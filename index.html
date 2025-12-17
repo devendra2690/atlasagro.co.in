@@ -1,0 +1,890 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+
+  <!-- Favicon / Tab Icon -->
+  <link rel="icon" type="image/png" href="assets/atlas-agro-logo.png" />
+  <link rel="apple-touch-icon" href="assets/atlas-agro-logo.png" />
+
+<title>Atlas Agro Industries | Dehydrated Powders, Chips & Custom Blends</title>
+  <meta name="description" content="Manufacturer & supplier of dehydrated fruit chips, vegetable powders, onion-garlic mixes, herbs, and custom blends for soups, noodles & ready meals." />
+  <meta name="keywords" content="dehydrated powder supplier, onion powder, garlic powder, ginger powder, fruit chips, vegetable powders, custom blends" />
+  <meta name="theme-color" content="#0f7a4a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Atlas Agro Industries | Dehydrated Powders & Chips" />
+  <meta property="og:description" content="Premium dehydrated powders, fruit chips, veg mixes & custom blends. Bulk supply for food manufacturers & exporters." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og.jpg" />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#f5fbf7',
+            100: '#e7f7ee',
+            200: '#c9efd9',
+            300: '#9fe2bd',
+            400: '#5ecc8f',
+            500: '#22b36a',
+            600: '#129457',
+            700: '#0f7a4a',
+            800: '#0f623c',
+            900: '#0c4f31'
+          },
+          ink: '#0f172a',
+          slateish: '#475569'
+        }
+      }
+    }
+  }
+
+  function galleryMagic() {
+    return {
+      isOpen: false,
+      activeIndex: 0,
+
+      items: [
+        { title: "Fruit Chips", desc: "Assorted chips & pieces", src: "assets/gallery/fruit-chips.png", alt: "Dehydrated Fruit Chips" },
+        { title: "Vegetable Mix", desc: "Ready meal blends", src: "assets/gallery/vegetable-mix.jpg", alt: "Dehydrated Vegetable Mix" },
+        { title: "Onion / Garlic", desc: "Powders & granules", src: "assets/gallery/onion-garlic.jpg", alt: "Onion Garlic Powder" },
+        { title: "Custom Blends", desc: "Soup & noodle mixes", src: "assets/gallery/custom-blends.jpg", alt: "Custom Food Blends" },
+        { title: "Herbs", desc: "Leafy greens & flakes", src: "assets/gallery/herbs.jpg", alt: "Dehydrated Herbs" },
+        { title: "Packaging", desc: "Bulk & retail options", src: "assets/gallery/packaging.jpg", alt: "Food Packaging" },
+        { title: "Quality Checks", desc: "Batch consistency", src: "assets/gallery/quality-checks.jpg", alt: "Quality Checks" },
+        { title: "Dispatch", desc: "Reliable shipments", src: "assets/gallery/dispatch.jpg", alt: "Dispatch & Logistics" },
+      ],
+
+      init() {
+        // Scroll reveal with IntersectionObserver
+        const cards = this.$root.querySelectorAll("button.group");
+        cards.forEach((el) => el.classList.add("reveal"));
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("in");
+          });
+        }, { threshold: 0.12 });
+
+        cards.forEach((el) => io.observe(el));
+      },
+
+      open(i) {
+        this.activeIndex = i;
+        this.isOpen = true;
+        document.body.style.overflow = "hidden";
+      },
+      close() {
+        this.isOpen = false;
+        document.body.style.overflow = "";
+      },
+      activeItem() {
+        return this.items[this.activeIndex] || this.items[0];
+      },
+      next() {
+        this.activeIndex = (this.activeIndex + 1) % this.items.length;
+      },
+      prev() {
+        this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length;
+      }
+    };
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    els.forEach((el) => io.observe(el));
+  });
+</script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    /* Smooth scroll + nicer selection */
+    html { scroll-behavior: smooth; }
+    ::selection { background: rgba(34,179,106,.25); }
+    /* Gallery reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px) scale(.98);
+      transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+      will-change: transform, opacity;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  
+    /* Gallery hover depth & tilt */
+    .gallery-card {
+      transform-style: preserve-3d;
+    }
+    .gallery-card:hover {
+      transform: translateY(-6px) scale(1.01);
+    }
+    .gallery-card img {
+      transition: transform .6s cubic-bezier(.2,.8,.2,1);
+    }
+    .gallery-card:hover img {
+      transform: scale(1.12);
+    }
+    /* Who we supply hover (match Products) */
+    .supply-card {
+      transition: background-color .25s ease, border-color .25s ease, transform .25s ease;
+    }
+
+    .supply-card:hover {
+      background-color: rgb(34 179 106 / 0.08); /* brand green, subtle */
+      border-color: rgb(34 179 106 / 0.35);
+    }
+
+  /* Universal card hover */
+  .card-hover {
+    transition: background-color .25s ease,
+                border-color .25s ease,
+                transform .25s ease,
+                box-shadow .25s ease;
+  }
+  .card-hover:hover {
+    background-color: rgb(34 179 106 / 0.08);
+    border-color: rgb(34 179 106 / 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
+  }
+
+</style>
+</head>
+
+<body class="bg-brand-50 text-ink antialiased"
+      x-data="siteApp()"
+      x-init="init()">
+
+  <!-- Top announcement -->
+  <div class="bg-brand-100 border-b border-brand-200">
+    <div class="max-w-7xl mx-auto px-4 py-2 text-sm flex flex-wrap items-center justify-between gap-2">
+      <div class="text-ink">
+        ✅ Bulk Supply • ✅ Export-ready • ✅ Custom Blends for Soups / Noodles / Ready Meals
+      </div>
+      <div class="flex items-center gap-3">
+        <a class="text-ink hover:text-ink underline underline-offset-4"
+           href="#quote">Get a Quote</a>
+        <a class="text-ink hover:text-ink underline underline-offset-4"
+           href="assets/brochure.pdf" download>
+          Download Brochure
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between gap-4 relative">
+
+<a href="#" class="flex items-center gap-5">
+  <!-- BIG, BORDERLESS LOGO -->
+  <span class="flex items-center justify-center">
+    <img
+      src="assets/atlas-agro-logo.png"
+      alt="Atlas Agro Logo"
+      class="h-16 w-auto md:h-20 object-contain"
+    />
+  </span>
+
+  <!-- Brand text -->
+  <span class="leading-tight">
+    <span class="block text-xl font-semibold text-ink">
+      ATLAS AGRO INDUSTRIES PRIVATE LTD
+    </span>
+    <span class="block text-sm tracking-wide text-slateish uppercase mt-0.5">
+      Premium Dehydrated Vegetables & Fruits
+    </span>
+  </span>
+</a>
+
+
+
+
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a class="hover:text-ink text-slateish" href="#products">Products</a>
+      <a class="hover:text-ink text-slateish" href="#industries">Industries</a>
+      <a class="hover:text-ink text-slateish" href="#quality">Quality</a>
+      <a class="hover:text-ink text-slateish" href="#gallery">Gallery</a>
+      <a class="hover:text-ink text-slateish" href="#faq">FAQ</a>
+      <a class="hover:text-ink text-slateish" href="#contact">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a :href="whatsappLink"
+         class="hidden sm:inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
+        <span>WhatsApp</span>
+        <span aria-hidden="true">→</span>
+      </a>
+
+      <button class="md:hidden rounded-2xl border border-slate-200 px-3 py-2 hover:bg-white"
+              @click="mobileOpen = !mobileOpen"
+              aria-label="Toggle menu">
+        ☰
+      </button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 opacity-25 pointer-events-none"
+         style="background: radial-gradient(800px 400px at 20% 10%, rgba(34,179,106,.25), transparent 60%),
+                        radial-gradient(600px 350px at 80% 15%, rgba(59,130,246,.12), transparent 60%);">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 relative">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-white/40 text-xs text-slateish">
+            <span class="h-2 w-2 rounded-full bg-brand-600"></span>
+            Reliable Dehydration Partner for Brands & Manufacturers
+          </div>
+
+          <h1 class="mt-5 text-4xl md:text-5xl font-bold leading-tight">
+            <span class="text-brand-800">Natural. Safe. Shelf‑Stable.</span>
+             Premium <span class="text-brand-800">Dehydrated Powders</span>, Fruit Chips & Custom Blends
+          </h1>
+
+          <p class="mt-4 text-slateish leading-relaxed">
+            From onion–garlic mixes to tropical fruit chips and soup-ready blends —
+            we deliver consistent quality, food-safety focus, and scalable bulk supply.
+          </p>
+
+          <div class="mt-7 flex flex-wrap gap-3">
+            <a href="#quote"
+               class="rounded-2xl px-5 py-3 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
+              Request Pricing / MOQ
+            </a>
+            <a href="#products"
+               class="rounded-2xl px-5 py-3 border border-slate-200 hover:bg-white transition">
+              Explore Products
+            </a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="card-hover rounded-2xl border border-slate-200 bg-white p-4">
+              <div class="text-2xl font-bold">50+</div>
+              <div class="text-xs text-slateish mt-1">SKUs & blends</div>
+            </div>
+            <div class="card-hover rounded-2xl border border-slate-200 bg-white p-4">
+              <div class="text-2xl font-bold">B2B</div>
+              <div class="text-xs text-slateish mt-1">Bulk supply</div>
+            </div>
+            <div class="card-hover rounded-2xl border border-slate-200 bg-white p-4">
+              <div class="text-2xl font-bold">QC</div>
+              <div class="text-xs text-slateish mt-1">Batch testing</div>
+            </div>
+            <div class="card-hover rounded-2xl border border-slate-200 bg-white p-4">
+              <div class="text-2xl font-bold">OEM</div>
+              <div class="text-xs text-slateish mt-1">Private label</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero card -->
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <div class="text-sm text-slateish">Quick Quote</div>
+              <div class="text-xs text-slateish mt-1">Get response within 24 hours (typical).</div>
+            </div>
+            <div class="text-xs text-brand-800 border border-brand-200 bg-brand-100 px-3 py-1 rounded-full">
+              Fast
+            </div>
+          </div>
+
+          <form class="mt-5 grid gap-3" @submit.prevent="submitQuote()">
+            <div class="grid sm:grid-cols-2 gap-3">
+              <input class="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 outline-none focus:border-brand-500"
+                     placeholder="Your Name" x-model="quote.name" required />
+              <input class="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 outline-none focus:border-brand-500"
+                     placeholder="Company" x-model="quote.company" />
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <input class="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 outline-none focus:border-brand-500"
+                     placeholder="Phone / WhatsApp" x-model="quote.phone" required />
+              <input class="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 outline-none focus:border-brand-500"
+                     placeholder="Email" type="email" x-model="quote.email" />
+            </div>
+
+            <select class="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 outline-none focus:border-brand-500"
+                    x-model="quote.product">
+              <option value="">Select product interest</option>
+              <option>Fruit chips / pieces</option>
+              <option>Vegetable powders</option>
+              <option>Onion & garlic mixes</option>
+              <option>Herbs / leafy greens</option>
+              <option>Custom blends (soups/noodles)</option>
+            </select>
+
+            <textarea class="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 outline-none focus:border-brand-500"
+                      rows="4"
+                      placeholder="Tell us MOQ, packaging, mesh size, application, etc."
+                      x-model="quote.message"></textarea>
+
+            <button class="rounded-2xl px-5 py-3 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
+              Send on WhatsApp
+            </button>
+
+            <div class="text-xs text-slateish">
+              This form opens WhatsApp with your message (works on mobile & desktop WhatsApp Web).
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="max-w-7xl mx-auto px-4 py-16">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+      <div>
+        <h2 class="text-3xl font-bold">Products</h2>
+        <p class="text-slateish mt-2 max-w-2xl">
+          Choose by category. We can support custom specs: mesh size, moisture target, flavor profile, packaging, and private label.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <template x-for="cat in categories" :key="cat">
+          <button
+            class="px-4 py-2 rounded-full border border-slate-200 text-sm hover:bg-white transition"
+            :class="selectedCategory === cat ? 'bg-brand-100 border-brand-300 text-ink' : 'text-slateish'"
+            @click="selectedCategory = cat"
+            x-text="cat">
+          </button>
+        </template>
+      </div>
+    </div>
+
+    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <template x-for="p in filteredProducts()" :key="p.name">
+        <div class="rounded-3xl border border-slate-200 bg-white p-5 hover:bg-brand-100 transition">
+          <div class="flex items-center justify-between gap-3">
+            <div class="text-sm text-ink border border-brand-200 bg-brand-100 px-3 py-1 rounded-full"
+                 x-text="p.category"></div>
+            <div class="text-xs text-slateish" x-text="p.tag"></div>
+          </div>
+
+          <h3 class="mt-4 text-xl font-semibold" x-text="p.name"></h3>
+          <p class="mt-2 text-slateish text-sm" x-text="p.desc"></p>
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            <template x-for="b in p.badges" :key="b">
+              <span class="text-xs px-3 py-1 rounded-full border border-slate-200 text-slateish" x-text="b"></span>
+            </template>
+          </div>
+
+          <div class="mt-5 flex items-center justify-between gap-3">
+            <button class="text-sm text-ink hover:text-ink underline underline-offset-4"
+                    @click="openSpec(p)">
+              View Specs
+            </button>
+            <a class="text-sm text-brand-800 hover:text-ink underline underline-offset-4"
+               :href="whatsappLinkForProduct(p.name)">
+              Enquire →
+            </a>
+          </div>
+        </div>
+      </template>
+    </div>
+  </section>
+
+  <!-- Industries / Use cases -->
+  <section id="industries" class="border-y border-slate-200 bg-brand-50">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-bold">Who we supply</h2>
+      <p class="text-slateish mt-2 max-w-2xl">
+        Ingredients designed for consistent taste, low moisture, and stable shelf life.
+      </p>
+
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition"
+            style="transition-delay:0ms">
+          <div class="text-xl font-semibold">Food Manufacturers</div>
+          <div class="text-sm text-slateish mt-2">Seasonings, sauces, RTC/RTD, frozen foods.</div>
+        </div>
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition"
+           style="transition-delay:80ms">
+          <div class="text-xl font-semibold">HoReCa</div>
+          <div class="text-sm text-slateish mt-2">Hotels, restaurants, caterers — bulk packs.</div>
+        </div>
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition"
+            style="transition-delay:160ms">          
+            <div class="text-xl font-semibold">Snack Brands</div>
+          <div class="text-sm text-slateish mt-2">Fruit chips, veg chips, spice blends.</div>
+        </div>
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition"
+            style="transition-delay:240ms">          
+            <div class="text-xl font-semibold">Exporters</div>
+          <div class="text-sm text-slateish mt-2">Documentation & packing support.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality -->
+  <section id="quality" class="max-w-7xl mx-auto px-4 py-16">
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-3xl font-bold">Quality & Food Safety</h2>
+        <p class="text-slateish mt-2">
+          We aim for repeatable batches through raw material checks, controlled processing, and QC logs.
+        </p>
+
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5">
+            <div class="font-semibold">Incoming RM Checks</div>
+            <div class="text-sm text-slateish mt-2">Visual sorting, odor, moisture, infestation check.</div>
+          </div>
+          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5">
+            <div class="font-semibold">Batch QC</div>
+            <div class="text-sm text-slateish mt-2">Moisture, mesh size, color, aroma, foreign matter.</div>
+          </div>
+          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5">
+            <div class="font-semibold">Traceability</div>
+            <div class="text-sm text-slateish mt-2">Lot tracking + basic documentation.</div>
+          </div>
+          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5">
+            <div class="font-semibold">Packaging Options</div>
+            <div class="text-sm text-slateish mt-2">Bulk liners, laminated pouches, private label.</div>
+          </div>
+        </div>
+
+        <div class="mt-6 text-sm text-slateish">
+          If you have required standards (FSSAI, ISO/HACCP, lab COA formats), we can align the documentation.
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-slate-200 bg-white p-6">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <div class="text-xl font-semibold">Typical Specifications</div>
+            <div class="text-sm text-slateish mt-1">We finalize per product & application.</div>
+          </div>
+        </div>
+
+        <div class="mt-5 grid gap-3 text-sm">
+          <div class="card-hover flex items-center justify-between border border-slate-200 rounded-2xl px-4 py-3">
+            <span class="text-slateish">Moisture</span>
+            <span class="text-ink font-semibold">As per SKU (targeted)</span>
+          </div>
+          <div class="card-hover flex items-center justify-between border border-slate-200 rounded-2xl px-4 py-3">
+            <span class="text-slateish">Mesh / Granulation</span>
+            <span class="text-ink font-semibold">Fine / Medium / Coarse</span>
+          </div>
+          <div class="card-hover flex items-center justify-between border border-slate-200 rounded-2xl px-4 py-3">
+            <span class="text-slateish">Packing</span>
+            <span class="text-ink font-semibold">1–25 kg (custom)</span>
+          </div>
+          <div class="card-hover flex items-center justify-between border border-slate-200 rounded-2xl px-4 py-3">
+            <span class="text-slateish">MOQ</span>
+            <span class="text-ink font-semibold">Depends on SKU</span>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <a href="#quote"
+             class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-slate-200 hover:bg-white transition">
+            Share your required specs →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery (animated + lightbox) -->
+<section id="gallery" class="border-y border-slate-200 bg-brand-50"
+  x-data="galleryMagic()"
+  x-init="init()"
+  @keydown.window.escape="close()" @keydown.window.arrow-right.prevent="next()" @keydown.window.arrow-left.prevent="prev()"
+>
+  <div class="max-w-7xl mx-auto px-4 py-16">
+    <div class="flex items-end justify-between gap-6 flex-wrap">
+      <div>
+        <h2 class="text-3xl font-bold">Gallery</h2>
+        <p class="text-slateish mt-2">Click any image to view.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <template x-for="(item, idx) in items" :key="item.title">
+        <button
+          type="button"
+          class="gallery-card group text-left rounded-3xl border border-slate-200 bg-white overflow-hidden
+                 shadow-sm hover:shadow-lg transition-all duration-300
+                 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-300"
+          :style="`transition-delay:${idx * 60}ms`"
+          x-ref="cards"
+          @click="open(idx)"
+        >
+          <div class="relative h-44 overflow-hidden">
+            <img
+              :src="item.src"
+              :alt="item.alt"
+              class="h-full w-full object-cover transition-transform duration-500
+                     group-hover:scale-110"
+              loading="lazy"
+            />
+            <!-- subtle top gradient for premium look -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/0 opacity-70"></div>
+
+            <!-- small chip -->
+            <div class="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full
+                        bg-white/90 border border-slate-200 text-slate-700">
+              View
+            </div>
+          </div>
+
+          <div class="p-4">
+            <div class="flex items-center justify-between gap-3">
+              <div class="font-semibold text-ink" x-text="item.title"></div>
+              <div class="text-slateish text-sm transition-transform duration-300 group-hover:translate-x-1">→</div>
+            </div>
+            <div class="text-xs text-slateish mt-1" x-text="item.desc"></div>
+          </div>
+        </button>
+      </template>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div
+    class="fixed inset-0 z-50 bg-black/60 p-4 grid place-items-center"
+    x-show="isOpen"
+    x-transition.opacity
+    @click.self="close()"
+  >
+    <div class="w-full max-w-4xl rounded-3xl bg-white overflow-hidden border border-slate-200 shadow-2xl"
+         x-transition.scale>
+      <div class="flex items-center justify-between p-4 border-b border-slate-200">
+        <div>
+          <div class="font-semibold text-ink" x-text="activeItem().title"></div>
+          <div class="text-xs text-slateish" x-text="activeItem().desc"></div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            class="px-3 py-2 rounded-2xl border border-slate-200 hover:bg-brand-100 transition"
+            @click="prev()"
+            aria-label="Previous"
+          >←</button>
+
+          <button
+            class="px-3 py-2 rounded-2xl border border-slate-200 hover:bg-brand-100 transition"
+            @click="next()"
+            aria-label="Next"
+          >→</button>
+
+          <button
+            class="px-3 py-2 rounded-2xl border border-slate-200 hover:bg-brand-100 transition"
+            @click="close()"
+            aria-label="Close"
+          >✕</button>
+        </div>
+      </div>
+
+      <div class="bg-slate-50">
+        <img
+          :src="activeItem().src"
+          :alt="activeItem().alt"
+          class="w-full max-h-[70vh] object-contain"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold">FAQ</h2>
+    <p class="text-slateish mt-2 max-w-2xl">
+      Quick answers for manufacturers, traders, and brand owners.
+    </p>
+
+    <div class="mt-8 grid gap-3 max-w-3xl">
+      <template x-for="(f, idx) in faqs" :key="idx">
+        <div class="card-hover rounded-3xl border border-slate-200 bg-white overflow-hidden">
+          <button class="w-full text-left p-5 flex items-center justify-between gap-4"
+                  @click="f.open = !f.open">
+            <span class="font-semibold" x-text="f.q"></span>
+            <span class="text-slateish" x-text="f.open ? '−' : '+'"></span>
+          </button>
+          <div class="px-5 pb-5 text-sm text-slateish" x-show="f.open" x-transition>
+            <div x-text="f.a"></div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </section>
+
+  <!-- Quote / Contact -->
+  <section id="quote" class="border-t border-slate-200 bg-brand-50">
+    <div id="contact" class="max-w-7xl mx-auto px-4 py-16">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 class="text-3xl font-bold">Contact & Quote</h2>
+          <p class="text-slateish mt-2">
+            Share your requirement: product, application, specs, MOQ, packaging, destination city, and timeline.
+          </p>
+
+          <div class="mt-6 grid gap-4">
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5">
+              <div class="text-sm text-slateish">Phone / WhatsApp</div>
+              <div class="text-lg font-semibold mt-1">+91-9867630682</div>
+            </div>
+
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5">
+              <div class="text-sm text-slateish">Email</div>
+              <div class="text-lg font-semibold mt-1">sales@atlasagro.co.in</div>
+            </div>
+
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5">
+              <div class="text-sm text-slateish">Location</div>
+              <div class="text-lg font-semibold mt-1">Khamgaon, District Buldhana, Maharashtra, India 444303</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-hover rounded-3xl border border-slate-200 bg-white overflow-hidden">
+          <!-- Google maps embed placeholder -->
+          <div class="h-72 bg-white/60 grid place-items-center text-slateish text-sm p-6 text-center">
+            Paste your Google Maps embed here (iframe).<br/>
+            For now it’s a placeholder block.
+          </div>
+
+          <div class="p-6 border-t border-slate-200">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="text-sm text-slateish">Prefer WhatsApp?</div>
+              <a :href="whatsappLink"
+                 class="rounded-2xl px-4 py-2 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
+                Chat on WhatsApp →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="mt-14 pt-8 border-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
+        <div>© <span x-text="new Date().getFullYear()"></span> Atlas Agro Industries. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a class="hover:text-slateish" href="#products">Products</a>
+          <a class="hover:text-slateish" href="#quality">Quality</a>
+          <a class="hover:text-slateish" href="#contact">Contact</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <!-- Spec modal -->
+  <div x-show="modalOpen" x-transition
+       class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50"
+       @click.self="modalOpen=false">
+    <div class="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <div class="text-xs text-brand-800" x-text="modalProduct?.category"></div>
+          <div class="text-2xl font-bold mt-1" x-text="modalProduct?.name"></div>
+          <div class="text-slateish text-sm mt-2" x-text="modalProduct?.desc"></div>
+        </div>
+        <button class="rounded-2xl px-3 py-2 border border-slate-200 hover:bg-white"
+                @click="modalOpen=false" aria-label="Close">✕</button>
+      </div>
+
+      <div class="mt-5 grid gap-3 text-sm">
+        <template x-for="s in (modalProduct?.specs || [])" :key="s.k">
+          <div class="card-hover flex items-center justify-between border border-slate-200 rounded-2xl px-4 py-3">
+            <span class="text-slateish" x-text="s.k"></span>
+            <span class="text-ink font-semibold" x-text="s.v"></span>
+          </div>
+        </template>
+      </div>
+
+      <div class="mt-6 flex items-center justify-between gap-3 flex-wrap">
+        <a class="text-brand-800 hover:text-ink underline underline-offset-4"
+           :href="whatsappLinkForProduct(modalProduct?.name || '')">
+          Enquire on WhatsApp →
+        </a>
+        <button class="rounded-2xl px-4 py-2 border border-slate-200 hover:bg-white transition"
+                @click="modalOpen=false">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- App script -->
+  <script>
+    function siteApp() {
+      return {
+        mobileOpen: false,
+
+        // Replace with your real WhatsApp number (country code + number, no +, no spaces)
+        whatsappNumber: "919867630682",
+        whatsappDefaultText: "Hello! I’m interested in dehydrated products. Please share pricing, MOQ, specs and availability.",
+
+        quote: { name: "", company: "", phone: "", email: "", product: "", message: "" },
+
+        categories: ["All", "Fruit", "Vegetable", "Onion & Garlic", "Herbs", "Custom Blends"],
+        selectedCategory: "All",
+
+        products: [
+          {
+            category: "Fruit",
+            tag: "Snacking / Ingredients",
+            name: "Assorted Dehydrated Fruit Chips",
+            desc: "Natural-looking fruit chips & pieces for snacks, toppings, bakery, and trail mixes.",
+            badges: ["Bulk supply", "Custom cut", "Private label"],
+            specs: [
+              { k: "Variants", v: "Chips / pieces" },
+              { k: "Packing", v: "1–10 kg (custom)" },
+              { k: "MOQ", v: "Depends on SKU" },
+              { k: "Customization", v: "Yes" }
+            ]
+          },
+          {
+            category: "Vegetable",
+            tag: "B2B / Food processing",
+            name: "Mixed Dehydrated Vegetable Mix",
+            desc: "Dehydrated vegetable blends used in ready meals, instant mixes, and seasoning lines.",
+            badges: ["Consistent mix", "Low moisture", "Bulk"],
+            specs: [
+              { k: "Application", v: "RTC/RTD, seasonings" },
+              { k: "Packing", v: "5–25 kg" },
+              { k: "MOQ", v: "Depends on mix" }
+            ]
+          },
+          {
+            category: "Onion & Garlic",
+            tag: "High demand",
+            name: "Onion Powder",
+            desc: "Strong aroma, uniform granulation options for sauces, gravies, snacks, masalas.",
+            badges: ["Fine/Coarse", "Stable", "B2B"],
+            specs: [
+              { k: "Granulation", v: "Fine/Medium/Coarse" },
+              { k: "Packing", v: "5–25 kg" },
+              { k: "MOQ", v: "Depends on grade" }
+            ]
+          },
+          {
+            category: "Onion & Garlic",
+            tag: "High demand",
+            name: "Garlic Powder",
+            desc: "Potent flavor for spice blends, marinades, seasonings, and noodles.",
+            badges: ["Consistent flavor", "Bulk", "Custom mesh"],
+            specs: [
+              { k: "Mesh", v: "As required" },
+              { k: "Packing", v: "5–25 kg" }
+            ]
+          },
+          {
+            category: "Vegetable",
+            tag: "Ingredient",
+            name: "Ginger Powder",
+            desc: "For beverages, spice mixes, bakery, and culinary applications.",
+            badges: ["Aroma focused", "Bulk", "B2B"],
+            specs: [
+              { k: "Use", v: "Beverage / spice mixes" },
+              { k: "Packing", v: "5–25 kg" }
+            ]
+          },
+          {
+            category: "Herbs",
+            tag: "Specialty",
+            name: "Leafy Greens & Herbs (Spinach, etc.)",
+            desc: "Dehydrated leafy greens & herbs for nutraceutical blends and ready meals.",
+            badges: ["Custom blend", "B2B", "Low moisture"],
+            specs: [
+              { k: "Forms", v: "Flakes / powder" },
+              { k: "Packing", v: "1–10 kg" }
+            ]
+          },
+          {
+            category: "Custom Blends",
+            tag: "Made-to-order",
+            name: "Custom Blends for Soups & Noodles",
+            desc: "Taste-profiled, consistent blends for ready meals, instant soups, noodles & seasoning packets.",
+            badges: ["R&D support", "OEM", "Repeatable batches"],
+            specs: [
+              { k: "Customization", v: "Flavor + granulation" },
+              { k: "Packing", v: "As required" },
+              { k: "MOQ", v: "Project-based" }
+            ]
+          }
+        ],
+
+        modalOpen: false,
+        modalProduct: null,
+
+        faqs: [
+          { q: "Do you supply in bulk for manufacturers?", a: "Yes. We support bulk supply with packaging options and repeatable batches.", open: true },
+          { q: "Can you make custom blends for soups/noodles?", a: "Yes. Share your application and target taste profile; we can create custom blends.", open: false },
+          { q: "What packaging do you support?", a: "Common options include liners, laminated pouches, and bulk packs. Private label is possible.", open: false },
+          { q: "Do you provide COA / batch details?", a: "We can share basic QC details and align documentation to your requirement.", open: false }
+        ],
+
+        get whatsappLink() {
+          const text = encodeURIComponent(this.whatsappDefaultText);
+          return `https://wa.me/${this.whatsappNumber}?text=${text}`;
+        },
+
+        whatsappLinkForProduct(productName) {
+          const base = `Hello! I’m interested in: ${productName}. Please share pricing, MOQ, specs (mesh/moisture), packaging options and lead time.`;
+          return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(base)}`;
+        },
+
+        filteredProducts() {
+          if (this.selectedCategory === "All") return this.products;
+          return this.products.filter(p => p.category === this.selectedCategory);
+        },
+
+        openSpec(p) {
+          this.modalProduct = p;
+          this.modalOpen = true;
+        },
+
+        submitQuote() {
+          const msg =
+            `Hello! Quote request:%0A` +
+            `Name: ${encodeURIComponent(this.quote.name)}%0A` +
+            `Company: ${encodeURIComponent(this.quote.company || "-")}%0A` +
+            `Phone: ${encodeURIComponent(this.quote.phone)}%0A` +
+            `Email: ${encodeURIComponent(this.quote.email || "-")}%0A` +
+            `Interest: ${encodeURIComponent(this.quote.product || "-")}%0A` +
+            `Message: ${encodeURIComponent(this.quote.message || "-")}`;
+
+          window.open(`https://wa.me/${this.whatsappNumber}?text=${msg}`, "_blank");
+        },
+
+        init() {
+          // You can add analytics init here later (GA4, Meta Pixel, etc.)
+        }
+      };
+    }
+  </script>
+</body>
+</html>

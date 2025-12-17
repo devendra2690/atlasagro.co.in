@@ -177,7 +177,7 @@
       x-init="init()">
 
   <!-- Top announcement -->
-  <div class="bg-brand-100 border-b border-brand-200">
+  <div class="hidden sm:block bg-brand-100 border-b border-brand-200">
     <div class="max-w-7xl mx-auto px-4 py-2 text-sm flex flex-wrap items-center justify-between gap-2">
       <div class="text-ink">
         ✅ Bulk Supply • ✅ Export-ready • ✅ Custom Blends for Soups / Noodles / Ready Meals
@@ -195,7 +195,7 @@
 
   <!-- Navbar -->
   <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
-<div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between gap-4 relative">
+<div class="max-w-7xl mx-auto px-4 h-16 sm:h-20 flex items-center justify-between gap-4 relative">
 
 <a href="#" class="flex items-center gap-5">
   <!-- BIG, BORDERLESS LOGO -->
@@ -203,16 +203,19 @@
     <img
       src="assets/atlas-agro-logo.png"
       alt="Atlas Agro Logo"
-      class="h-16 w-auto md:h-20 object-contain"
+      class="h-12 sm:h-14 md:h-20 w-auto object-contain"
     />
   </span>
 
   <!-- Brand text -->
-  <span class="leading-tight">
-    <span class="block text-xl font-semibold text-ink">
+  <span class="leading-snug">
+    <!-- Mobile -->
+    <span class="block sm:hidden text-base font-semibold text-ink">ATLAS AGRO</span>
+    <!-- Desktop -->
+    <span class="hidden sm:block text-lg md:text-xl font-semibold text-ink">
       ATLAS AGRO INDUSTRIES PRIVATE LTD
     </span>
-    <span class="block text-sm tracking-wide text-slateish uppercase mt-0.5">
+    <span class="hidden sm:block text-xs md:text-sm tracking-wide text-slateish uppercase mt-0.5">
       Premium Dehydrated Vegetables & Fruits
     </span>
   </span>
@@ -254,15 +257,15 @@
                         radial-gradient(600px 350px at 80% 15%, rgba(59,130,246,.12), transparent 60%);">
     </div>
 
-    <div class="max-w-7xl mx-auto px-4 py-16 md:py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 py-10 sm:py-14 md:py-24 relative">
       <div class="grid md:grid-cols-2 gap-10 items-center">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-white/40 text-xs text-slateish">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-white/40 text-xs text-slateish max-w-full">
             <span class="h-2 w-2 rounded-full bg-brand-600"></span>
             Reliable Dehydration Partner for Brands & Manufacturers
           </div>
 
-          <h1 class="mt-5 text-4xl md:text-5xl font-bold leading-tight">
+          <h1 class="mt-5 text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
             <span class="text-brand-800">Natural. Safe. Shelf‑Stable.</span>
              Premium <span class="text-brand-800">Dehydrated Powders</span>, Fruit Chips & Custom Blends
           </h1>
@@ -274,11 +277,11 @@
 
           <div class="mt-7 flex flex-wrap gap-3">
             <a href="#quote"
-               class="rounded-2xl px-5 py-3 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
+               class="w-full sm:w-auto rounded-2xl px-5 py-3 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
               Request Pricing / MOQ
             </a>
             <a href="#products"
-               class="rounded-2xl px-5 py-3 border border-slate-200 hover:bg-white transition">
+               class="w-full sm:w-auto rounded-2xl px-5 py-3 border border-slate-200 hover:bg-white transition">
               Explore Products
             </a>
           </div>
@@ -292,11 +295,11 @@
               <div class="text-2xl font-bold">B2B</div>
               <div class="text-xs text-slateish mt-1">Bulk supply</div>
             </div>
-            <div class="card-hover rounded-2xl border border-slate-200 bg-white p-4">
+            <div class="card-hover hidden sm:block rounded-2xl border border-slate-200 bg-white p-4">
               <div class="text-2xl font-bold">QC</div>
               <div class="text-xs text-slateish mt-1">Batch testing</div>
             </div>
-            <div class="card-hover rounded-2xl border border-slate-200 bg-white p-4">
+            <div class="card-hover hidden sm:block rounded-2xl border border-slate-200 bg-white p-4">
               <div class="text-2xl font-bold">OEM</div>
               <div class="text-xs text-slateish mt-1">Private label</div>
             </div>
@@ -304,7 +307,7 @@
         </div>
 
         <!-- Hero card -->
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl">
+        <div class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xl">
           <div class="flex items-start justify-between gap-4">
             <div>
               <div class="text-sm text-slateish">Quick Quote</div>

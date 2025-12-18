@@ -205,6 +205,16 @@
     box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
   }
 
+
+  /* Touch-friendly: show feedback on tap/focus as well */
+  .card-hover:active,
+  .card-hover:focus,
+  .card-hover:focus-visible {
+    background-color: rgb(34 179 106 / 0.10);
+    border-color: rgb(34 179 106 / 0.45);
+    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
+    outline: none;
+  }
 </style>
 </head>
 <body class="bg-brand-50 text-ink antialiased"

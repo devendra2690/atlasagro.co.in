@@ -56,5 +56,50 @@
 </script>
 
 
+<script>
+(function(){
+  var WA_NUMBER = "919867630682";
+  function pageLabel(){
+    var p = (location.pathname || "/").toLowerCase();
+    if(p === "/" || p === "/index.html") return "Home";
+    if(p.startsWith("/products/")){
+      var slug = p.split("/").pop() || "products";
+      if(slug === "" || slug === "index.html") return "Products";
+      slug = slug.replace(".html","").replace(/-/g," ");
+      return slug.replace(/\b\w/g, c => c.toUpperCase());
+    }
+    return location.pathname;
+  }
+  function productFromPage(){
+    var p = (location.pathname || "/").toLowerCase();
+    if(p.includes("dehydrated-products")) return "Dehydrated Products";
+    if(p.includes("spray-dried-products")) return "Spray Dried Products";
+    if(p.includes("spices")) return "Spices";
+    if(p.startsWith("/products/")) return "Products (General)";
+    return "Product Enquiry";
+  }
+  function buildHref(){
+    var msg =
+      "Hello Atlas Agro,\n" +
+      "I want details/pricing.\n" +
+      "Product interest: " + productFromPage() + "\n" +
+      "Page: " + pageLabel() + "\n" +
+      "Link: " + location.href + "\n\n" +
+      "Please share MOQ, packaging, mesh size & pricing.";
+    return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
+  }
+  function apply(){
+    var href = buildHref();
+    document.querySelectorAll('a[data-wa="prefill"]').forEach(function(a){
+      a.setAttribute("href", href);
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+    });
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", apply);
+  else apply();
+})();
+</script>
+
 </body>
 </html>

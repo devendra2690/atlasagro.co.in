@@ -177,7 +177,7 @@
       x-init="init()">
 
   <!-- Top announcement -->
-  <div class="bg-brand-100 border-b border-brand-200">
+  <div class="bg-brand-100 border-b border-brand-200 hidden md:block">
     <div class="max-w-7xl mx-auto px-4 py-2 text-sm flex flex-wrap items-center justify-between gap-2">
       <div class="text-ink">
         ✅ Bulk Supply • ✅ Export-ready • ✅ Custom Blends for Soups / Noodles / Ready Meals
@@ -205,27 +205,34 @@
 
   <!-- Navbar -->
   <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
-<div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between gap-4 relative">
+<div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4 relative">
 
-<a href="#" class="flex items-center gap-5">
+<a href="#" class="flex items-center gap-3 md:gap-5 min-w-0">
   <!-- BIG, BORDERLESS LOGO -->
   <span class="flex items-center justify-center">
     <img
       src="assets/atlas-agro-logo.png"
       alt="Atlas Agro Logo"
-      class="h-16 w-auto md:h-20 object-contain"
+      class="h-10 w-auto md:h-14 object-contain"
     />
   </span>
 
-  <!-- Brand text -->
-  <span class="leading-tight">
-    <span class="block text-xl font-semibold text-ink">
-      ATLAS AGRO INDUSTRIES PRIVATE LTD
-    </span>
-    <span class="block text-sm tracking-wide text-slateish uppercase mt-0.5">
-      Premium Dehydrated Vegetables & Fruits
-    </span>
-  </span>
+  <div class="leading-tight min-w-0">
+  <!-- Mobile brand -->
+  <div class="block md:hidden font-semibold text-ink text-base">
+    ATLAS AGRO
+  </div>
+
+  <!-- Desktop brand -->
+  <div class="hidden md:block font-semibold text-ink text-lg">
+    ATLAS AGRO INDUSTRIES PRIVATE LTD
+  </div>
+
+  <div class="hidden md:block text-xs text-slateish tracking-wide uppercase">
+    PREMIUM DEHYDRATED VEGETABLES & FRUITS
+  </div>
+</div>
+
 </a>
 
 
@@ -247,6 +254,15 @@
         <span aria-hidden="true">→</span>
       </a>
 
+      
+      <!-- Mobile Language Switcher -->
+      <div class="md:hidden flex items-center gap-1 text-[11px] border border-slate-200 rounded-2xl px-2 py-2 bg-white">
+        <button type="button" onclick="setLang('en')" class="px-1 font-medium hover:text-brand-700">EN</button>
+        <span class="text-slateish">|</span>
+        <button type="button" onclick="setLang('hi')" class="px-1 font-medium hover:text-brand-700">हिं</button>
+        <span class="text-slateish">|</span>
+        <button type="button" onclick="setLang('mr')" class="px-1 font-medium hover:text-brand-700">मर</button>
+      </div>
       <button class="md:hidden rounded-2xl border border-slate-200 px-3 py-2 hover:bg-white"
               @click="mobileOpen = !mobileOpen"
               aria-label="Toggle menu">

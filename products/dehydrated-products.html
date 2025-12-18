@@ -205,23 +205,13 @@
     box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
   }
 
-
-  /* Touch-friendly: show feedback on tap/focus as well */
-  .card-hover:active,
-  .card-hover:focus,
-  .card-hover:focus-visible {
-    background-color: rgb(34 179 106 / 0.10);
-    border-color: rgb(34 179 106 / 0.45);
-    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
-    outline: none;
-  }
 </style>
 </head>
-<body class="bg-brand-50 text-ink antialiased"
+<body class="bg-brand-700-50 text-ink antialiased"
       x-data="siteApp()"
       x-init="init()">
 <!-- Top announcement -->
-  <div class="bg-brand-100 border-b border-brand-200 hidden md:block">
+  <div class="bg-brand-700-100 border-b border-brand-200 hidden md:block">
     <div class="max-w-7xl mx-auto px-4 py-2 text-sm flex flex-wrap items-center justify-between gap-2">
       <div class="text-ink">
         ✅ Bulk Supply • ✅ Export-ready • ✅ Custom Blends for Soups / Noodles / Ready Meals
@@ -290,7 +280,7 @@
 
     <div class="flex items-center gap-3">
       <a :href="whatsappLink"
-         class="hidden sm:inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
+         class="hidden sm:inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-brand-700-700 text-white font-semibold hover:bg-brand-800-700-600 transition">
         <span>WhatsApp</span>
         <span aria-hidden="true">→</span>
       </a>
@@ -315,9 +305,9 @@
 <main class="max-w-7xl mx-auto px-4 py-10">
   <div class="max-w-3xl">
     <h1 class="text-4xl font-extrabold tracking-tight">Dehydrated Products</h1>
-  <div class="mt-3"><div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/60 px-4 py-2 text-sm"><a class="text-slateish hover:text-brand hover:underline" href="/">Home</a> <span class="text-slateish">/</span> <a class="text-slateish hover:text-brand hover:underline" href="/products/">Products</a> <span class="text-slateish">/</span> <span class="text-brand font-semibold" aria-current="page">Dehydrated Products</span></div></div>
+  <nav aria-label="Breadcrumb" class="mt-3 text-sm"><a class="text-slateish hover:text-brand hover:underline" href="/">Home</a> <span class="text-slateish">/</span> <a class="text-slateish hover:text-brand hover:underline" href="/products/">Products</a> <span class="text-slateish">/</span> <span class="font-semibold text-slate-900" aria-current="page">Dehydrated Products</span></nav>
 
-</div>
+  </div>
   <div class="mt-8">
     
 <p class="text-slateish max-w-3xl">
@@ -1013,33 +1003,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <script>
 (function(){
-  function setActive(){
-    var p=(location.pathname||"").toLowerCase();
-    var key = p.includes("dehydrated")?"dehydrated":p.includes("spray")?"spray":p.includes("spices")?"spices":null;
-    if(!key) return;
-    var el=document.querySelector('[data-side="'+key+'"]');
-    if(el){
-      el.classList.add("bg-brand-100","border","border-brand","text-brand","font-semibold");
-    }
-  }
-  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", setActive);
-  else setActive();
-})();
-</script>
-
-
-<script>
-(function(){
-  var WA_BASE = 'whatsappLink';
-  function normalizeBase(base){
-    // allow api.whatsapp.com/send?phone=... or wa.me/...
-    if(!base) return "";
-    return base;
-  }
+  var WA_NUMBER = "919867630682";
   function pageLabel(){
     var p = (location.pathname || "/").toLowerCase();
     if(p === "/" || p === "/index.html") return "Home";
-    if(p.startsWith("/products/")) {
+    if(p.startsWith("/products/")){
       var slug = p.split("/").pop() || "products";
       if(slug === "" || slug === "index.html") return "Products";
       slug = slug.replace(".html","").replace(/-/g," ");
@@ -1052,33 +1020,26 @@ document.addEventListener("DOMContentLoaded", () => {
     if(p.includes("dehydrated-products")) return "Dehydrated Products";
     if(p.includes("spray-dried-products")) return "Spray Dried Products";
     if(p.includes("spices")) return "Spices";
-    // if on products index, try selected category from query or fallback
+    if(p.startsWith("/products/")) return "Products (General)";
     return "Product Enquiry";
   }
-  function buildWhatsAppPrefill(){
-    var base = normalizeBase(WA_BASE);
-    var product = productFromPage();
-    var page = pageLabel();
-    var url = location.href;
+  function buildHref(){
     var msg =
       "Hello Atlas Agro,\n" +
       "I want details/pricing.\n" +
-      "Product interest: " + product + "\n" +
-      "Page: " + page + "\n" +
-      "Link: " + url + "\n\n" +
+      "Product interest: " + productFromPage() + "\n" +
+      "Page: " + pageLabel() + "\n" +
+      "Link: " + location.href + "\n\n" +
       "Please share MOQ, packaging, mesh size & pricing.";
-    var encoded = encodeURIComponent(msg);
-    // If base already has ? , append with &
-    if(base.includes("?")) {
-      if(/\btext=/.test(base)) return base; // already has text
-      return base + "&text=" + encoded;
-    }
-    // wa.me supports ?text=
-    return base + "?text=" + encoded;
+    return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg);
   }
   function apply(){
-    var href = buildWhatsAppPrefill();
-    document.querySelectorAll('a[data-wa="prefill"]').forEach(function(a){ a.setAttribute("href", href); });
+    var href = buildHref();
+    document.querySelectorAll('a[data-wa="prefill"]').forEach(function(a){
+      a.setAttribute("href", href);
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+    });
   }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", apply);
   else apply();

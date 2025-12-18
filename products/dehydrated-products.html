@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+
+  <!-- Favicon / Tab Icon -->
+  <link rel="icon" type="image/png" href="assets/atlas-agro-logo.png" />
+  <link rel="apple-touch-icon" href="assets/atlas-agro-logo.png" />
+
+  <title>Dehydrated Products Manufacturer & Supplier India | Atlas Agro</title>
+  <meta name="description" content="Atlas Agro Industries manufactures dehydrated fruits and vegetables including powders, flakes, granules and custom blends for B2B and export supply.">
+  <meta name="keywords" content="dehydrated powder supplier, onion powder, garlic powder, ginger powder, fruit chips, vegetable powders, custom blends" />
+  <meta name="theme-color" content="#0f7a4a" />
+
+  <meta name="description" content="Atlas Agro Industries manufactures dehydrated fruits and vegetables including powders, flakes, granules and custom blends for B2B and export supply.">
+
+  <link rel="canonical" href="https://atlasagro.co.in/products/dehydrated-products.html">
+
+  <meta name="robots" content="index,follow" />
+
+<!-- Open Graph (for WhatsApp/LinkedIn preview) -->
+<meta property="og:title" content="Dehydrated Fruits & Vegetables Manufacturer | Atlas Agro Industries India" />
+<meta property="og:description" content="Bulk supplier of dehydrated fruits, vegetables, and custom food ingredients for B2B and export markets." />
+<meta property="og:url" content="https://atlasagro.co.in/" />
+<meta property="og:type" content="website" />
+<!-- Optional: add your logo image URL if you have one -->
+<!-- <meta property="og:image" content="https://atlasagro.co.in/assets/logo.png" /> -->
+
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Atlas Agro Industries | Dehydrated Powders & Chips" />
+  <meta property="og:description" content="Premium dehydrated powders, fruit chips, veg mixes & custom blends. Bulk supply for food manufacturers & exporters." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og.jpg" />
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Atlas Agro Industries",
+  "url": "https://atlasagro.co.in/",
+  "description": "Manufacturer and bulk supplier of dehydrated fruits, vegetables, and custom food ingredients for B2B and export markets.",
+  "sameAs": [],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "areaServed": ["IN", "Global"],
+    "availableLanguage": ["English", "Hindi", "Marathi"]
+  }]
+}
+</script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#f5fbf7',
+            100: '#e7f7ee',
+            200: '#c9efd9',
+            300: '#9fe2bd',
+            400: '#5ecc8f',
+            500: '#22b36a',
+            600: '#129457',
+            700: '#0f7a4a',
+            800: '#0f623c',
+            900: '#0c4f31'
+          },
+          ink: '#0f172a',
+          slateish: '#475569'
+        }
+      }
+    }
+  }
+
+  function galleryMagic() {
+    return {
+      isOpen: false,
+      activeIndex: 0,
+
+      items: [
+        { title: "Fruit Chips", desc: "Assorted chips & pieces", src: "assets/gallery/fruit-chips.png", alt: "Dehydrated Fruit Chips" },
+        { title: "Vegetable Mix", desc: "Ready meal blends", src: "assets/gallery/vegetable-mix.jpg", alt: "Dehydrated Vegetable Mix" },
+        { title: "Onion / Garlic", desc: "Powders & granules", src: "assets/gallery/onion-garlic.jpg", alt: "Onion Garlic Powder" },
+        { title: "Custom Blends", desc: "Soup & noodle mixes", src: "assets/gallery/custom-blends.jpg", alt: "Custom Food Blends" },
+        { title: "Herbs", desc: "Leafy greens & flakes", src: "assets/gallery/herbs.jpg", alt: "Dehydrated Herbs" },
+        { title: "Packaging", desc: "Bulk & retail options", src: "assets/gallery/packaging.jpg", alt: "Food Packaging" },
+        { title: "Quality Checks", desc: "Batch consistency", src: "assets/gallery/quality-checks.jpg", alt: "Quality Checks" },
+        { title: "Dispatch", desc: "Reliable shipments", src: "assets/gallery/dispatch.jpg", alt: "Dispatch & Logistics" },
+      ],
+
+      init() {
+        // Scroll reveal with IntersectionObserver
+        const cards = this.$root.querySelectorAll("button.group");
+        cards.forEach((el) => el.classList.add("reveal"));
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("in");
+          });
+        }, { threshold: 0.12 });
+
+        cards.forEach((el) => io.observe(el));
+      },
+
+      open(i) {
+        this.activeIndex = i;
+        this.isOpen = true;
+        document.body.style.overflow = "hidden";
+      },
+      close() {
+        this.isOpen = false;
+        document.body.style.overflow = "";
+      },
+      activeItem() {
+        return this.items[this.activeIndex] || this.items[0];
+      },
+      next() {
+        this.activeIndex = (this.activeIndex + 1) % this.items.length;
+      },
+      prev() {
+        this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length;
+      }
+    };
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    els.forEach((el) => io.observe(el));
+  });
+</script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    
+    .product-card{transition:all .25s ease;}
+    .product-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
+
+/* Smooth scroll + nicer selection */
+    html { scroll-behavior: smooth; }
+    ::selection { background: rgba(34,179,106,.25); }
+    /* Gallery reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px) scale(.98);
+      transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+      will-change: transform, opacity;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  
+    /* Gallery hover depth & tilt */
+    .gallery-card {
+      transform-style: preserve-3d;
+    }
+    .gallery-card:hover {
+      transform: translateY(-6px) scale(1.01);
+    }
+    .gallery-card img {
+      transition: transform .6s cubic-bezier(.2,.8,.2,1);
+    }
+    .gallery-card:hover img {
+      transform: scale(1.12);
+    }
+    /* Who we supply hover (match Products) */
+    .supply-card {
+      transition: background-color .25s ease, border-color .25s ease, transform .25s ease;
+    }
+
+    .supply-card:hover {
+      background-color: rgb(34 179 106 / 0.08); /* brand green, subtle */
+      border-color: rgb(34 179 106 / 0.35);
+    }
+
+  /* Universal card hover */
+  .card-hover {
+    transition: background-color .25s ease,
+                border-color .25s ease,
+                transform .25s ease,
+                box-shadow .25s ease;
+  }
+  .card-hover:hover {
+    background-color: rgb(34 179 106 / 0.08);
+    border-color: rgb(34 179 106 / 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
+  }
+
+</style>
+</head>
+<body class="min-h-screen bg-white text-slate-900">
+<header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4 relative">
+
+<a href="#" class="flex items-center gap-3 md:gap-5 min-w-0">
+  <!-- BIG, BORDERLESS LOGO -->
+  <span class="flex items-center justify-center">
+    <img
+      src="assets/atlas-agro-logo.png"
+      alt="Atlas Agro Logo"
+      class="h-10 w-auto md:h-14 object-contain"
+    />
+  </span>
+
+  <div class="leading-tight min-w-0">
+  <!-- Mobile brand -->
+  <div class="block md:hidden font-semibold text-ink text-base">
+    ATLAS AGRO
+  </div>
+
+  <!-- Desktop brand -->
+  <div class="hidden md:block font-semibold text-ink text-lg">
+    ATLAS AGRO INDUSTRIES PRIVATE LTD
+  </div>
+
+  <div class="hidden md:block text-xs text-slateish tracking-wide uppercase">
+    PREMIUM DEHYDRATED VEGETABLES & FRUITS
+  </div>
+</div>
+
+</a>
+
+
+
+
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a class="hover:text-ink text-slateish" href="/products/" data-i18n="nav.products">Products</a>
+      <a class="hover:text-ink text-slateish" href="#industries" data-i18n="nav.industries">Industries</a>
+      <a class="hover:text-ink text-slateish" href="#quality" data-i18n="nav.quality">Quality</a>
+      <a class="hover:text-ink text-slateish" href="#gallery" data-i18n="nav.gallery">Gallery</a>
+      <a class="hover:text-ink text-slateish" href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a class="hover:text-ink text-slateish" href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a :href="whatsappLink"
+         class="hidden sm:inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
+        <span>WhatsApp</span>
+        <span aria-hidden="true">→</span>
+      </a>
+
+      
+      <!-- Mobile Language Switcher -->
+      <div class="md:hidden flex items-center gap-1 text-[11px] border border-slate-200 rounded-2xl px-2 py-2 bg-white">
+        <button type="button" onclick="setLang('en')" class="px-1 font-medium hover:text-brand-700">EN</button>
+        <span class="text-slateish">|</span>
+        <button type="button" onclick="setLang('hi')" class="px-1 font-medium hover:text-brand-700">हिं</button>
+        <span class="text-slateish">|</span>
+        <button type="button" onclick="setLang('mr')" class="px-1 font-medium hover:text-brand-700">मर</button>
+      </div>
+      <button class="md:hidden rounded-2xl border border-slate-200 px-3 py-2 hover:bg-white"
+              @click="mobileOpen = !mobileOpen"
+              aria-label="Toggle menu">
+        ☰
+      </button>
+    </div>
+  </div>
+</header>
+<main class="max-w-7xl mx-auto px-4 py-10">
+  <div class="max-w-3xl">
+    <h1 class="text-4xl font-extrabold tracking-tight">Dehydrated Products</h1>
+  </div>
+  <div class="mt-8">
+    
+<p class="text-slateish max-w-3xl">
+We manufacture export-quality dehydrated ingredients for food manufacturers, HoReCa and private label brands. Share your target application, mesh size and MOQ to get a fast quotation.
+</p>
+<div class='mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+<div class="product-card rounded-3xl border border-slate-200 bg-white p-6">
+  <div class="flex items-center justify-between">
+    <span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">Vegetable</span>
+    <span class="text-xs text-slateish">High demand</span>
+  </div>
+  <h3 class="mt-4 text-xl font-semibold">Onion Powder & Flakes</h3>
+  <p class="mt-2 text-sm text-slateish">Uniform granulation options for sauces, gravies, snacks and masalas.</p>
+  <ul class="mt-4 text-sm text-slateish list-disc list-inside">
+    <li>Fine/Coarse mesh</li><li>Low moisture</li><li>Bulk supply / OEM</li>
+  </ul>
+  <div class="mt-6 flex items-center justify-between text-sm">
+    <a class="underline text-slate-700 hover:text-brand" href="/products/">Back to categories</a>
+    <a class="text-brand font-semibold hover:underline" href="/#quote">Enquire →</a>
+  </div>
+</div>
+
+
+<div class="product-card rounded-3xl border border-slate-200 bg-white p-6">
+  <div class="flex items-center justify-between">
+    <span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">Onion & Garlic</span>
+    <span class="text-xs text-slateish">B2B</span>
+  </div>
+  <h3 class="mt-4 text-xl font-semibold">Garlic Powder & Granules</h3>
+  <p class="mt-2 text-sm text-slateish">Potent flavour for spice blends, marinades, seasonings and noodles.</p>
+  <ul class="mt-4 text-sm text-slateish list-disc list-inside">
+    <li>Custom mesh</li><li>Consistent flavour</li><li>Bulk supply</li>
+  </ul>
+  <div class="mt-6 flex items-center justify-between text-sm">
+    <a class="underline text-slate-700 hover:text-brand" href="/products/">Back to categories</a>
+    <a class="text-brand font-semibold hover:underline" href="/#quote">Enquire →</a>
+  </div>
+</div>
+
+
+<div class="product-card rounded-3xl border border-slate-200 bg-white p-6">
+  <div class="flex items-center justify-between">
+    <span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">Vegetable</span>
+    <span class="text-xs text-slateish">Ingredient</span>
+  </div>
+  <h3 class="mt-4 text-xl font-semibold">Ginger Powder</h3>
+  <p class="mt-2 text-sm text-slateish">Aroma-focused ingredient for beverages, bakery, and culinary applications.</p>
+  <ul class="mt-4 text-sm text-slateish list-disc list-inside">
+    <li>Bulk supply</li><li>B2B ready</li><li>Custom specs</li>
+  </ul>
+  <div class="mt-6 flex items-center justify-between text-sm">
+    <a class="underline text-slate-700 hover:text-brand" href="/products/">Back to categories</a>
+    <a class="text-brand font-semibold hover:underline" href="/#quote">Enquire →</a>
+  </div>
+</div>
+
+
+<div class="product-card rounded-3xl border border-slate-200 bg-white p-6">
+  <div class="flex items-center justify-between">
+    <span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">Fruit</span>
+    <span class="text-xs text-slateish">Snacking / Ingredients</span>
+  </div>
+  <h3 class="mt-4 text-xl font-semibold">Assorted Dehydrated Fruit Chips</h3>
+  <p class="mt-2 text-sm text-slateish">Natural-looking fruit chips & pieces for snacks, toppings, bakery and trail mixes.</p>
+  <ul class="mt-4 text-sm text-slateish list-disc list-inside">
+    <li>Bulk supply</li><li>Custom cut</li><li>Private label</li>
+  </ul>
+  <div class="mt-6 flex items-center justify-between text-sm">
+    <a class="underline text-slate-700 hover:text-brand" href="/products/">Back to categories</a>
+    <a class="text-brand font-semibold hover:underline" href="/#quote">Enquire →</a>
+  </div>
+</div>
+
+
+<div class="product-card rounded-3xl border border-slate-200 bg-white p-6">
+  <div class="flex items-center justify-between">
+    <span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">Herbs</span>
+    <span class="text-xs text-slateish">Specialty</span>
+  </div>
+  <h3 class="mt-4 text-xl font-semibold">Leafy Greens & Herbs</h3>
+  <p class="mt-2 text-sm text-slateish">Dehydrated leafy greens and herbs for nutraceutical blends and ready meals.</p>
+  <ul class="mt-4 text-sm text-slateish list-disc list-inside">
+    <li>Custom blend</li><li>B2B</li><li>Low moisture</li>
+  </ul>
+  <div class="mt-6 flex items-center justify-between text-sm">
+    <a class="underline text-slate-700 hover:text-brand" href="/products/">Back to categories</a>
+    <a class="text-brand font-semibold hover:underline" href="/#quote">Enquire →</a>
+  </div>
+</div>
+
+
+<div class="product-card rounded-3xl border border-slate-200 bg-white p-6">
+  <div class="flex items-center justify-between">
+    <span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">Custom Blends</span>
+    <span class="text-xs text-slateish">Made-to-order</span>
+  </div>
+  <h3 class="mt-4 text-xl font-semibold">Custom Blends for Soups & Noodles</h3>
+  <p class="mt-2 text-sm text-slateish">Taste-profiled blends for ready meals, instant soups, noodles and seasoning packets.</p>
+  <ul class="mt-4 text-sm text-slateish list-disc list-inside">
+    <li>R&D support</li><li>OEM</li><li>Repeatable batches</li>
+  </ul>
+  <div class="mt-6 flex items-center justify-between text-sm">
+    <a class="underline text-slate-700 hover:text-brand" href="/products/">Back to categories</a>
+    <a class="text-brand font-semibold hover:underline" href="/#quote">Enquire →</a>
+  </div>
+</div>
+</div>
+
+  </div>
+</main>
+<footer class="mt-14 pt-8 border-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
+        <div>© <span x-text="new Date().getFullYear()"></span> Atlas Agro Industries. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a class="hover:text-slateish" href="/products/">Products</a>
+          <a class="hover:text-slateish" href="#quality">Quality</a>
+          <a class="hover:text-slateish" href="#contact">Contact</a>
+        </div>
+      </footer>
+</body>
+</html>

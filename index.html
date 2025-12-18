@@ -1327,5 +1327,23 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
+
+<script>
+(function(){
+  function setActiveNav(){
+    var path = (location.pathname || "/").toLowerCase();
+    var home = document.querySelector('a[data-nav="home"]');
+    var products = document.querySelector('a[data-nav="products"]');
+    if(products && path.startsWith("/products")) {
+      products.classList.add("text-brand","font-semibold");
+    } else if(home && path === "/") {
+      home.classList.add("text-brand","font-semibold");
+    }
+  }
+  if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", setActiveNav); }
+  else { setActiveNav(); }
+})();
+</script>
+
 </body>
 </html>

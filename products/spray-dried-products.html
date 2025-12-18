@@ -305,7 +305,7 @@
 <main class="max-w-7xl mx-auto px-4 py-10">
   <div class="max-w-3xl">
     <h1 class="text-4xl font-extrabold tracking-tight">Spray Dried Products</h1>
-  <nav aria-label="Breadcrumb" class="mt-3 text-sm text-slateish"><a class="hover:underline" href="/">Home</a> <span class="text-slateish">/</span> <a class="hover:underline" href="/products/">Products</a> <span class="text-slateish">/</span> <span class="text-slateish">Spray Dried Products</span></nav>
+  <nav aria-label="Breadcrumb" class="mt-3 text-sm"><a class="text-slateish hover:text-brand hover:underline" href="/">Home</a> <span class="text-slateish">/</span> <a class="text-slateish hover:text-brand hover:underline" href="/products/">Products</a> <span class="text-slateish">/</span> <span class="font-semibold text-slate-900" aria-current="page">Spray Dried Products</span></nav>
 
   </div>
   <div class="mt-8">
@@ -929,6 +929,24 @@ function setLang(lang) {
 document.addEventListener("DOMContentLoaded", () => {
   setLang(localStorage.getItem("atlasLang") || "en");
 });
+</script>
+
+
+<script>
+(function(){
+  function setActiveNav(){
+    var path = (location.pathname || "/").toLowerCase();
+    var home = document.querySelector('a[data-nav="home"]');
+    var products = document.querySelector('a[data-nav="products"]');
+    if(products && path.startsWith("/products")) {
+      products.classList.add("text-brand","font-semibold");
+    } else if(home && path === "/") {
+      home.classList.add("text-brand","font-semibold");
+    }
+  }
+  if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", setActiveNav); }
+  else { setActiveNav(); }
+})();
 </script>
 
 </body>

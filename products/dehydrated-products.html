@@ -1027,5 +1027,63 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 </script>
 
+
+<script>
+(function(){
+  var WA_BASE = 'whatsappLink';
+  function normalizeBase(base){
+    // allow api.whatsapp.com/send?phone=... or wa.me/...
+    if(!base) return "";
+    return base;
+  }
+  function pageLabel(){
+    var p = (location.pathname || "/").toLowerCase();
+    if(p === "/" || p === "/index.html") return "Home";
+    if(p.startsWith("/products/")) {
+      var slug = p.split("/").pop() || "products";
+      if(slug === "" || slug === "index.html") return "Products";
+      slug = slug.replace(".html","").replace(/-/g," ");
+      return slug.replace(/\b\w/g, c => c.toUpperCase());
+    }
+    return location.pathname;
+  }
+  function productFromPage(){
+    var p = (location.pathname || "/").toLowerCase();
+    if(p.includes("dehydrated-products")) return "Dehydrated Products";
+    if(p.includes("spray-dried-products")) return "Spray Dried Products";
+    if(p.includes("spices")) return "Spices";
+    // if on products index, try selected category from query or fallback
+    return "Product Enquiry";
+  }
+  function buildWhatsAppPrefill(){
+    var base = normalizeBase(WA_BASE);
+    var product = productFromPage();
+    var page = pageLabel();
+    var url = location.href;
+    var msg =
+      "Hello Atlas Agro,\n" +
+      "I want details/pricing.\n" +
+      "Product interest: " + product + "\n" +
+      "Page: " + page + "\n" +
+      "Link: " + url + "\n\n" +
+      "Please share MOQ, packaging, mesh size & pricing.";
+    var encoded = encodeURIComponent(msg);
+    // If base already has ? , append with &
+    if(base.includes("?")) {
+      if(/\btext=/.test(base)) return base; // already has text
+      return base + "&text=" + encoded;
+    }
+    // wa.me supports ?text=
+    return base + "?text=" + encoded;
+  }
+  function apply(){
+    var href = buildWhatsAppPrefill();
+    document.querySelectorAll('a[data-wa="prefill"]').forEach(function(a){ a.setAttribute("href", href); });
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", apply);
+  else apply();
+})();
+</script>
+
 </body>
 </html>

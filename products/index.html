@@ -332,26 +332,19 @@
       </nav>
     </div>
     
-
 <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-5">
   <h3 class="text-sm font-semibold text-slate-700">Need MOQ, mesh size, or packaging options?</h3>
   <p class="mt-2 text-sm text-slateish">Send your requirement and we’ll reply with specs & pricing.</p>
 
   <div class="mt-4 grid gap-3">
-    <a class="inline-flex items-center justify-center px-5 py-2 rounded-2xl bg-brand text-white font-semibold card-hover"
-       href="#"
-       data-wa="prefill">
+    <a class="inline-flex items-center justify-center px-5 py-2 rounded-2xl bg-brand text-white font-semibold card-hover" href="/#whatsapp" data-wa="prefill" data-wa="prefill">
       Chat on WhatsApp
     </a>
-    <a class="inline-flex items-center justify-center px-5 py-2 rounded-2xl bg-brand text-white font-semibold card-hover"
-       href="/#quote">
-      Get a Quote
-    </a>
+    <a class="inline-flex items-center justify-center px-5 py-2 rounded-2xl bg-brand text-white font-semibold card-hover" href="/#quote">Get a Quote</a>
   </div>
 </div>
 
-</div>
-</aside>
+  </aside>
 
   <section class="lg:col-span-9">
     <p class="text-slateish max-w-3xl">
@@ -1000,74 +993,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <script>
 (function(){
-  function findWaBase(){
-    // Find first real WhatsApp link already present on page (header button etc.)
-    var hrefs = Array.from(document.querySelectorAll('a[href]'))
-      .map(function(el){ return el.getAttribute('href'); })
-      .filter(Boolean);
-
-    var abs = hrefs.find(function(h){
-      return h.indexOf("wa.me/") !== -1 ||
-             h.indexOf("api.whatsapp.com/send") !== -1 ||
-             h.indexOf("whatsapp.com/send") !== -1;
-    });
-
-    if(!abs) return null;
-    if(abs.startsWith("//")) return location.protocol + abs;
-    if(abs.startsWith("http")) return abs;
-    // ignore relative placeholders like "whatsappLink"
-    return null;
+  var WA_BASE = 'whatsappLink';
+  function normalizeBase(base){
+    // allow api.whatsapp.com/send?phone=... or wa.me/...
+    if(!base) return "";
+    return base;
   }
-
   function pageLabel(){
     var p = (location.pathname || "/").toLowerCase();
     if(p === "/" || p === "/index.html") return "Home";
-    if(p.startsWith("/products/")){
+    if(p.startsWith("/products/")) {
       var slug = p.split("/").pop() || "products";
       if(slug === "" || slug === "index.html") return "Products";
       slug = slug.replace(".html","").replace(/-/g," ");
-      return slug.replace(/\b\w/g, function(c){ return c.toUpperCase(); });
+      return slug.replace(/\b\w/g, c => c.toUpperCase());
     }
     return location.pathname;
   }
-
   function productFromPage(){
     var p = (location.pathname || "/").toLowerCase();
-    if(p.indexOf("dehydrated-products") !== -1) return "Dehydrated Products";
-    if(p.indexOf("spray-dried-products") !== -1) return "Spray Dried Products";
-    if(p.indexOf("spices") !== -1) return "Spices";
-    if(p.startsWith("/products/")) return "Products (General)";
+    if(p.includes("dehydrated-products")) return "Dehydrated Products";
+    if(p.includes("spray-dried-products")) return "Spray Dried Products";
+    if(p.includes("spices")) return "Spices";
+    // if on products index, try selected category from query or fallback
     return "Product Enquiry";
   }
-
-  function buildPrefillUrl(base){
+  function buildWhatsAppPrefill(){
+    var base = normalizeBase(WA_BASE);
+    var product = productFromPage();
+    var page = pageLabel();
+    var url = location.href;
     var msg =
       "Hello Atlas Agro,\n" +
       "I want details/pricing.\n" +
-      "Product interest: " + productFromPage() + "\n" +
-      "Page: " + pageLabel() + "\n" +
-      "Link: " + location.href + "\n\n" +
+      "Product interest: " + product + "\n" +
+      "Page: " + page + "\n" +
+      "Link: " + url + "\n\n" +
       "Please share MOQ, packaging, mesh size & pricing.";
     var encoded = encodeURIComponent(msg);
-
-    if(base.indexOf("?") !== -1){
-      if(/\btext=/.test(base)) return base;
+    // If base already has ? , append with &
+    if(base.includes("?")) {
+      if(/\btext=/.test(base)) return base; // already has text
       return base + "&text=" + encoded;
     }
+    // wa.me supports ?text=
     return base + "?text=" + encoded;
   }
-
   function apply(){
-    var base = findWaBase();
-    if(!base) return;
-    var href = buildPrefillUrl(base);
-    document.querySelectorAll('a[data-wa="prefill"]').forEach(function(a){
-      a.setAttribute("href", href);
-      a.setAttribute("target", "_blank");
-      a.setAttribute("rel", "noopener");
-    });
+    var href = buildWhatsAppPrefill();
+    document.querySelectorAll('a[data-wa="prefill"]').forEach(function(a){ a.setAttribute("href", href); });
   }
-
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", apply);
   else apply();
 })();

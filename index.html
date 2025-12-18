@@ -150,8 +150,8 @@
 
   <style>
     
-    .product-card{transition:all .25s ease;}
-    .product-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
 
 /* Smooth scroll + nicer selection */
     html { scroll-behavior: smooth; }
@@ -368,7 +368,7 @@
         </div>
 
         <!-- Hero card -->
-        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl product-card">
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-xl card-hover">
           <div class="flex items-start justify-between gap-4">
             <div>
               <div class="text-sm text-slateish"><span data-i18n="quote.title">Quick Quote</span></div>
@@ -448,7 +448,7 @@
 
     <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       <template x-for="p in filteredProducts()" :key="p.name">
-        <div class="rounded-3xl border border-slate-200 bg-white p-5 hover:bg-brand-100 transition product-card">
+        <div class="rounded-3xl border border-slate-200 bg-white p-5 hover:bg-brand-100 transition card-hover">
           <div class="flex items-center justify-between gap-3">
             <div class="text-sm text-ink border border-brand-200 bg-brand-100 px-3 py-1 rounded-full"
                  x-text="p.category"></div>
@@ -488,22 +488,22 @@
       </p>
 
       <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition product-card"
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition card-hover"
             style="transition-delay:0ms">
           <div class="text-xl font-semibold" data-i18n="industries.card1.title">Food Manufacturers</div>
           <div class="text-sm text-slateish mt-2" data-i18n="industries.card1.desc">Seasonings, sauces, RTC/RTD, frozen foods.</div>
         </div>
-        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition product-card"
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition card-hover"
            style="transition-delay:80ms">
           <div class="text-xl font-semibold" data-i18n="industries.card2.title">HoReCa</div>
           <div class="text-sm text-slateish mt-2" data-i18n="industries.card2.desc">Hotels, restaurants, caterers — bulk packs.</div>
         </div>
-        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition product-card"
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition card-hover"
             style="transition-delay:160ms">          
             <div class="text-xl font-semibold"><span data-i18n="industries.snackBrands">Snack Brands</span></div>
           <div class="text-sm text-slateish mt-2"><span data-i18n="industries.snackDesc">Fruit chips, veg chips, spice blends.</span></div>
         </div>
-        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition product-card"
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition card-hover"
             style="transition-delay:240ms">          
             <div class="text-xl font-semibold"><span data-i18n="industries.exporters">Exporters</span></div>
           <div class="text-sm text-slateish mt-2"><span data-i18n="industries.exportersDesc">Documentation & packing support.</span></div>
@@ -522,19 +522,19 @@
         </p>
 
         <div class="mt-6 grid sm:grid-cols-2 gap-4">
-          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 product-card">
+          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 card-hover">
             <div class="font-semibold" data-i18n="quality.card1.title">Incoming RM Checks</div>
             <div class="text-sm text-slateish mt-2" data-i18n="quality.card1.desc">Visual sorting, odor, moisture, infestation check.</div>
           </div>
-          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 product-card">
+          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 card-hover">
             <div class="font-semibold" data-i18n="quality.card2.title">Batch QC</div>
             <div class="text-sm text-slateish mt-2" data-i18n="quality.card2.desc"><span data-i18n="specs.moisture">Moisture</span>, mesh size, color, aroma, foreign matter.</div>
           </div>
-          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 product-card">
+          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 card-hover">
             <div class="font-semibold" data-i18n="quality.card3.title">Traceability</div>
             <div class="text-sm text-slateish mt-2" data-i18n="quality.card3.desc">Lot tracking + basic documentation.</div>
           </div>
-          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 product-card">
+          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 card-hover">
             <div class="font-semibold" data-i18n="quality.card4.title">Packaging Options</div>
             <div class="text-sm text-slateish mt-2" data-i18n="quality.card4.desc">Bulk liners, laminated pouches, private label.</div>
           </div>
@@ -545,7 +545,7 @@
         </div>
       </div>
 
-      <div class="rounded-3xl border border-slate-200 bg-white p-6 product-card">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 card-hover">
         <div class="flex items-start justify-between gap-4">
           <div>
             <div class="text-xl font-semibold"><span data-i18n="specs.title">Typical Specifications</span></div>
@@ -602,7 +602,7 @@
           type="button"
           class="gallery-card group text-left rounded-3xl border border-slate-200 bg-white overflow-hidden
                  shadow-sm hover:shadow-lg transition-all duration-300
-                 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-300 product-card"
+                 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-300 card-hover"
           :style="`transition-delay:${idx * 60}ms`"
           x-ref="cards"
           @click="open(idx)"
@@ -642,7 +642,7 @@
     x-transition.opacity
     @click.self="close()"
   >
-    <div class="w-full max-w-4xl rounded-3xl bg-white overflow-hidden border border-slate-200 shadow-2xl product-card"
+    <div class="w-full max-w-4xl rounded-3xl bg-white overflow-hidden border border-slate-200 shadow-2xl card-hover"
          x-transition.scale>
       <div class="flex items-center justify-between p-4 border-b border-slate-200">
         <div>
@@ -692,7 +692,7 @@
 
     <div class="mt-8 grid gap-3 max-w-3xl">
       <template x-for="(f, idx) in faqs" :key="idx">
-        <div class="card-hover rounded-3xl border border-slate-200 bg-white overflow-hidden product-card">
+        <div class="card-hover rounded-3xl border border-slate-200 bg-white overflow-hidden card-hover">
           <button class="w-full text-left p-5 flex items-center justify-between gap-4"
                   @click="f.open = !f.open">
             <span class="font-semibold" x-text="f.q"></span>
@@ -717,24 +717,24 @@
           </p>
 
           <div class="mt-6 grid gap-4">
-            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 product-card">
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 card-hover">
               <div class="text-sm text-slateish">Phone / WhatsApp</div>
               <div class="text-lg font-semibold mt-1">+91-9867630682</div>
             </div>
 
-            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 product-card">
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 card-hover">
               <div class="text-sm text-slateish">Email</div>
               <div class="text-lg font-semibold mt-1">sales@atlasagro.co.in</div>
             </div>
 
-            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 product-card">
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 card-hover">
               <div class="text-sm text-slateish">Location</div>
               <div class="text-lg font-semibold mt-1">Khamgaon, District Buldhana, Maharashtra, India 444303</div>
             </div>
           </div>
         </div>
 
-        <div class="card-hover rounded-3xl border border-slate-200 bg-white overflow-hidden product-card">
+        <div class="card-hover rounded-3xl border border-slate-200 bg-white overflow-hidden card-hover">
           <!-- Google Maps Embed -->
           <div class="h-72">
             <iframe
@@ -773,7 +773,7 @@
   <div x-show="modalOpen" x-transition
        class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50"
        @click.self="modalOpen=false">
-    <div class="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 product-card">
+    <div class="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 card-hover">
       <div class="flex items-start justify-between gap-4">
         <div>
           <div class="text-xs text-brand-800" x-text="modalProduct?.category"></div>

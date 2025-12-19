@@ -205,6 +205,40 @@
     transform: translateY(-3px);
     box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
   }
+  /* Full-width explore strip */
+	.explore-strip {
+	  width: 100%;
+	  background: rgba(255, 255, 255, 0.7);
+	  border-top: 1px solid #e5e7eb;
+	  border-bottom: 1px solid #e5e7eb;
+	  padding: 14px 20px;
+	  display: flex;
+	  justify-content: center;
+	}
+
+	.explore-text {
+	  max-width: 1200px;
+	  text-align: center;
+	  font-size: 14px;
+	  color: #475569;
+	  line-height: 1.6;
+	}
+
+	.explore-text span {
+	  font-weight: 600;
+	  color: #0f172a;
+	}
+
+	.explore-text a {
+	  color: #16a34a; /* Atlas green */
+	  font-weight: 600;
+	  text-decoration: none;
+	}
+
+	.explore-text a:hover {
+	  text-decoration: underline;
+	}
+
 
 </style>
 
@@ -318,19 +352,16 @@
 
 
 <!-- Internal Links: Products -->
-<section class="section pt-0">
-  <div class="container">
-    <div class="rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 shadow-soft">
-      <p class="text-slateish text-sm leading-relaxed">
-        <span class="font-semibold text-slate-900">Explore:</span>
-        <a href="/products/" class="text-brand font-semibold hover:underline">product categories</a> including
-        <a href="/products/dehydrated-products.html" class="text-brand font-semibold hover:underline">dehydrated vegetables &amp; fruit powders</a>,
-        <a href="/products/spray-dried-products.html" class="text-brand font-semibold hover:underline">spray dried ingredients</a> and
-        <a href="/products/spices.html" class="text-brand font-semibold hover:underline">onion &amp; garlic based dehydrated mixes</a>.
-      </p>
-    </div>
-  </div>
+<section class="explore-strip">
+  <p class="explore-text">
+    <span>Explore:</span>
+    <a href="/products/">product categories</a> including
+    <a href="/products/dehydrated-products.html">dehydrated vegetables & fruit powders</a>,
+    <a href="/products/spray-dried-products.html">spray dried ingredients</a> and
+    <a href="/products/spices.html">onion & garlic based dehydrated mixes</a>.
+  </p>
 </section>
+
 <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 opacity-25 pointer-events-none"

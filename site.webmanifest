@@ -1,0 +1,20 @@
+{
+  "name": "Atlas Agro Industries",
+  "short_name": "Atlas Agro",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F2FBF5",
+  "theme_color": "#0F6B3E",
+  "icons": [
+    {
+      "src": "/assets/atlas-agro-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/atlas-agro-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

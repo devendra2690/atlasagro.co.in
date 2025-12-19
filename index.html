@@ -22,8 +22,8 @@
       <!-- Social previews -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Atlas Agro Industries">
-    <meta property="og:title" content="Dehydrated Vegetables & Fruit Powders Manufacturer | Atlas Agro Industries">
-    <meta property="og:description" content="Atlas Agro Industries is a B2B manufacturer of dehydrated vegetables, fruit powders, onion & garlic powders, and custom blends for food processors and exporters.">
+    <meta property="og:title" content="Dehydrated Vegetables &amp; Fruit Powders Manufacturer | Atlas Agro Industries">
+    <meta property="og:description" content="Atlas Agro Industries is a B2B manufacturer of dehydrated vegetables, fruit powders, onion &amp; garlic powders, and custom blends for food processors and exporters.">
     <meta property="og:url" content="https://atlasagro.co.in/">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dehydrated Vegetables & Fruit Powders Manufacturer | Atlas Agro Industries">
@@ -31,19 +31,19 @@
 <meta name="robots" content="index,follow" />
 
 <!-- Open Graph (for WhatsApp/LinkedIn preview) -->
-<meta property="og:title" content="Dehydrated Fruits & Vegetables Manufacturer | Atlas Agro Industries India" />
-<meta property="og:description" content="Bulk supplier of dehydrated fruits, vegetables, and custom food ingredients for B2B and export markets." />
-<meta property="og:url" content="https://atlasagro.co.in/" />
+<meta property="og:title" content="Dehydrated Vegetables &amp; Fruit Powders Manufacturer | Atlas Agro Industries">
+<meta property="og:description" content="Atlas Agro Industries is a B2B manufacturer of dehydrated vegetables, fruit powders, onion &amp; garlic powders, and custom blends for food processors and exporters.">
+<meta property="og:url" content="https://atlasagro.co.in/">
 <meta property="og:type" content="website" />
 <!-- Optional: add your logo image URL if you have one -->
-<!-- <meta property="og:image" content="https://atlasagro.co.in/assets/logo.png" /> -->
+<!-- <meta property="og:image" content="https://atlasagro.co.in/assets/logo.svg"> -->
 
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Atlas Agro Industries | Dehydrated Powders & Chips" />
-  <meta property="og:description" content="Premium dehydrated powders, fruit chips, veg mixes & custom blends. Bulk supply for food manufacturers & exporters." />
+  <meta property="og:title" content="Dehydrated Vegetables &amp; Fruit Powders Manufacturer | Atlas Agro Industries">
+  <meta property="og:description" content="Atlas Agro Industries is a B2B manufacturer of dehydrated vegetables, fruit powders, onion &amp; garlic powders, and custom blends for food processors and exporters.">
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og.jpg" />
+  <meta property="og:image" content="https://atlasagro.co.in/assets/logo.svg">
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -256,7 +256,8 @@
 /* Phase 1A UI: subtle card shadow */
 .shadow-soft{box-shadow:0 10px 30px rgba(15,23,42,.08);} 
 </style>
-</head>
+
+    <meta name="twitter:image" content="https://atlasagro.co.in/assets/logo.svg"></head>
 
 <body class="bg-brand-50 text-ink antialiased"
       x-data="siteApp()"
@@ -296,7 +297,7 @@
 <a href="#" class="flex items-center gap-3 md:gap-5 min-w-0">
   <!-- BIG, BORDERLESS LOGO -->
   <span class="flex items-center justify-center">
-    <img
+    <img loading="eager" decoding="async"
       src="/assets/atlas-agro-logo.png"
       alt="Atlas Agro Logo"
       class="h-10 w-auto md:h-14 object-contain"
@@ -731,7 +732,7 @@
       </div>
 
       <div class="bg-slate-50">
-        <img
+        <img loading="lazy" decoding="async"
           :src="activeItem().src"
           :alt="activeItem().alt"
           class="w-full max-h-[70vh] object-contain"

@@ -209,6 +209,10 @@
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is your MOQ for bulk orders?", "acceptedAnswer": {"@type": "Answer", "text": "MOQ depends on the product category and packaging. Share your requirement on WhatsApp and we’ll confirm MOQ and pricing."}}, {"@type": "Question", "name": "Do you support different mesh sizes and granulation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share available mesh sizes/grades for powders, flakes and granules depending on the product."}}, {"@type": "Question", "name": "Do you offer packaging options and private label?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We support bulk packs and selected packaging options. Private label/OEM can be discussed for repeat orders."}}, {"@type": "Question", "name": "Are your products suitable for export?", "acceptedAnswer": {"@type": "Answer", "text": "We can support export-oriented supply based on buyer requirements. Share destination country and specifications to align documents and packing."}}]}</script>
+<style>
+/* Phase 1A UI: subtle card shadow */
+.shadow-soft{box-shadow:0 10px 30px rgba(15,23,42,.08);} 
+</style>
 </head>
 
 <body class="bg-brand-50 text-ink antialiased"
@@ -312,21 +316,22 @@
   </div>
 </header>
 
+
 <!-- Internal Links: Products -->
-<section class="section">
+<section class="section pt-0">
   <div class="container">
-    <p class="text-slateish">
-      Explore our <a href="/products/" class="text-brand font-semibold hover:underline">product categories</a> including
-      <a href="/products/dehydrated-products.html" class="text-brand font-semibold hover:underline">dehydrated vegetables & fruit powders</a>,
-      <a href="/products/spray-dried-products.html" class="text-brand font-semibold hover:underline">spray dried ingredients</a> and
-      <a href="/products/spices.html" class="text-brand font-semibold hover:underline">onion & garlic based dehydrated mixes</a>.
-    </p>
+    <div class="rounded-2xl border border-slate-200 bg-white/70 px-4 py-3 shadow-soft">
+      <p class="text-slateish text-sm leading-relaxed">
+        <span class="font-semibold text-slate-900">Explore:</span>
+        <a href="/products/" class="text-brand font-semibold hover:underline">product categories</a> including
+        <a href="/products/dehydrated-products.html" class="text-brand font-semibold hover:underline">dehydrated vegetables &amp; fruit powders</a>,
+        <a href="/products/spray-dried-products.html" class="text-brand font-semibold hover:underline">spray dried ingredients</a> and
+        <a href="/products/spices.html" class="text-brand font-semibold hover:underline">onion &amp; garlic based dehydrated mixes</a>.
+      </p>
+    </div>
   </div>
 </section>
-
-
-
-  <!-- Hero -->
+<!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 opacity-25 pointer-events-none"
          style="background: radial-gradient(800px 400px at 20% 10%, rgba(34,179,106,.25), transparent 60%),

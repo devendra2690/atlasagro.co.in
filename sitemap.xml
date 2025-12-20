@@ -52,4 +52,34 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://atlasagro.co.in/applications/seasoning-spice-blends.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://atlasagro.co.in/applications/instant-foods-ready-meals.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://atlasagro.co.in/industries/food-processing-manufacturers.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://atlasagro.co.in/industries/horeca-bulk-kitchens.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://atlasagro.co.in/industries/export-private-label.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>

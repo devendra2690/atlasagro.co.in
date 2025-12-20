@@ -354,9 +354,9 @@
     <div class="rounded-3xl border border-slate-200 bg-white p-5">
       <h2 class="text-sm font-semibold tracking-wide text-slate-700">OUR PRODUCTS</h2>
       <nav class="mt-4 space-y-2 text-sm">
-        <a class="block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover" href="/products/dehydrated-products.html" data-side="dehydrated" class="block w-full px-4 py-3 rounded-2xl border border-brand bg-brand-50 font-semibold text-ink">Dehydrated Products</a>
-        <a class="block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover" href="/products/spray-dried-products.html" data-side="spray">Spray Dried Products</a>
-        <a class="block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover" href="/products/spices.html" data-side="spices">Spices</a>
+        <a class="block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover" href="/products/dehydrated-products.html" data-side="dehydrated" class="block w-full px-4 py-3 rounded-2xl border border-brand bg-brand-50 font-semibold text-ink" data-tab="dehydrated">Dehydrated Products</a>
+        <a class="block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover" href="/products/spray-dried-products.html" data-side="spray" data-tab="spray">Spray Dried Products</a>
+        <a class="block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover" href="/products/spices.html" data-side="spices" data-tab="spices">Spices</a>
       </nav>
     </div>
     
@@ -1057,6 +1057,59 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", apply);
   else apply();
+})();
+</script>
+
+
+<script>
+(function() {
+  const links = Array.from(document.querySelectorAll('a.tab-link[data-tab]'));
+  const panels = {
+    dehydrated: document.getElementById('tab-dehydrated'),
+    spray: document.getElementById('tab-spray'),
+    spices: document.getElementById('tab-spices')
+  };
+
+  function setActive(key, pushState) {
+    Object.keys(panels).forEach(k => {
+      if (!panels[k]) return;
+      panels[k].classList.toggle('hidden', k !== key);
+    });
+    links.forEach(a => {
+      const k = a.getAttribute('data-tab');
+      const isActive = k === key;
+      a.classList.toggle('border', !isActive);
+      a.classList.toggle('border-brand', isActive);
+      a.classList.toggle('bg-brand-50', isActive);
+      a.classList.toggle('font-semibold', isActive);
+      a.classList.toggle('text-ink', isActive);
+    });
+
+    if (pushState) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('tab', key);
+      window.history.replaceState({}, '', url.toString());
+    }
+  }
+
+  // intercept clicks (progressive enhancement: keep href working if JS fails)
+  links.forEach(a => {
+    a.addEventListener('click', (e) => {
+      const key = a.getAttribute('data-tab');
+      if (!key || !panels[key]) return;
+      e.preventDefault();
+      setActive(key, true);
+      // scroll to the panels on mobile
+      const wrapper = document.getElementById('products-tabs');
+      if (wrapper) wrapper.scrollIntoView({behavior: 'smooth', block: 'start'});
+    });
+  });
+
+  // initial state from ?tab=
+  const params = new URLSearchParams(window.location.search);
+  const initial = params.get('tab');
+  if (initial && panels[initial]) setActive(initial, false);
+  else setActive('dehydrated', false);
 })();
 </script>
 

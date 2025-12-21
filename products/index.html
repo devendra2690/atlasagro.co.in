@@ -354,9 +354,9 @@
     <div class="rounded-3xl border border-slate-200 bg-white p-5">
       <h2 class="text-sm font-semibold tracking-wide text-slate-700">OUR PRODUCTS</h2>
       <nav class="mt-4 space-y-2 text-sm">
-        <a class="tab-link block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover" href="/products/dehydrated-products.html" data-side="dehydrated" class="tab-link block w-full px-4 py-3 rounded-2xl border border-brand bg-brand-50 font-semibold text-ink" data-tab="dehydrated">Dehydrated Products</a>
-        <a class="tab-link block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover" href="/products/spray-dried-products.html" data-side="spray" data-tab="spray">Spray Dried Products</a>
-        <a class="tab-link block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover" href="/products/spices.html" data-side="spices" data-tab="spices">Spices</a>
+        <button type="button" class="tab-btn block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover text-left transition hover:bg-brand-50 border-brand bg-brand-50 font-semibold text-ink" data-tab="dehydrated">Dehydrated Products</button>
+        <button type="button" class="tab-btn block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover text-left transition hover:bg-brand-50" data-tab="spray">Spray Dried Products</button>
+        <button type="button" class="tab-btn block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover text-left transition hover:bg-brand-50" data-tab="spices">Spices</button>
       </nav>
     </div>
     
@@ -397,7 +397,38 @@
 
   </div>
 
+<div class="mt-8 rounded-3xl border border-slate-200 bg-white/60 p-6">
+  <h2 class="text-xl font-bold text-slate-900">Related pages:</h2>
+  <p class="mt-2 text-slateish">
+    <a class="text-brand font-semibold hover:underline" href="/products/dehydrated-products.html">Dehydrated Products</a> •
+    <a class="text-brand font-semibold hover:underline" href="/products/spray-dried-products.html">Spray Dried Products</a> •
+    <a class="text-brand font-semibold hover:underline" href="/products/spices.html">Spices & Mixes</a>
+  </p>
+</div>
 
+
+<section id="faq" class="section">
+  <div class="container">
+    <h2 class="text-2xl font-bold text-slate-900">FAQs</h2>
+    <p class="mt-2 text-slateish">Quick answers to common bulk buying questions.</p>
+    <details class="mt-3 rounded-2xl border border-slate-200 bg-white/70 p-4">
+  <summary class="cursor-pointer font-semibold text-slate-900">What is your MOQ for bulk orders?</summary>
+  <div class="mt-2 text-slateish">MOQ depends on the product category and packaging. Share your requirement on WhatsApp and we’ll confirm MOQ and pricing.</div>
+</details>
+<details class="mt-3 rounded-2xl border border-slate-200 bg-white/70 p-4">
+  <summary class="cursor-pointer font-semibold text-slate-900">Do you support different mesh sizes and granulation?</summary>
+  <div class="mt-2 text-slateish">Yes. We can share available mesh sizes/grades for powders, flakes and granules depending on the product.</div>
+</details>
+<details class="mt-3 rounded-2xl border border-slate-200 bg-white/70 p-4">
+  <summary class="cursor-pointer font-semibold text-slate-900">Do you offer packaging options and private label?</summary>
+  <div class="mt-2 text-slateish">Yes. We support bulk packs and selected packaging options. Private label/OEM can be discussed for repeat orders.</div>
+</details>
+<details class="mt-3 rounded-2xl border border-slate-200 bg-white/70 p-4">
+  <summary class="cursor-pointer font-semibold text-slate-900">Are your products suitable for export?</summary>
+  <div class="mt-2 text-slateish">We can support export-oriented supply based on buyer requirements. Share destination country and specifications to align documents and packing.</div>
+</details>
+  </div>
+</section>
 
 </main>
 <footer class="mt-14 pt-8 border-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
@@ -1063,7 +1094,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <script>
 (function() {
-  const links = Array.from(document.querySelectorAll('a.tab-link[data-tab]'));
+  const btns = Array.from(document.querySelectorAll('button.tab-btn[data-tab]'));
   const panels = {
     dehydrated: document.getElementById('tab-dehydrated'),
     spray: document.getElementById('tab-spray'),
@@ -1076,13 +1107,13 @@ document.addEventListener("DOMContentLoaded", () => {
       panels[k].classList.toggle('hidden', k !== key);
     });
 
-    links.forEach(a => {
-      const k = a.getAttribute('data-tab');
+    btns.forEach(b => {
+      const k = b.getAttribute('data-tab');
       const isActive = k === key;
-      a.classList.toggle('border-brand', isActive);
-      a.classList.toggle('bg-brand-50', isActive);
-      a.classList.toggle('font-semibold', isActive);
-      a.classList.toggle('text-ink', isActive);
+      b.classList.toggle('border-brand', isActive);
+      b.classList.toggle('bg-brand-50', isActive);
+      b.classList.toggle('font-semibold', isActive);
+      b.classList.toggle('text-ink', isActive);
     });
 
     if (pushState) {
@@ -1092,14 +1123,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  links.forEach(a => {
-    a.addEventListener('click', (e) => {
-      const key = a.getAttribute('data-tab');
+  btns.forEach(b => {
+    b.addEventListener('click', () => {
+      const key = b.getAttribute('data-tab');
       if (!key || !panels[key]) return;
-      e.preventDefault();
       setActive(key, true);
       const wrapper = document.getElementById('products-tabs');
-      if (wrapper) wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (wrapper) wrapper.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
 

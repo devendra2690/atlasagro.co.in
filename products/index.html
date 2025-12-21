@@ -354,9 +354,9 @@
     <div class="rounded-3xl border border-slate-200 bg-white p-5">
       <h2 class="text-sm font-semibold tracking-wide text-slate-700">OUR PRODUCTS</h2>
       <nav class="mt-4 space-y-2 text-sm">
-        <button type="button" class="tab-btn block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover text-left transition hover:bg-brand-50 border-brand bg-brand-50 font-semibold text-ink" data-tab="dehydrated">Dehydrated Products</button>
-        <button type="button" class="tab-btn block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover text-left transition hover:bg-brand-50" data-tab="spray">Spray Dried Products</button>
-        <button type="button" class="tab-btn block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover text-left transition hover:bg-brand-50" data-tab="spices">Spices</button>
+        <button type="button" class="tab-btn block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover text-left transition hover:bg-brand-50 border-brand bg-brand-50 font-semibold text-ink" data-tab="dehydrated" onclick="window.__setProductsTab && window.__setProductsTab('dehydrated')">Dehydrated Products</button>
+        <button type="button" class="tab-btn block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover text-left transition hover:bg-brand-50" data-tab="spray" onclick="window.__setProductsTab && window.__setProductsTab('spray')">Spray Dried Products</button>
+        <button type="button" class="tab-btn block w-full px-4 py-3 rounded-2xl border border-transparent hover:border-brand hover:bg-brand-100 text-slate-800 hover:text-brand font-medium card-hover text-left transition hover:bg-brand-50" data-tab="spices" onclick="window.__setProductsTab && window.__setProductsTab('spices')">Spices</button>
       </nav>
     </div>
     
@@ -422,7 +422,7 @@
     </div>
   </section>
 
-  <section id="tab-spray" class="tab-panel hidden">
+  <section id="tab-spray" class="tab-panel hidden" style="display:none">
     <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
@@ -441,7 +441,7 @@
     </div>
   </section>
 
-  <section id="tab-spices" class="tab-panel hidden">
+  <section id="tab-spices" class="tab-panel hidden" style="display:none">
     <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
@@ -1082,144 +1082,92 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 
-<script>
-(function(){
-  function setActiveNav(){
-    var path = (location.pathname || "/").toLowerCase();
-    var home = document.querySelector('a[data-nav="home"]');
-    var products = document.querySelector('a[data-nav="products"]');
-    if(products && path.startsWith("/products")) {
-      products.classList.add("text-brand","font-semibold");
-    } else if(home && path === "/") {
-      home.classList.add("text-brand","font-semibold");
-    }
-  }
-  if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", setActiveNav); }
-  else { setActiveNav(); }
-})();
-</script>
+
+
+
+
+
+
+
+
+
+
 
 
 <script>
 (function(){
-  function setActive(){
-    var p=(location.pathname||"").toLowerCase();
-    var key = p.includes("dehydrated")?"dehydrated":p.includes("spray")?"spray":p.includes("spices")?"spices":null;
-    if(!key) return;
-    var el=document.querySelector('[data-side="'+key+'"]');
-    if(el){
-      el.classList.add("bg-brand-100","border","border-brand","text-brand","font-semibold");
-    }
+  function getPanels(){
+    return {
+      dehydrated: document.getElementById('tab-dehydrated'),
+      spray: document.getElementById('tab-spray'),
+      spices: document.getElementById('tab-spices')
+    };
   }
-  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", setActive);
-  else setActive();
-})();
-</script>
 
+  function getButtons(){
+    return Array.from(document.querySelectorAll('button.tab-btn[data-tab]'));
+  }
 
-<script>
-(function(){
-  var WA_BASE = 'https://wa.me/919867630682';
-  function normalizeBase(base){
-    // allow api.whatsapp.com/send?phone=... or wa.me/...
-    if(!base) return "";
-    return base;
-  }
-  function pageLabel(){
-    var p = (location.pathname || "/").toLowerCase();
-    if(p === "/" || p === "/index.html") return "Home";
-    if(p.startsWith("/products/")) {
-      var slug = p.split("/").pop() || "products";
-      if(slug === "" || slug === "index.html") return "Products";
-      slug = slug.replace(".html","").replace(/-/g," ");
-      return slug.replace(/\b\w/g, c => c.toUpperCase());
-    }
-    return location.pathname;
-  }
-  function productFromPage(){
-    var p = (location.pathname || "/").toLowerCase();
-    if(p.includes("dehydrated-products")) return "Dehydrated Products";
-    if(p.includes("spray-dried-products")) return "Spray Dried Products";
-    if(p.includes("spices")) return "Spices";
-    // if on products index, try selected category from query or fallback
-    return "Product Enquiry";
-  }
-  function buildWhatsAppPrefill(){
-    var base = normalizeBase(WA_BASE);
-    var product = productFromPage();
-    var page = pageLabel();
-    var url = location.href;
-    var msg =
-      "Hello Atlas Agro,\n" +
-      "I want details/pricing.\n" +
-      "Product interest: " + product + "\n" +
-      "Page: " + page + "\n" +
-      "Link: " + url + "\n\n" +
-      "Please share MOQ, packaging, mesh size & pricing.";
-    var encoded = encodeURIComponent(msg);
-    // If base already has ? , append with &
-    if(base.includes("?")) {
-      if(/\btext=/.test(base)) return base; // already has text
-      return base + "&text=" + encoded;
-    }
-    // wa.me supports ?text=
-    return base + "?text=" + encoded;
-  }
-  function apply(){
-    var href = buildWhatsAppPrefill();
-    document.querySelectorAll('a[data-wa="prefill"]').forEach(function(a){ a.setAttribute("href", href); });
-  }
-  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", apply);
-  else apply();
-})();
-</script>
-
-
-<script>
-(function() {
-  const btns = Array.from(document.querySelectorAll('button.tab-btn[data-tab]'));
-  const panels = {
-    dehydrated: document.getElementById('tab-dehydrated'),
-    spray: document.getElementById('tab-spray'),
-    spices: document.getElementById('tab-spices')
-  };
-
-  function setActive(key, pushState) {
+  function setActive(key, pushState){
+    const panels = getPanels();
     Object.keys(panels).forEach(k => {
-      if (!panels[k]) return;
-      panels[k].classList.toggle('hidden', k !== key);
+      const el = panels[k];
+      if(!el) return;
+      el.style.display = (k === key) ? '' : 'none';
     });
 
+    const btns = getButtons();
     btns.forEach(b => {
       const k = b.getAttribute('data-tab');
       const isActive = k === key;
+      b.classList.toggle('border', isActive);
       b.classList.toggle('border-brand', isActive);
       b.classList.toggle('bg-brand-50', isActive);
       b.classList.toggle('font-semibold', isActive);
       b.classList.toggle('text-ink', isActive);
     });
 
-    if (pushState) {
-      const url = new URL(window.location.href);
-      url.searchParams.set('tab', key);
-      history.replaceState({}, '', url.toString());
+    if(pushState){
+      try{
+        const url = new URL(window.location.href);
+        url.searchParams.set('tab', key);
+        history.replaceState({}, '', url.toString());
+      }catch(e){}
     }
   }
 
-  btns.forEach(b => {
-    b.addEventListener('click', () => {
-      const key = b.getAttribute('data-tab');
-      if (!key || !panels[key]) return;
-      setActive(key, true);
-      const wrapper = document.getElementById('products-tabs');
-      if (wrapper) wrapper.scrollIntoView({behavior:'smooth', block:'start'});
-    });
+  // Expose global for inline onclick fallback
+  window.__setProductsTab = function(key){
+    setActive(key, true);
+    const wrapper = document.getElementById('products-tabs');
+    if(wrapper) wrapper.scrollIntoView({behavior:'smooth', block:'start'});
+  };
+
+  // Event delegation (works even if buttons are re-rendered)
+  document.addEventListener('click', function(e){
+    const btn = e.target.closest && e.target.closest('button.tab-btn[data-tab]');
+    if(!btn) return;
+    const key = btn.getAttribute('data-tab');
+    if(!key) return;
+    e.preventDefault();
+    window.__setProductsTab(key);
   });
 
-  const params = new URLSearchParams(location.search);
-  const initial = params.get('tab');
-  if (initial && panels[initial]) setActive(initial, false);
-  else setActive('dehydrated', false);
+  // Init after DOM is ready
+  function init(){
+    const panels = getPanels();
+    // ensure non-active panels are hidden on first load
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get('tab');
+    const key = (initial && panels[initial]) ? initial : 'dehydrated';
+    setActive(key, false);
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 </script>
 

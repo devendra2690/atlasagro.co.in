@@ -325,14 +325,14 @@
 
       
       <!-- Mobile Language Switcher -->
-      <div class="md:hidden flex items-center gap-1 text-[11px] border border-slate-200 rounded-2xl px-2 py-2 bg-white">
+      <div class="md:hidden flex items-center gap-1 text-[11px] border border-slate-200 rounded-2xl px-2 py-2 bg-white card-hover hover:border-slate-300 transition">
         <button type="button" onclick="setLang('en')" class="px-1 font-medium hover:text-brand-700">EN</button>
         <span class="text-slateish">|</span>
         <button type="button" onclick="setLang('hi')" class="px-1 font-medium hover:text-brand-700">हिं</button>
         <span class="text-slateish">|</span>
         <button type="button" onclick="setLang('mr')" class="px-1 font-medium hover:text-brand-700">मर</button>
       </div>
-      <button class="md:hidden rounded-2xl border border-slate-200 px-3 py-2 hover:bg-white"
+      <button class="md:hidden rounded-2xl border border-slate-200 px-3 py-2 hover:bg-white card-hover hover:border-slate-300 transition"
               @click="mobileOpen = !mobileOpen"
               aria-label="Toggle menu">
         ☰
@@ -358,7 +358,7 @@
   </div>
 
   <div class="mt-8">
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
       <div class="flex flex-wrap items-start justify-between gap-4">
         <div>
           <div class="text-sm text-slate-500">Dehydrated Products</div>
@@ -387,7 +387,7 @@
     </div>
 
     
-<div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+<div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
   <h2 class="text-xl font-bold">Typical applications</h2>
   <ul class="mt-4 list-disc pl-5 text-slateish space-y-2"><li>Soups and noodle seasonings</li>
 <li>Snack seasonings</li>
@@ -397,7 +397,7 @@
 </div>
 
     
-<div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+<div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
   <h2 class="text-xl font-bold">Quality & compliance</h2>
   <ul class="mt-4 list-disc pl-5 text-slateish space-y-2"><li>Food-grade processing and hygienic packing</li>
 <li>Batch-wise quality checks for consistency</li>
@@ -419,7 +419,7 @@
 </div>
 
     
-<div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+<div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
   <h2 class="text-xl font-bold">Related products</h2>
   <div class='mt-4 grid md:grid-cols-2 gap-5'>
 <a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/banana-powder.html">
@@ -447,7 +447,7 @@
 </div>
 
     
-<div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+<div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
   <h2 class="text-xl font-bold">FAQs</h2>
   <div class="mt-4 space-y-3">
     <details class="rounded-2xl border border-slate-200 p-4">
@@ -489,7 +489,7 @@
           <div class="text-2xl font-bold mt-1" x-text="modalProduct?.name"></div>
           <div class="text-slateish text-sm mt-2" x-text="modalProduct?.desc"></div>
         </div>
-        <button class="rounded-2xl px-3 py-2 border border-slate-200 hover:bg-white"
+        <button class="rounded-2xl px-3 py-2 border border-slate-200 hover:bg-white card-hover hover:border-slate-300 transition"
                 @click="modalOpen=false" aria-label="Close">✕</button>
       </div>
 
@@ -507,7 +507,7 @@
            :href="whatsappLinkForProduct(modalProduct?.name || '')">
           Enquire on WhatsApp →
         </a>
-        <button class="rounded-2xl px-4 py-2 border border-slate-200 hover:bg-white transition"
+        <button class="rounded-2xl px-4 py-2 border border-slate-200 hover:bg-white transition card-hover hover:border-slate-300"
                 @click="modalOpen=false">
           Close
         </button>

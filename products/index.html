@@ -422,7 +422,7 @@
     </div>
   </section>
 
-  <section id="tab-spray" class="tab-panel hidden" style="display:none">
+  <section id="tab-spray" class="tab-panel hidden">
     <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
@@ -441,7 +441,7 @@
     </div>
   </section>
 
-  <section id="tab-spices" class="tab-panel hidden" style="display:none">
+  <section id="tab-spices" class="tab-panel hidden">
     <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
       <div class="flex items-start justify-between gap-4 flex-wrap">
         <div>
@@ -1168,6 +1168,79 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     init();
   }
+})();
+</script>
+
+
+<script>
+(function(){
+  function panels(){
+    return {
+      dehydrated: document.getElementById('tab-dehydrated'),
+      spray: document.getElementById('tab-spray'),
+      spices: document.getElementById('tab-spices')
+    };
+  }
+  function buttons(){
+    return Array.from(document.querySelectorAll('button.tab-btn[data-tab]'));
+  }
+
+  function setActive(key, pushState){
+    const p = panels();
+    Object.keys(p).forEach(k => {
+      const el = p[k];
+      if(!el) return;
+      const isOn = (k === key);
+      // IMPORTANT: remove/add hidden class (some builds use !important)
+      el.classList.toggle('hidden', !isOn);
+      // Also set inline display for extra safety
+      el.style.display = isOn ? '' : 'none';
+    });
+
+    buttons().forEach(b => {
+      const k = b.getAttribute('data-tab');
+      const isActive = (k === key);
+      b.classList.toggle('border', isActive);
+      b.classList.toggle('border-brand', isActive);
+      b.classList.toggle('bg-brand-50', isActive);
+      b.classList.toggle('font-semibold', isActive);
+      b.classList.toggle('text-ink', isActive);
+    });
+
+    if(pushState){
+      try{
+        const url = new URL(window.location.href);
+        url.searchParams.set('tab', key);
+        history.replaceState({}, '', url.toString());
+      }catch(e){}
+    }
+  }
+
+  window.__setProductsTab = function(key){
+    setActive(key, true);
+    const wrapper = document.getElementById('products-tabs');
+    if(wrapper) wrapper.scrollIntoView({behavior:'smooth', block:'start'});
+  };
+
+  document.addEventListener('click', function(e){
+    const btn = e.target.closest && e.target.closest('button.tab-btn[data-tab]');
+    if(!btn) return;
+    const key = btn.getAttribute('data-tab');
+    if(!key) return;
+    e.preventDefault();
+    window.__setProductsTab(key);
+  });
+
+  function init(){
+    const p = panels();
+    const params = new URLSearchParams(window.location.search);
+    const initial = params.get('tab');
+    const key = (initial && p[initial]) ? initial : 'dehydrated';
+    setActive(key, false);
+  }
+
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
 </script>
 

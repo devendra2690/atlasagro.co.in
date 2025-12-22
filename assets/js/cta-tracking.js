@@ -1,13 +1,15 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelectorAll('a[href*="wa.me"]').forEach(function(el){
+  // Track WhatsApp CTA clicks
+  document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(el){
     el.addEventListener("click", function(){
-      console.log("WhatsApp CTA clicked");
+      console.log("WhatsApp CTA clicked:", el.href);
     });
   });
-  document.querySelectorAll('a[href*="contact"]').forEach(function(el){
+
+  // Track Quote / Contact CTA clicks
+  document.querySelectorAll('a[href*="quote"], a[href*="contact"]').forEach(function(el){
     el.addEventListener("click", function(){
-      console.log("Quote CTA clicked");
+      console.log("Quote/Contact CTA clicked:", el.href);
     });
   });
 });

@@ -161,6 +161,18 @@
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <style>
+
+    .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
+    .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
+    .sticky-cta .quote{background:var(--brand-700,#1f6f4a);color:#ffffff}
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
+    .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
+    @media (min-width: 768px){.mobile-cta{display:none}}
+    @media (max-width: 767px){body{padding-bottom:70px}}
+    
+
     
     .card-hover{transition:all .25s ease;}
     .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
@@ -312,8 +324,35 @@
   ]
 }
 </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Atlas Agro Industries Pvt Ltd",
+    "url":"https://atlasagro.co.in",
+    "contactPoint":{
+      "@type":"ContactPoint",
+      "contactType":"sales",
+      "url":"https://atlasagro.co.in/contact.html"
+    }
+  }
+  </script>
+
 </head>
 <body>
+
+  <div class="sticky-cta">
+    <a class="quote" href="/contact.html">Get Bulk Quote</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/919867630682" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="/contact.html">Get Bulk Quote</a>
+      <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/919867630682" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+
 <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
 <div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4 relative">
 
@@ -529,6 +568,7 @@
         <div>© <span x-text="new Date().getFullYear()"></span> Atlas Agro Industries. All rights reserved.</div>
         <div class="flex items-center gap-4">
           <a class="hover:text-slateish" href="/products/">Products</a>
+          <a class="hover:text-brand-700" href="/why-atlas-agro.html">Why Atlas Agro</a>
           <a class="hover:text-slateish" href="#quality">Quality</a>
           <a class="hover:text-slateish" href="#contact">Contact</a>
         </div>

@@ -405,7 +405,6 @@
 <main class="max-w-7xl mx-auto px-4 py-10">
   <div class="max-w-3xl">
     
-  <d
     <section class="container" style="padding: 28px 0 10px;">
       <div class="breadcrumb-pill">
         <a href="/">Home</a><span class="sep">/</span><span class="text-brand font-semibold">Gallery</span>
@@ -425,18 +424,7 @@
     
       </div>
     </section>
-      <footer class="mt-14 pt-8 border-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
-        <div>© <span x-text="new Date().getFullYear()"></span> Atlas Agro Industries. All rights reserved.</div>
-        <div class="flex items-center gap-4">
-          <a class="hover:text-slateish" href="/products/">Products</a>
-          <a class="hover:text-brand-700" href="/why-atlas-agro.html">Why Atlas Agro</a>
-          <a class="hover:text-slateish" href="/quality.html">Quality</a>
-          <a class="hover:text-slateish" href="/contact.html">Contact</a>
-        </div>
-      </footer>
 </div>
-  </section>
-
   <!-- Spec modal -->
   <div x-show="modalOpen" x-transition
        class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50"
@@ -1153,5 +1141,16 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script src="/assets/js/cta-tracking.js"></script>
+<footer class="mt-14 border-t border-slate-200 text-sm text-slateish">
+  <div class="mx-auto max-w-6xl px-4 md:px-8 py-8 flex flex-col md:flex-row gap-3 items-center justify-between">
+    <p>© 2025 Atlas Agro Industries. All rights reserved.</p>
+    <div class="flex flex-wrap gap-x-5 gap-y-2">
+      <a href="/products/" class="hover:underline">Products</a>
+      <a href="/why-atlas.html" class="hover:underline">Why Atlas Agro</a>
+      <a href="/quality.html" class="hover:underline">Quality</a>
+      <a href="/contact.html" class="hover:underline">Contact</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

@@ -266,7 +266,7 @@
 .breadcrumb-pill a:hover{text-decoration:underline;}
 .breadcrumb-pill .sep{opacity:.55;font-weight:700;}
 
-  .breadcrumb-pill .current{color: var(--brand); font-weight:700;}
+  .breadcrumb-pill .current{color: #2f6b45; font-weight:700;}
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What products do you supply under dehydrated range?", "acceptedAnswer": {"@type": "Answer", "text": "Dehydrated vegetables, fruit powders, flakes and custom blends depending on seasonal availability and requirement."}}, {"@type": "Question", "name": "Can you share moisture/specification sheet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share typical specs and can align to buyer specs where feasible."}}, {"@type": "Question", "name": "How do I request a quote?", "acceptedAnswer": {"@type": "Answer", "text": "Use the WhatsApp button on this page and send product + MOQ + packaging + destination details for a quick quotation."}}, {"@type": "Question", "name": "Do you supply for food processing and HORECA?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We supply B2B ingredients for food manufacturers, HORECA and exporters."}}]}</script>
@@ -358,6 +358,33 @@
 
 </head>
 <body>
+<!-- Top announcement -->
+  <div class="bg-brand-100 border-b border-brand-200 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 py-2 text-sm flex flex-wrap items-center justify-between gap-2">
+      <div class="text-ink">
+        ✅ Bulk Supply • ✅ Export-ready • ✅ Custom Blends for Soups / Noodles / Ready Meals
+      </div>
+      <div class="flex items-center gap-3">
+
+        <!-- Language Switcher -->
+        <div class="hidden sm:flex items-center gap-2 text-xs border border-slate-200 rounded-full px-3 py-2 bg-white">
+          <button type="button" onclick="setLang('en')" class="hover:text-brand-700 font-medium">EN</button>
+          <span class="text-slateish">|</span>
+          <button type="button" onclick="setLang('hi')" class="hover:text-brand-700 font-medium">हिंदी</button>
+          <span class="text-slateish">|</span>
+          <button type="button" onclick="setLang('mr')" class="hover:text-brand-700 font-medium">मराठी</button>
+        </div>
+
+        <a class="text-ink hover:text-ink underline underline-offset-4"
+           href="#quote">Get a Quote</a>
+        <a class="text-ink hover:text-ink underline underline-offset-4"
+           href="/assets/brochure.pdf" download>
+          Download Brochure
+        </a>
+      </div>
+    </div>
+  </div>
+
 
   <div class="sticky-cta">
     <a class="quote" href="/contact.html">Get Bulk Quote</a>

@@ -259,6 +259,8 @@
 .breadcrumb-pill a{color:inherit;text-decoration:none;}
 .breadcrumb-pill a:hover{text-decoration:underline;}
 .breadcrumb-pill .sep{opacity:.55;font-weight:700;}
+
+.breadcrumb-pill .current{color:#1f6f4a;font-weight:600;}
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is your MOQ for bulk orders?", "acceptedAnswer": {"@type": "Answer", "text": "MOQ depends on the product category and packaging. Share your requirement on WhatsApp and we’ll confirm MOQ and pricing."}}, {"@type": "Question", "name": "Do you support different mesh sizes and granulation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share available mesh sizes/grades for powders, flakes and granules depending on the product."}}, {"@type": "Question", "name": "Do you offer packaging options and private label?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We support bulk packs and selected packaging options. Private label/OEM can be discussed for repeat orders."}}, {"@type": "Question", "name": "Are your products suitable for export?", "acceptedAnswer": {"@type": "Answer", "text": "We can support export-oriented supply based on buyer requirements. Share destination country and specifications to align documents and packing."}}]}</script>
@@ -272,7 +274,7 @@
 
     <link rel="manifest" href="/site.webmanifest">
 
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Product Categories", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dehydrated Products", "url": "https://atlasagro.co.in/products/dehydrated-products.html"}, {"@type": "ListItem", "position": 2, "name": "Spray Dried Products", "url": "https://atlasagro.co.in/products/spray-dried-products.html"}, {"@type": "ListItem", "position": 3, "name": "Spices", "url": "https://atlasagro.co.in/products/spices.html"}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Product Categories", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dehydrated Products", "url": "https://atlasagro.co.in/products/dehydrated-products.html"}, {"@type": "ListItem", "position": 2, "name": "Quality", "url": "https://atlasagro.co.in/products/spray-dried-products.html"}, {"@type": "ListItem", "position": 3, "name": "Spices", "url": "https://atlasagro.co.in/products/spices.html"}]}</script>
 
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://atlasagro.co.in/"}, {"@type": "SiteNavigationElement", "position": 2, "name": "Products", "url": "https://atlasagro.co.in/products/"}, {"@type": "SiteNavigationElement", "position": 3, "name": "Dehydrated Products", "url": "https://atlasagro.co.in/products/dehydrated-products.html"}, {"@type": "SiteNavigationElement", "position": 4, "name": "Spray Dried Products", "url": "https://atlasagro.co.in/products/spray-dried-products.html"}, {"@type": "SiteNavigationElement", "position": 5, "name": "Spices", "url": "https://atlasagro.co.in/products/spices.html"}]}</script>
 
@@ -404,7 +406,7 @@
   <div class="max-w-3xl">
     <section class="container" style="padding: 28px 0 10px;">
       <div class="breadcrumb-pill">
-        <a href="/">Home</a><span class="sep">/</span><span>Quality</span>
+        <a href="/">Home</a><span class="sep">/</span><span class="current">Quality</span>
       </div>
     </section>
     <section class="container" style="padding: 10px 0 50px;">
@@ -435,57 +437,19 @@
     
       </div>
     </section>
-    14 pt-8 border-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
-        <div>© <span x-text="new Date().getFullYear()"></span> Atlas Agro Industries. All rights reserved.</div>
-        <div class="flex items-center gap-4">
+    <footer class="container mx-auto px-4 md:px-6 lg:px-8 py-14">
+      <div class="pt-8 border-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
+        <div>© <span id="year"></span> Atlas Agro Industries. All rights reserved.</div>
+        <nav class="flex items-center gap-4">
           <a class="hover:text-slateish" href="/products/">Products</a>
-          <a class="hover:text-brand-700" href="/why-atlas-agro.html">Why Atlas Agro</a>
+          <a class="hover:text-slateish" href="/why-atlas-agro.html">Why Atlas Agro</a>
           <a class="hover:text-slateish" href="/quality.html">Quality</a>
           <a class="hover:text-slateish" href="/contact.html">Contact</a>
-        </div>
-      </footer>
-</div>
-  </section>
-
-  <!-- Spec modal -->
-  <div x-show="modalOpen" x-transition
-       class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50"
-       @click.self="modalOpen=false">
-    <div class="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 card-hover">
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <div class="text-xs text-brand-800" x-text="modalProduct?.category"></div>
-          <div class="text-2xl font-bold mt-1" x-text="modalProduct?.name"></div>
-          <div class="text-slateish text-sm mt-2" x-text="modalProduct?.desc"></div>
-        </div>
-        <button class="rounded-2xl px-3 py-2 border border-slate-200 hover:bg-white"
-                @click="modalOpen=false" aria-label="Close">✕</button>
+        </nav>
       </div>
+    </footer>
 
-      <div class="mt-5 grid gap-3 text-sm">
-        <template x-for="s in (modalProduct?.specs || [])" :key="s.k">
-          <div class="card-hover flex items-center justify-between border border-slate-200 rounded-2xl px-4 py-3">
-            <span class="text-slateish" x-text="s.k"></span>
-            <span class="text-ink font-semibold" x-text="s.v"></span>
-          </div>
-        </template>
-      </div>
-
-      <div class="mt-6 flex items-center justify-between gap-3 flex-wrap">
-        <a class="text-brand-800 hover:text-ink underline underline-offset-4"
-           :href="whatsappLinkForProduct(modalProduct?.name || '')">
-          Enquire on WhatsApp →
-        </a>
-        <button class="rounded-2xl px-4 py-2 border border-slate-200 hover:bg-white transition"
-                @click="modalOpen=false">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- App script -->
-  <script>
+<script>
     function siteApp() {
       return {
         init() {
@@ -1163,5 +1127,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script src="/assets/js/cta-tracking.js"></script>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
 </body>
 </html>

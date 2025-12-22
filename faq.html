@@ -1,149 +1,500 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  
+
+  <!-- Favicon / Tab Icon -->
+  <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/atlas-agro-logo.png" />
+
   <title>FAQs | Atlas Agro Industries</title>
-  <meta name="description" content="FAQs for bulk buying dehydrated products, spray dried ingredients and spices. MOQ, mesh size/grade, packaging, documentation, export readiness and enquiry process." />
+  <meta name="description" content="Frequently asked questions about bulk orders, specifications, packaging and quality checks for Atlas Agro dehydrated products." />
+  <meta name="keywords" content="dehydrated powder supplier, onion powder, garlic powder, ginger powder, fruit chips, vegetable powders, custom blends" />
+  <meta name="theme-color" content="#0f7a4a" />
+
+  <meta name="description" content="Frequently asked questions about bulk orders, specifications, packaging and quality checks for Atlas Agro dehydrated products." />
+
   <link rel="canonical" href="https://atlasagro.co.in/faq.html" />
 
+          <link rel="alternate" href="https://atlasagro.co.in/products/" hreflang="en-IN">
+    <link rel="alternate" href="https://atlasagro.co.in/products/" hreflang="x-default">
+<!-- Social previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Atlas Agro Industries">
+    <meta property="og:title" content="Products | Dehydrated, Spray Dried &amp; Spices | Atlas Agro">
+    <meta property="og:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
+    <meta property="og:url" content="https://atlasagro.co.in/products/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Products | Dehydrated, Spray Dried &amp; Spices | Atlas Agro">
+    <meta name="twitter:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
+<meta name="robots" content="index,follow" />
+
+<!-- Open Graph (for WhatsApp/LinkedIn preview) -->
+<meta property="og:title" content="Products | Dehydrated, Spray Dried &amp; Spices | Atlas Agro">
+<meta property="og:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
+<meta property="og:url" content="https://atlasagro.co.in/products/">
+<meta property="og:type" content="website">
+<!-- Optional: add your logo image URL if you have one -->
+<!-- <meta property="og:image" content="https://atlasagro.co.in/assets/atlas-agro-logo.png"> -->
+
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Products | Dehydrated, Spray Dried &amp; Spices | Atlas Agro">
+  <meta property="og:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://atlasagro.co.in/assets/atlas-agro-logo.png">
+
+  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: "#0f172a",
-            slateish: "#475569",
-            mint: "#f1f7f3",
-            brand: "#2f6b45",
-            brand2: "#3b8a5a"
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Atlas Agro Industries",
+  "url": "https://atlasagro.co.in/",
+  "description": "Manufacturer and bulk supplier of dehydrated fruits, vegetables, and custom food ingredients for B2B and export markets.",
+  "sameAs": [],
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "areaServed": ["IN", "Global"],
+    "availableLanguage": ["English", "Hindi", "Marathi"]
+  }]
+}
+</script>
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            DEFAULT: '#22b36a',
+            50: '#f5fbf7',
+            100: '#e7f7ee',
+            200: '#c9efd9',
+            300: '#9fe2bd',
+            400: '#5ecc8f',
+            500: '#22b36a',
+            600: '#129457',
+            700: '#0f7a4a',
+            800: '#0f623c',
+            900: '#0c4f31'
           },
-          boxShadow: {
-            soft: "0 10px 25px rgba(2,6,23,.08)"
-          }
+          ink: '#0f172a',
+          slateish: '#475569'
         }
       }
     }
-  </script>
+  }
+
+  function galleryMagic() {
+    return {
+      isOpen: false,
+      activeIndex: 0,
+
+      items: [
+        { title: "Fruit Chips", desc: "Assorted chips & pieces", src: "assets/gallery/fruit-chips.png", alt: "Dehydrated Fruit Chips" },
+        { title: "Vegetable Mix", desc: "Ready meal blends", src: "assets/gallery/vegetable-mix.jpg", alt: "Dehydrated Vegetable Mix" },
+        { title: "Onion / Garlic", desc: "Powders & granules", src: "assets/gallery/onion-garlic.jpg", alt: "Onion Garlic Powder" },
+        { title: "Custom Blends", desc: "Soup & noodle mixes", src: "assets/gallery/custom-blends.jpg", alt: "Custom Food Blends" },
+        { title: "Herbs", desc: "Leafy greens & flakes", src: "assets/gallery/herbs.jpg", alt: "Dehydrated Herbs" },
+        { title: "Packaging", desc: "Bulk & retail options", src: "assets/gallery/packaging.jpg", alt: "Food Packaging" },
+        { title: "Quality Checks", desc: "Batch consistency", src: "assets/gallery/quality-checks.jpg", alt: "Quality Checks" },
+        { title: "Dispatch", desc: "Reliable shipments", src: "assets/gallery/dispatch.jpg", alt: "Dispatch & Logistics" },
+      ],
+
+      init() {
+        // Scroll reveal with IntersectionObserver
+        const cards = this.$root.querySelectorAll("button.group");
+        cards.forEach((el) => el.classList.add("reveal"));
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("in");
+          });
+        }, { threshold: 0.12 });
+
+        cards.forEach((el) => io.observe(el));
+      },
+
+      open(i) {
+        this.activeIndex = i;
+        this.isOpen = true;
+        document.body.style.overflow = "hidden";
+      },
+      close() {
+        this.isOpen = false;
+        document.body.style.overflow = "";
+      },
+      activeItem() {
+        return this.items[this.activeIndex] || this.items[0];
+      },
+      next() {
+        this.activeIndex = (this.activeIndex + 1) % this.items.length;
+      },
+      prev() {
+        this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length;
+      }
+    };
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    els.forEach((el) => io.observe(el));
+  });
+</script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
   <style>
-    body{background:#f5fbf6;color:#0f172a}
-    .pill{background:rgba(255,255,255,.75);border:1px solid rgba(148,163,184,.45);backdrop-filter:blur(8px)}
-    details>summary{list-style:none}
-    details>summary::-webkit-details-marker{display:none}
-  </style>
-  <style>
-  .card-hover{transition:transform .18s ease, box-shadow .18s ease;}
-  .card-hover:hover{transform:translateY(-2px); box-shadow:0 12px 30px rgba(16,24,40,.10);}
+
+    .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
+    .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
+    .sticky-cta .quote{background:var(--brand-700,#1f6f4a);color:#ffffff}
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
+    .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
+    @media (min-width: 768px){.mobile-cta{display:none}}
+    @media (max-width: 767px){body{padding-bottom:70px}}
+    
+
+    
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
+
+/* Smooth scroll + nicer selection */
+    html { scroll-behavior: smooth; }
+    ::selection { background: rgba(34,179,106,.25); }
+    /* Gallery reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px) scale(.98);
+      transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1);
+      will-change: transform, opacity;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  
+    /* Gallery hover depth & tilt */
+    .gallery-card {
+      transform-style: preserve-3d;
+    }
+    .gallery-card:hover {
+      transform: translateY(-6px) scale(1.01);
+    }
+    .gallery-card img {
+      transition: transform .6s cubic-bezier(.2,.8,.2,1);
+    }
+    .gallery-card:hover img {
+      transform: scale(1.12);
+    }
+    /* Who we supply hover (match Products) */
+    .supply-card {
+      transition: background-color .25s ease, border-color .25s ease, transform .25s ease;
+    }
+
+    .supply-card:hover {
+      background-color: rgb(34 179 106 / 0.08); /* brand green, subtle */
+      border-color: rgb(34 179 106 / 0.35);
+    }
+
+  /* Universal card hover */
+  .card-hover {
+    transition: background-color .25s ease,
+                border-color .25s ease,
+                transform .25s ease,
+                box-shadow .25s ease;
+  }
+  .card-hover:hover {
+    background-color: rgb(34 179 106 / 0.08);
+    border-color: rgb(34 179 106 / 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
+  }
+
+
+  /* Touch-friendly: show feedback on tap/focus as well */
+  .card-hover:active,
+  .card-hover:focus,
+  .card-hover:focus-visible {
+    background-color: rgb(34 179 106 / 0.10);
+    border-color: rgb(34 179 106 / 0.45);
+    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
+    outline: none;
+  }
+
+
+/* reusable section divider (minimal) */
+.section-divider{height:1px;width:100%;background:rgba(15,23,42,0.08);margin:28px 0;}
+@media (max-width:640px){.section-divider{margin:20px 0;}}
+
+
+/* consistent breadcrumb pill */
+.breadcrumb-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:10px 14px;border-radius:999px;
+  background: #ffffff;
+  border:1px solid rgba(15,23,42,0.08);
+  box-shadow: 0 8px 22px rgba(15,23,42,0.06);
+  color: rgba(15,23,42,0.75);
+  font-weight: 600;
+}
+.breadcrumb-pill a{color:inherit;text-decoration:none;}
+.breadcrumb-pill a:hover{text-decoration:underline;}
+.breadcrumb-pill .sep{opacity:.55;font-weight:700;}
+
+  .breadcrumb-pill .current{color: #2f6b45; font-weight:700;}
 </style>
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"What is your MOQ for bulk orders?","acceptedAnswer":{"@type":"Answer","text":"MOQ depends on the product and packaging format. Share product, grade/mesh, packaging and monthly volume and we’ll confirm MOQ and availability."}},
-      {"@type":"Question","name":"Do you support different mesh sizes and granulation?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can supply powders, flakes and granules with specification confirmation before bulk supply."}},
-      {"@type":"Question","name":"Do you offer packaging options and private label?","acceptedAnswer":{"@type":"Answer","text":"We support bulk/export packing formats. Private label options can be discussed based on order quantity and destination requirements."}},
-      {"@type":"Question","name":"Are your products suitable for export?","acceptedAnswer":{"@type":"Answer","text":"Yes. We support export-ready packing guidance and documentation on request (e.g., COA / batch documentation)."}},
-      {"@type":"Question","name":"Can you share specification sheets (moisture, mesh, etc.)?","acceptedAnswer":{"@type":"Answer","text":"Yes. Share the product and intended application, and we’ll share typical specs and confirm against your requirement."}},
-      {"@type":"Question","name":"How do you ensure consistent batch quality?","acceptedAnswer":{"@type":"Answer","text":"We confirm sample + specs before bulk supply and follow consistency checks per production lot."}},
-      {"@type":"Question","name":"How do I request a quote quickly?","acceptedAnswer":{"@type":"Answer","text":"Send product name, grade/mesh, packaging, monthly volume and destination via WhatsApp or the Get a Quote form. We reply with availability and pricing."}}
-    ]
-  }
-  </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is your MOQ for bulk orders?", "acceptedAnswer": {"@type": "Answer", "text": "MOQ depends on the product category and packaging. Share your requirement on WhatsApp and we’ll confirm MOQ and pricing."}}, {"@type": "Question", "name": "Do you support different mesh sizes and granulation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share available mesh sizes/grades for powders, flakes and granules depending on the product."}}, {"@type": "Question", "name": "Do you offer packaging options and private label?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We support bulk packs and selected packaging options. Private label/OEM can be discussed for repeat orders."}}, {"@type": "Question", "name": "Are your products suitable for export?", "acceptedAnswer": {"@type": "Answer", "text": "We can support export-oriented supply based on buyer requirements. Share destination country and specifications to align documents and packing."}}]}</script>
+
+    <meta name="twitter:image" content="https://atlasagro.co.in/assets/atlas-agro-logo.png">  <!-- schema-organization -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://atlasagro.co.in#organization", "name": "Atlas Agro Industries Private Ltd", "url": "https://atlasagro.co.in/", "logo": "https://atlasagro.co.in/assets/atlas-agro-logo.png", "email": "sales@atlasagro.co.in", "telephone": "+91-9867630682"}</script>
+  <!-- schema-website -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://atlasagro.co.in#website", "url": "https://atlasagro.co.in/", "name": "Atlas Agro Industries", "publisher": {"@id": "https://atlasagro.co.in#organization"}, "inLanguage": "en"}</script>
+  <!-- schema-webpage:https://atlasagro.co.in/products -->
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://atlasagro.co.in/products#webpage", "url": "https://atlasagro.co.in/products", "name": "Products | Dehydrated, Spray Dried & Spices | Atlas Agro", "description": "Explore our product range: dehydrated vegetables & fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.", "isPartOf": {"@id": "https://atlasagro.co.in#website"}, "about": {"@id": "https://atlasagro.co.in#organization"}, "inLanguage": "en"}</script>
+
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Product Categories", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dehydrated Products", "url": "https://atlasagro.co.in/products/dehydrated-products.html"}, {"@type": "ListItem", "position": 2, "name": "Spray Dried Products", "url": "https://atlasagro.co.in/products/spray-dried-products.html"}, {"@type": "ListItem", "position": 3, "name": "Spices", "url": "https://atlasagro.co.in/products/spices.html"}]}</script>
+
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://atlasagro.co.in/"}, {"@type": "SiteNavigationElement", "position": 2, "name": "Products", "url": "https://atlasagro.co.in/products/"}, {"@type": "SiteNavigationElement", "position": 3, "name": "Dehydrated Products", "url": "https://atlasagro.co.in/products/dehydrated-products.html"}, {"@type": "SiteNavigationElement", "position": 4, "name": "Spray Dried Products", "url": "https://atlasagro.co.in/products/spray-dried-products.html"}, {"@type": "SiteNavigationElement", "position": 5, "name": "Spices", "url": "https://atlasagro.co.in/products/spices.html"}]}</script>
 
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://atlasagro.co.in/"},
-      {"@type":"ListItem","position":2,"name":"FAQ","item":"https://atlasagro.co.in/faq.html"}
-    ]
+    "@type":"Organization",
+    "name":"Atlas Agro Industries Pvt Ltd",
+    "url":"https://atlasagro.co.in",
+    "contactPoint":{
+      "@type":"ContactPoint",
+      "contactType":"sales",
+      "url":"https://atlasagro.co.in/contact.html"
+    }
   }
   </script>
+
 </head>
+<body class="bg-brand-50 text-ink antialiased"
+      x-data="siteApp()"
+      x-init="init()">
 
-<body class="min-h-screen">
-  <div class="w-full bg-mint border-b border-slate-200">
-    <div class="mx-auto max-w-6xl px-4 md:px-8 py-2 text-xs text-slateish flex items-center justify-between gap-3">
-      <div class="flex flex-wrap items-center gap-2">
-        <span>✅ Bulk Supply</span><span>·</span><span>✅ Export-ready</span><span>·</span><span>✅ Custom Blends for Soups / Noodles / Ready Meals</span>
-      </div>
-      <div class="flex items-center gap-3">
-        <a class="hover:underline" href="/#lang">EN</a><span class="text-slate-300">|</span>
-        <a class="hover:underline" href="/#lang">हिंदी</a><span class="text-slate-300">|</span>
-        <a class="hover:underline" href="/#lang">मराठी</a>
-        <a class="hover:underline" href="/quote.html">Get a Quote</a>
-        <a class="hover:underline" href="/brochure.html">Download Brochure</a>
-      </div>
+  <div class="sticky-cta">
+    <a class="quote" href="/contact.html">Get Bulk Quote</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/919867630682?text=Hi+Atlas+Agro%2C+I+am+looking+for+bulk+your+products.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="/contact.html">Get Bulk Quote</a>
+      <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/919867630682?text=Hi+Atlas+Agro%2C+I+am+looking+for+bulk+your+products.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 
-  <header class="bg-white/80 backdrop-blur border-b border-slate-200">
-    <div class="mx-auto max-w-6xl px-4 md:px-8 py-4 flex items-center justify-between gap-6">
-      <a href="/" class="flex items-center gap-3">
-        <img src="/assets/atlas-logo.png" alt="Atlas Agro" class="h-10 w-10 rounded-full border border-slate-200 bg-white" />
-        <div>
-          <div class="font-extrabold tracking-tight">ATLAS AGRO INDUSTRIES PRIVATE LTD</div>
-          <div class="text-xs text-slateish">PREMIUM DEHYDRATED VEGETABLES &amp; FRUITS</div>
-        </div>
-      </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a class="hover:text-brand" href="/">Home</a>
-        <a class="hover:text-brand" href="/products/">Products</a>
-        <a class="hover:text-brand" href="/industries.html">Industries</a>
-        <a class="hover:text-brand" href="/quality.html">Quality</a>
-        <a class="hover:text-brand" href="/gallery.html">Gallery</a>
-        <a class="text-brand font-semibold" href="/faq.html">FAQ</a>
-        <a class="hover:text-brand" href="/contact.html">Contact</a>
-      </nav>
-      <a href="https://wa.me/919867630682" class="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-white text-sm font-semibold shadow-soft hover:bg-brand2">WhatsApp →</a>
-    </div>
-  </header>
-
-  <main class="mx-auto max-w-6xl px-4 md:px-8 py-10">
-    <nav aria-label="Breadcrumb" class="mb-6">
-      <div class="inline-flex items-center gap-2 pill rounded-full px-4 py-2 text-sm">
-        <a class="text-slateish hover:text-brand" href="/">Home</a>
-        <span class="text-slate-300">/</span>
-        <span class="text-brand font-semibold">FAQ</span>
+<!-- Top announcement -->
+  <div class="bg-brand-100 border-b border-brand-200 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 py-2 text-sm flex flex-wrap items-center justify-between gap-2">
+      <div class="text-ink">
+        ✅ Bulk Supply • ✅ Export-ready • ✅ Custom Blends for Soups / Noodles / Ready Meals
       </div>
+      <div class="flex items-center gap-3">
+
+        <!-- Language Switcher -->
+        <div class="hidden sm:flex items-center gap-2 text-xs border border-slate-200 rounded-full px-3 py-2 bg-white">
+          <button type="button" onclick="setLang('en')" class="hover:text-brand-700 font-medium">EN</button>
+          <span class="text-slateish">|</span>
+          <button type="button" onclick="setLang('hi')" class="hover:text-brand-700 font-medium">हिंदी</button>
+          <span class="text-slateish">|</span>
+          <button type="button" onclick="setLang('mr')" class="hover:text-brand-700 font-medium">मराठी</button>
+        </div>
+
+        <a class="text-ink hover:text-ink underline underline-offset-4"
+           href="#quote">Get a Quote</a>
+        <a class="text-ink hover:text-ink underline underline-offset-4"
+           href="/assets/brochure.pdf" download>
+          Download Brochure
+        </a>
+      </div>
+    </div>
+  </div>
+<header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4 relative">
+
+<a href="#" class="flex items-center gap-3 md:gap-5 min-w-0">
+  <!-- BIG, BORDERLESS LOGO -->
+  <span class="flex items-center justify-center">
+    <img loading="eager" decoding="async"
+      src="/assets/atlas-agro-logo.png"
+      alt="Atlas Agro Logo"
+      class="h-10 w-auto md:h-14 object-contain"
+    />
+  </span>
+
+  <div class="leading-tight min-w-0">
+  <!-- Mobile brand -->
+  <div class="block md:hidden font-semibold text-ink text-base">
+    ATLAS AGRO
+  </div>
+
+  <!-- Desktop brand -->
+  <div class="hidden md:block font-semibold text-ink text-lg">
+    ATLAS AGRO INDUSTRIES PRIVATE LTD
+  </div>
+
+  <div class="hidden md:block text-xs text-slateish tracking-wide uppercase">
+    PREMIUM DEHYDRATED VEGETABLES & FRUITS
+  </div>
+</div>
+
+</a>
+
+
+
+
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a class="hover:text-ink text-slateish" href="/" data-i18n="nav.home">Home</a>
+      <a class="hover:text-ink text-slateish" href="/products/" data-i18n="nav.products">Products</a>
+      <a class="hover:text-ink text-slateish" href="/industries/" data-i18n="nav.industries">Industries</a>
+      <a class="hover:text-ink text-slateish" href="/quality.html" data-i18n="nav.quality">Quality</a>
+      <a class="hover:text-ink text-slateish" href="/gallery.html" data-i18n="nav.gallery">Gallery</a>
+      <a class="hover:text-ink text-slateish" href="/faq.html" data-i18n="nav.faq">FAQ</a>
+      <a class="hover:text-ink text-slateish" href="/contact.html" data-i18n="nav.contact">Contact</a>
     </nav>
 
-    <h1 class="text-4xl font-extrabold tracking-tight">FAQs</h1>
-    <p class="mt-2 text-slateish max-w-2xl">Quick answers to common bulk buying questions for dehydrated products, spray dried ingredients and spices.</p>
+    <div class="flex items-center gap-3">
+      <a :href="whatsappLink"
+         class="hidden sm:inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
+        <span>WhatsApp</span>
+        <span aria-hidden="true">→</span>
+      </a>
 
-    <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
-      <h2 class="text-xl font-bold">Bulk buying &amp; ordering</h2>
-      <div class="mt-4 grid gap-3">
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">What is your MOQ for bulk orders?</summary><p class="mt-2 text-slateish">MOQ depends on product and packing format. Share product, grade/mesh, packaging, monthly volume and destination — we’ll confirm MOQ & availability.</p></details>
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">Do you support different mesh sizes and granulation?</summary><p class="mt-2 text-slateish">Yes. We can supply powders, flakes and granules. We confirm specs (mesh/grade) before bulk production.</p></details>
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">Do you offer packaging options and private label?</summary><p class="mt-2 text-slateish">We support bulk/export packaging formats. Private label can be discussed based on quantity, destination and compliance needs.</p></details>
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">Are your products suitable for export?</summary><p class="mt-2 text-slateish">Yes. We support export-friendly labeling & packing guidance and documentation on request.</p></details>
+      
+      <!-- Mobile Language Switcher -->
+      <div class="md:hidden flex items-center gap-1 text-[11px] border border-slate-200 rounded-2xl px-2 py-2 bg-white card-hover">
+        <button type="button" onclick="setLang('en')" class="px-1 font-medium hover:text-brand-700">EN</button>
+        <span class="text-slateish">|</span>
+        <button type="button" onclick="setLang('hi')" class="px-1 font-medium hover:text-brand-700">हिं</button>
+        <span class="text-slateish">|</span>
+        <button type="button" onclick="setLang('mr')" class="px-1 font-medium hover:text-brand-700">मर</button>
+      </div>
+      <button class="md:hidden rounded-2xl border border-slate-200 px-3 py-2 hover:bg-white"
+              @click="mobileOpen = !mobileOpen"
+              aria-label="Toggle menu">
+        ☰
+      </button>
+    </div>
+  </div>
+</header>
+<main class="max-w-7xl mx-auto px-4 py-10">
+  <div class="max-w-3xl">
+        <section class="container" style="padding: 28px 0 10px;">
+      <div class="breadcrumb-pill">
+        <a href="/">Home</a><span class="sep">/</span><span class="text-brand font-semibold">FAQs</span>
       </div>
     </section>
+    <section class="container" style="padding: 10px 0 50px;">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-ink">FAQs</h1>
+        <p class="mt-3 text-slateish">
+          Quick answers for bulk buying, specifications, packaging and quality checks.
+          If you need a custom quote, share your product, target mesh/grade, monthly volume and destination.
+        </p>
 
-    <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
-      <h2 class="text-xl font-bold">Quality &amp; compliance</h2>
-      <div class="mt-4 grid gap-3">
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">Can you share specification sheets (moisture, mesh, etc.)?</summary><p class="mt-2 text-slateish">Yes. Share the product and intended application and we’ll share typical specs and confirm against your requirement.</p></details>
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">How do you ensure consistent batch quality?</summary><p class="mt-2 text-slateish">We confirm sample + specs before bulk supply and follow consistency checks per production lot.</p></details>
+        <div class="mt-8 space-y-4">
+          <!-- FAQ items -->
+          
+          <details class="card-hover rounded-2xl border border-slate-200 bg-white/70 px-5 py-4">
+            <summary class="cursor-pointer font-semibold text-ink flex items-center justify-between gap-4">
+              <span>What is your MOQ for bulk orders?</span>
+              <span class="text-slateish">+</span>
+            </summary>
+            <div class="pt-3 text-slateish leading-relaxed">
+              <p>MOQ depends on product and packing format. Share product, grade/mesh, packaging, monthly volume and destination — we’ll confirm MOQ &amp; availability.</p>
+            </div>
+          </details>
+
+          <details class="card-hover rounded-2xl border border-slate-200 bg-white/70 px-5 py-4">
+            <summary class="cursor-pointer font-semibold text-ink flex items-center justify-between gap-4">
+              <span>Do you support different mesh sizes and granulation?</span>
+              <span class="text-slateish">+</span>
+            </summary>
+            <div class="pt-3 text-slateish leading-relaxed">
+              <p>Yes. We can supply powders, flakes and granules. We confirm specs (mesh/grade) before bulk production.</p>
+            </div>
+          </details>
+
+          <details class="card-hover rounded-2xl border border-slate-200 bg-white/70 px-5 py-4">
+            <summary class="cursor-pointer font-semibold text-ink flex items-center justify-between gap-4">
+              <span>Do you offer packaging options and private label?</span>
+              <span class="text-slateish">+</span>
+            </summary>
+            <div class="pt-3 text-slateish leading-relaxed">
+              <p>We support bulk/export packaging formats. Private label can be discussed based on quantity, destination and compliance needs.</p>
+            </div>
+          </details>
+
+          <details class="card-hover rounded-2xl border border-slate-200 bg-white/70 px-5 py-4">
+            <summary class="cursor-pointer font-semibold text-ink flex items-center justify-between gap-4">
+              <span>Are your products suitable for export?</span>
+              <span class="text-slateish">+</span>
+            </summary>
+            <div class="pt-3 text-slateish leading-relaxed">
+              <p>Yes. We support export-friendly labeling &amp; packing guidance and documentation on request.</p>
+            </div>
+          </details>
+
+          <details class="card-hover rounded-2xl border border-slate-200 bg-white/70 px-5 py-4">
+            <summary class="cursor-pointer font-semibold text-ink flex items-center justify-between gap-4">
+              <span>Can you share specification sheets (moisture, mesh, etc.)?</span>
+              <span class="text-slateish">+</span>
+            </summary>
+            <div class="pt-3 text-slateish leading-relaxed">
+              <p>Yes. Share the product and intended application and we’ll share typical specs and confirm against your requirement.</p>
+            </div>
+          </details>
+
+          <details class="card-hover rounded-2xl border border-slate-200 bg-white/70 px-5 py-4">
+            <summary class="cursor-pointer font-semibold text-ink flex items-center justify-between gap-4">
+              <span>How do you ensure consistent batch quality?</span>
+              <span class="text-slateish">+</span>
+            </summary>
+            <div class="pt-3 text-slateish leading-relaxed">
+              <p>We confirm sample + specs before bulk supply and follow consistency checks per production lot.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="mt-10 rounded-2xl border border-slate-200 bg-white/70 p-6">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-bold text-ink">Need a fast enquiry?</h2>
+              <p class="mt-1 text-slateish">Use the Contact page — we usually respond within 24–48 hours.</p>
+            </div>
+            <a href="/contact.html" class="card-hover inline-flex items-center justify-center rounded-xl bg-brand px-5 py-3 font-semibold text-white">
+              Contact us
+            </a>
+          </div>
+        </div>
       </div>
     </section>
-
-    <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
-      <h2 class="text-xl font-bold">Fast enquiry</h2>
-      <p class="mt-2 text-slateish max-w-3xl">For quotation, share <b>product</b>, <b>grade/mesh</b>, <b>packaging</b>, <b>monthly volume</b> and <b>destination</b>. We’ll respond with availability and pricing.</p>
-      <div class="mt-4 flex flex-wrap gap-3">
-        <a href="https://wa.me/919867630682" class="inline-flex items-center rounded-full bg-brand px-5 py-2 text-white text-sm font-semibold shadow-soft hover:bg-brand2">Chat on WhatsApp</a>
-        <a href="/quote.html" class="inline-flex items-center rounded-full border border-brand px-5 py-2 text-brand text-sm font-semibold hover:bg-mint">Get a Quote</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="mt-14 border-t border-slate-200 text-sm text-slateish">
+<footer class="mt-14 border-t border-slate-200 text-sm text-slateish">
   <div class="mx-auto max-w-6xl px-4 md:px-8 py-8 flex flex-col md:flex-row gap-3 items-center justify-between">
     <p>© 2025 Atlas Agro Industries. All rights reserved.</p>
     <div class="flex flex-wrap gap-x-5 gap-y-2">
@@ -154,7 +505,5 @@
     </div>
   </div>
 </footer>
-
-  <script src="/assets/js/cta-tracking.js"></script>
 </body>
 </html>

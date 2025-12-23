@@ -261,6 +261,18 @@
 .breadcrumb-pill .sep{opacity:.55;font-weight:700;}
 
   .breadcrumb-pill .current{color: #2f6b45; font-weight:700;}
+
+
+    .hero-strip{margin:14px 0 18px;padding:14px 16px;border-radius:22px;border:1px solid rgba(15,23,42,.10);
+      background:linear-gradient(135deg, rgba(34,179,106,.16), rgba(255,255,255,.78));
+      display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;}
+    .hero-pills{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+    .hero-pill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.70);border:1px solid rgba(148,163,184,.45);
+      font-size:12px;color:rgba(15,23,42,.72);font-weight:800}
+    .hero-pill strong{color:rgba(15,23,42,.92)}
+    .fade-in{animation:fadeInUp .55s ease both}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is your MOQ for bulk orders?", "acceptedAnswer": {"@type": "Answer", "text": "MOQ depends on the product category and packaging. Share your requirement on WhatsApp and we’ll confirm MOQ and pricing."}}, {"@type": "Question", "name": "Do you support different mesh sizes and granulation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share available mesh sizes/grades for powders, flakes and granules depending on the product."}}, {"@type": "Question", "name": "Do you offer packaging options and private label?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We support bulk packs and selected packaging options. Private label/OEM can be discussed for repeat orders."}}, {"@type": "Question", "name": "Are your products suitable for export?", "acceptedAnswer": {"@type": "Answer", "text": "We can support export-oriented supply based on buyer requirements. Share destination country and specifications to align documents and packing."}}]}</script>
@@ -415,7 +427,7 @@
         <p style="margin:0 0 18px; font-size: 16px; color: rgba(15,23,42,0.75);">Quality and consistency for B2B buyers — export-ready specs, batch discipline, and documentation support.</p>
         
     <div class="grid" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px;">
-      <div class="soft-card" style="padding:18px;border-radius:18px;border:1px solid rgba(15,23,42,0.08);background: rgba(255,255,255,0.6);">
+      <div class="soft-card card-hover" style="padding:18px;border-radius:18px;border:1px solid rgba(15,23,42,0.08);background: rgba(255,255,255,0.6);">
         <h2 style="margin:0 0 8px;font-size:18px;">Typical specs supported</h2>
         <ul style="margin:0;padding-left:18px;color:rgba(15,23,42,0.75);line-height:1.7;">
           <li>Moisture, mesh size / grade, color & aroma expectations</li>
@@ -423,7 +435,7 @@
           <li>COA / batch documentation on request</li>
         </ul>
       </div>
-      <div class="soft-card" style="padding:18px;border-radius:18px;border:1px solid rgba(15,23,42,0.08);background: rgba(255,255,255,0.6);">
+      <div class="soft-card card-hover" style="padding:18px;border-radius:18px;border:1px solid rgba(15,23,42,0.08);background: rgba(255,255,255,0.6);">
         <h2 style="margin:0 0 8px;font-size:18px;">How we support procurement</h2>
         <ul style="margin:0;padding-left:18px;color:rgba(15,23,42,0.75);line-height:1.7;">
           <li>Sample + spec confirmation before bulk supply</li>
@@ -432,23 +444,24 @@
         </ul>
       </div>
     </div>
-    <div class="section-divider" aria-hidden="true"></div>
+    
+    <div class="hero-strip fade-in">
+      <div class="hero-pills">
+        <span class="hero-pill">✅ <strong>COA</strong> on request</span>
+        <span class="hero-pill">📦 Export packaging support</span>
+        <span class="hero-pill">⚡ Fast quote for bulk orders</span>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a class="btn" href="/contact.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:var(--brand-700,#1f6f4a);color:#fff;text-decoration:none;font-weight:800;">Get a quote →</a>
+        <a class="btn" href="/buyers-guide/" style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid rgba(15,23,42,0.12);color:rgba(15,23,42,.88);text-decoration:none;font-weight:800;">Procurement guide →</a>
+      </div>
+    </div>
+<div class="section-divider" aria-hidden="true"></div>
     <p style="margin:0;color:rgba(15,23,42,0.75);">For quotation, share MOQ, mesh/grade, packaging and destination. Use WhatsApp or the quote form.</p>
     
       </div>
     </section>
-    14 pt-8 border-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
-        <div>© <span x-text="new Date().getFullYear()"></span> Atlas Agro Industries. All rights reserved.</div>
-        <div class="flex items-center gap-4">
-          <a class="hover:text-slateish" href="/products/">Products</a>
-          <a class="hover:text-brand-700" href="/why-atlas-agro.html">Why Atlas Agro</a>
-          <a class="hover:text-slateish" href="/quality.html">Quality</a>
-          <a class="hover:text-slateish" href="/contact.html">Contact</a>
-        </div>
-      </footer>
 </div>
-  </section>
-
   <!-- Spec modal -->
   <div x-show="modalOpen" x-transition
        class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50"

@@ -405,6 +405,7 @@
 <main class="max-w-7xl mx-auto px-4 py-10">
   <div class="max-w-3xl">
     
+  <d
     <section class="container" style="padding: 28px 0 10px;">
       <div class="breadcrumb-pill">
         <a href="/">Home</a><span class="sep">/</span><span class="text-brand font-semibold">Contact</span>
@@ -416,71 +417,40 @@
         <p style="margin:0 0 18px; font-size: 16px; color: rgba(15,23,42,0.75);">Share your requirement (product, mesh/grade, MOQ, packaging and destination). We reply with pricing and availability.</p>
         
     <div class="grid" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:18px;">
-      <div class="card-hover" style="padding:18px;border-radius:18px;border:1px solid rgba(15,23,42,0.08);background: rgba(255,255,255,0.6);">
+      <div style="padding:18px;border-radius:18px;border:1px solid rgba(15,23,42,0.08);background: rgba(255,255,255,0.6);">
         <h2 style="margin:0 0 8px;font-size:18px;">WhatsApp</h2>
         <p style="margin:0 0 12px;color:rgba(15,23,42,0.75);">Fastest way for bulk enquiry.</p>
         <a href="https://wa.me/919867630682" style="display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:#2f6f4e;color:#fff;text-decoration:none;font-weight:800;">Chat on WhatsApp →</a>
       </div>
-      <div class="card-hover" style="padding:18px;border-radius:18px;border:1px solid rgba(15,23,42,0.08);background: rgba(255,255,255,0.6);">
+      <div style="padding:18px;border-radius:18px;border:1px solid rgba(15,23,42,0.08);background: rgba(255,255,255,0.6);">
         <h2 style="margin:0 0 8px;font-size:18px;">Email</h2>
-        <p style="margin:0;color:rgba(15,23,42,0.75);">sales@atlasagro.co.in</p>
+        <p style="margin:0;color:rgba(15,23,42,0.75);">Add your business email here later (recommended for procurement).</p>
       </div>
     </div>
     <div class="section-divider" aria-hidden="true"></div>
     <h2 style="margin:0 0 8px;font-size:18px;">What to send for a quick quote</h2>
-    
-    <div class="soft-card card-hover" style="padding:18px;border-radius:18px;border:1px solid rgba(15,23,42,0.10);background:rgba(255,255,255,.72);backdrop-filter:blur(8px);">
-      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
-        <label style="display:flex;flex-direction:column;gap:6px;">
-          <span style="font-size:12px;color:rgba(15,23,42,.70);font-weight:700;">Product</span>
-          <input id="qqProduct" type="text" placeholder="Onion flakes / garlic powder / banana powder"
-                 style="padding:12px 12px;border-radius:14px;border:1px solid rgba(15,23,42,0.12);outline:none;background:white;" />
-        </label>
-        <label style="display:flex;flex-direction:column;gap:6px;">
-          <span style="font-size:12px;color:rgba(15,23,42,.70);font-weight:700;">Format</span>
-          <select id="qqFormat" style="padding:12px 12px;border-radius:14px;border:1px solid rgba(15,23,42,0.12);outline:none;background:white;">
-            <option value="">Select</option>
-            <option>Powder</option>
-            <option>Flakes</option>
-            <option>Granules</option>
-            <option>Slices</option>
-            <option>Custom</option>
-          </select>
-        </label>
-        <label style="display:flex;flex-direction:column;gap:6px;">
-          <span style="font-size:12px;color:rgba(15,23,42,.70);font-weight:700;">Mesh / grade</span>
-          <input id="qqMesh" type="text" placeholder="e.g., 40 mesh / A-grade"
-                 style="padding:12px 12px;border-radius:14px;border:1px solid rgba(15,23,42,0.12);outline:none;background:white;" />
-        </label>
-        <label style="display:flex;flex-direction:column;gap:6px;">
-          <span style="font-size:12px;color:rgba(15,23,42,.70);font-weight:700;">MOQ / volume</span>
-          <input id="qqMoq" type="text" placeholder="e.g., 200 kg / month"
-                 style="padding:12px 12px;border-radius:14px;border:1px solid rgba(15,23,42,0.12);outline:none;background:white;" />
-        </label>
-        <label style="display:flex;flex-direction:column;gap:6px;">
-          <span style="font-size:12px;color:rgba(15,23,42,.70);font-weight:700;">Packaging</span>
-          <input id="qqPack" type="text" placeholder="Bulk / export / 25kg bags"
-                 style="padding:12px 12px;border-radius:14px;border:1px solid rgba(15,23,42,0.12);outline:none;background:white;" />
-        </label>
-        <label style="display:flex;flex-direction:column;gap:6px;">
-          <span style="font-size:12px;color:rgba(15,23,42,.70);font-weight:700;">Destination</span>
-          <input id="qqDest" type="text" placeholder="City / country"
-                 style="padding:12px 12px;border-radius:14px;border:1px solid rgba(15,23,42,0.12);outline:none;background:white;" />
-        </label>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px;">
-        <button type="button" class="btn" id="qqSendBtn"
-                style="display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;background:var(--brand-700,#1f6f4a);color:#fff;text-decoration:none;font-weight:800;border:none;cursor:pointer;">
-          Send on WhatsApp →
-        </button>
-        <span style="font-size:12px;color:rgba(15,23,42,.65);">Tip: add destination + packaging for faster pricing.</span>
-      </div>
-    </div>
-
+    <ul style="margin:0;padding-left:18px;color:rgba(15,23,42,0.75);line-height:1.7;">
+      <li>Product + format (powder / flakes / granules)</li>
+      <li>Mesh / grade</li>
+      <li>MOQ / monthly volume</li>
+      <li>Packaging (bulk / export)</li>
+      <li>Destination (city/country) + compliance needs</li>
+    </ul>
     
       </div>
     </section>
+    rder-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
+        <div>© <span x-text="new Date().getFullYear()"></span> Atlas Agro Industries. All rights reserved.</div>
+        <div class="flex items-center gap-4">
+          <a class="hover:text-slateish" href="/products/">Products</a>
+          <a class="hover:text-brand-700" href="/why-atlas-agro.html">Why Atlas Agro</a>
+          <a class="hover:text-slateish" href="/quality.html">Quality</a>
+          <a class="hover:text-slateish" href="/contact.html">Contact</a>
+        </div>
+      </footer>
 </div>
+  </section>
+
   <!-- Spec modal -->
   <div x-show="modalOpen" x-transition
        class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50"
@@ -1208,27 +1178,5 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   </div>
 </footer>
-
-<script>
-(function() {
-  const btn = document.getElementById('qqSendBtn');
-  if(!btn) return;
-  btn.addEventListener('click', function() {
-    const v = (id)=> (document.getElementById(id)?.value || '').trim();
-    const parts = [];
-    const product = v('qqProduct'); if(product) parts.push(`Product: ${product}`);
-    const format = v('qqFormat'); if(format) parts.push(`Format: ${format}`);
-    const mesh = v('qqMesh'); if(mesh) parts.push(`Mesh/Grade: ${mesh}`);
-    const moq = v('qqMoq'); if(moq) parts.push(`MOQ/Volume: ${moq}`);
-    const pack = v('qqPack'); if(pack) parts.push(`Packaging: ${pack}`);
-    const dest = v('qqDest'); if(dest) parts.push(`Destination: ${dest}`);
-    const msg = parts.length ? `Hi Atlas Agro, I need a quote.\n\n${parts.join('\n')}` :
-      'Hi Atlas Agro, I need a quote. Please share MOQ, specs (mesh/grade), packaging options and pricing.';
-    const url = 'https://wa.me/919867630682?text=' + encodeURIComponent(msg);
-    window.open(url, '_blank', 'noopener,noreferrer');
-  });
-})();
-</script>
-
 </body>
 </html>

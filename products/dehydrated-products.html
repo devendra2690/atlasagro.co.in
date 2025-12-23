@@ -528,12 +528,6 @@ We manufacture export-quality dehydrated ingredients for food manufacturers, HoR
 
 
 <!-- SEO Content: What buyers usually ask -->
-
-<hr class="section-divider" aria-hidden="true"/>
-
-
-</main>
-
 <section class="section" id="specs">
   <div class="container">
     <h2 class="text-2xl font-bold text-slate-900">What buyers usually ask for</h2>
@@ -548,195 +542,6 @@ We manufacture export-quality dehydrated ingredients for food manufacturers, HoR
   </div>
 </section>
 
-<section class="section" id="applications">
-  <div class="container">
-    <h2 class="text-2xl font-bold text-slate-900">Applications</h2>
-    <p>Learn more about <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">bulk packaging options</a> and <a href="/buyers-guide/export-quality-standards-dehydrated-products.html">export quality standards</a> for this product.</p>
-<p class="mt-2 text-slateish">Our dehydrated ingredients are used by food processors and bulk buyers for consistent taste, shelf stability and easy handling.</p>
-    <ul class="mt-4 grid gap-3 md:grid-cols-2 text-slateish">
-      <li class="rounded-2xl border border-slate-200 bg-white/60 p-4">Instant soups, noodles & ready meals</li>
-      <li class="rounded-2xl border border-slate-200 bg-white/60 p-4">Snack seasoning, namkeen & spice mixes</li>
-      <li class="rounded-2xl border border-slate-200 bg-white/60 p-4">Sauces, gravies, pastes & marinades</li>
-      <li class="rounded-2xl border border-slate-200 bg-white/60 p-4">HORECA, catering & export supplies</li>
-    </ul>
-    <p>Learn more about <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">bulk packaging options</a> and <a href="/buyers-guide/export-quality-standards-dehydrated-products.html">export quality standards</a> for this product.</p>
-<p class="mt-4 text-slateish">Also explore: <a class="text-brand font-semibold hover:underline" href="/products/spices.html">Spices & mixes</a> and <a class="text-brand font-semibold hover:underline" href="/products/spray-dried-products.html">Spray dried products</a>.</p>
-  </div>
-</section>
-
-<section id="faq" class="section section-faq-gap">
-  <div class="container">
-    <h2 class="text-2xl font-bold text-slate-900">FAQs</h2>
-    <p>Learn more about <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">bulk packaging options</a> and <a href="/buyers-guide/export-quality-standards-dehydrated-products.html">export quality standards</a> for this product.</p>
-<p class="mt-2 text-slateish">Quick answers to common bulk buying questions.</p>
-    <details class="mt-3 rounded-2xl border border-slate-200 bg-white/70 p-4">
-  <summary class="cursor-pointer font-semibold text-slate-900">What products do you supply under dehydrated range?</summary>
-  <div class="mt-2 text-slateish">Dehydrated vegetables, fruit powders, flakes and custom blends depending on seasonal availability and requirement.</div>
-</details>
-<details class="mt-3 rounded-2xl border border-slate-200 bg-white/70 p-4">
-  <summary class="cursor-pointer font-semibold text-slate-900">Can you share moisture/specification sheet?</summary>
-  <div class="mt-2 text-slateish">Yes. We can share typical specs and can align to buyer specs where feasible.</div>
-</details>
-<details class="mt-3 rounded-2xl border border-slate-200 bg-white/70 p-4">
-  <summary class="cursor-pointer font-semibold text-slate-900">How do I request a quote?</summary>
-  <div class="mt-2 text-slateish">Use the WhatsApp button on this page and send product + MOQ + packaging + destination details for a quick quotation.</div>
-</details>
-<details class="mt-3 rounded-2xl border border-slate-200 bg-white/70 p-4">
-  <summary class="cursor-pointer font-semibold text-slate-900">Do you supply for food processing and HORECA?</summary>
-  <div class="mt-2 text-slateish">Yes. We supply B2B ingredients for food manufacturers, HORECA and exporters.</div>
-</details>
-  </div>
-</section>
-
-
-
-
-
-
-<!-- SEO Content: Applications -->
-
-<div class="section-divider" aria-hidden="true"></div>
-
-
-
-
-
-<!-- SEO Content: Applications -->
-
-
-
-
-<!-- SEO Content: What buyers usually ask -->
-
-
-<div class="section-divider" aria-hidden="true"></div>
-
-
-
-<footer class="mt-14 pt-8 border-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
-        <div>© <span x-text="new Date().getFullYear()"></span> Atlas Agro Industries. All rights reserved.</div>
-        <div class="flex items-center gap-4">
-          <a class="hover:text-slateish" href="/products/">Products</a>
-          <a class="hover:text-brand-700" href="/why-atlas-agro.html">Why Atlas Agro</a>
-          <a class="hover:text-slateish" href="/quality.html">Quality</a>
-          <a class="hover:text-slateish" href="/contact.html">Contact</a>
-        </div>
-      </footer>
-</div>
-  </section>
-
-  <!-- Spec modal -->
-  <div x-show="modalOpen" x-transition
-       class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50"
-       @click.self="modalOpen=false">
-    <div class="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 card-hover">
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <div class="text-xs text-brand-800" x-text="modalProduct?.category"></div>
-          <div class="text-2xl font-bold mt-1" x-text="modalProduct?.name"></div>
-          <div class="text-slateish text-sm mt-2" x-text="modalProduct?.desc"></div>
-        </div>
-        <button class="rounded-2xl px-3 py-2 border border-slate-200 hover:bg-white"
-                @click="modalOpen=false" aria-label="Close">✕</button>
-      </div>
-
-      <div class="mt-5 grid gap-3 text-sm">
-        <template x-for="s in (modalProduct?.specs || [])" :key="s.k">
-          <div class="card-hover flex items-center justify-between border border-slate-200 rounded-2xl px-4 py-3">
-            <span class="text-slateish" x-text="s.k"></span>
-            <span class="text-ink font-semibold" x-text="s.v"></span>
-          </div>
-        </template>
-      </div>
-
-      <div class="mt-6 flex items-center justify-between gap-3 flex-wrap">
-        <a class="text-brand-800 hover:text-ink underline underline-offset-4"
-           :href="whatsappLinkForProduct(modalProduct?.name || '')">
-          Enquire on WhatsApp →
-        </a>
-        <button class="rounded-2xl px-4 py-2 border border-slate-200 hover:bg-white transition"
-                @click="modalOpen=false">
-          Close
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- App script -->
-  <script>
-    function siteApp() {
-      return {
-        init() {
-          // Ensure FAQs render on first load and update on language switch
-          this.refreshFaqs();
-          window.addEventListener("atlasLangChanged", () => this.refreshFaqs());
-        },
-
-        mobileOpen: false,
-
-        // Replace with your real WhatsApp number (country code + number, no +, no spaces)
-        whatsappNumber: "919867630682",
-        whatsappDefaultText: "Hello! I’m interested in dehydrated products. Please share pricing, MOQ, specs and availability.",
-
-        quote: { name: "", company: "", phone: "", email: "", product: "", message: "" },
-
-        categories: ["All", "Fruit", "Vegetable", "Onion & Garlic", "Herbs", "Custom Blends"],
-        selectedCategory: "All",
-
-        products: [
-          {
-            category: "Fruit",
-            tag: "Snacking / Ingredients",
-            name: "Assorted Dehydrated Fruit Chips",
-            desc: "Natural-looking fruit chips & pieces for snacks, toppings, bakery, and trail mixes.",
-            badges: ["Bulk supply", "Custom cut", "Private label"],
-            specs: [
-              { k: "Variants", v: "Chips / pieces" },
-              { k: "Packing", v: "1–10 kg (custom)" },
-              { k: "MOQ", v: "Depends on SKU" },
-              { k: "Customization", v: "Yes" }
-            ]
-          },
-          {
-            category: "Vegetable",
-            tag: "B2B / Food processing",
-            name: "Mixed Dehydrated Vegetable Mix",
-            desc: "Dehydrated vegetable blends used in ready meals, instant mixes, and seasoning lines.",
-            badges: ["Consistent mix", "Low moisture", "Bulk"],
-            specs: [
-              { k: "Application", v: "RTC/RTD, seasonings" },
-              { k: "Packing", v: "5–25 kg" },
-              { k: "MOQ", v: "Depends on mix" }
-            ]
-          },
-          {
-            category: "Onion & Garlic",
-            tag: "High demand",
-            name: "Onion Powder",
-            desc: "Strong aroma, uniform granulation options for sauces, gravies, snacks, masalas.",
-            badges: ["Fine/Coarse", "Stable", "B2B"],
-            specs: [
-              { k: "Granulation", v: "Fine/Medium/Coarse" },
-              { k: "Packing", v: "5–25 kg" },
-              { k: "MOQ", v: "Depends on grade" }
-            ]
-          },
-          {
-            category: "Onion & Garlic",
-            tag: "High demand",
-            name: "Garlic Powder",
-            desc: "Potent flavor for spice blends, marinades, seasonings, and noodles.",
-            badges: ["Consistent flavor", "Bulk", "Custom mesh"],
-            specs: [
-              { k: "Mesh", v: "As required" },
-              { k: "Packing", v: "5–25 kg" }
-            ]
-          },
-          {
-            category: "Vegetable",
-            tag: "Ingredient",
-            name: "Ginger Powder",
-            desc: "For beverages, spice mixes, bakery, and culinary applications.",
             badges: ["Aroma focused", "Bulk", "B2B"],
             specs: [
               { k: "Use", v: "Beverage / spice mixes" },
@@ -773,106 +578,12 @@ We manufacture export-quality dehydrated ingredients for food manufacturers, HoR
         faqBank: {
           en: [
             { q: "Do you supply in bulk for manufacturers?", a: "Yes — we support bulk supply with packaging options and repeatable batches.", open: true },
-            { q: "Can you make custom blends for soups/noodles?", a: "Yes. Share your target recipe and taste profile; we can create custom blends.", open: false },
-            { q: "What packaging do you support?", a: "Common options include 5–25 kg liners/laminated pouches and bulk packs. Private label is possible.", open: false },
-            { q: "Do you provide COA / batch details?", a: "We can share batch details and align documentation to your requirement.", open: false }
-          ],
-          hi: [
-            { q: "क्या आप मैन्युफैक्चरर्स के लिए बल्क सप्लाई करते हैं?", a: "हाँ — हम पैकेजिंग विकल्पों के साथ बल्क सप्लाई और रिपीटेबल बैच सपोर्ट करते हैं।", open: true },
-            { q: "क्या आप सूप/नूडल्स के लिए कस्टम ब्लेंड बना सकते हैं?", a: "हाँ। अपना टारगेट रेसिपी और टेस्ट प्रोफाइल शेयर करें — हम कस्टम ब्लेंड बना सकते हैं।", open: false },
-            { q: "आप कौन-कौन सी पैकेजिंग सपोर्ट करते हैं?", a: "आम विकल्प: 5–25 kg लाइनर/लैमिनेटेड पाउच और बल्क पैक। प्राइवेट लेबल संभव है।", open: false },
-            { q: "क्या आप COA / बैच डिटेल्स देते हैं?", a: "हम बैच डिटेल्स साझा कर सकते हैं और आपकी आवश्यकता के अनुसार डॉक्युमेंटेशन अलाइन कर सकते हैं।", open: false }
-          ],
-          mr: [
-            { q: "आपण मॅन्युफॅक्चरर्ससाठी बल्क सप्लाय करता का?", a: "होय — आम्ही पॅकेजिंग पर्यायांसह बल्क सप्लाय आणि रिपीटेबल बॅचेस सपोर्ट करतो.", open: true },
-            { q: "सूप/नूडल्ससाठी कस्टम ब्लेंड बनवू शकता का?", a: "होय. तुमची रेसिपी आणि टेस्ट प्रोफाइल शेअर करा — आम्ही कस्टम ब्लेंड तयार करू शकतो.", open: false },
-            { q: "तुम्ही कोणती पॅकेजिंग सपोर्ट करता?", a: "सामान्य पर्याय: 5–25 kg लाइनर/लॅमिनेटेड पाउच आणि बल्क पॅक्स. प्रायव्हेट लेबल शक्य आहे.", open: false },
-            { q: "तुम्ही COA / बॅच डिटेल्स देता का?", a: "आम्ही बॅच डिटेल्स शेअर करू शकतो आणि तुमच्या गरजेनुसार डॉक्युमेंटेशन अलाइन करू शकतो.", open: false }
-          ]
-        },
-        refreshFaqs() {
-          const lang = localStorage.getItem("atlasLang") || "en";
-          const bank = this.faqBank[lang] || this.faqBank.en;
-          this.faqs = bank.map((x, i) => ({ ...x, open: i === 0 }));
-        },
+            { q: "Can you make custom blends for soups/noodles?", a: "Yes. Share your target re
 
-        faqs: [],
+cipe and taste profile; we can create custom blends.", open: false },
+            { q: "What 
 
-
-        get whatsappLink() {
-          const text = encodeURIComponent(this.whatsappDefaultText);
-          return `https://wa.me/${this.whatsappNumber}?text=${text}`;
-        },
-
-        whatsappLinkForProduct(productName) {
-          const base = `Hello! I’m interested in: ${productName}. Please share pricing, MOQ, specs (mesh/moisture), packaging options and lead time.`;
-          return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(base)}`;
-        },
-
-        filteredProducts() {
-          if (this.selectedCategory === "All") return this.products;
-          return this.products.filter(p => p.category === this.selectedCategory);
-        },
-
-        openSpec(p) {
-          this.modalProduct = p;
-          this.modalOpen = true;
-        },
-
-        submitQuote() {
-          const msg =
-            `Hello! Quote request:%0A` +
-            `Name: ${encodeURIComponent(this.quote.name)}%0A` +
-            `Company: ${encodeURIComponent(this.quote.company || "-")}%0A` +
-            `Phone: ${encodeURIComponent(this.quote.phone)}%0A` +
-            `Email: ${encodeURIComponent(this.quote.email || "-")}%0A` +
-            `Interest: ${encodeURIComponent(this.quote.product || "-")}%0A` +
-            `Message: ${encodeURIComponent(this.quote.message || "-")}`;
-
-          window.open(`https://wa.me/${this.whatsappNumber}?text=${msg}`, "_blank");
-        },
-
-        init() {
-          // You can add analytics init here later (GA4, Meta Pixel, etc.)
-          this.refreshFaqs();
-          window.addEventListener("atlasLangChanged", () => this.refreshFaqs());
-
-        }
-      };
-    }
-  </script>
-
-<script>
-const translations = {
-  en: {
-    "contact.company":"Company",
-    "contact.email":"Email",
-    "contact.lead":"Tell us what you need — product, mesh, quantity, packing, and destination. We respond fast on WhatsApp.",
-    "contact.mapTitle":"Atlas Agro Location",
-    "contact.message":"Message",
-    "contact.name":"Name",
-    "contact.send":"Send Enquiry",
-    "cta.primary":"Request Pricing / MOQ",
-    "cta.secondary":"Explore Products",
-    "faq.lead":"Quick answers for manufacturers, traders, and brand owners.",
-    "gallery.card1.desc":"Assorted chips & pieces",
-    "gallery.card1.title":"Fruit Chips",
-    "gallery.card2.desc":"Ready meal blends",
-    "gallery.card2.title":"Vegetable Mix",
-    "gallery.card3.desc":"Powders & granules",
-    "gallery.card3.title":"Onion / Garlic",
-    "gallery.card4.desc":"Soup & noodle mixes",
-    "gallery.card4.title":"Custom Blends",
-    "gallery.card5.desc":"Leafy greens & flakes",
-    "gallery.card5.title":"Herbs",
-    "gallery.card6.desc":"Bulk & retail options",
-    "gallery.card6.title":"Packaging",
-    "gallery.card7.desc":"Batch consistency",
-    "gallery.card7.title":"Quality Checks",
-    "gallery.card8.desc":"Reliable shipments",
-    "gallery.card8.title":"Dispatch",
-    "gallery.view":"View",
-    "hero.desc":"Atlas Agro Industries supplies export-quality dehydrated fruits and vegetables, including powders, flakes and custom blends for food manufacturers, HORECA and private label brands. We support bulk orders and consistent quality for B2B buyers across India and international markets.",
+upplies export-quality dehydrated fruits and vegetables, including powders, flakes and custom blends for food manufacturers, HORECA and private label brands. We support bulk orders and consistent quality for B2B buyers across India and international markets.",
     "hero.title":"<span class='text-brand-800'>Natural. Safe. Shelf‑Stable.</span> Premium <span class='text-brand-800'>Dehydrated Powders</span>, Fruit Chips &amp; Custom Blends",
     "industries.card1.desc":"Seasonings, sauces, RTC/RTD, frozen foods.",
     "industries.card1.title":"Food Manufacturers",
@@ -901,7 +612,9 @@ const translations = {
     "product.viewSpecs":"View Specs",
     "quality.card1.desc":"Visual sorting, odor, moisture, infestation check.",
     "quality.card1.title":"Incoming RM Checks",
-    "quality.card2.desc":"Moisture, mesh size, color, aroma, foreign matter.",
+    "quality.card2.desc":"Moisture, mesh size, color, aroma, foreig
+
+n matter.",
     "quality.card2.title":"Batch QC",
     "quality.card3.desc":"Lot tracking + basic documentation.",
     "quality.card3.title":"Traceability",

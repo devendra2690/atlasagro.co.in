@@ -439,41 +439,54 @@
       </div>
 
       <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- Image placeholder block (replace with real product images) -->
+        <!-- Product images -->
         <div class="lg:col-span-7">
-          <div class="rounded-3xl border border-slate-200 bg-slate-50 overflow-hidden aspect-[16/9] flex items-center justify-center">
-            <div class="text-center p-6">
-              <svg class="mx-auto h-10 w-10 text-slate-400" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M21 16V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M3 16l4-4a2 2 0 0 1 2.8 0l2.4 2.4a2 2 0 0 0 2.8 0L19 12l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3 16v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M9 10.5a1.25 1.25 0 1 0 0-2.5 1.25 1.25 0 0 0 0 2.5Z" fill="currentColor"/>
-              </svg>
-              <div class="mt-2 text-sm font-semibold text-slate-700">Product image</div>
-              <div class="mt-1 text-xs text-slate-500">Add a hero image for Banana Powder (e.g., <span class="font-mono">/assets/products/banana/hero.jpg</span>)</div>
+          <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden">
+            <div class="aspect-[16/9] bg-slate-50">
+              <img
+                id="productMainImage"
+                src="../assets/placeholders/product-hero.svg"
+                alt="Banana powder product image"
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
 
         <div class="lg:col-span-5">
           <div class="grid grid-cols-3 gap-4">
-            <div class="rounded-2xl border border-slate-200 bg-white aspect-[4/3] flex items-center justify-center text-xs text-slate-500">Image 1</div>
-            <div class="rounded-2xl border border-slate-200 bg-white aspect-[4/3] flex items-center justify-center text-xs text-slate-500">Image 2</div>
-            <div class="rounded-2xl border border-slate-200 bg-white aspect-[4/3] flex items-center justify-center text-xs text-slate-500">Image 3</div>
+            <button type="button"
+              class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ring-2 ring-emerald-500"
+              data-src="../assets/placeholders/product-hero.svg"
+              aria-label="View image 1">
+              <img src="../assets/placeholders/product-thumb-1.svg" alt="Banana powder image thumbnail 1" class="h-full w-full object-cover" loading="lazy"/>
+            </button>
+
+            <button type="button"
+              class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              data-src="../assets/placeholders/product-alt-1.svg"
+              aria-label="View image 2">
+              <img src="../assets/placeholders/product-thumb-2.svg" alt="Banana powder image thumbnail 2" class="h-full w-full object-cover" loading="lazy"/>
+            </button>
+
+            <button type="button"
+              class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              data-src="../assets/placeholders/product-alt-2.svg"
+              aria-label="View image 3">
+              <img src="../assets/placeholders/product-thumb-3.svg" alt="Banana powder image thumbnail 3" class="h-full w-full object-cover" loading="lazy"/>
+            </button>
           </div>
 
           <div class="mt-4 rounded-2xl border border-slate-200 bg-white p-4">
-            <div class="text-xs font-semibold text-slate-700">Image guidelines</div>
-            <ul class="mt-2 space-y-1 text-xs text-slate-600">
-              <li>• Use clean, natural product photos (powder + packaging).</li>
-              <li>• Keep backgrounds light to match the site theme.</li>
-              <li>• Recommended size: 1600×900 (hero) and 600×450 (thumbs).</li>
-            </ul>
+            <div class="text-xs font-semibold text-slate-700">Add your real images</div>
+            <div class="mt-1 text-xs text-slate-600">
+              Replace the placeholder files inside <span class="font-mono">/assets/products/banana/</span> (hero + 2–3 thumbnails).
+            </div>
           </div>
         </div>
-      </div>
+<!-- /Product images -->
 
-      <div class='mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
 <div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">
   <div class="text-xs text-slateish">Mesh size</div>
   <div class="mt-2 text-lg font-semibold">Fine / Medium / Coarse</div>
@@ -1261,5 +1274,28 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script src="/assets/js/cta-tracking.js"></script>
+<script>
+  (function () {
+    function setActiveThumb(activeBtn) {
+      document.querySelectorAll('.product-thumb').forEach(function (btn) {
+        btn.classList.remove('ring-2', 'ring-emerald-500');
+      });
+      activeBtn.classList.add('ring-2', 'ring-emerald-500');
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var mainImg = document.getElementById('productMainImage');
+      if (!mainImg) return;
+
+      document.querySelectorAll('.product-thumb').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var src = btn.getAttribute('data-src');
+          if (src) mainImg.setAttribute('src', src);
+          setActiveThumb(btn);
+        });
+      });
+    });
+  })();
+</script>
 </body>
 </html>

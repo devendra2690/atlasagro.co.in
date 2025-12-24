@@ -267,6 +267,13 @@
 .breadcrumb-pill .sep{opacity:.55;font-weight:700;}
 
   .breadcrumb-pill .current{color: #2f6b45; font-weight:700;}
+
+    /* Product image viewer */
+    .product-hero-zoom img{transition:transform .5s cubic-bezier(.2,.8,.2,1);}
+    @media (hover:hover) and (pointer:fine){
+      .product-hero-zoom:hover img{transform:scale(1.06);}
+    }
+
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What products do you supply under dehydrated range?", "acceptedAnswer": {"@type": "Answer", "text": "Dehydrated vegetables, fruit powders, flakes and custom blends depending on seasonal availability and requirement."}}, {"@type": "Question", "name": "Can you share moisture/specification sheet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share typical specs and can align to buyer specs where feasible."}}, {"@type": "Question", "name": "How do I request a quote?", "acceptedAnswer": {"@type": "Answer", "text": "Use the WhatsApp button on this page and send product + MOQ + packaging + destination details for a quick quotation."}}, {"@type": "Question", "name": "Do you supply for food processing and HORECA?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We supply B2B ingredients for food manufacturers, HORECA and exporters."}}]}</script>
@@ -446,6 +453,7 @@
               <img
                 id="productMainImage"
                 src="../assets/products/banana/hero.png"
+                onerror="this.onerror=null;this.src=\'/assets/atlas-agro-logo.png\';"
                 alt="Banana powder product image"
                 class="h-full w-full object-cover"
                 loading="lazy"
@@ -465,14 +473,14 @@
 
             <button type="button"
               class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              data-src="../assets/products/banana/hero.png"
+              data-src="../assets/products/banana/thumb-2.png"
               aria-label="View image 2">
               <img src="../assets/products/banana/thumb-2.png" alt="Dehydrated Banana Granules image thumbnail 2" class="h-full w-full object-cover" loading="lazy"/>
             </button>
 
             <button type="button"
               class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              data-src="../assets/products/banana/hero.png"
+              data-src="../assets/products/banana/thumb-3.png"
               aria-label="View image 3">
               <img src="../assets/products/banana/thumb-3.png" alt="Dehydrated Chips image thumbnail 3" class="h-full w-full object-cover" loading="lazy"/>
             </button>
@@ -1300,5 +1308,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })();
 </script>
+
+<script>
+  (function () {
+    const main = document.getElementById("productMainImage");
+    const thumbs = Array.from(document.querySelectorAll(".product-thumb"));
+    if (!main || thumbs.length === 0) return;
+
+    function setActive(btn) {
+      thumbs.forEach(b => {
+        b.classList.remove("ring-emerald-500");
+        b.classList.remove("ring-2");
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("ring-2", "ring-emerald-500");
+      btn.setAttribute("aria-pressed", "true");
+    }
+
+    thumbs.forEach((btn) => {
+      btn.setAttribute("aria-pressed", btn.classList.contains("ring-emerald-500") ? "true" : "false");
+      btn.addEventListener("click", () => {
+        const nextSrc = btn.getAttribute("data-src");
+        if (nextSrc) {
+          main.src = nextSrc;
+          setActive(btn);
+        }
+      });
+      btn.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+  })();
+</script>
+
 </body>
 </html>

@@ -267,6 +267,13 @@
 .breadcrumb-pill .sep{opacity:.55;font-weight:700;}
 
   .breadcrumb-pill .current{color: #2f6b45; font-weight:700;}
+
+    /* Product image viewer */
+    .product-hero-zoom img{transition:transform .5s cubic-bezier(.2,.8,.2,1);}
+    @media (hover:hover) and (pointer:fine){
+      .product-hero-zoom:hover img{transform:scale(1.06);}
+    }
+
 </style>
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What products do you supply under dehydrated range?", "acceptedAnswer": {"@type": "Answer", "text": "Dehydrated vegetables, fruit powders, flakes and custom blends depending on seasonal availability and requirement."}}, {"@type": "Question", "name": "Can you share moisture/specification sheet?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share typical specs and can align to buyer specs where feasible."}}, {"@type": "Question", "name": "How do I request a quote?", "acceptedAnswer": {"@type": "Answer", "text": "Use the WhatsApp button on this page and send product + MOQ + packaging + destination details for a quick quotation."}}, {"@type": "Question", "name": "Do you supply for food processing and HORECA?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We supply B2B ingredients for food manufacturers, HORECA and exporters."}}]}</script>
@@ -444,11 +451,11 @@
             <div class="aspect-[16/9] bg-slate-50">
               <img
                 id="productMainImage"
-                src="../assets/placeholders/product-hero.svg"
+                src="../assets/products/onion/hero.png"
                 alt="Dehydrated Onion Flakes product image"
                 class="h-full w-full object-cover"
                 loading="lazy"
-              />
+              / onerror="this.onerror=null;this.src='/assets/atlas-agro-logo.png';">
             </div>
           </div>
         </div>
@@ -457,23 +464,23 @@
           <div class="grid grid-cols-3 gap-4">
             <button type="button"
               class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ring-2 ring-emerald-500"
-              data-src="../assets/placeholders/product-hero.svg"
+              data-src="../assets/products/onion/hero.png"
               aria-label="View image 1">
-              <img src="../assets/placeholders/product-thumb-1.svg" alt="Dehydrated Onion Flakes product image 1" class="h-full w-full object-cover" loading="lazy"/>
+              <img src="../assets/products/onion/thumb-1.png" alt="Dehydrated Onion Flakes product image 1" class="h-full w-full object-cover" loading="lazy"/>
             </button>
 
             <button type="button"
               class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              data-src="../assets/placeholders/product-alt-1.svg"
+              data-src="../assets/products/onion/thumb-2.png"
               aria-label="View image 2">
-              <img src="../assets/placeholders/product-thumb-2.svg" alt="Dehydrated Onion Flakes product image 2" class="h-full w-full object-cover" loading="lazy"/>
+              <img src="../assets/products/onion/thumb-2.png" alt="Dehydrated Onion Flakes product image 2" class="h-full w-full object-cover" loading="lazy"/>
             </button>
 
             <button type="button"
               class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              data-src="../assets/placeholders/product-alt-2.svg"
+              data-src="../assets/products/onion/thumb-3.png"
               aria-label="View image 3">
-              <img src="../assets/placeholders/product-thumb-3.svg" alt="Dehydrated Onion Flakes product image 3" class="h-full w-full object-cover" loading="lazy"/>
+              <img src="../assets/products/onion/thumb-3.png" alt="Dehydrated Onion Flakes product image 3" class="h-full w-full object-cover" loading="lazy"/>
             </button>
           </div>
 
@@ -1298,6 +1305,23 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   })();
+</script>
+
+<script>
+(function(){
+  function setActiveNav(){
+    var path = (location.pathname || "/").toLowerCase();
+    var home = document.querySelector('a[data-nav="home"]');
+    var products = document.querySelector('a[data-nav="products"]');
+    if(products && path.startsWith("/products")) {
+      products.classList.add("text-brand","font-semibold");
+    } else if(home && path === "/") {
+      home.classList.add("text-brand","font-semibold");
+    }
+  }
+  if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", setActiveNav); }
+  else { setActiveNav(); }
+})();
 </script>
 </body>
 </html>

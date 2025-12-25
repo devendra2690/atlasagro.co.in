@@ -364,6 +364,30 @@
 <p class="text-slateish max-w-3xl">
 We manufacture export-quality dehydrated ingredients for food manufacturers, HoReCa and private label brands. Share your target application, mesh size and MOQ to get a fast quotation.
 </p>
+
+    <!-- Product Search -->
+    <div class="mt-6 rounded-3xl border border-slate-200 bg-white/70 p-4 md:p-5">
+      <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <div class="flex-1">
+          <label for="productSearch" class="block text-sm font-semibold text-slate-700">Search products</label>
+          <div class="mt-2 flex items-center gap-2">
+            <input id="productSearch" type="search" placeholder="Type to filter products (e.g., moringa, flakes, mango)…"
+              class="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 placeholder:text-slate-400 focus:border-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-100" />
+            <button id="productSearchClear" type="button"
+              class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+              Clear
+            </button>
+          </div>
+          <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slateish">
+            <span id="productSearchCount" class="font-medium text-slate-700">Showing all products</span>
+            <span class="text-slate-400">•</span>
+            <span class="text-slate-500">Tip: search by name or format like “powder”, “flakes”, “granules”.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Product Search -->
+
 <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 <div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">
 <div class="flex items-center justify-between">
@@ -1546,5 +1570,60 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 </script>
 <script src="/assets/js/cta-tracking.js"></script>
+
+
+<script>
+  (function () {
+    const input = document.getElementById("productSearch");
+    const clearBtn = document.getElementById("productSearchClear");
+    const countEl = document.getElementById("productSearchCount");
+
+    // Main product grid (first "mt-8 grid ... gap-6")
+    const grid = document.querySelector('main .mt-8.grid');
+    if (!input || !countEl || !grid) return;
+
+    // Product cards are the direct children divs inside this grid
+    const cards = Array.from(grid.children).filter(el => el && el.classList && el.classList.contains('card-hover'));
+
+    function norm(s) {
+      return (s || "").toLowerCase().replace(/\s+/g, " ").trim();
+    }
+
+    function cardText(card) {
+      // include tags, title, list items, etc.
+      return norm(card.innerText);
+    }
+
+    function update() {
+      const q = norm(input.value);
+      let visible = 0;
+
+      cards.forEach(card => {
+        const show = !q || cardText(card).includes(q);
+        card.style.display = show ? "" : "none";
+        if (show) visible++;
+      });
+
+      if (!q) {
+        countEl.textContent = "Showing all products";
+      } else if (visible === 0) {
+        countEl.textContent = "No products found";
+      } else {
+        countEl.textContent = `Showing ${visible} of ${cards.length} products`;
+      }
+    }
+
+    input.addEventListener("input", update);
+    if (clearBtn) {
+      clearBtn.addEventListener("click", () => {
+        input.value = "";
+        input.focus();
+        update();
+      });
+    }
+    update();
+  })();
+</script>
+
 </body>
 </html>

@@ -26,9 +26,9 @@
 <meta content="Supplier of dehydrated onion powder, garlic powder and spice ingredients for bulk food manufacturing, seasoning blends, and exports." name="twitter:description"/>
 <meta content="index,follow" name="robots"/>
 <!-- Open Graph (for WhatsApp/LinkedIn preview) -->
-<meta content="Onion Powder, Garlic Powder &amp; Spices | Bulk Supplier | Atlas Agro" property="og:title">
+<meta content="Onion Powder, Garlic Powder &amp; Spices | Bulk Supplier | Atlas Agro" property="og:title"/>
 <meta content="Supplier of dehydrated onion powder, garlic powder and spice ingredients for bulk food manufacturing, seasoning blends, and exports." property="og:description"/>
-<meta content="https://atlasagro.co.in/products/spices.html" property="og:url"/>
+<meta content="https://atlasagro.co.in/products/spices.html" property="og:url">
 <meta content="website" property="og:type"/>
 <!-- Optional: add your logo image URL if you have one -->
 <!-- <meta property="og:image" content="https://atlasagro.co.in/assets/atlas-agro-logo.png"> -->
@@ -368,57 +368,37 @@
 <p class="text-slateish max-w-3xl">
 For spices and related ingredients, we support specification-based procurement and bulk supply. Share grade/packing needs for a quick quote.
 </p>
-      <div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- Product images -->
-        <div class="lg:col-span-7">
-          <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden">
-            <div class="aspect-[16/9] bg-slate-50">
-              <img
-                id="productMainImage"
-                src="../assets/placeholders/product-hero.svg"
-                alt="Product image product image"
-                class="h-full w-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="lg:col-span-5">
-          <div class="grid grid-cols-3 gap-4">
-            <button type="button"
-              class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ring-2 ring-emerald-500"
-              data-src="../assets/placeholders/product-hero.svg"
-              aria-label="View image 1">
-              <img src="../assets/placeholders/product-thumb-1.svg" alt="Product image product image 1" class="h-full w-full object-cover" loading="lazy"/>
-            </button>
-
-            <button type="button"
-              class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              data-src="../assets/placeholders/product-alt-1.svg"
-              aria-label="View image 2">
-              <img src="../assets/placeholders/product-thumb-2.svg" alt="Product image product image 2" class="h-full w-full object-cover" loading="lazy"/>
-            </button>
-
-            <button type="button"
-              class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              data-src="../assets/placeholders/product-alt-2.svg"
-              aria-label="View image 3">
-              <img src="../assets/placeholders/product-thumb-3.svg" alt="Product image product image 3" class="h-full w-full object-cover" loading="lazy"/>
-            </button>
-          </div>
-
-          <div class="mt-4 rounded-3xl border border-slate-200 bg-white p-5">
-            <div class="text-sm font-semibold text-ink">Image guidance</div>
-            <ul class="mt-2 text-sm text-slateish space-y-1">
-              <li>• Use close-ups that show texture (flakes/granules/powder).</li>
-              <li>• Include packaging photo (bulk + retail, if available).</li>
-              <li>• Keep background clean for a premium B2B feel.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
+<div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Product images -->
+<div class="lg:col-span-7">
+<div class="rounded-3xl border border-slate-200 bg-white overflow-hidden">
+<div class="aspect-[16/9] bg-slate-50">
+<img alt="Product image product image" class="h-full w-full object-cover" id="productMainImage" loading="lazy" src="../assets/placeholders/product-hero.svg"/>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5">
+<div class="grid grid-cols-3 gap-4">
+<button aria-label="View image 1" class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ring-2 ring-emerald-500" data-src="../assets/placeholders/product-hero.svg" type="button">
+<img alt="Product image product image 1" class="h-full w-full object-cover" loading="lazy" src="../assets/placeholders/product-thumb-1.svg"/>
+</button>
+<button aria-label="View image 2" class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-src="../assets/placeholders/product-alt-1.svg" type="button">
+<img alt="Product image product image 2" class="h-full w-full object-cover" loading="lazy" src="../assets/placeholders/product-thumb-2.svg"/>
+</button>
+<button aria-label="View image 3" class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-src="../assets/placeholders/product-alt-2.svg" type="button">
+<img alt="Product image product image 3" class="h-full w-full object-cover" loading="lazy" src="../assets/placeholders/product-thumb-3.svg"/>
+</button>
+</div>
+<div class="mt-4 rounded-3xl border border-slate-200 bg-white p-5">
+<div class="text-sm font-semibold text-ink">Image guidance</div>
+<ul class="mt-2 text-sm text-slateish space-y-1">
+<li>• Use close-ups that show texture (flakes/granules/powder).</li>
+<li>• Include packaging photo (bulk + retail, if available).</li>
+<li>• Keep background clean for a premium B2B feel.</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 <div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">
 <div class="flex items-center justify-between">
@@ -468,7 +448,49 @@ For spices and related ingredients, we support specification-based procurement a
 <a class="text-brand font-semibold hover:underline" href="/#quote">Enquire →</a>
 </div>
 </div>
+<div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">Spices</span>
+<span class="text-xs text-slateish">Powder/Granules</span>
 </div>
+<h3 class="mt-4 text-xl font-semibold">Red Pepper Powder / Granules</h3>
+<p class="mt-2 text-sm text-slateish">Bulk packaging options and export-ready supply. Share your target specs for a quick quote.</p>
+<ul class="mt-4 text-sm text-slateish list-disc list-inside">
+<li>Powder / flakes / granules (as applicable)</li><li>Bulk supply (B2B)</li><li>Custom specs</li><li>Export-ready / OEM</li>
+</ul>
+<div class="mt-6 flex items-center justify-between text-sm">
+<a class="underline text-slate-700 hover:text-brand" href="/products/">Back to categories</a>
+<a class="text-brand font-semibold hover:underline" href="/products/red-pepper.html">Open product details →</a>
+</div>
+</div><div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">Spices</span>
+<span class="text-xs text-slateish">Powder/Granules</span>
+</div>
+<h3 class="mt-4 text-xl font-semibold">Green Pepper Powder / Granules</h3>
+<p class="mt-2 text-sm text-slateish">Bulk packaging options and export-ready supply. Share your target specs for a quick quote.</p>
+<ul class="mt-4 text-sm text-slateish list-disc list-inside">
+<li>Powder / flakes / granules (as applicable)</li><li>Bulk supply (B2B)</li><li>Custom specs</li><li>Export-ready / OEM</li>
+</ul>
+<div class="mt-6 flex items-center justify-between text-sm">
+<a class="underline text-slate-700 hover:text-brand" href="/products/">Back to categories</a>
+<a class="text-brand font-semibold hover:underline" href="/products/green-pepper.html">Open product details →</a>
+</div>
+</div><div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">Herbs</span>
+<span class="text-xs text-slateish">Powder/Granules</span>
+</div>
+<h3 class="mt-4 text-xl font-semibold">Mint Powder / Granules</h3>
+<p class="mt-2 text-sm text-slateish">Bulk packaging options and export-ready supply. Share your target specs for a quick quote.</p>
+<ul class="mt-4 text-sm text-slateish list-disc list-inside">
+<li>Powder / flakes / granules (as applicable)</li><li>Bulk supply (B2B)</li><li>Custom specs</li><li>Export-ready / OEM</li>
+</ul>
+<div class="mt-6 flex items-center justify-between text-sm">
+<a class="underline text-slate-700 hover:text-brand" href="/products/">Back to categories</a>
+<a class="text-brand font-semibold hover:underline" href="/products/mint.html">Open product details →</a>
+</div>
+</div></div>
 </div>
 <!-- SEO Content: Applications -->
 <!-- SEO Content: What buyers usually ask -->
@@ -524,7 +546,6 @@ For spices and related ingredients, we support specification-based procurement a
 </div></section>
 </section>
 </main>
-
 <div aria-hidden="true" class="section-divider"></div>
 <!-- SEO Content: What buyers usually ask -->
 <section class="section" id="specs">

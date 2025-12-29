@@ -554,63 +554,37 @@
       </div>
     </div>
   </section>
-
-  <!-- Products -->
-  <section id="products" class="max-w-7xl mx-auto px-4 py-16">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
-      <div>
-        <h2 class="text-3xl font-bold">Our Product Range</h2>
-    <p class="text-slateish mt-2 max-w-2xl">Dehydrated ingredients designed for food manufacturers, exporters, and private label brands.</p>
-
-        <p class="text-slateish mt-2 max-w-2xl">
-          Choose by category. We can support custom specs: mesh size, moisture target, flavor profile, packaging, and private label.
-        </p>
-      </div>
-
-      <div class="flex flex-wrap gap-2">
-        <template x-for="cat in categories" :key="cat">
-          <button
-            class="px-4 py-2 rounded-full border border-slate-200 text-sm hover:bg-white transition"
-            :class="selectedCategory === cat ? 'bg-brand-100 border-brand-300 text-ink' : 'text-slateish'"
-            @click="selectedCategory = cat"
-            x-text="cat">
-          </button>
-        </template>
-      </div>
-    </div>
-
-    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <template x-for="p in filteredProducts()" :key="p.name">
-        <div class="rounded-3xl border border-slate-200 bg-white p-5 hover:bg-brand-100 transition card-hover">
-          <div class="flex items-center justify-between gap-3">
-            <div class="text-sm text-ink border border-brand-200 bg-brand-100 px-3 py-1 rounded-full"
-                 x-text="p.category"></div>
-            <div class="text-xs text-slateish" x-text="p.tag"></div>
-          </div>
-
-          <h3 class="mt-4 text-xl font-semibold" x-text="p.name"></h3>
-          <p class="mt-2 text-slateish text-sm" x-text="p.desc"></p>
-
-          <div class="mt-4 flex flex-wrap gap-2">
-            <template x-for="b in p.badges" :key="b">
-              <span class="text-xs px-3 py-1 rounded-full border border-slate-200 text-slateish" x-text="b"></span>
-            </template>
-          </div>
-
-          <div class="mt-5 flex items-center justify-between gap-3">
-            <button class="text-sm text-ink hover:text-ink underline underline-offset-4"
-                    @click="openSpec(p)">
-              <span data-i18n="product.viewSpecs">View Specs</span>
-            </button>
-            <a class="text-sm text-brand-800 hover:text-ink underline underline-offset-4"
-               :href="whatsappLinkForProduct(p.name)">
-              <span data-i18n="product.enquire">Enquire →</span>
-            </a>
-          </div>
+  <!-- Quick CTAs (avoid duplicate content) -->
+  <section class="max-w-7xl mx-auto px-4 py-10">
+    <div class="rounded-3xl border border-slate-200 bg-white/70 backdrop-blur p-6 md:p-8 shadow-soft">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div>
+          <h2 class="text-xl md:text-2xl font-bold">Explore Atlas Agro</h2>
+          <p class="text-slateish mt-2 max-w-2xl">
+            View our complete product categories and the full facility gallery—kept on dedicated pages for faster browsing.
+          </p>
         </div>
-      </template>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/products/"
+             class="card-hover inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
+            Products
+            <span aria-hidden="true" class="ml-2">→</span>
+          </a>
+          <a href="/gallery.html"
+             class="card-hover inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-slate-200 bg-white hover:bg-brand-100 transition">
+            Gallery
+            <span aria-hidden="true" class="ml-2">→</span>
+          </a>
+          <a href="/contact.html"
+             class="card-hover inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-slate-200 bg-white hover:bg-brand-100 transition">
+            Get Bulk Quote
+          </a>
+        </div>
+      </div>
     </div>
   </section>
+
 
   <!-- Industries / Use cases -->
   <section id="industries" class="border-y border-slate-200 bg-brand-50">
@@ -715,105 +689,7 @@
     </div>
   </section>
 
-  <!-- Gallery (animated + lightbox) -->
-<section id="gallery" class="border-y border-slate-200 bg-brand-50"
-  x-data="galleryMagic()"
-  x-init="init()"
-  @keydown.window.escape="close()" @keydown.window.arrow-right.prevent="next()" @keydown.window.arrow-left.prevent="prev()"
->
-  <div class="max-w-7xl mx-auto px-4 py-16">
-    <div class="flex items-end justify-between gap-6 flex-wrap">
-      <div>
-        <h2 class="text-3xl font-bold" data-i18n="sec.gallery">Gallery</h2>
-        <p class="text-slateish mt-2">Click any image to view.</p>
-      </div>
-    </div>
-
-    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <template x-for="(item, idx) in items" :key="item.title">
-        <button
-          type="button"
-          class="gallery-card group text-left rounded-3xl border border-slate-200 bg-white overflow-hidden
-                 shadow-sm hover:shadow-lg transition-all duration-300
-                 hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-brand-300 card-hover"
-          :style="`transition-delay:${idx * 60}ms`"
-          x-ref="cards"
-          @click="open(idx)"
-        >
-          <div class="relative h-44 overflow-hidden">
-            <img
-              :src="item.src"
-              :alt="item.alt"
-              class="h-full w-full object-cover transition-transform duration-500
-                     group-hover:scale-110"
-              loading="lazy"
-            />
-            <!-- subtle top gradient for premium look -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/0 opacity-70"></div>
-
-            <!-- small chip -->
-            <div class="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full
-                        bg-white/90 border border-slate-200 text-slate-700"><span data-i18n="gallery.view">View</span></div>
-          </div>
-
-          <div class="p-4">
-            <div class="flex items-center justify-between gap-3">
-              <div class="font-semibold text-ink" x-text="item.title"></div>
-              <div class="text-slateish text-sm transition-transform duration-300 group-hover:translate-x-1">→</div>
-            </div>
-            <div class="text-xs text-slateish mt-1" x-text="item.desc"></div>
-          </div>
-        </button>
-      </template>
-    </div>
-  </div>
-
-  <!-- Lightbox -->
-  <div
-    class="fixed inset-0 z-50 bg-black/60 p-4 grid place-items-center"
-    x-show="isOpen"
-    x-transition.opacity
-    @click.self="close()"
-  >
-    <div class="w-full max-w-4xl rounded-3xl bg-white overflow-hidden border border-slate-200 shadow-2xl card-hover"
-         x-transition.scale>
-      <div class="flex items-center justify-between p-4 border-b border-slate-200">
-        <div>
-          <div class="font-semibold text-ink" x-text="activeItem().title"></div>
-          <div class="text-xs text-slateish" x-text="activeItem().desc"></div>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <button
-            class="px-3 py-2 rounded-2xl border border-slate-200 hover:bg-brand-100 transition"
-            @click="prev()"
-            aria-label="Previous"
-          >←</button>
-
-          <button
-            class="px-3 py-2 rounded-2xl border border-slate-200 hover:bg-brand-100 transition"
-            @click="next()"
-            aria-label="Next"
-          >→</button>
-
-          <button
-            class="px-3 py-2 rounded-2xl border border-slate-200 hover:bg-brand-100 transition"
-            @click="close()"
-            aria-label=<span data-i18n="modal.close">Close</span>"
-          >✕</button>
-        </div>
-      </div>
-
-      <div class="bg-slate-50">
-        <img loading="lazy" decoding="async"
-          :src="activeItem().src"
-          :alt="activeItem().alt"
-          class="w-full max-h-[70vh] object-contain"
-        />
-      </div>
-    </div>
-  </div>
-</section>
+  
 
 
   <!-- FAQ -->

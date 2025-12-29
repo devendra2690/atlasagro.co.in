@@ -11,38 +11,39 @@
   <link rel="apple-touch-icon" href="/assets/atlas-agro-logo.png" />
 
   <title>Gallery | Atlas Agro</title>
-  <meta name="description" content="Explore our product range: dehydrated vegetables & fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports."/>
+  <meta name="description" content="Explore Atlas Agro’s facility, packaging, quality checks, and product formats for bulk B2B supply."/>
+  
   <meta name="keywords" content="dehydrated powder supplier, onion powder, garlic powder, ginger powder, fruit chips, vegetable powders, custom blends" />
   <meta name="theme-color" content="#0f7a4a" />
 
-  <meta name="description" content="Explore dehydrated vegetables, fruit powders, spray dried ingredients and spices for bulk B2B supply and exports.">
+  
 
-  <link rel="canonical" href="https://atlasagro.co.in/products/">
+  <link rel="canonical" href="https://atlasagro.co.in/gallery.html">
 
           <link rel="alternate" href="https://atlasagro.co.in/products/" hreflang="en-IN">
     <link rel="alternate" href="https://atlasagro.co.in/products/" hreflang="x-default">
 <!-- Social previews -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Atlas Agro Industries">
-    <meta property="og:title" content="Products | Dehydrated, Spray Dried &amp; Spices | Atlas Agro">
+    <meta property="og:title" content="Gallery | Atlas Agro">
     <meta property="og:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
-    <meta property="og:url" content="https://atlasagro.co.in/products/">
+    <meta property="og:url" content="https://atlasagro.co.in/gallery.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Products | Dehydrated, Spray Dried &amp; Spices | Atlas Agro">
+    <meta name="twitter:title" content="Gallery | Atlas Agro">
     <meta name="twitter:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
 <meta name="robots" content="index,follow" />
 
 <!-- Open Graph (for WhatsApp/LinkedIn preview) -->
-<meta property="og:title" content="Products | Dehydrated, Spray Dried &amp; Spices | Atlas Agro">
+<meta property="og:title" content="Gallery | Atlas Agro">
 <meta property="og:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
-<meta property="og:url" content="https://atlasagro.co.in/products/">
+<meta property="og:url" content="https://atlasagro.co.in/gallery.html">
 <meta property="og:type" content="website">
 <!-- Optional: add your logo image URL if you have one -->
 <!-- <meta property="og:image" content="https://atlasagro.co.in/assets/atlas-agro-logo.png"> -->
 
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Products | Dehydrated, Spray Dried &amp; Spices | Atlas Agro">
+  <meta property="og:title" content="Gallery | Atlas Agro">
   <meta property="og:description" content="Explore our product range: dehydrated vegetables &amp; fruit powders, spray dried ingredients, and spices for bulk B2B supply, OEM/private label, and exports.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://atlasagro.co.in/assets/atlas-agro-logo.png">
@@ -95,17 +96,51 @@
     return {
       isOpen: false,
       activeIndex: 0,
+      q: "",
+      activeCat: "All",
+      categories: ["All", "Products", "Formats", "Packaging", "Facility", "Quality", "Dispatch"],
 
+      
       items: [
-        { title: "Fruit Chips", desc: "Assorted chips & pieces", src: "assets/gallery/fruit-chips.png", alt: "Dehydrated Fruit Chips" },
-        { title: "Vegetable Mix", desc: "Ready meal blends", src: "assets/gallery/vegetable-mix.jpg", alt: "Dehydrated Vegetable Mix" },
-        { title: "Onion / Garlic", desc: "Powders & granules", src: "assets/gallery/onion-garlic.jpg", alt: "Onion Garlic Powder" },
-        { title: "Custom Blends", desc: "Soup & noodle mixes", src: "assets/gallery/custom-blends.jpg", alt: "Custom Food Blends" },
-        { title: "Herbs", desc: "Leafy greens & flakes", src: "assets/gallery/herbs.jpg", alt: "Dehydrated Herbs" },
-        { title: "Packaging", desc: "Bulk & retail options", src: "assets/gallery/packaging.jpg", alt: "Food Packaging" },
-        { title: "Quality Checks", desc: "Batch consistency", src: "assets/gallery/quality-checks.jpg", alt: "Quality Checks" },
-        { title: "Dispatch", desc: "Reliable shipments", src: "assets/gallery/dispatch.jpg", alt: "Dispatch & Logistics" },
+        // NOTE: These paths assume your images live in /assets/products/.
+        // Add/rename items here to match your actual filenames.
+        { cat: "Products", title: "Onion Powder", desc: "Powder / granules", src: "/assets/products/onion-powder.jpg", alt: "Onion powder" },
+        { cat: "Products", title: "Garlic Powder", desc: "Powder / granules", src: "/assets/products/garlic-powder.jpg", alt: "Garlic powder" },
+        { cat: "Products", title: "Ginger Powder", desc: "Powder", src: "/assets/products/ginger-powder.jpg", alt: "Ginger powder" },
+        { cat: "Products", title: "Banana Powder", desc: "Fruit powder", src: "/assets/products/banana-powder.jpg", alt: "Banana powder" },
+
+        { cat: "Formats", title: "Flakes", desc: "Flakes / cuts", src: "/assets/products/flakes.jpg", alt: "Flakes format" },
+        { cat: "Formats", title: "Granules", desc: "Uniform granulation", src: "/assets/products/granules.jpg", alt: "Granules format" },
+        { cat: "Formats", title: "Chips", desc: "Fruit / veg chips", src: "/assets/products/chips.jpg", alt: "Chips format" },
+
+        { cat: "Packaging", title: "Bulk Packaging", desc: "Liners & cartons", src: "/assets/products/packaging-bulk.jpg", alt: "Bulk packaging" },
+        { cat: "Packaging", title: "Retail Packaging", desc: "Pouches (if applicable)", src: "/assets/products/packaging-retail.jpg", alt: "Retail packaging" },
+
+        { cat: "Facility", title: "Processing Area", desc: "Hygienic operations", src: "/assets/products/facility-1.jpg", alt: "Processing area" },
+        { cat: "Facility", title: "Drying & Milling", desc: "Controlled processing", src: "/assets/products/facility-2.jpg", alt: "Drying and milling" },
+
+        { cat: "Quality", title: "Incoming RM Check", desc: "Sorting & inspection", src: "/assets/products/qc-incoming.jpg", alt: "Incoming raw material check" },
+        { cat: "Quality", title: "Batch QC", desc: "Moisture / mesh checks", src: "/assets/products/qc-batch.jpg", alt: "Batch quality check" },
+
+        { cat: "Dispatch", title: "Dispatch Ready", desc: "Reliable shipments", src: "/assets/products/dispatch.jpg", alt: "Dispatch and logistics" },
       ],
+
+      
+      filtered() {
+        const q = (this.q || "").trim().toLowerCase();
+        return this.items.filter((it) => {
+          const catOk = (this.activeCat === "All") || (it.cat === this.activeCat);
+          if (!catOk) return false;
+          if (!q) return true;
+          const hay = `${it.cat} ${it.title} ${it.desc}`.toLowerCase();
+          return hay.includes(q);
+        });
+      },
+
+      openBySrc(src) {
+        const idx = this.items.findIndex(x => x.src === src);
+        this.open(idx >= 0 ? idx : 0);
+      },
 
       init() {
         // Scroll reveal with IntersectionObserver
@@ -122,11 +157,23 @@
       },
 
       open(i) {
+        // keyboard navigation
+        this._onKey = (e) => {
+          if (!this.isOpen) return;
+          if (e.key === 'ArrowRight') this.next();
+          if (e.key === 'ArrowLeft') this.prev();
+          if (e.key === 'Escape') this.close();
+        };
+        window.addEventListener('keydown', this._onKey);
+
         this.activeIndex = i;
         this.isOpen = true;
         document.body.style.overflow = "hidden";
       },
       close() {
+        if (this._onKey) window.removeEventListener('keydown', this._onKey);
+        this._onKey = null;
+
         this.isOpen = false;
         document.body.style.overflow = "";
       },
@@ -419,7 +466,7 @@
     
     <section class="container" style="padding: 28px 0 10px;">
       <div class="breadcrumb-pill">
-        <a href="/">Home</a><span class="sep">/</span><span class="text-brand font-semibold">Gallery</span>
+        <a href="/">Home</a><span class="sep">/</span><span class="current">Gallery</span>
       </div>
     </section>
     <section class="container" style="padding: 10px 0 50px;">

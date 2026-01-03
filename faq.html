@@ -48,6 +48,78 @@
   .card-hover{transition:transform .18s ease, box-shadow .18s ease;}
   .card-hover:hover{transform:translateY(-2px); box-shadow:0 12px 30px rgba(16,24,40,.10);}
 </style>
+<style>
+  [x-cloak]{ display:none !important; }
+  .no-scroll{ overflow:hidden; }
+
+  .mobile-menu-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, .35);
+    backdrop-filter: blur(2px);
+    z-index: 60;
+  }
+  .mobile-menu-panel{
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    top: 88px;
+    max-height: calc(100vh - 112px);
+    overflow: auto;
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(16, 185, 129, .18);
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(2, 6, 23, .18);
+    z-index: 61;
+    padding: 14px;
+  }
+  .mobile-menu-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 4px 4px 10px 4px;
+  }
+  .mobile-menu-title{
+    font-weight: 700;
+    font-size: 16px;
+    color: #0f172a;
+  }
+  .mobile-menu-close{
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(148,163,184,.55);
+    background: rgba(255,255,255,.75);
+    color: #0f172a;
+    font-size: 18px;
+    line-height: 1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .mobile-menu-nav{
+    display:grid;
+    gap: 10px;
+    padding: 6px 4px 12px 4px;
+  }
+  .mobile-menu-nav a{
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(148,163,184,.35);
+    background: rgba(255,255,255,.6);
+    color: #0f172a;
+    font-weight: 600;
+  }
+  .mobile-menu-nav a:active{
+    transform: translateY(1px);
+  }
+  .mobile-menu-actions{
+    display:grid;
+    gap: 10px;
+    padding: 4px;
+  }
+  .w-full{ width:100%; }
+</style>
 
   <script type="application/ld+json">
   {
@@ -77,7 +149,9 @@
   </script>
 </head>
 
-<body class="min-h-screen">
+<body class="bg-brand-50 text-ink antialiased"
+      :class="{\'no-scroll\': mobileOpen}" x-data="siteApp()"
+      x-init="init()">
   <div class="w-full bg-mint border-b border-slate-200">
     <div class="mx-auto max-w-6xl px-4 md:px-8 py-2 text-xs text-slateish flex items-center justify-between gap-3">
       <div class="flex flex-wrap items-center gap-2">
@@ -114,6 +188,38 @@
       <a href="https://wa.me/919867630682" class="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-white text-sm font-semibold shadow-soft hover:bg-brand2">WhatsApp →</a>
     </div>
   </header>
+
+  <!-- Mobile menu (drawer) -->
+<div x-cloak x-show="mobileOpen" class="mobile-menu-overlay" @click="mobileOpen=false" x-transition.opacity></div>
+<div x-cloak x-show="mobileOpen" class="mobile-menu-panel" @click.stop
+     x-transition:enter="transition ease-out duration-200"
+     x-transition:enter-start="opacity-0 translate-y-2"
+     x-transition:enter-end="opacity-100 translate-y-0"
+     x-transition:leave="transition ease-in duration-150"
+     x-transition:leave-start="opacity-100 translate-y-0"
+     x-transition:leave-end="opacity-0 translate-y-2">
+  <div class="mobile-menu-header">
+    <div class="mobile-menu-title">Menu</div>
+    <button class="mobile-menu-close" @click="mobileOpen=false" aria-label="Close menu">✕</button>
+  </div>
+
+  <nav class="mobile-menu-nav" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="products/index.html">Products</a>
+    <a href="industries/index.html">Industries</a>
+    <a href="quality.html">Quality</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="/assets/brochure.pdf" download>📄 Download Brochure</a>
+  </nav>
+
+  <div class="mobile-menu-actions">
+    <a class="btn btn-primary w-full" href="#quote" @click="mobileOpen=false">Get Bulk Quote</a>
+    <a class="btn btn-outline w-full" href="https://wa.me/917738505687" target="_blank" rel="noopener" @click="mobileOpen=false">WhatsApp</a>
+  </div>
+</div>
+
 
   <main class="mx-auto max-w-6xl px-4 md:px-8 py-10">
     <nav aria-label="Breadcrumb" class="mb-6">

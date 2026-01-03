@@ -51,6 +51,7 @@
 
   <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -859,5 +860,22 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Minimal Alpine data for header/mobile menu on this page.
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('siteApp', () => ({
+      mobileOpen: false,
+      whatsappLink: "https://wa.me/919867630682?text=Hi+Atlas+Agro%2C+I+am+looking+for+bulk+your+products.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing.",
+      init() {}
+    }));
+  });
+
+  // Safe language switch stub (prevents errors if i18n bundle isn't present)
+  window.setLang = window.setLang || function(lang){
+    try { localStorage.setItem("atlas_lang", lang); } catch(e){}
+  };
+</script>
+
 </body>
 </html>

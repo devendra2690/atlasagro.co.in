@@ -3,32 +3,168 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FAQs | Atlas Agro Industries</title>
+  <title>FAQ | Atlas Agro</title>
   <meta name="description" content="FAQs for bulk buying dehydrated products, spray dried ingredients and spices. MOQ, mesh size/grade, packaging, documentation, export readiness and enquiry process." />
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="canonical" href="https://atlasagro.co.in/faq.html" />
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: "#0f172a",
-            slateish: "#475569",
-            mint: "#f1f7f3",
-            brand: "#2f6b45",
-            brand2: "#3b8a5a"
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            DEFAULT: '#22b36a',
+            50: '#f5fbf7',
+            100: '#e7f7ee',
+            200: '#c9efd9',
+            300: '#9fe2bd',
+            400: '#5ecc8f',
+            500: '#22b36a',
+            600: '#129457',
+            700: '#0f7a4a',
+            800: '#0f623c',
+            900: '#0c4f31'
           },
-          boxShadow: {
-            soft: "0 10px 25px rgba(2,6,23,.08)"
-          }
+          ink: '#0f172a',
+          slateish: '#475569'
         }
       }
     }
-  </script>
+  }
+
+  function galleryMagic() {
+  return {
+    base: "/assets/products",
+    // cards represent folders under /assets/products/<folder>/
+    items: [
+        { group: "Fruits", folder: "apple", title: "Apple" },
+        { group: "Fruits", folder: "banana", title: "Banana" },
+        { group: "Vegetables", folder: "beetroot", title: "Beetroot" },
+        { group: "Vegetables", folder: "bitter-gourd", title: "Bitter Gourd" },
+        { group: "Vegetables", folder: "carrot", title: "Carrot" },
+        { group: "Fruits", folder: "coconut", title: "Coconut" },
+        { group: "Herbs & Leaves", folder: "coriander", title: "Coriander" },
+        { group: "Vegetables", folder: "corn", title: "Corn" },
+        { group: "Vegetables", folder: "cucumber", title: "Cucumber" },
+        { group: "Herbs & Leaves", folder: "curry-leaves", title: "Curry Leaves" },
+        { group: "Vegetables", folder: "garlic", title: "Garlic" },
+        { group: "Vegetables", folder: "ginger", title: "Ginger" },
+        { group: "Vegetables", folder: "green-chilli", title: "Green Chilli" },
+        { group: "Vegetables", folder: "green-pepper", title: "Green Pepper" },
+        { group: "Fruits", folder: "guava", title: "Guava" },
+        { group: "Fruits", folder: "mango", title: "Mango" },
+        { group: "Flowers", folder: "marigold", title: "Marigold" },
+        { group: "Herbs & Leaves", folder: "methi", title: "Methi" },
+        { group: "Herbs & Leaves", folder: "mint", title: "Mint" },
+        { group: "Special", folder: "mixed-veg", title: "Mixed Veg" },
+        { group: "Herbs & Leaves", folder: "moringa", title: "Moringa" },
+        { group: "Vegetables", folder: "mushroom", title: "Mushroom" },
+        { group: "Vegetables", folder: "okra", title: "Okra" },
+        { group: "Vegetables", folder: "onion", title: "Onion" },
+        { group: "Fruits", folder: "orange", title: "Orange" },
+        { group: "Fruits", folder: "papaya", title: "Papaya" },
+        { group: "Vegetables", folder: "potato", title: "Potato" },
+        { group: "Vegetables", folder: "red-pepper", title: "Red Pepper" },
+        { group: "Flowers", folder: "rose", title: "Rose" },
+        { group: "Special", folder: "spices", title: "Spices" },
+        { group: "Vegetables", folder: "spinach", title: "Spinach" },
+        { group: "Special", folder: "spray-dried", title: "Spray Dried" },
+        { group: "Vegetables", folder: "tomato", title: "Tomato" }
+      ],
+    isOpen: false,
+    activeIndex: 0,
+    activeImage: "",
+
+    q: "",
+    activeGroup: "All",
+    groups: ["All", "Vegetables", "Fruits", "Herbs & Leaves", "Flowers", "Special"],
+
+    init() {
+      // default active image for first item
+      const it = this.items[0];
+      this.activeImage = this.cover(it);
+    },
+
+    cover(it) {
+      return `${this.base}/${it.folder}/hero.png`;
+    },
+
+    imageList(it) {
+      // Common pattern: hero.png + thumb-1..thumb-3 (many folders follow this)
+      const list = [
+        `${this.base}/${it.folder}/hero.png`,
+        `${this.base}/${it.folder}/thumb-1.png`,
+        `${this.base}/${it.folder}/thumb-2.png`,
+        `${this.base}/${it.folder}/thumb-3.png`,
+      ];
+      // Dedupe
+      return Array.from(new Set(list));
+    },
+
+    filtered() {
+      const q = (this.q || "").trim().toLowerCase();
+      return this.items.filter(it => {
+        const grpOk = (this.activeGroup === "All") || (it.group === this.activeGroup);
+        if (!grpOk) return false;
+        if (!q) return true;
+        const hay = `${it.group} ${it.title} ${it.folder}`.toLowerCase();
+        return hay.includes(q);
+      });
+    },
+
+    openByFolder(folder) {
+      const idx = this.items.findIndex(x => x.folder === folder);
+      this.open(idx >= 0 ? idx : 0);
+    },
+
+    open(i) {
+      this.activeIndex = i;
+      this.isOpen = true;
+      const it = this.items[this.activeIndex];
+      this.activeImage = this.cover(it);
+
+      // keyboard nav
+      this._onKey = (e) => {
+        if (!this.isOpen) return;
+        if (e.key === "ArrowRight") this.next();
+        if (e.key === "ArrowLeft") this.prev();
+        if (e.key === "Escape") this.close();
+      };
+      window.addEventListener("keydown", this._onKey);
+    },
+
+    close() {
+      this.isOpen = false;
+      if (this._onKey) window.removeEventListener("keydown", this._onKey);
+      this._onKey = null;
+    },
+
+    prev() {
+      this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length;
+      this.activeImage = this.cover(this.items[this.activeIndex]);
+    },
+
+    next() {
+      this.activeIndex = (this.activeIndex + 1) % this.items.length;
+      this.activeImage = this.cover(this.items[this.activeIndex]);
+    },
+
+    activeItem() {
+      return this.items[this.activeIndex] || this.items[0];
+    },
+
+    setImage(src) {
+      this.activeImage = src;
+    }
+  };
+}
+</script>
   <style>
-    body{background:#f5fbf6;color:#0f172a}
+    
     .pill{background:rgba(255,255,255,.75);border:1px solid rgba(148,163,184,.45);backdrop-filter:blur(8px)}
     details>summary{list-style:none}
     details>summary::-webkit-details-marker{display:none}
@@ -123,137 +259,132 @@
 </style>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is your MOQ for bulk orders?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "MOQ depends on the product and packaging format. Share product, grade/mesh, packaging and monthly volume and we’ll confirm MOQ and availability."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you support different mesh sizes and granulation?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. We can supply powders, flakes and granules with specification confirmation before bulk supply."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you offer packaging options and private label?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We support bulk/export packing formats. Private label options can be discussed based on order quantity and destination requirements."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are your products suitable for export?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. We support export-ready packing guidance and documentation on request (e.g., COA / batch documentation)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you share specification sheets (moisture, mesh, etc.)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Share the product and intended application, and we’ll share typical specs and confirm against your requirement."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you ensure consistent batch quality?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We confirm sample + specs before bulk supply and follow consistency checks per production lot."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I request a quote quickly?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Send product name, grade/mesh, packaging, monthly volume and destination via WhatsApp or the Get a Quote form. We reply with availability and pricing."
-          }
-        }
-      ],
-      "@id": "https://atlasagro.co.in/faq.html#faq"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://atlasagro.co.in/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "FAQ",
-          "item": "https://atlasagro.co.in/faq.html"
-        }
-      ],
-      "@id": "https://atlasagro.co.in/faq.html#breadcrumb"
-    }
-  ]
-}
-</script>
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What is your MOQ for bulk orders?","acceptedAnswer":{"@type":"Answer","text":"MOQ depends on the product and packaging format. Share product, grade/mesh, packaging and monthly volume and we’ll confirm MOQ and availability."}},
+      {"@type":"Question","name":"Do you support different mesh sizes and granulation?","acceptedAnswer":{"@type":"Answer","text":"Yes. We can supply powders, flakes and granules with specification confirmation before bulk supply."}},
+      {"@type":"Question","name":"Do you offer packaging options and private label?","acceptedAnswer":{"@type":"Answer","text":"We support bulk/export packing formats. Private label options can be discussed based on order quantity and destination requirements."}},
+      {"@type":"Question","name":"Are your products suitable for export?","acceptedAnswer":{"@type":"Answer","text":"Yes. We support export-ready packing guidance and documentation on request (e.g., COA / batch documentation)."}},
+      {"@type":"Question","name":"Can you share specification sheets (moisture, mesh, etc.)?","acceptedAnswer":{"@type":"Answer","text":"Yes. Share the product and intended application, and we’ll share typical specs and confirm against your requirement."}},
+      {"@type":"Question","name":"How do you ensure consistent batch quality?","acceptedAnswer":{"@type":"Answer","text":"We confirm sample + specs before bulk supply and follow consistency checks per production lot."}},
+      {"@type":"Question","name":"How do I request a quote quickly?","acceptedAnswer":{"@type":"Answer","text":"Send product name, grade/mesh, packaging, monthly volume and destination via WhatsApp or the Get a Quote form. We reply with availability and pricing."}}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://atlasagro.co.in/"},
+      {"@type":"ListItem","position":2,"name":"FAQ","item":"https://atlasagro.co.in/faq.html"}
+    ]
+  }
+  </script>
 </head>
 
 <body class="bg-brand-50 text-ink antialiased"
-      :class="{\'no-scroll\': mobileOpen}" x-data="siteApp()"
+      :class="{\'no-scroll\': mobileOpen}"
+      x-data="siteApp()"
       x-init="init()">
-  <div class="w-full bg-mint border-b border-slate-200">
-    <div class="mx-auto max-w-6xl px-4 md:px-8 py-2 text-xs text-slateish flex items-center justify-between gap-3">
-      <div class="flex flex-wrap items-center gap-2">
-        <span>✅ Bulk Supply</span><span>·</span><span>✅ Export-ready</span><span>·</span><span>✅ Custom Blends for Soups / Noodles / Ready Meals</span>
+
+<!-- Top announcement -->
+  <div class="bg-brand-100 border-b border-brand-200 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 py-2 text-sm flex flex-wrap items-center justify-between gap-2">
+      <div class="text-ink">
+        ✅ Bulk Supply • ✅ Export-ready • ✅ Custom Blends for Soups / Noodles / Ready Meals
       </div>
       <div class="flex items-center gap-3">
-        <a class="hover:underline" href="/#lang">EN</a><span class="text-slate-300">|</span>
-        <a class="hover:underline" href="/#lang">हिंदी</a><span class="text-slate-300">|</span>
-        <a class="hover:underline" href="/#lang">मराठी</a>
-        <a class="hover:underline" href="/quote.html">Get a Quote</a>
-        <a class="hover:underline" href="/brochure.html">Download Brochure</a>
+
+        <!-- Language Switcher -->
+        <div class="hidden sm:flex items-center gap-2 text-xs border border-slate-200 rounded-full px-3 py-2 bg-white">
+          <button type="button" onclick="setLang('en')" class="hover:text-brand-700 font-medium">EN</button>
+          <span class="text-slateish">|</span>
+          <button type="button" onclick="setLang('hi')" class="hover:text-brand-700 font-medium">हिंदी</button>
+          <span class="text-slateish">|</span>
+          <button type="button" onclick="setLang('mr')" class="hover:text-brand-700 font-medium">मराठी</button>
+        </div>
+
+        <a class="text-ink hover:text-ink underline underline-offset-4"
+           href="#quote">Get a Quote</a>
+        <a class="text-ink hover:text-ink underline underline-offset-4"
+           href="/assets/brochure.pdf" download>
+          Download Brochure
+        </a>
       </div>
     </div>
   </div>
+<header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
+<div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4 relative">
 
-  <header class="bg-white/80 backdrop-blur border-b border-slate-200">
-    <div class="mx-auto max-w-6xl px-4 md:px-8 py-4 flex items-center justify-between gap-6">
-      <a href="/" class="flex items-center gap-3">
-        <img src="/assets/atlas-agro-logo.png" alt="Atlas Agro" class="h-10 w-10 rounded-full border border-slate-200 bg-white" />
-        <div>
-          <div class="font-extrabold tracking-tight">ATLAS AGRO INDUSTRIES PRIVATE LTD</div>
-          <div class="text-xs text-slateish">PREMIUM DEHYDRATED VEGETABLES &amp; FRUITS</div>
-        </div>
+<a href="#" class="flex items-center gap-3 md:gap-5 min-w-0">
+  <!-- BIG, BORDERLESS LOGO -->
+  <span class="flex items-center justify-center">
+    <img loading="eager" decoding="async"
+      src="/assets/atlas-agro-logo.png"
+      alt="Atlas Agro Logo"
+      class="h-10 w-auto md:h-14 object-contain"
+    />
+  </span>
+
+  <div class="leading-tight min-w-0">
+  <!-- Mobile brand -->
+  <div class="block md:hidden font-semibold text-ink text-base">
+    ATLAS AGRO
+  </div>
+
+  <!-- Desktop brand -->
+  <div class="hidden md:block font-semibold text-ink text-lg">
+    ATLAS AGRO INDUSTRIES PRIVATE LTD
+  </div>
+
+  <div class="hidden md:block text-xs text-slateish tracking-wide uppercase">
+    PREMIUM DEHYDRATED VEGETABLES & FRUITS
+  </div>
+</div>
+
+</a>
+
+
+
+
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a class="hover:text-ink text-slateish" href="/" data-i18n="nav.home">Home</a>
+      <a class="hover:text-ink text-slateish" href="/products/" data-i18n="nav.products">Products</a>
+      <a class="hover:text-ink text-slateish" href="/industries/" data-i18n="nav.industries">Industries</a>
+      <a class="hover:text-ink text-slateish" href="/quality.html" data-i18n="nav.quality">Quality</a>
+      <a class="hover:text-ink text-slateish" href="/gallery.html" data-i18n="nav.gallery">Gallery</a>
+      <a class="hover:text-ink text-slateish" href="/faq.html" data-i18n="nav.faq">FAQ</a>
+      <a class="hover:text-ink text-slateish" href="/contact.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a :href="whatsappLink"
+         class="hidden sm:inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
+        <span>WhatsApp</span>
+        <span aria-hidden="true">→</span>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a class="hover:text-brand" href="/">Home</a>
-        <a class="hover:text-brand" href="/products/">Products</a>
-        <a class="hover:text-brand" href="/industries.html">Industries</a>
-        <a class="hover:text-brand" href="/quality.html">Quality</a>
-        <a class="hover:text-brand" href="/gallery.html">Gallery</a>
-        <a class="text-brand font-semibold" href="/faq.html">FAQ</a>
-        <a class="hover:text-brand" href="/contact.html">Contact</a>
-      </nav>
-      <a href="https://wa.me/919867630682" class="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-white text-sm font-semibold shadow-soft hover:bg-brand2">WhatsApp →</a>
-    </div>
-  </header>
 
-  <!-- Mobile menu (drawer) -->
+      
+      <!-- Mobile Language Switcher -->
+      <div class="md:hidden flex items-center gap-1 text-[11px] border border-slate-200 rounded-2xl px-2 py-2 bg-white card-hover">
+        <button type="button" onclick="setLang('en')" class="px-1 font-medium hover:text-brand-700">EN</button>
+        <span class="text-slateish">|</span>
+        <button type="button" onclick="setLang('hi')" class="px-1 font-medium hover:text-brand-700">हिं</button>
+        <span class="text-slateish">|</span>
+        <button type="button" onclick="setLang('mr')" class="px-1 font-medium hover:text-brand-700">मर</button>
+      </div>
+      <button class="md:hidden rounded-2xl border border-slate-200 px-3 py-2 hover:bg-white" @click="mobileOpen = !mobileOpen"
+              aria-label="Toggle menu">
+        ☰
+      </button>
+    </div>
+  </div>
+</header>
+<!-- Mobile menu (drawer) -->
 <div x-cloak x-show="mobileOpen" class="mobile-menu-overlay" @click="mobileOpen=false" x-transition.opacity></div>
 <div x-cloak x-show="mobileOpen" class="mobile-menu-panel" @click.stop
      x-transition:enter="transition ease-out duration-200"
@@ -285,7 +416,7 @@
 </div>
 
 
-  <main class="mx-auto max-w-6xl px-4 md:px-8 py-10">
+<main class="mx-auto max-w-6xl px-4 md:px-8 py-10">
     <nav aria-label="Breadcrumb" class="mb-6">
       <div class="inline-flex items-center gap-2 pill rounded-full px-4 py-2 text-sm">
         <a class="text-slateish hover:text-brand" href="/">Home</a>
@@ -350,5 +481,21 @@
 </footer>
 
   <script src="/assets/js/cta-tracking.js"></script>
+
+  <script>
+  // Minimal Alpine data for header/mobile menu on this page.
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('siteApp', () => ({
+      mobileOpen: false,
+      whatsappLink: "https://wa.me/919867630682?text=Hi+Atlas+Agro%2C+I+am+looking+for+bulk+your+products.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing.",
+      init() {}
+    }));
+  });
+
+  // Safe language switch stub (prevents errors if i18n bundle isn't present)
+  window.setLang = window.setLang || function(lang){
+    try { localStorage.setItem("atlas_lang", lang); } catch(e){}
+  };
+</script>
 </body>
 </html>

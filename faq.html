@@ -258,6 +258,43 @@
   .w-full{ width:100%; }
 </style>
 
+  <style>
+    /* FAQ enhancements */
+    .faq-wrap{display:grid;gap:18px}
+    @media (min-width: 1024px){ .faq-wrap{grid-template-columns: 1.15fr .85fr; align-items:start;} }
+    .faq-hero{
+      border:1px solid rgba(15,23,42,.10);
+      background: radial-gradient(900px 300px at 15% 10%, rgba(34,179,106,.22), transparent 55%),
+                  radial-gradient(700px 260px at 85% 30%, rgba(34,179,106,.16), transparent 55%),
+                  linear-gradient(135deg, rgba(255,255,255,.85), rgba(34,179,106,.08));
+      border-radius: 28px;
+      overflow:hidden;
+    }
+    .faq-hero-inner{padding: 26px 22px;}
+    @media (min-width: 768px){ .faq-hero-inner{padding: 34px 30px;} }
+    .faq-kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .faq-kpi{padding:10px 12px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid rgba(148,163,184,.45);
+      font-size:12px;color:rgba(15,23,42,.72);font-weight:800}
+    .faq-kpi strong{color:rgba(15,23,42,.92)}
+    .faq-card{border:1px solid rgba(148,163,184,.35);background: rgba(255,255,255,.92);border-radius: 22px; padding: 16px;}
+    .faq-side{position:sticky; top: 96px;}
+    .faq-side .cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:999px;
+      font-weight:800;text-decoration:none}
+    .faq-side .cta-primary{background: var(--brand-700,#1f6f4a); color:#fff;}
+    .faq-side .cta-primary:hover{filter:brightness(1.03)}
+    .faq-side .cta-ghost{background: rgba(255,255,255,.85); border:1px solid rgba(15,23,42,0.12); color: rgba(15,23,42,.88);}
+    .faq-side .cta-ghost:hover{background: rgba(255,255,255,.95)}
+    .faq-acc details{border:1px solid rgba(148,163,184,.28); background: rgba(34,179,106,.06); border-radius: 18px; padding: 14px 14px;}
+    .faq-acc summary{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .faq-acc summary .q{font-weight:800;color:rgba(15,23,42,.92)}
+    .faq-acc summary .icon{width:34px;height:34px;border-radius:999px;border:1px solid rgba(148,163,184,.40);
+      background: rgba(255,255,255,.75);display:flex;align-items:center;justify-content:center;color: rgba(15,23,42,.70); flex:0 0 auto}
+    details[open] summary .icon{transform: rotate(45deg);}
+    .faq-acc p{margin-top:10px;color:rgba(71,85,105,1)}
+    .soft-divider{height:1px;background:rgba(148,163,184,.25);margin: 12px 0}
+  </style>
+
+
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -417,56 +454,203 @@
 
 
 <main class="mx-auto max-w-6xl px-4 md:px-8 py-10">
-    <nav aria-label="Breadcrumb" class="mb-6">
-      <div class="inline-flex items-center gap-2 pill rounded-full px-4 py-2 text-sm">
-        <a class="text-slateish hover:text-brand" href="/">Home</a>
-        <span class="text-slate-300">/</span>
-        <span class="text-brand font-semibold">FAQ</span>
-      </div>
-    </nav>
+  <nav aria-label="Breadcrumb" class="mb-6">
+    <div class="inline-flex items-center gap-2 pill rounded-full px-4 py-2 text-sm">
+      <a class="text-slateish hover:text-brand" href="/">Home</a>
+      <span class="text-slate-300">/</span>
+      <span class="text-brand font-semibold">FAQ</span>
+    </div>
+  </nav>
 
-    <h1 class="text-4xl font-extrabold tracking-tight">FAQs</h1>
-    <p class="mt-2 text-slateish max-w-2xl">Quick answers to common bulk buying questions for dehydrated products, spray dried ingredients and spices.</p>
-    <div class="hero-strip fade-in">
-      <div class="hero-pills">
-        <span class="hero-pill">⚡ Typical reply: <strong>same day</strong></span>
-        <span class="hero-pill">📦 MOQ + packaging clarified</span>
-        <span class="hero-pill">🌍 Export-ready support</span>
-      </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <a class="btn" href="/contact.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:var(--brand-700,#1f6f4a);color:#fff;text-decoration:none;font-weight:800;">Ask on WhatsApp →</a>
-        <a class="btn" href="/buyers-guide/" style="display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid rgba(15,23,42,0.12);color:rgba(15,23,42,.88);text-decoration:none;font-weight:800;">Buyer guide →</a>
+  <!-- Hero -->
+  <section class="faq-hero card-hover fade-in">
+    <div class="faq-hero-inner">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">FAQs</h1>
+          <p class="mt-3 text-slateish max-w-2xl">
+            Quick answers for bulk buying — MOQ, mesh/grade, packaging, documentation, export readiness and enquiry process.
+          </p>
+          <div class="faq-kpis">
+            <span class="faq-kpi">⚡ Typical reply: <strong>same day</strong></span>
+            <span class="faq-kpi">📦 MOQ + packaging confirmed</span>
+            <span class="faq-kpi">🌍 Export-ready support</span>
+            <span class="faq-kpi">🧾 COA / batch docs on request</span>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a class="faq-side cta-btn cta-primary"
+             href="/contact.html"
+             style="display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:var(--brand-700,#1f6f4a);color:#fff;text-decoration:none;font-weight:800;">
+            Ask on WhatsApp →
+          </a>
+          <a class="faq-side cta-btn cta-ghost"
+             href="/buyers-guide/"
+             style="display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:rgba(255,255,255,.85);border:1px solid rgba(15,23,42,0.12);color:rgba(15,23,42,.88);text-decoration:none;font-weight:800;">
+            Buyer guide →
+          </a>
+        </div>
       </div>
     </div>
+  </section>
 
+  <div class="mt-8 faq-wrap">
+    <!-- Left: FAQ sections -->
+    <div class="grid gap-8">
+      <section class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-extrabold">Bulk buying &amp; ordering</h2>
+            <p class="mt-2 text-slateish max-w-2xl">Common questions about MOQ, formats, and how to place a bulk enquiry.</p>
+          </div>
+          <span class="hidden md:inline-flex px-3 py-1 text-xs rounded-full bg-brand-50 border border-brand-200 text-brand-800 font-semibold">B2B</span>
+        </div>
 
-    <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
-      <h2 class="text-xl font-bold">Bulk buying &amp; ordering</h2>
-      <div class="mt-4 grid gap-3">
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">What is your MOQ for bulk orders?</summary><p class="mt-2 text-slateish">MOQ depends on product and packing format. Share product, grade/mesh, packaging, monthly volume and destination — we’ll confirm MOQ & availability.</p></details>
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">Do you support different mesh sizes and granulation?</summary><p class="mt-2 text-slateish">Yes. We can supply powders, flakes and granules. We confirm specs (mesh/grade) before bulk production.</p></details>
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">Do you offer packaging options and private label?</summary><p class="mt-2 text-slateish">We support bulk/export packaging formats. Private label can be discussed based on quantity, destination and compliance needs.</p></details>
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">Are your products suitable for export?</summary><p class="mt-2 text-slateish">Yes. We support export-friendly labeling & packing guidance and documentation on request.</p></details>
+        <div class="soft-divider"></div>
+
+        <div class="faq-acc grid gap-3">
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">What is your MOQ for bulk orders?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>MOQ depends on product and packing format. Share product, grade/mesh, packaging, monthly volume and destination — we’ll confirm MOQ &amp; availability.</p>
+          </details>
+
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">Do you support different mesh sizes and granulation?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>Yes. We can supply powders, flakes and granules. We confirm specs (mesh/grade) before bulk production.</p>
+          </details>
+
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">Do you offer packaging options and private label?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>We support bulk/export packaging formats. Private label can be discussed based on quantity, destination and compliance needs.</p>
+          </details>
+
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">Are your products suitable for export?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>Yes. We support export-friendly labeling &amp; packing guidance and documentation on request.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-extrabold">Quality &amp; compliance</h2>
+            <p class="mt-2 text-slateish max-w-2xl">Specs, batch consistency, and typical documentation support for buyers.</p>
+          </div>
+          <span class="hidden md:inline-flex px-3 py-1 text-xs rounded-full bg-slate-50 border border-slate-200 text-slate-700 font-semibold">QC</span>
+        </div>
+
+        <div class="soft-divider"></div>
+
+        <div class="faq-acc grid gap-3">
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">Can you share specification sheets (moisture, mesh, etc.)?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>Yes. Share the product and intended application and we’ll share typical specs and confirm against your requirement.</p>
+          </details>
+
+          <details>
+            <summary class="cursor-pointer">
+              <span class="q">How do you ensure consistent batch quality?</span>
+              <span class="icon">+</span>
+            </summary>
+            <p>We confirm sample + specs before bulk supply and follow consistency checks per production lot.</p>
+          </details>
+        </div>
+
+        <div class="mt-6 rounded-2xl border border-slate-200 bg-brand-50 p-4">
+          <div class="text-sm font-extrabold text-ink">Tip for faster approval</div>
+          <p class="mt-1 text-sm text-slateish">
+            Send your target <b>mesh/grade</b>, <b>moisture</b>, <b>packaging</b>, and <b>destination country</b>.
+            We’ll align sample + spec confirmation quickly.
+          </p>
+        </div>
+      </section>
+
+      <section id="fast-enquiry" class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-extrabold">Fast enquiry</h2>
+            <p class="mt-2 text-slateish max-w-3xl">
+              For quotation, share <b>product</b>, <b>grade/mesh</b>, <b>packaging</b>, <b>monthly volume</b> and <b>destination</b>.
+              We’ll respond with availability and pricing.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="https://wa.me/917738505687"
+             class="inline-flex items-center gap-2 rounded-full bg-brand-700 px-5 py-2 text-white text-sm font-extrabold hover:bg-brand-600">
+            Chat on WhatsApp →
+          </a>
+          <a href="/contact.html"
+             class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-ink text-sm font-extrabold hover:bg-brand-50">
+            Open contact page →
+          </a>
+          <a href="/buyers-guide/"
+             class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-ink text-sm font-extrabold hover:bg-brand-50">
+            Read buyer guide →
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <!-- Right: Sticky helper -->
+    <aside class="faq-side">
+      <div class="faq-card card-hover">
+        <div class="flex items-center justify-between">
+          <div class="text-base font-extrabold">Need pricing fast?</div>
+          <span class="px-3 py-1 text-xs rounded-full bg-brand-50 border border-brand-200 text-brand-800 font-semibold">B2B Quote</span>
+        </div>
+
+        <p class="mt-2 text-sm text-slateish">
+          Send these 5 details and we’ll reply quickly:
+        </p>
+
+        <ul class="mt-3 text-sm text-slateish list-disc list-inside">
+          <li>Product name</li>
+          <li>Mesh / grade</li>
+          <li>Packaging (5–25kg / custom)</li>
+          <li>Monthly volume</li>
+          <li>Destination</li>
+        </ul>
+
+        <div class="mt-4 grid gap-3">
+          <a class="cta-btn cta-primary" href="https://wa.me/917738505687" target="_blank" rel="noopener">
+            WhatsApp now →
+          </a>
+          <a class="cta-btn cta-ghost" href="/contact.html">
+            Use quote form →
+          </a>
+        </div>
+
+        <div class="soft-divider"></div>
+
+        <div class="text-sm font-extrabold">Helpful links</div>
+        <div class="mt-2 grid gap-2 text-sm">
+          <a class="underline text-slate-700 hover:text-brand" href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">Bulk packaging options</a>
+          <a class="underline text-slate-700 hover:text-brand" href="/buyers-guide/export-quality-standards-dehydrated-products.html">Export quality standards</a>
+          <a class="underline text-slate-700 hover:text-brand" href="/quality.html">Quality &amp; documentation</a>
+        </div>
       </div>
-    </section>
-
-    <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
-      <h2 class="text-xl font-bold">Quality &amp; compliance</h2>
-      <div class="mt-4 grid gap-3">
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">Can you share specification sheets (moisture, mesh, etc.)?</summary><p class="mt-2 text-slateish">Yes. Share the product and intended application and we’ll share typical specs and confirm against your requirement.</p></details>
-        <details class="rounded-2xl border border-slate-200 bg-mint/40 p-4"><summary class="cursor-pointer font-semibold">How do you ensure consistent batch quality?</summary><p class="mt-2 text-slateish">We confirm sample + specs before bulk supply and follow consistency checks per production lot.</p></details>
-      </div>
-    </section>
-
-    <section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover">
-      <h2 class="text-xl font-bold">Fast enquiry</h2>
-      <p class="mt-2 text-slateish max-w-3xl">For quotation, share <b>product</b>, <b>grade/mesh</b>, <b>packaging</b>, <b>monthly volume</b> and <b>destination</b>. We’ll respond with availability and pricing.</p>
-      <div class="mt-4 flex flex-wrap gap-3">
-        <a href="https://wa.me/917738505687" class="inline-flex items-center rounded-full bg-brand px-5 py-2 text-white text-sm font-semibold shadow-soft hover:bg-brand2">Chat on WhatsApp</a>
-        <a href="/quote.html" class="inline-flex items-center rounded-full border border-brand px-5 py-2 text-brand text-sm font-semibold hover:bg-mint">Get a Quote</a>
-      </div>
-    </section>
-  </main>
+    </aside>
+  </div>
+</main>
 
   <footer class="mt-14 border-t border-slate-200 text-sm text-slateish">
   <div class="mx-auto max-w-6xl px-4 md:px-8 py-8 flex flex-col md:flex-row gap-3 items-center justify-between">

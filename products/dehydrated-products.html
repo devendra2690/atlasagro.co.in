@@ -439,7 +439,8 @@
         <a class="flex items-center gap-3 md:gap-5 min-w-0" href="#">
             <!-- BIG, BORDERLESS LOGO -->
             <span class="flex items-center justify-center">
-                <img alt="Atlas AgroFood Logo" class="h-10 w-auto md:h-14 object-contain" decoding="async" loading="eager"
+                <img alt="Atlas AgroFood Logo" class="h-10 w-auto md:h-14 object-contain" decoding="async"
+                     loading="eager"
                      src="/assets/atlas-agro-logo.png"/>
             </span>
             <div class="leading-tight min-w-0">
@@ -594,24 +595,53 @@
                     <a class="text-brand font-semibold hover:underline" href="/#quote">Enquire →</a>
                 </div>
             </div>
-            <div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">
-                <div class="flex items-center justify-between">
-                    <span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">Fruit</span>
-                    <span class="text-xs text-slateish">B2B</span>
+            <div class="card-hover rounded-3xl border border-slate-200 bg-white overflow-hidden group">
+
+                <!-- Hero Image -->
+                <div class="relative aspect-[4/3] overflow-hidden">
+                    <img src="../assets/products/banana/hero.png"
+                        alt="Dehydrated banana powder, granules and chips for B2B supply"
+                        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"/>
                 </div>
-                <h3 class="mt-4 text-xl font-semibold">Banana Powder / Granules / Chips</h3>
-                <p class="mt-2 text-sm text-slateish">Bulk packaging options and export-ready supply. Share your target
-                    specs for a quick quote.</p>
-                <ul class="mt-4 text-sm text-slateish list-disc list-inside">
-                    <li>Powder / flakes / granules (as applicable)</li>
-                    <li>Bulk supply (B2B)</li>
-                    <li>Custom specs</li>
-                    <li>Export-ready / OEM</li>
-                </ul>
-                <div class="mt-6 flex items-center justify-between text-sm">
-                    <a class="underline text-slate-700 hover:text-brand" href="/products/">Back to categories</a>
-                    <a class="text-brand font-semibold hover:underline" href="/products/banana.html">Open product
-                        details →</a>
+
+                <!-- Card Content -->
+                <div class="p-6">
+                    <div class="flex items-center justify-between">
+                        <span class="px-3 py-1 text-xs rounded-full bg-slate-50 border">
+                            Fruit
+                        </span>
+                        <span class="text-xs text-slateish">
+                            B2B
+                        </span>
+                    </div>
+
+                    <h3 class="mt-4 text-xl font-semibold">
+                        Banana Powder / Granules / Chips
+                    </h3>
+
+                    <p class="mt-2 text-sm text-slateish">
+                        Bulk packaging options and export-ready supply.
+                        Share your target specs for a quick quote.
+                    </p>
+
+                    <ul class="mt-4 text-sm text-slateish list-disc list-inside">
+                        <li>Powder / flakes / granules (as applicable)</li>
+                        <li>Bulk supply (B2B)</li>
+                        <li>Custom specs</li>
+                        <li>Export-ready / OEM</li>
+                    </ul>
+
+                    <div class="mt-6 flex items-center justify-between text-sm">
+                        <a class="underline text-slate-700 hover:text-brand"
+                            href="/products/">
+                            Back to categories
+                        </a>
+                        <a class="text-brand font-semibold hover:underline"
+                                href="/products/banana.html">
+                            Open product details →
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">

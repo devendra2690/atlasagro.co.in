@@ -2,89 +2,150 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://atlasagro.co.in/</loc>
-    <lastmod>2025-12-19</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/products/</loc>
-    <lastmod>2025-12-19</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/products/dehydrated-products.html</loc>
-    <lastmod>2025-12-19</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/products/spices.html</loc>
-    <lastmod>2025-12-19</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/products/spray-dried.html</loc>
-    <lastmod>2025-12-19</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/products/banana.html</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/products/onion.html</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/products/garlic-granules.html</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/products/ginger.html</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/products/mixed-veg.html</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
-  <url><loc>https://atlasagro.co.in/industries/</loc></url>
-  <url><loc>https://atlasagro.co.in/industries/soups-noodles-ready-meals.html</loc></url>
-  <url><loc>https://atlasagro.co.in/industries/seasoning-and-spice-blends.html</loc></url>
-  <url><loc>https://atlasagro.co.in/industries/bakery-and-savoury-snacks.html</loc></url>
-  <url><loc>https://atlasagro.co.in/industries/sauces-dressings-condiments.html</loc></url>
-  <url><loc>https://atlasagro.co.in/industries/food-manufacturing-and-export.html</loc></url>
-  <url><loc>https://atlasagro.co.in/industries/horeca-institutional-buyers.html</loc></url>
-  <url><loc>https://atlasagro.co.in/buyers-guide/</loc></url>
-  <url><loc>https://atlasagro.co.in/buyers-guide/spray-dried-vs-dehydrated-powder.html</loc></url>
-  <url><loc>https://atlasagro.co.in/buyers-guide/onion-flakes-vs-onion-powder.html</loc></url>
-  <url><loc>https://atlasagro.co.in/buyers-guide/banana-powder-manufacturer-india.html</loc></url>
-  <url><loc>https://atlasagro.co.in/buyers-guide/garlic-powder-bulk-supplier.html</loc></url>
-  <url><loc>https://atlasagro.co.in/buyers-guide/minimum-order-quantity-packaging-dehydrated-products.html</loc></url>
+  <url>
+    <loc>https://atlasagro.co.in/industries/</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/industries/soups-noodles-ready-meals.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/industries/seasoning-and-spice-blends.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/industries/bakery-and-savoury-snacks.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/industries/sauces-dressings-condiments.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/industries/food-manufacturing-and-export.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/industries/horeca-institutional-buyers.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/buyers-guide/</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/buyers-guide/spray-dried-vs-dehydrated-powder.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/buyers-guide/onion-flakes-vs-onion-powder.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/buyers-guide/banana-powder-manufacturer-india.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/buyers-guide/garlic-powder-bulk-supplier.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/buyers-guide/minimum-order-quantity-packaging-dehydrated-products.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
   <url>
     <loc>https://atlasagro.co.in/buyers-guide/export-quality-standards-dehydrated-products.html</loc>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/buyers-guide/shelf-life-storage-dehydrated-powders.html</loc>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/buyers-guide/mesh-size-grade-guide-powder-flakes-granules.html</loc>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/buyers-guide/private-label-oem-dehydrated-products.html</loc>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/buyers-guide/bulk-packaging-options-dehydrated-products.html</loc>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/buyers-guide/ginger-powder-bulk-supplier.html</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/buyers-guide/dehydrated-onion-powder-supplier.html</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/buyers-guide/garlic-granules-exporter-india.html</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/buyers-guide/mixed-vegetable-powder-manufacturer.html</loc>
-    <lastmod>2025-12-22</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
   <url>
     <loc>https://atlasagro.co.in/why-atlas-agro.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/products/black-pepper.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/products/turmeric.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/products/cinnamon.html</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+  <url>
+    <loc>https://atlasagro.co.in/products/sesame-seed.html</loc>
+    <lastmod>2026-01-08</lastmod>
   </url>
 </urlset>

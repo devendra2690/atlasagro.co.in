@@ -5,29 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
+  <link rel="apple-touch-icon" href="/assets/atlas-agro-logo.png" />
+
+  <title>Dehydrated Vegetables, Fruit Powders & Custom Blends | Atlas AgroFood</title>
   
-  <title>Dehydrated Vegetables & Fruit Powders | Atlas AgroFood</title>
-  <meta name="description" content="Manufacturer and bulk supplier of dehydrated onions, garlic, fruit powders, and custom spice blends for B2B and export." />
-  <meta name="theme-color" content="#15803d" />
-  
+  <meta name="description" content="Atlas AgroFood Pvt Ltd supplies export-ready dehydrated vegetables, fruit powders, onion & garlic powders, and custom blends for B2B buyers."/>
+  <meta name="keywords" content="dehydrated powder supplier, onion powder, garlic powder, ginger powder, fruit chips, vegetable powders, custom blends" />
+  <meta name="theme-color" content="#0f7a4a" />
+  <link rel="canonical" href="https://atlasagro.co.in/">
+  <link rel="alternate" href="https://atlasagro.co.in/" hreflang="en-IN">
+  <link rel="alternate" href="https://atlasagro.co.in/" hreflang="x-default">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Atlas AgroFood">
+  <meta property="og:title" content="Dehydrated Vegetables, Fruit Powders & Custom Blends | Atlas AgroFood">
+  <meta property="og:description" content="Atlas AgroFood Pvt Ltd supplies export-ready dehydrated vegetables, fruit powders, onion & garlic powders, and custom blends for B2B buyers.">
+  <meta property="og:url" content="https://atlasagro.co.in/">
+  <meta property="og:image" content="https://atlasagro.co.in/assets/atlas-agro-logo.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Atlas AgroFood",
+    "url": "https://atlasagro.co.in/",
+    "logo": "https://atlasagro.co.in/assets/atlas-agro-logo.png",
+    "description": "Manufacturer and bulk supplier of dehydrated fruits, vegetables, and custom food ingredients for B2B and export markets.",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+91-7738505687",
+      "email": "sales@atlasagrofood.co.in",
+      "areaServed": ["IN", "Global"],
+      "availableLanguage": ["English", "Hindi", "Marathi"]
+    }]
+  }
+  </script>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             brand: { DEFAULT: '#15803d', 50: '#f2fcf5', 100: '#dcfce7', 200: '#bbf7d0', 600: '#16a34a', 700: '#15803d', 800: '#166534', 900: '#14532d' },
-            ink: '#1e293b',
-            slateish: '#64748b',
+            ink: '#0f172a',
+            slateish: '#475569',
             'earth-cream': '#f9f7f2',
             'earth-gold': '#c5a365', 
             'earth-brown': '#5d4037',
-            'earth-green': '#556b2f',
           },
           fontFamily: {
             sans: ['Lato', 'sans-serif'],
@@ -39,19 +70,49 @@
   </script>
 
   <style>
+    [x-cloak]{ display:none !important; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Lato', sans-serif; }
     .font-script { font-family: 'Dancing Script', cursive; }
     .font-serif-display { font-family: 'Playfair Display', serif; }
-    [x-cloak] { display: none !important; }
-    html { scroll-behavior: smooth; }
-    .card-hover { transition: all .3s ease; }
-    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+    
+    .card-hover{transition:all .25s ease;}
+    .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
+    
+    .supply-card:hover { background-color: rgb(34 179 106 / 0.08); border-color: rgb(34 179 106 / 0.35); }
+    
+    /* Reveal Animation */
+    .reveal { opacity: 0; transform: translateY(14px) scale(.98); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); will-change: transform, opacity; }
+    .reveal.in { opacity: 1; transform: translateY(0) scale(1); }
+
+    /* Sticky CTA */
+    .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
+    .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
+    .sticky-cta .wa{background:#ffffff;border:1px solid rgba(148,163,184,.6);color:#0f172a}
+    .sticky-cta .quote{background:var(--brand-700,#1f6f4a);color:#ffffff}
+    
+    .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:59;padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);border-top:1px solid rgba(148,163,184,.6)}
+    .mobile-cta .wrap{max-width:72rem;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .mobile-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 14px;border-radius:16px;font-weight:900}
+    @media (min-width: 768px){.mobile-cta{display:none}}
+    @media (max-width: 767px){body{padding-bottom:70px}}
   </style>
 </head>
 
-<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen" 
-      x-data="siteApp()" 
+<body class="bg-earth-cream text-ink antialiased flex flex-col min-h-screen"
+      x-data="siteApp()"
       x-init="init()">
+
+  <div class="sticky-cta">
+    <a class="quote" href="/contact.html">Get Bulk Quote</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+  <div class="mobile-cta">
+    <div class="wrap">
+      <a class="quote" href="/contact.html">Get Bulk Quote</a>
+      <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
 
   <div class="bg-earth-gold text-white text-xs md:text-sm py-2">
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
@@ -105,8 +166,8 @@
     </div>
   </header>
 
-  <div x-show="mobileOpen" class="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm" @click="mobileOpen = false" x-transition.opacity></div>
-  <div x-show="mobileOpen" class="fixed right-0 top-0 bottom-0 w-[80%] max-w-sm bg-earth-cream z-[70] shadow-2xl p-6 flex flex-col gap-6 border-l border-stone-200" 
+  <div x-cloak x-show="mobileOpen" class="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm" @click="mobileOpen = false" x-transition.opacity></div>
+  <div x-cloak x-show="mobileOpen" class="fixed right-0 top-0 bottom-0 w-[80%] max-w-sm bg-earth-cream z-[70] shadow-2xl p-6 flex flex-col gap-6 border-l border-stone-200" 
        x-transition:enter="transition transform duration-300"
        x-transition:enter-start="translate-x-full"
        x-transition:enter-end="translate-x-0"
@@ -128,132 +189,202 @@
       <a :href="whatsappLink" class="mt-auto w-full bg-brand-700 text-white text-center py-4 rounded-xl font-bold">Chat on WhatsApp</a>
   </div>
 
-  <main class="flex-grow">
-      
-      <section class="relative w-full h-[680px] md:h-[750px] overflow-hidden bg-earth-cream group" x-data="heroSlider()">
-        <template x-for="(slide, index) in slides" :key="index">
-          <div class="absolute inset-0 w-full h-full flex flex-col md:flex-row" 
-               x-show="active === index"
-               x-transition:enter="transition ease-in-out duration-700"
-               x-transition:enter-start="opacity-0"
-               x-transition:enter-end="opacity-100"
-               x-transition:leave="transition ease-in-out duration-700"
-               x-transition:leave-start="opacity-100"
-               x-transition:leave-end="opacity-0">
-            
-            <div class="w-full h-[55%] md:h-full md:w-[60%] flex items-center justify-center md:justify-start px-6 md:pl-24 relative z-20">
-              <div class="max-w-xl text-center md:text-left mt-8 md:mt-0">
-                <div class="relative inline-block mb-3 md:mb-5">
-                   <span class="block h-px w-12 bg-stone-300 absolute left-[-60px] top-1/2 hidden md:block"></span>
-                   <span class="font-script text-3xl md:text-5xl" :style="`color: ${slide.accentColor}`" x-text="slide.tagline"></span>
-                   <span class="block h-px w-12 bg-stone-300 absolute right-[-60px] top-1/2 hidden md:block"></span>
-                </div>
-                <h1 class="font-serif-display text-5xl sm:text-6xl md:text-8xl text-brand-900 leading-[1] mb-6 drop-shadow-sm" x-html="slide.title"></h1>
-                <p class="text-stone-600 text-base md:text-xl mb-8 max-w-sm mx-auto md:mx-0 font-light leading-relaxed" x-text="slide.desc"></p>
-                <a :href="slide.link" class="inline-block text-white px-8 py-4 uppercase tracking-[0.15em] text-xs md:text-sm font-bold hover:opacity-90 transition shadow-xl rounded-sm" :style="`background-color: ${slide.accentColor}`">View Product</a>
-              </div>
-            </div>
+  <section class="w-full bg-white/70 border-y border-stone-200 py-3 text-center text-sm text-stone-500">
+    <p class="max-w-4xl mx-auto leading-relaxed">
+      <span class="font-bold text-ink">Explore:</span>
+      <a href="/products/" class="text-brand-700 font-semibold hover:underline">product categories</a> including
+      <a href="/products/dehydrated-products.html" class="text-brand-700 font-semibold hover:underline">dehydrated vegetables</a>,
+      <a href="/products/spray-dried.html" class="text-brand-700 font-semibold hover:underline">spray dried ingredients</a> and
+      <a href="/products/spices.html" class="text-brand-700 font-semibold hover:underline">onion & garlic mixes</a>.
+    </p>
+  </section>
 
-            <div class="w-full h-[45%] md:h-full md:w-[40%] relative overflow-hidden z-10">
-              <div class="absolute inset-0 w-full h-full z-0 transition-colors duration-700" :style="`background-color: ${slide.color}`"></div>
-              <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 md:left-auto md:right-[10%] md:top-1/2 md:-translate-y-1/2 md:translate-x-0 w-[280px] h-[280px] md:w-[90%] md:h-auto md:aspect-square rounded-full border-[10px] md:border-[20px] border-white/30 shadow-2xl flex items-center justify-center z-10 overflow-hidden bg-white/10 backdrop-blur-sm">
-                 <img :src="slide.image" class="w-full h-full object-cover scale-110 hover:scale-105 transition duration-[2000ms]" alt="Product">
-              </div>
+  <section class="relative overflow-hidden pt-12 pb-20">
+    <div class="absolute inset-0 opacity-25 pointer-events-none"
+         style="background: radial-gradient(800px 400px at 20% 10%, rgba(34,179,106,.25), transparent 60%),
+                        radial-gradient(600px 350px at 80% 15%, rgba(59,130,246,.12), transparent 60%);">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 relative">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-200 bg-brand-50 text-xs text-brand-800 font-bold mb-4">
+            <span class="h-2 w-2 rounded-full bg-brand-600"></span>
+            Reliable Dehydration Partner for Brands & Manufacturers
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-serif-display font-bold text-ink leading-[1.1] mb-6" data-i18n="hero.title">
+            Premium <span class="text-brand-800">Dehydrated Vegetables</span>, Fruit Powders & Custom Blends
+          </h1>
+
+          <p class="text-slateish leading-relaxed text-lg" data-i18n="hero.desc">
+            Atlas AgroFood supplies export-quality dehydrated fruits and vegetables,
+            including powders, flakes and custom blends. We support bulk orders and consistent quality 
+            for B2B buyers across India and international markets.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#quote" class="rounded-xl px-6 py-3 bg-brand-700 text-white font-bold hover:bg-brand-800 transition shadow-lg">
+              Request Pricing / <span data-i18n="specs.moq">MOQ</span>
+            </a>
+            <a href="/products/" class="rounded-xl px-6 py-3 border border-stone-300 bg-white hover:bg-stone-50 transition font-bold text-ink">
+              Explore Products
+            </a>
+          </div>
+
+          <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="rounded-2xl border border-stone-200 bg-white p-4 text-center">
+              <div class="text-2xl font-bold text-brand-700">50+</div>
+              <div class="text-xs text-slateish font-bold uppercase mt-1">SKUs</div>
             </div>
+            <div class="rounded-2xl border border-stone-200 bg-white p-4 text-center">
+              <div class="text-2xl font-bold text-brand-700">B2B</div>
+              <div class="text-xs text-slateish font-bold uppercase mt-1">Bulk Only</div>
+            </div>
+            <div class="rounded-2xl border border-stone-200 bg-white p-4 text-center">
+              <div class="text-2xl font-bold text-brand-700">QC</div>
+              <div class="text-xs text-slateish font-bold uppercase mt-1">Certified</div>
+            </div>
+            <div class="rounded-2xl border border-stone-200 bg-white p-4 text-center">
+              <div class="text-2xl font-bold text-brand-700">OEM</div>
+              <div class="text-xs text-slateish font-bold uppercase mt-1">Private Label</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-stone-200 bg-white p-8 shadow-xl relative z-10">
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div>
+              <div class="text-lg font-bold text-ink" data-i18n="quote.title">Quick Quote</div>
+              <div class="text-xs text-slateish mt-1" data-i18n="quote.lead">Get response within 24 hours.</div>
+            </div>
+            <div class="text-xs font-bold text-brand-800 bg-brand-100 px-3 py-1 rounded-full uppercase tracking-wider">Fast</div>
+          </div>
+
+          <form class="grid gap-4" @submit.prevent="submitQuote()">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <input class="w-full rounded-xl bg-stone-50 border border-stone-200 px-4 py-3 outline-none focus:border-brand-500 focus:bg-white transition" placeholder="Your Name" x-model="quote.name" required />
+              <input class="w-full rounded-xl bg-stone-50 border border-stone-200 px-4 py-3 outline-none focus:border-brand-500 focus:bg-white transition" placeholder="Company" x-model="quote.company" />
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <input class="w-full rounded-xl bg-stone-50 border border-stone-200 px-4 py-3 outline-none focus:border-brand-500 focus:bg-white transition" placeholder="Phone / WhatsApp" x-model="quote.phone" required />
+              <input class="w-full rounded-xl bg-stone-50 border border-stone-200 px-4 py-3 outline-none focus:border-brand-500 focus:bg-white transition" placeholder="Email" type="email" x-model="quote.email" />
+            </div>
+            <select class="w-full rounded-xl bg-stone-50 border border-stone-200 px-4 py-3 outline-none focus:border-brand-500 focus:bg-white transition" x-model="quote.product">
+              <option value="">Select product interest</option>
+              <option>Fruit chips / pieces</option>
+              <option>Vegetable powders</option>
+              <option>Onion & garlic mixes</option>
+              <option>Herbs / leafy greens</option>
+              <option>Custom blends</option>
+            </select>
+            <textarea class="w-full rounded-xl bg-stone-50 border border-stone-200 px-4 py-3 outline-none focus:border-brand-500 focus:bg-white transition" rows="3" placeholder="Tell us MOQ, packaging, mesh size..." x-model="quote.message"></textarea>
+            <button class="rounded-xl px-5 py-4 bg-brand-700 text-white font-bold hover:bg-brand-800 transition shadow-lg">
+              <span data-i18n="quote.send">Send Enquiry via WhatsApp</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="industries" class="border-y border-slate-200 bg-brand-50">
+    <div class="max-w-7xl mx-auto px-4 py-20">
+      <h2 class="text-3xl md:text-4xl font-serif-display font-bold text-center" data-i18n="sec.industries">Who We Supply</h2>
+      <div class="h-1 w-20 bg-earth-gold mx-auto rounded-full mb-4 mt-4"></div>
+      <p class="text-center text-slateish mb-12 max-w-2xl mx-auto" data-i18n="industries.lead">Ingredients designed for consistent taste, low moisture, and stable shelf life.</p>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="reveal supply-card rounded-3xl border border-stone-200 bg-white p-6 hover:shadow-lg transition card-hover" style="transition-delay:0ms">
+          <div class="text-3xl mb-4">🏭</div>
+          <div class="text-xl font-bold mb-2" data-i18n="industries.card1.title">Food Manufacturers</div>
+          <div class="text-sm text-slateish" data-i18n="industries.card1.desc">Seasonings, sauces, RTC/RTD, frozen foods.</div>
+        </div>
+        <div class="reveal supply-card rounded-3xl border border-stone-200 bg-white p-6 hover:shadow-lg transition card-hover" style="transition-delay:80ms">
+           <div class="text-3xl mb-4">🏨</div>
+          <div class="text-xl font-bold mb-2" data-i18n="industries.card2.title">HoReCa</div>
+          <div class="text-sm text-slateish" data-i18n="industries.card2.desc">Hotels, restaurants, caterers — bulk packs.</div>
+        </div>
+        <div class="reveal supply-card rounded-3xl border border-stone-200 bg-white p-6 hover:shadow-lg transition card-hover" style="transition-delay:160ms">          
+            <div class="text-3xl mb-4">🍿</div>
+            <div class="text-xl font-bold mb-2"><span data-i18n="industries.snackBrands">Snack Brands</span></div>
+          <div class="text-sm text-slateish"><span data-i18n="industries.snackDesc">Fruit chips, veg chips, spice blends.</span></div>
+        </div>
+        <div class="reveal supply-card rounded-3xl border border-stone-200 bg-white p-6 hover:shadow-lg transition card-hover" style="transition-delay:240ms">          
+            <div class="text-3xl mb-4">✈️</div>
+            <div class="text-xl font-bold mb-2"><span data-i18n="industries.exporters">Exporters</span></div>
+          <div class="text-sm text-slateish"><span data-i18n="industries.exportersDesc">Documentation & packing support.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quality" class="max-w-7xl mx-auto px-4 py-20">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-serif-display font-bold text-brand-900" data-i18n="sec.quality">Quality & Food Safety</h2>
+        <div class="h-1 w-20 bg-earth-gold rounded-full my-4"></div>
+        <p class="text-slateish text-lg" data-i18n="quality.lead">We aim for repeatable batches through raw material checks, controlled processing, and QC logs.</p>
+
+        <div class="mt-8 grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl border border-stone-200 bg-stone-50 p-5">
+            <div class="font-bold text-ink" data-i18n="quality.card1.title">Incoming RM Checks</div>
+            <div class="text-sm text-slateish mt-2" data-i18n="quality.card1.desc">Visual sorting, odor, moisture, infestation check.</div>
+          </div>
+          <div class="rounded-2xl border border-stone-200 bg-stone-50 p-5">
+            <div class="font-bold text-ink" data-i18n="quality.card2.title">Batch QC</div>
+            <div class="text-sm text-slateish mt-2" data-i18n="quality.card2.desc">Moisture, mesh size, color, aroma, foreign matter.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-stone-200 bg-white p-8 shadow-lg">
+        <div class="text-xl font-bold text-ink mb-6" data-i18n="specs.title">Typical Specifications</div>
+        <div class="space-y-4">
+          <div class="flex justify-between border-b border-stone-100 pb-2">
+            <span class="text-slateish" data-i18n="specs.moisture">Moisture</span>
+            <span class="font-bold text-ink" data-i18n="specs.moistureVal">Max 5-6% (Targeted)</span>
+          </div>
+          <div class="flex justify-between border-b border-stone-100 pb-2">
+            <span class="text-slateish" data-i18n="specs.mesh">Mesh</span>
+            <span class="font-bold text-ink" data-i18n="specs.meshVal">Fine / Medium / Coarse</span>
+          </div>
+          <div class="flex justify-between border-b border-stone-100 pb-2">
+            <span class="text-slateish" data-i18n="specs.packing">Packing</span>
+            <span class="font-bold text-ink" data-i18n="specs.packingVal">1–25 kg (Custom)</span>
+          </div>
+        </div>
+        <div class="mt-8">
+          <a href="#quote" class="inline-block w-full text-center rounded-xl bg-stone-100 py-3 text-brand-800 font-bold hover:bg-stone-200 transition" data-i18n="specs.cta">Share Required Specs →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="bg-stone-50 py-20">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-serif-display font-bold text-center mb-10" data-i18n="sec.faq">FAQ</h2>
+      <div class="grid gap-4">
+        <template x-for="(f, idx) in faqs" :key="idx">
+          <div class="rounded-2xl border border-stone-200 bg-white overflow-hidden shadow-sm">
+            <button class="w-full text-left p-5 flex items-center justify-between gap-4 font-bold text-ink hover:text-brand-700"
+                    @click="f.open = !f.open">
+              <span x-text="f.q"></span>
+              <span x-text="f.open ? '−' : '+'" class="text-xl"></span>
+            </button>
+            <div class="px-5 pb-5 text-stone-600 leading-relaxed" x-show="f.open" x-transition x-text="f.a"></div>
           </div>
         </template>
-
-        <div class="absolute bottom-0 left-0 w-full px-6 py-6 md:px-12 md:py-10 z-30 flex flex-col md:flex-row items-center justify-between pointer-events-none">
-          <div class="flex gap-4 pointer-events-auto hidden md:flex">
-            <button @click="prev()" class="w-14 h-14 rounded-full border border-stone-400 flex items-center justify-center text-stone-600 hover:bg-brand-900 hover:text-white hover:border-brand-900 transition duration-300"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
-            <button @click="next()" class="w-14 h-14 rounded-full border border-stone-400 flex items-center justify-center text-stone-600 hover:bg-brand-900 hover:text-white hover:border-brand-900 transition duration-300"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-          </div>
-          <div class="absolute bottom-[25%] w-full flex justify-between px-4 md:hidden pointer-events-auto">
-             <button @click="prev()" class="w-10 h-10 rounded-full bg-white/40 backdrop-blur text-brand-900 flex items-center justify-center shadow-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
-             <button @click="next()" class="w-10 h-10 rounded-full bg-white/40 backdrop-blur text-brand-900 flex items-center justify-center shadow-lg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
-          </div>
-          <div class="flex gap-4 pointer-events-auto overflow-x-auto max-w-full pb-2 md:pb-0">
-            <template x-for="(slide, index) in slides" :key="index">
-              <button @click="goTo(index)" class="relative w-12 h-12 md:w-20 md:h-20 rounded-full overflow-hidden border-2 transition-all duration-300 transform" :class="active === index ? 'border-brand-900 scale-110 shadow-lg' : 'border-transparent opacity-60 grayscale hover:grayscale-0'"><img :src="slide.image" class="w-full h-full object-cover"></button>
-            </template>
-          </div>
-          <div class="hidden md:flex items-center gap-2 pointer-events-auto transform rotate-90 origin-right translate-x-8 text-earth-gold font-bold tracking-[0.2em] text-xs uppercase">Premium Quality</div>
-        </div>
-      </section>
-
-      <section class="py-20 bg-earth-cream">
-        <div class="max-w-7xl mx-auto px-4">
-          <div class="text-center mb-16">
-            <h2 class="font-serif-display text-4xl md:text-5xl text-brand-900 mb-4">Who We Supply</h2>
-            <div class="h-1 w-20 bg-earth-gold mx-auto rounded-full"></div>
-            <p class="mt-4 text-stone-600 max-w-2xl mx-auto">Ingredients designed for consistent taste, low moisture, and stable shelf life for industrial applications.</p>
-          </div>
-          <div class="grid md:grid-cols-4 gap-6">
-            <div class="bg-white p-8 rounded-t-full rounded-b-[3rem] text-center border border-stone-100 shadow-sm card-hover group">
-              <div class="w-16 h-16 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:bg-brand-700 group-hover:text-white transition">🏭</div>
-              <h3 class="font-serif-display text-xl font-bold text-brand-900 mb-2">Manufacturers</h3>
-              <p class="text-sm text-stone-500">Seasonings, sauces, RTC/RTD, and frozen food lines.</p>
-            </div>
-            <div class="bg-white p-8 rounded-t-full rounded-b-[3rem] text-center border border-stone-100 shadow-sm card-hover group">
-              <div class="w-16 h-16 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:bg-brand-700 group-hover:text-white transition">🏨</div>
-              <h3 class="font-serif-display text-xl font-bold text-brand-900 mb-2">HoReCa</h3>
-              <p class="text-sm text-stone-500">Hotels, restaurants, and caterers requiring bulk packs.</p>
-            </div>
-            <div class="bg-white p-8 rounded-t-full rounded-b-[3rem] text-center border border-stone-100 shadow-sm card-hover group">
-               <div class="w-16 h-16 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:bg-brand-700 group-hover:text-white transition">🍿</div>
-              <h3 class="font-serif-display text-xl font-bold text-brand-900 mb-2">Snack Brands</h3>
-              <p class="text-sm text-stone-500">Fruit chips, veggie chips, and dusting spice blends.</p>
-            </div>
-            <div class="bg-white p-8 rounded-t-full rounded-b-[3rem] text-center border border-stone-100 shadow-sm card-hover group">
-               <div class="w-16 h-16 bg-brand-50 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl group-hover:bg-brand-700 group-hover:text-white transition">✈️</div>
-              <h3 class="font-serif-display text-xl font-bold text-brand-900 mb-2">Exporters</h3>
-              <p class="text-sm text-stone-500">White-label supply with export-ready documentation.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="quote" class="py-20 bg-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-50 rounded-bl-full -z-0 opacity-50"></div>
-        <div class="max-w-7xl mx-auto px-4 relative z-10">
-          <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span class="text-earth-gold font-bold tracking-widest uppercase text-xs">Get in Touch</span>
-              <h2 class="font-serif-display text-4xl md:text-5xl text-brand-900 mt-2 mb-6">Request a Bulk Quote</h2>
-              <p class="text-stone-600 mb-8">Direct farm-to-factory supply. Share your requirements for Dehydrated Onions, Garlic, Fruit Powders, or Custom Blends.</p>
-              <div class="flex gap-6 mb-8">
-                <div>
-                  <div class="text-xs uppercase text-stone-400 font-bold">Call / WhatsApp</div>
-                  <div class="text-xl font-serif-display text-brand-700">+91-7738505687</div>
-                </div>
-                <div>
-                  <div class="text-xs uppercase text-stone-400 font-bold">Email</div>
-                  <div class="text-xl font-serif-display text-brand-700">sales@atlasagro.in</div>
-                </div>
-              </div>
-            </div>
-            <div class="bg-earth-cream p-8 rounded-3xl border border-stone-200 shadow-lg">
-              <form @submit.prevent="submitQuote()" class="grid gap-4">
-                <div class="grid grid-cols-2 gap-4">
-                  <input x-model="quote.name" type="text" placeholder="Name" class="w-full bg-white border border-stone-200 p-4 rounded-xl focus:outline-none focus:border-brand-500">
-                  <input x-model="quote.company" type="text" placeholder="Company" class="w-full bg-white border border-stone-200 p-4 rounded-xl focus:outline-none focus:border-brand-500">
-                </div>
-                <input x-model="quote.phone" type="text" placeholder="Phone Number" class="w-full bg-white border border-stone-200 p-4 rounded-xl focus:outline-none focus:border-brand-500">
-                <textarea x-model="quote.message" rows="3" placeholder="I am interested in..." class="w-full bg-white border border-stone-200 p-4 rounded-xl focus:outline-none focus:border-brand-500"></textarea>
-                <button class="w-full bg-brand-700 text-white font-bold py-4 rounded-xl hover:bg-brand-800 transition shadow-lg">Send via WhatsApp</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-  </main>
+      </div>
+    </div>
+  </section>
 
   <footer class="bg-brand-900 text-white pt-16 pb-8 border-t-[10px] border-earth-gold">
     <div class="max-w-7xl mx-auto px-4">
       <div class="grid md:grid-cols-4 gap-10 mb-12">
         <div class="col-span-1 md:col-span-1">
            <div class="h-20 w-20 rounded-2xl bg-white p-2 mb-4">
-              <img src="/assets/atlas-agro-logo.png" alt="Atlas AgroFood" class="w-full h-full object-contain">
+              <img src="/assets/atlas-agro-logo.png" alt="Atlas AgroFood - Dehydrated Onion Manufacturer" class="w-full h-full object-contain">
            </div>
            <div class="font-serif-display text-2xl font-bold mb-4">Atlas AgroFood</div>
            <p class="text-brand-200 text-sm leading-relaxed">
@@ -285,7 +416,7 @@
            <p class="text-sm text-brand-100 leading-relaxed">
              Khamgaon, Dist Buldhana,<br>Maharashtra, India 444303
            </p>
-           <div class="mt-4 text-brand-200 text-sm">
+           <div class="mt-4 text-brand-200 text-sm font-bold">
               <p>+91-7738505687</p>
               <p>sales@atlasagro.in</p>
            </div>
@@ -296,7 +427,7 @@
         <p>&copy; <span id="footer-year">2026</span> Atlas AgroFood Pvt Ltd. All rights reserved.</p>
         <div class="flex gap-4 mt-2 md:mt-0">
             <a href="#" class="hover:text-white">Privacy Policy</a>
-            <a href="#" class="hover:text-white">Sitemap</a>
+            <a href="/sitemap.xml" class="hover:text-white">Sitemap</a>
         </div>
       </div>
     </div>
@@ -305,36 +436,91 @@
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <script>
-    function heroSlider() {
-      return {
-        active: 0,
-        interval: null,
-        slides: [
-          { tagline: "Healthy & Quality", title: "Dehydrated <br>Onion Flakes", desc: "Export-quality onion flakes and powders for seasonings, gravies and ready-mixes.", image: "assets/gallery/onion-garlic.jpg", color: "#c5a365", accentColor: "#c5a365", link: "products/spices.html" },
-          { tagline: "Natural Snacks", title: "Crispy Fruit <br>Chips", desc: "100% natural dehydrated fruit chips. No added sugar, perfect for snacking.", image: "assets/gallery/fruit-chips.png", color: "#8FA35C", accentColor: "#8FA35C", link: "products/dehydrated-products.html" },
-          { tagline: "Pure Ingredients", title: "Vegetable <br>Powders", desc: "Spinach, Tomato, and Ginger powders for instant soups and nutraceuticals.", image: "assets/gallery/vegetable-mix.jpg", color: "#B35A22", accentColor: "#B35A22", link: "products/dehydrated-products.html" },
-          { tagline: "Custom Blends", title: "Spices & <br>Seasonings", desc: "Customized spice blends tailored for noodle tastemakers and snack dust.", image: "assets/gallery/custom-blends.jpg", color: "#5D4037", accentColor: "#5D4037", link: "products/spices.html" }
-        ],
-        next() { this.active = (this.active + 1) % this.slides.length; this.resetTimer(); },
-        prev() { this.active = (this.active - 1 + this.slides.length) % this.slides.length; this.resetTimer(); },
-        goTo(index) { this.active = index; this.resetTimer(); },
-        init() { this.startTimer(); },
-        startTimer() { this.interval = setInterval(() => { this.next(); }, 5000); },
-        resetTimer() { clearInterval(this.interval); this.startTimer(); }
-      }
-    }
+    // --- Translations ---
+    const translations = {
+      en: {
+        "hero.title": "Premium <span class='text-brand-800'>Dehydrated Vegetables</span>, Fruit Powders & Custom Blends",
+        "hero.desc": "Atlas AgroFood supplies export-quality dehydrated fruits and vegetables, including powders, flakes and custom blends. We support bulk orders and consistent quality for B2B buyers.",
+        "quote.title": "Quick Quote",
+        "quote.lead": "Get response within 24 hours.",
+        "quote.send": "Send Enquiry via WhatsApp",
+        "sec.industries": "Who We Supply",
+        "industries.lead": "Ingredients designed for consistent taste, low moisture, and stable shelf life.",
+        "industries.card1.title": "Food Manufacturers",
+        "industries.card1.desc": "Seasonings, sauces, RTC/RTD, frozen foods.",
+        "industries.card2.title": "HoReCa",
+        "industries.card2.desc": "Hotels, restaurants, caterers — bulk packs.",
+        "industries.snackBrands": "Snack Brands",
+        "industries.snackDesc": "Fruit chips, veg chips, spice blends.",
+        "industries.exporters": "Exporters",
+        "industries.exportersDesc": "Documentation & packing support.",
+        "sec.quality": "Quality & Food Safety",
+        "quality.lead": "We aim for repeatable batches through raw material checks, controlled processing, and QC logs.",
+        "quality.card1.title": "Incoming RM Checks",
+        "quality.card1.desc": "Visual sorting, odor, moisture, infestation check.",
+        "quality.card2.title": "Batch QC",
+        "quality.card2.desc": "Moisture, mesh size, color, aroma, foreign matter.",
+        "specs.title": "Typical Specifications",
+        "specs.moisture": "Moisture",
+        "specs.moistureVal": "Max 5-6% (Targeted)",
+        "specs.mesh": "Mesh",
+        "specs.meshVal": "Fine / Medium / Coarse",
+        "specs.packing": "Packing",
+        "specs.packingVal": "1–25 kg (Custom)",
+        "specs.cta": "Share Required Specs →",
+        "sec.faq": "FAQ",
+        "specs.moq": "MOQ"
+      },
+      // You can keep Hindi/Marathi objects empty or populate if needed
+      hi: {},
+      mr: {}
+    };
+
+    // --- FAQs ---
+    const faqTranslations = {
+      en: [
+        { q: "Do you supply in bulk for manufacturers?", a: "Yes — we support bulk supply with packaging options and repeatable batches." },
+        { q: "Can you make custom blends for soups/noodles?", a: "Yes. Share your target recipe and taste profile; we can create custom blends." },
+        { q: "What packaging do you support?", a: "Common options include 5–25 kg liners/laminated pouches and bulk packs. Private label is possible." },
+        { q: "Do you provide COA / batch details?", a: "We can share batch details and align documentation to your requirement." }
+      ]
+    };
 
     function siteApp() {
       return {
         mobileOpen: false,
         whatsappNumber: "917738505687",
-        quote: { name: "", company: "", phone: "", message: "" },
-        get whatsappLink() { return `https://wa.me/${this.whatsappNumber}`; },
-        submitQuote() {
-          const msg = `Hi Atlas, I am interested.%0A Name: ${this.quote.name}%0A Company: ${this.quote.company}%0A Phone: ${this.quote.phone}%0A Details: ${this.quote.message}`;
-          window.open(`https://wa.me/${this.whatsappNumber}?text=${msg}`, "_blank");
+        whatsappDefaultText: "Hello! I’m interested in dehydrated products. Please share pricing, MOQ, specs and availability.",
+        quote: { name: "", company: "", phone: "", email: "", product: "", message: "" },
+        faqs: [],
+
+        init() {
+          this.refreshFaqs();
+          document.getElementById('footer-year').textContent = new Date().getFullYear();
         },
-        init() { console.log("Site Loaded"); }
+
+        refreshFaqs() {
+          const bank = faqTranslations.en;
+          this.faqs = bank.map((x, i) => ({ ...x, open: i === 0 }));
+        },
+
+        get whatsappLink() {
+          const text = encodeURIComponent(this.whatsappDefaultText);
+          return `https://wa.me/${this.whatsappNumber}?text=${text}`;
+        },
+
+        submitQuote() {
+          const msg =
+            `Hello! Quote request:%0A` +
+            `Name: ${encodeURIComponent(this.quote.name)}%0A` +
+            `Company: ${encodeURIComponent(this.quote.company || "-")}%0A` +
+            `Phone: ${encodeURIComponent(this.quote.phone)}%0A` +
+            `Email: ${encodeURIComponent(this.quote.email || "-")}%0A` +
+            `Interest: ${encodeURIComponent(this.quote.product || "-")}%0A` +
+            `Message: ${encodeURIComponent(this.quote.message || "-")}`;
+
+          window.open(`https://wa.me/${this.whatsappNumber}?text=${msg}`, "_blank");
+        }
       };
     }
   </script>

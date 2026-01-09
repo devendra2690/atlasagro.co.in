@@ -315,6 +315,33 @@
 .signal-k{margin-top:10px; font-weight:900; color:#0f172a}
 .signal-v{margin-top:6px; font-size:13px; color: rgba(71,85,105,.95); font-weight:700}
 
+/* ===== Product Page v3 (Banana) ===== */
+.v3-hero{background: radial-gradient(1200px 700px at 18% 0%, rgba(34,179,106,.14) 0%, rgba(255,255,255,1) 58%);}
+.v3-chip{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;border:1px solid rgba(15,23,42,.10);background:rgba(255,255,255,.70);color:rgba(15,23,42,.86);font-weight:900;font-size:12px}
+.v3-btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:999px;background:var(--brand,#16a34a);color:#fff;font-weight:900;box-shadow:0 14px 30px rgba(22,163,74,.20)}
+.v3-btn-primary:hover{opacity:.96}
+.v3-btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:14px 18px;border-radius:999px;background:#fff;color:#0f172a;font-weight:900;border:1px solid rgba(15,23,42,.10)}
+.v3-btn-ghost:hover{background:rgba(15,23,42,.04)}
+.v3-mini{border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:12px 14px;background:rgba(255,255,255,.68);backdrop-filter:blur(8px)}
+.v3-mini-k{font-size:12px;font-weight:900;color:rgba(71,85,105,.95);text-transform:uppercase;letter-spacing:.08em}
+.v3-mini-v{margin-top:6px;font-weight:900;color:#0f172a;font-size:13px}
+.v3-fact{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;border:1px dashed rgba(15,23,42,.12);border-radius:18px;padding:10px 12px}
+.v3-fact span{font-size:12px;font-weight:900;color:rgba(71,85,105,.95);text-transform:uppercase;letter-spacing:.08em}
+.v3-fact b{font-size:13px;font-weight:900;color:#0f172a;text-align:right}
+.v3-tab{padding:10px 14px;border-radius:999px;border:1px solid rgba(15,23,42,.10);background:#fff;color:#0f172a;font-weight:900;font-size:13px}
+.v3-tab:hover{background:rgba(15,23,42,.04)}
+.v3-tab.is-active{background:rgba(34,179,106,.10);border-color:rgba(34,179,106,.22);color:#0f623c}
+.v3-spec{border:1px solid rgba(15,23,42,.10);border-radius:22px;padding:14px;background:rgba(255,255,255,.72);backdrop-filter:blur(8px)}
+.v3-spec span{font-size:12px;font-weight:900;color:rgba(71,85,105,.95);text-transform:uppercase;letter-spacing:.08em}
+.v3-spec b{display:block;margin-top:8px;font-weight:900;color:#0f172a;font-size:14px}
+.v3-faq{border:1px solid rgba(15,23,42,.10);border-radius:18px;padding:12px 14px;background:rgba(255,255,255,.70)}
+.v3-faq summary{cursor:pointer;font-weight:900;color:#0f172a;list-style:none}
+.v3-faq summary::-webkit-details-marker{display:none}
+.v3-faq summary:after{content:"▾";float:right;color:rgba(71,85,105,.85);font-weight:900}
+.v3-faq[open] summary:after{content:"▴"}
+.v3-faq-a{margin-top:10px;color:rgba(71,85,105,.95);font-weight:700;font-size:14px;line-height:1.55}
+.v3-cta{background: radial-gradient(900px 500px at 90% 0%, rgba(34,179,106,.14) 0%, rgba(255,255,255,1) 60%);}
+
 </style>
 <!-- schema-organization -->
 <!-- schema-website -->
@@ -335,279 +362,281 @@
 </div>
 <!-- Top announcement -->
 <main class="max-w-7xl mx-auto px-4 py-10">
-
-<!-- Quick Spec Bar (fixed) -->
+  <!-- Quick Spec Bar (fixed) -->
   <div class="quickbar-spacer" aria-hidden="true"></div>
-<div class="quickbar-wrap">
-  <div class="quickbar">
-    <div class="qb-left">
-      <div class="qb-title">Banana Powder / Flakes / Granules</div>
-      <div class="qb-sub">Bulk B2B • Export-ready • Custom specs</div>
-    </div>
-
-    <div class="qb-right">
-      <div class="qb-pills">
-        <span class="qb-pill">60–100 mesh</span>
-        <span class="qb-pill">5–25 kg packs</span>
-        <span class="qb-pill">OEM</span>
+  <div class="quickbar-wrap">
+    <div class="quickbar">
+      <div class="qb-left">
+        <div class="qb-title">Banana Powder / Flakes / Granules</div>
+        <div class="qb-sub">Bulk B2B • Export-ready • Custom specs</div>
       </div>
-      <div class="qb-actions">
-        <a href="/#quote" class="qb-btn qb-btn-primary">Get Quote</a>
-        <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html" class="qb-btn">Packaging</a>
-        <a href="/buyers-guide/export-quality-standards-dehydrated-products.html" class="qb-btn">Export Std</a>
+      <div class="qb-right">
+        <div class="qb-pills">
+          <span class="qb-pill">60–100 mesh</span>
+          <span class="qb-pill">5–25 kg packs</span>
+          <span class="qb-pill">OEM</span>
+        </div>
+        <div class="qb-actions">
+          <a href="/#quote" class="qb-btn qb-btn-primary">Get Quote</a>
+          <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html" class="qb-btn">Packaging</a>
+          <a href="/buyers-guide/export-quality-standards-dehydrated-products.html" class="qb-btn">Export Std</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="grid lg:grid-cols-12 gap-8 items-start">
-<div class="lg:col-span-6">
-<div class="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur border border-slate-200 px-4 py-2 text-sm">
-<a class="text-slate-600 hover:text-brand" href="/">Home</a>
-<span class="text-slate-300">/</span>
-<a class="text-slate-600 hover:text-brand" href="/products/">Products</a>
-<span class="text-slate-300">/</span>
-<a class="text-slate-600 hover:text-brand" href="/products/dehydrated-products.html">Dehydrated Products</a>
-<span class="text-slate-300">/</span>
-<span class="font-semibold text-slate-900">Banana Powder</span>
-</div>
-<h1 class="mt-5 text-3xl md:text-4xl font-extrabold tracking-tight">Banana Powder</h1>
-<p class="mt-3 text-slateish max-w-xl">
-      Bulk supply for bakery, beverages, nutrition mixes and ready-to-eat applications. Share your target mesh, moisture and packing preferences for a quick quote.
-    </p>
-<div class="mt-5 flex flex-wrap gap-2">
-<span class="chip">Bulk B2B supply</span>
-<span class="chip">Fine / Medium / Coarse</span>
-<span class="chip">5–25 kg packs</span>
-<span class="chip">OEM / Private label</span>
-<span class="chip">Export-ready (on request)</span>
-</div>
-<ul class="mt-6 space-y-2 text-slateish">
-<li class="flex gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand shrink-0"></span><span>Consistent batches with specification-based sourcing</span></li>
-<li class="flex gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand shrink-0"></span><span>Multiple cuts / granulation options depending on requirement</span></li>
-<li class="flex gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand shrink-0"></span><span>Food-grade bulk packing, labeling and documentation support</span></li>
-<li class="flex gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-brand shrink-0"></span><span>Suitable for domestic supply and export workflows</span></li>
-</ul>
-<div class="mt-7 flex flex-wrap items-center gap-3">
-<a class="btn-primary" href="/#quote">Request a quote</a>
-<a class="btn-secondary" href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">Packaging options</a>
-<a class="btn-ghost" href="/buyers-guide/export-quality-standards-dehydrated-products.html">Export standards</a>
-</div>
-<p class="mt-4 text-xs text-slate-500">
-      Tip: If you know your target mesh size and packing (5/10/25 kg), we can respond faster.
-    </p>
-</div>
-<div class="lg:col-span-6">
-<div class="rounded-3xl border border-slate-200 bg-white overflow-hidden premium-frame">
-<div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
-<div class="flex flex-wrap items-start justify-between gap-4">
-<div>
-<div class="text-sm text-slate-500">Dehydrated Products</div>
-<h1 class="mt-2 text-3xl font-extrabold tracking-tight">Banana Powder</h1>
-<p class="mt-2 text-slate-600">Learn more about <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">bulk packaging options</a> and <a href="/buyers-guide/export-quality-standards-dehydrated-products.html">export quality standards</a> for this product.</p>
-<p class="mt-3 text-slateish max-w-3xl">Dehydrated banana powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label &amp; export-ready.</p>
-</div>
-<a class="shrink-0 inline-flex items-center justify-center px-5 py-2 rounded-full bg-brand text-white font-semibold card-hover" href="/products/dehydrated-products.html">
-          View category
-        </a>
-</div>
-<div class="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
-<!-- Product images -->
-<div class="lg:col-span-7">
-<div class="rounded-3xl border border-slate-200 bg-white overflow-hidden">
-<div class="aspect-[16/9] bg-slate-50">
-<img alt="Banana powder product image" class="h-full w-full object-cover" id="productMainImage" loading="lazy" onerror="this.onerror=null;this.src=\'/assets/atlas-agrofood-logo.png\';" src="../assets/products/banana/hero.png"/>
-</div>
-</div>
-</div>
-<div class="lg:col-span-5">
-<div class="grid grid-cols-3 gap-4">
-<button aria-label="View image 1" class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ring-2 ring-emerald-500" data-src="../assets/products/banana/thumb-1.png" type="button">
-<img alt="Dehydrated Banana Powder image thumbnail 1" class="h-full w-full object-cover" loading="lazy" src="../assets/products/banana/thumb-1.png"/>
-</button>
-<button aria-label="View image 2" class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-src="../assets/products/banana/thumb-2.png" type="button">
-<img alt="Dehydrated Banana Granules image thumbnail 2" class="h-full w-full object-cover" loading="lazy" src="../assets/products/banana/thumb-2.png"/>
-</button>
-<button aria-label="View image 3" class="product-thumb rounded-2xl border border-slate-200 bg-white overflow-hidden aspect-square transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-src="../assets/products/banana/thumb-3.png" type="button">
-<img alt="Dehydrated Chips image thumbnail 3" class="h-full w-full object-cover" loading="lazy" src="../assets/products/banana/thumb-3.png"/>
-</button>
-</div>
-</div>
-<!-- /Product images -->
-</div>
-<div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-<div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">
-<div class="text-xs text-slateish">Mesh size</div>
-<div class="mt-2 text-base sm:text-lg font-semibold leading-snug">Fine / Medium / Coarse</div>
-</div>
-<div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">
-<div class="text-xs text-slateish">Packaging</div>
-<div class="mt-2 text-base sm:text-lg font-semibold leading-snug">5–25 kg bulk packs</div>
-</div>
-<div class="card-hover rounded-3xl border border-slate-200 bg-white p-6">
-<div class="text-xs text-slateish">MOQ</div>
-<div class="mt-2 text-base sm:text-lg font-semibold leading-snug">As per product &amp; packing</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <!-- HERO v3 -->
+  <section class="mt-4">
+    <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden v3-hero">
+      <div class="grid lg:grid-cols-12">
+        <div class="lg:col-span-7 p-6 md:p-10">
+          <div class="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-50 px-3 py-1 text-xs font-extrabold text-brand">
+            Banana • Dehydrated • B2B Supply <span class="h-1 w-1 rounded-full bg-brand/60"></span> Procurement-friendly
+          </div>
 
-<div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-<div class="stat-card rounded-3xl border border-slate-200 bg-white p-5">
-<div class="text-xs uppercase tracking-wide text-slate-500 font-bold">Mesh / Cut</div>
-<div class="mt-2 text-lg font-extrabold text-slate-900">As per spec</div>
-<div class="mt-1 text-sm text-slateish">Powder, granules or chips</div>
-</div>
-<div class="stat-card rounded-3xl border border-slate-200 bg-white p-5">
-<div class="text-xs uppercase tracking-wide text-slate-500 font-bold">Packaging</div>
-<div class="mt-2 text-lg font-extrabold text-slate-900">5–25 kg</div>
-<div class="mt-1 text-sm text-slateish">Food-grade bulk liners</div>
-</div>
-<div class="stat-card rounded-3xl border border-slate-200 bg-white p-5">
-<div class="text-xs uppercase tracking-wide text-slate-500 font-bold">MOQ</div>
-<div class="mt-2 text-lg font-extrabold text-slate-900">On request</div>
-<div class="mt-1 text-sm text-slateish">Depends on grade &amp; packing</div>
-</div>
-<div class="stat-card rounded-3xl border border-slate-200 bg-white p-5">
-<div class="text-xs uppercase tracking-wide text-slate-500 font-bold">Lead time</div>
-<div class="mt-2 text-lg font-extrabold text-slate-900">Fast dispatch</div>
-<div class="mt-1 text-sm text-slateish">Subject to availability</div>
-</div>
-</div>
-<div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
-<h2 class="text-xl font-bold">Typical applications</h2>
-<ul class="mt-4 list-disc pl-5 text-slateish space-y-2"><li>Bakery and confectionery</li>
-<li>Beverage mixes &amp; smoothies</li>
-<li>Baby food and nutrition mixes</li>
-<li>Ice creams &amp; desserts</li>
-<li>Instant mixes and ready meals</li></ul>
-</div><div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
-<h2 class="text-xl font-bold">Quality &amp; compliance</h2>
-<ul class="mt-4 list-disc pl-5 text-slateish space-y-2"><li>Food-grade processing and hygienic packing</li>
-<li>Batch-wise quality checks for consistency</li>
-<li>Suitable for B2B bulk supply and export documentation support (on request)</li></ul>
-</div><div class="mt-10 rounded-3xl border border-slate-200 bg-brand-50 p-6 md:p-8">
-<div class="flex flex-wrap items-center justify-between gap-4">
-<div>
-<h2 class="text-xl font-bold">Need a quote for Banana Powder?</h2>
-<p>Learn more about <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">bulk packaging options</a> and <a href="/buyers-guide/export-quality-standards-dehydrated-products.html">export quality standards</a> for this product.</p>
-<p class="mt-2 text-slateish">Share application, mesh size, packing and monthly volume — we’ll reply with specs &amp; pricing.</p>
-</div>
-<div class="flex gap-3">
-<a class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-brand text-white font-semibold card-hover" href="/contact.html">Get a Quote</a>
-<a class="inline-flex items-center justify-center px-5 py-2 rounded-full border border-slate-200 bg-white font-semibold hover:border-slate-300 card-hover" href="/products/">Browse Products</a>
-</div>
-</div>
-</div><div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
-<h2 class="text-xl font-bold">Related products</h2>
-<div class="mt-4 grid md:grid-cols-2 gap-5">
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/onion.html">
-<div class="text-sm text-slate-500">Dehydrated</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Onion Powder/Granules/Flakes</div>
-<div class="mt-2 text-sm text-slateish">Open product details →</div>
-</a>
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/garlic-granules.html">
-<div class="text-sm text-slate-500">Dehydrated</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Garlic Powder/Granules/Flakes</div>
-<div class="mt-2 text-sm text-slateish">Open product details →</div>
-</a>
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/ginger.html">
-<div class="text-sm text-slate-500">Dehydrated</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Ginger Powder/Granules/Flakes</div>
-<div class="mt-2 text-sm text-slateish">Open product details →</div>
-</a>
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/products/mixed-veg.html">
-<div class="text-sm text-slate-500">Dehydrated</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Mixed Vegetable Powder/Granules/Flakes</div>
-<div class="mt-2 text-sm text-slateish">Open product details →</div>
-</a>
-</div>
-</div><div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 md:p-8 card-hover hover:border-slate-300 transition">
-<h2 class="text-xl font-bold">FAQs</h2>
-<div class="mt-4 space-y-3">
-<details class="rounded-2xl border border-slate-200 p-4">
-<summary class="font-semibold cursor-pointer">What is your MOQ for Banana Powder?</summary>
-<p>Learn more about <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">bulk packaging options</a> and <a href="/buyers-guide/export-quality-standards-dehydrated-products.html">export quality standards</a> for this product.</p>
-<p class="mt-2 text-slateish">MOQ depends on packing, mesh size, and shipment destination. Share your monthly volume and we’ll confirm a fast quote.</p>
-</details>
-<details class="rounded-2xl border border-slate-200 p-4">
-<summary class="font-semibold cursor-pointer">Do you support different mesh sizes / granulation?</summary>
-<p>Learn more about <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">bulk packaging options</a> and <a href="/buyers-guide/export-quality-standards-dehydrated-products.html">export quality standards</a> for this product.</p>
-<p class="mt-2 text-slateish">Yes. We can supply fine/medium/coarse options based on your application (seasoning, sauces, soups, ready meals, etc.).</p>
-</details>
-<details class="rounded-2xl border border-slate-200 p-4">
-<summary class="font-semibold cursor-pointer">What packaging options do you offer?</summary>
-<p>Learn more about <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">bulk packaging options</a> and <a href="/buyers-guide/export-quality-standards-dehydrated-products.html">export quality standards</a> for this product.</p>
-<p class="mt-2 text-slateish">Common bulk packs are 5–25 kg. We also support OEM/private label based on requirements.</p>
-</details>
-</div>
-</div><section class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
-<div class="flex items-start justify-between gap-4 flex-wrap">
-<div>
-<h2 class="text-2xl font-extrabold tracking-tight">Used in industries</h2>
-<p>Learn more about <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html">bulk packaging options</a> and <a href="/buyers-guide/export-quality-standards-dehydrated-products.html">export quality standards</a> for this product.</p>
-<p class="mt-2 text-slateish">Explore application pages where this product is commonly used.</p>
-</div>
-<a class="inline-flex items-center justify-center px-5 py-2 rounded-full bg-brand text-white font-semibold card-hover" href="/industries/">
-      Browse industries
-    </a>
-</div>
-<div class="mt-6 grid md:grid-cols-2 gap-5">
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/food-manufacturing-and-export.html">
-<div class="text-sm text-slate-500">Industry</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Food Manufacturing &amp; Bulk Export</div>
-<div class="mt-2 text-sm text-slateish">Bulk sourcing &amp; export →</div>
-</a>
-<a class="group rounded-3xl border border-slate-200 bg-white p-6 card-hover hover:border-slate-300 block" href="/industries/bakery-and-savoury-snacks.html">
-<div class="text-sm text-slate-500">Industry</div>
-<div class="mt-1 text-lg font-bold group-hover:text-brand">Bakery &amp; Savoury Snacks</div>
-<div class="mt-2 text-sm text-slateish">Mixes and applications →</div>
-</a>
-</div>
-</section>
+          <h1 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-ink leading-[1.05]">
+            Spec-first banana ingredients for <span class="text-brand">food manufacturing</span>.
+          </h1>
+          <p class="mt-4 text-slateish text-base md:text-lg max-w-2xl">
+            Powder, flakes or granules — share mesh/grade, packing and destination to get a fast bulk quote.
+          </p>
 
-<!-- Buyer confidence (fast signals) -->
-<section class="mt-10">
-  <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 premium-panel">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="v3-chip">Powder / Flakes / Granules</span>
+            <span class="v3-chip">Custom sizing</span>
+            <span class="v3-chip">Bulk supply</span>
+            <span class="v3-chip">Export-ready packing</span>
+          </div>
+
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <a href="/#quote" class="v3-btn-primary">Get Bulk Quote →</a>
+            <a href="/quality.html" class="v3-btn-ghost">Quality & docs →</a>
+          </div>
+
+          <div class="mt-8 grid gap-3 sm:grid-cols-3">
+            <div class="v3-mini">
+              <div class="v3-mini-k">Common packing</div>
+              <div class="v3-mini-v">5–25 kg (liner + outer)</div>
+            </div>
+            <div class="v3-mini">
+              <div class="v3-mini-k">Grades</div>
+              <div class="v3-mini-v">Fine / medium / coarse</div>
+            </div>
+            <div class="v3-mini">
+              <div class="v3-mini-k">Docs</div>
+              <div class="v3-mini-v">COA (on request)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-slate-200 bg-slate-50/60 p-6 md:p-10">
+          <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden">
+            <div class="p-4 border-b border-slate-200 flex items-center justify-between">
+              <div class="text-sm font-extrabold text-ink">Preview</div>
+              <span class="text-xs font-extrabold text-brand bg-brand-50 border border-brand/20 px-3 py-1 rounded-full">Fast quote</span>
+            </div>
+            <div class="p-5">
+              <div class="aspect-[4/3] rounded-2xl border border-slate-200 bg-slate-50 overflow-hidden relative">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-slate-50"></div>
+                <div class="absolute inset-0 flex items-center justify-center text-center px-6">
+                  <div>
+                    <div class="text-sm font-extrabold text-slateish">Hero Image</div>
+                    <div class="mt-1 text-xs text-slate-500">Add banana powder/flakes image here</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5 grid gap-3">
+                <div class="v3-fact"><span>Applications</span><b>Bakery • beverages • premixes</b></div>
+                <div class="v3-fact"><span>Variants</span><b>Powder / flakes / granules</b></div>
+                <div class="v3-fact"><span>Share</span><b>mesh • packing • destination</b></div>
+              </div>
+
+              <div class="mt-6 flex gap-3">
+                <a href="/#quote" class="v3-btn-primary w-full text-center">Request Quote</a>
+                <a href="/contact.html" class="v3-btn-ghost w-full text-center">WhatsApp</a>
+              </div>
+
+              <p class="mt-3 text-xs text-slate-500">Tip: send monthly requirement for a faster confirmation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Forms (tabs) -->
+  <section class="mt-10">
+    <div class="flex items-end justify-between gap-4">
       <div>
-        <div class="text-xs font-extrabold tracking-wide uppercase text-brand">Why buyers choose Atlas</div>
-        <h2 class="mt-2 text-2xl md:text-3xl font-extrabold tracking-tight text-ink">Specification-first supply built for procurement</h2>
-        <p class="mt-2 text-slateish max-w-3xl">Clear grades, consistent batches and export-ready packing support — so your team can approve faster.</p>
+        <div class="text-xs font-extrabold tracking-wide uppercase text-brand">Forms & specs</div>
+        <h2 class="mt-2 text-2xl md:text-3xl font-extrabold tracking-tight text-ink">Choose your format</h2>
+        <p class="mt-2 text-slateish max-w-2xl">Tap a tab to view typical specs. Custom requests supported.</p>
       </div>
-      <a href="/quality.html" class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 font-extrabold text-ink hover:bg-slate-50">
-        See quality process →
-      </a>
+      <a href="/buyers-guide/mesh-size-grade-guide-powder-flakes-granules.html" class="hidden md:inline-flex v3-btn-ghost">Mesh & grade guide →</a>
     </div>
 
-    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="signal-card">
-        <div class="signal-ico">✅</div>
-        <div class="signal-k">Grades & mesh</div>
-        <div class="signal-v">Fine / medium / coarse as required</div>
+    <div class="mt-6 rounded-3xl border border-slate-200 bg-white overflow-hidden">
+      <div class="p-4 md:p-5 border-b border-slate-200 flex flex-wrap gap-2" id="v3Tabs">
+        <button class="v3-tab is-active" type="button" data-tab="powder">Powder</button>
+        <button class="v3-tab" type="button" data-tab="flakes">Flakes</button>
+        <button class="v3-tab" type="button" data-tab="granules">Granules</button>
       </div>
-      <div class="signal-card">
-        <div class="signal-ico">📦</div>
-        <div class="signal-k">Bulk packing</div>
-        <div class="signal-v">Food-grade liners, 5–25 kg</div>
-      </div>
-      <div class="signal-card">
-        <div class="signal-ico">🧾</div>
-        <div class="signal-k">Documentation</div>
-        <div class="signal-v">COA / batch details on request</div>
-      </div>
-      <div class="signal-card">
-        <div class="signal-ico">🚚</div>
-        <div class="signal-k">B2B handling</div>
-        <div class="signal-v">MOQ + lead time confirmation</div>
+
+      <div class="p-6 md:p-8">
+        <div class="v3-panel" data-panel="powder">
+          <div class="grid lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-7">
+              <h3 class="text-xl md:text-2xl font-extrabold text-ink">Banana Powder</h3>
+              <p class="mt-2 text-slateish">Fine milling for easy blending in bakery premixes, beverages and nutrition mixes.</p>
+              <div class="mt-5 grid sm:grid-cols-2 gap-3">
+                <div class="v3-spec"><span>Typical mesh</span><b>60–100 (custom)</b></div>
+                <div class="v3-spec"><span>Packing</span><b>5 / 10 / 20 / 25 kg</b></div>
+                <div class="v3-spec"><span>MOQ</span><b>Depends on grade</b></div>
+                <div class="v3-spec"><span>Use-cases</span><b>Premixes • beverages</b></div>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <div class="rounded-3xl border border-slate-200 bg-slate-50/70 p-5">
+                <div class="text-sm font-extrabold text-ink">Fast quote checklist</div>
+                <ul class="mt-3 space-y-2 text-sm text-slateish font-semibold">
+                  <li>• mesh/grade</li><li>• moisture expectation</li><li>• packing size</li><li>• destination</li>
+                </ul>
+                <a href="/#quote" class="mt-5 v3-btn-primary w-full text-center">Get Quote for Powder →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="v3-panel hidden" data-panel="flakes">
+          <div class="grid lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-7">
+              <h3 class="text-xl md:text-2xl font-extrabold text-ink">Banana Flakes</h3>
+              <p class="mt-2 text-slateish">Visible inclusions for cereals, toppings, snack blends and trail mixes.</p>
+              <div class="mt-5 grid sm:grid-cols-2 gap-3">
+                <div class="v3-spec"><span>Cut / size</span><b>Custom supported</b></div>
+                <div class="v3-spec"><span>Packing</span><b>5 / 10 / 20 / 25 kg</b></div>
+                <div class="v3-spec"><span>MOQ</span><b>Depends on cut</b></div>
+                <div class="v3-spec"><span>Use-cases</span><b>Toppings • snacks</b></div>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <div class="rounded-3xl border border-slate-200 bg-slate-50/70 p-5">
+                <div class="text-sm font-extrabold text-ink">Fast quote checklist</div>
+                <ul class="mt-3 space-y-2 text-sm text-slateish font-semibold">
+                  <li>• flake size</li><li>• packing size</li><li>• destination</li><li>• monthly requirement</li>
+                </ul>
+                <a href="/#quote" class="mt-5 v3-btn-primary w-full text-center">Get Quote for Flakes →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="v3-panel hidden" data-panel="granules">
+          <div class="grid lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-7">
+              <h3 class="text-xl md:text-2xl font-extrabold text-ink">Banana Granules</h3>
+              <p class="mt-2 text-slateish">Controlled flow for consistent inclusion in blends and premixes.</p>
+              <div class="mt-5 grid sm:grid-cols-2 gap-3">
+                <div class="v3-spec"><span>Grade</span><b>Medium / coarse</b></div>
+                <div class="v3-spec"><span>Packing</span><b>5 / 10 / 20 / 25 kg</b></div>
+                <div class="v3-spec"><span>MOQ</span><b>Depends on grade</b></div>
+                <div class="v3-spec"><span>Use-cases</span><b>Premixes • blends</b></div>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <div class="rounded-3xl border border-slate-200 bg-slate-50/70 p-5">
+                <div class="text-sm font-extrabold text-ink">Fast quote checklist</div>
+                <ul class="mt-3 space-y-2 text-sm text-slateish font-semibold">
+                  <li>• granule size</li><li>• packing size</li><li>• destination</li><li>• monthly requirement</li>
+                </ul>
+                <a href="/#quote" class="mt-5 v3-btn-primary w-full text-center">Get Quote for Granules →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div class="text-sm text-slateish font-semibold">Need help selecting? Tell us your application — we’ll recommend the best format.</div>
+          <div class="flex gap-2">
+            <a href="/buyers-guide/private-label-oem-dehydrated-products.html" class="v3-btn-ghost">Private label / OEM →</a>
+            <a href="/buyers-guide/shelf-life-storage-dehydrated-powders.html" class="v3-btn-ghost">Shelf life & storage →</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- FAQ -->
+  <section class="mt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <div class="text-xs font-extrabold tracking-wide uppercase text-brand">FAQs</div>
+          <h2 class="mt-2 text-2xl md:text-3xl font-extrabold tracking-tight text-ink">Common questions</h2>
+        </div>
+        <a href="/buyers-guide/" class="hidden md:inline-flex v3-btn-ghost">Buyer Guides →</a>
+      </div>
+
+      <div class="mt-6 space-y-3">
+        <details class="v3-faq">
+          <summary>What is your MOQ for Banana Powder?</summary>
+          <div class="v3-faq-a">MOQ depends on grade, packing and seasonality. Share your requirement and we’ll confirm availability.</div>
+        </details>
+        <details class="v3-faq">
+          <summary>Do you support export-ready packing?</summary>
+          <div class="v3-faq-a">Yes. We support bulk packing (5–25 kg) and can guide labeling/packing requirements based on destination.</div>
+        </details>
+        <details class="v3-faq">
+          <summary>How do we get the fastest quote?</summary>
+          <div class="v3-faq-a">Send mesh/grade, packing size, destination and monthly requirement. We’ll reply with availability + quote.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="mt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 v3-cta">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <div class="text-xs font-extrabold tracking-wide uppercase text-brand">Ready to source?</div>
+          <h2 class="mt-2 text-2xl md:text-3xl font-extrabold tracking-tight text-ink">Share your specs — we’ll confirm and quote.</h2>
+          <p class="mt-2 text-slateish">MOQ • mesh/grade • packing • destination</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="/#quote" class="v3-btn-primary">Get Bulk Quote →</a>
+          <a href="/contact.html" class="v3-btn-ghost">Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+
+<script>
+(function () {
+  var wrap = document.getElementById('v3Tabs');
+  if (!wrap) return;
+  var buttons = wrap.querySelectorAll('[data-tab]');
+  var panels = document.querySelectorAll('[data-panel]');
+
+  function setTab(name) {
+    buttons.forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-tab') === name);
+    });
+    panels.forEach(function (p) {
+      p.classList.toggle('hidden', p.getAttribute('data-panel') !== name);
+    });
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setTab(b.getAttribute('data-tab')); });
+  });
+
+  setTab('powder');
+})();
+</script>
+
 <!-- Spec modal -->
 <div @click.self="modalOpen=false" class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50" x-show="modalOpen" x-transition="">
 <div class="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 card-hover">

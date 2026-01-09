@@ -252,6 +252,63 @@
     color:#0f623c;font-weight:900;
   }
   .btn-ghost:hover{text-decoration:none;filter:brightness(.98);}
+/* --- Creative polish: Sticky quickbar + signals --- */
+.quickbar-wrap{position:sticky; top:86px; z-index:40; margin-top:6px; margin-bottom:14px}
+@media (max-width: 767px){
+  .quickbar-wrap{top:70px}
+}
+.quickbar{
+  display:flex; gap:14px; align-items:center; justify-content:space-between;
+  border:1px solid rgba(15,23,42,.10);
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 14px 14px;
+  box-shadow: 0 14px 34px rgba(15,23,42,.10);
+}
+.qb-left{min-width:0}
+.qb-title{font-weight:900; color:#0f172a; font-size:14px; line-height:1.1}
+.qb-sub{margin-top:4px; font-size:12px; color: rgba(71,85,105,.95); font-weight:700}
+.qb-right{display:flex; align-items:center; gap:12px}
+.qb-pills{display:none; gap:8px; flex-wrap:wrap}
+@media (min-width: 1024px){ .qb-pills{display:flex} }
+.qb-pill{
+  display:inline-flex; align-items:center; padding:7px 10px; border-radius:999px;
+  border:1px solid rgba(34,179,106,.22);
+  background: rgba(34,179,106,.10);
+  color:#0f623c; font-weight:900; font-size:12px; line-height:1;
+}
+.qb-actions{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
+.qb-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 14px; border-radius:999px;
+  border:1px solid rgba(15,23,42,.10);
+  background:#fff; color:#0f172a;
+  font-weight:900; font-size:13px;
+}
+.qb-btn:hover{background: rgba(15,23,42,.04)}
+.qb-btn-primary{
+  background: var(--brand, #16a34a);
+  border-color: transparent;
+  color:#fff;
+  box-shadow: 0 10px 26px rgba(22,163,74,.22);
+}
+.qb-btn-primary:hover{opacity:.96}
+
+.premium-panel{
+  background: radial-gradient(1200px 600px at 10% 0%, rgba(34,179,106,.12) 0%, rgba(255,255,255,1) 58%);
+}
+.signal-card{
+  border:1px solid rgba(15,23,42,.10);
+  border-radius: 22px;
+  padding: 14px 14px;
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(8px);
+}
+.signal-ico{font-size:18px}
+.signal-k{margin-top:10px; font-weight:900; color:#0f172a}
+.signal-v{margin-top:6px; font-size:13px; color: rgba(71,85,105,.95); font-weight:700}
+
 </style>
 <!-- schema-organization -->
 <!-- schema-website -->
@@ -260,8 +317,42 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://atlasagro.co.in#organization","name":"Atlas AgroFood Private Ltd","url":"https://atlasagro.co.in/","logo":"https://atlasagro.co.in/assets/atlas-agrofood-logo.png","email":"sales@atlasagrofood.co.in","telephone":"+91-7738505687"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://atlasagro.co.in#website","url":"https://atlasagro.co.in/","name":"Atlas AgroFood","publisher":{"@id":"https://atlasagro.co.in#organization"},"inLanguage":"en"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://atlasagro.co.in/products/banana.html#webpage","url":"https://atlasagro.co.in/products/banana.html","name":"Banana Powder | Bulk Dehydrated Banana Powder Supplier | Atlas AgroFood","description":"Dehydrated banana powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label & export-ready.","isPartOf":{"@id":"https://atlasagro.co.in#website"},"about":{"@id":"https://atlasagro.co.in#organization"},"inLanguage":"en"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://atlasagro.co.in/"},{"@type":"ListItem","position":2,"name":"Products","item":"https://atlasagro.co.in/products/"},{"@type":"ListItem","position":3,"name":"Dehydrated Products","item":"https://atlasagro.co.in/products/dehydrated-products.html"},{"@type":"ListItem","position":4,"name":"Banana Powder","item":"https://atlasagro.co.in/products/banana.html"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Banana Powder","brand":{"@type":"Brand","name":"Atlas AgroFood"},"url":"https://atlasagro.co.in/products/banana.html","category":"Dehydrated Products","description":"Dehydrated banana powder for bakery, beverages, baby food, nutrition mixes and ready-to-eat applications. Bulk supply, OEM/private label & export-ready.","image":["https://atlasagro.co.in/assets/products/banana/hero.png"],"offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"INR","price":"0","url":"https://atlasagro.co.in/contact.html"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What forms do you supply for banana?","acceptedAnswer":{"@type":"Answer","text":"Banana powder is available in fine/medium/coarse mesh as per requirement. Share your application and we will suggest the best grade."}},{"@type":"Question","name":"What is the MOQ for Banana Powder?","acceptedAnswer":{"@type":"Answer","text":"MOQ depends on packing and destination. Send your required monthly volume and packaging (5–25 kg bulk packs) for a quick quotation."}},{"@type":"Question","name":"Do you support export/bulk B2B supply?","acceptedAnswer":{"@type":"Answer","text":"Yes. We supply B2B bulk and can support export-ready documentation on request."}},{"@type":"Question","name":"How do I request a quote?","acceptedAnswer":{"@type":"Answer","text":"Use the WhatsApp button or Contact page and share product, mesh size, packaging, quantity, and destination."}}]}</script></head>
 <body class="bg-brand-50 text-ink antialiased" x-data="siteApp()" x-init="init()">
 <div id="site-header"></div>
+<div class="sticky-cta">
+<a class="quote" href="/contact.html">Get Bulk Quote</a>
+<a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+Banana+Powder.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing." rel="noopener" target="_blank">WhatsApp</a>
+</div>
+<div class="mobile-cta">
+<div class="wrap">
+<a class="quote" href="/contact.html">Get Bulk Quote</a>
+<a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+Banana+Powder.+Please+share+MOQ%2C+specs+%28mesh/grade%29%2C+packaging+options+and+pricing." rel="noopener" target="_blank">WhatsApp</a>
+</div>
+</div>
 <!-- Top announcement -->
 <main class="max-w-7xl mx-auto px-4 py-10">
+
+<!-- Quick Spec Bar (sticky) -->
+<div class="quickbar-wrap">
+  <div class="quickbar">
+    <div class="qb-left">
+      <div class="qb-title">Banana Powder / Flakes / Granules</div>
+      <div class="qb-sub">Bulk B2B • Export-ready • Custom specs</div>
+    </div>
+
+    <div class="qb-right">
+      <div class="qb-pills">
+        <span class="qb-pill">60–100 mesh</span>
+        <span class="qb-pill">5–25 kg packs</span>
+        <span class="qb-pill">OEM</span>
+      </div>
+      <div class="qb-actions">
+        <a href="/#quote" class="qb-btn qb-btn-primary">Get Quote</a>
+        <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html" class="qb-btn">Packaging</a>
+        <a href="/buyers-guide/export-quality-standards-dehydrated-products.html" class="qb-btn">Export Std</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="grid lg:grid-cols-12 gap-8 items-start">
 <div class="lg:col-span-6">
 <div class="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur border border-slate-200 px-4 py-2 text-sm">
@@ -468,7 +559,48 @@
 <div class="mt-2 text-sm text-slateish">Mixes and applications →</div>
 </a>
 </div>
-</section></main>
+</section>
+
+<!-- Buyer confidence (fast signals) -->
+<section class="mt-10">
+  <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 premium-panel">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <div class="text-xs font-extrabold tracking-wide uppercase text-brand">Why buyers choose Atlas</div>
+        <h2 class="mt-2 text-2xl md:text-3xl font-extrabold tracking-tight text-ink">Specification-first supply built for procurement</h2>
+        <p class="mt-2 text-slateish max-w-3xl">Clear grades, consistent batches and export-ready packing support — so your team can approve faster.</p>
+      </div>
+      <a href="/quality.html" class="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 font-extrabold text-ink hover:bg-slate-50">
+        See quality process →
+      </a>
+    </div>
+
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="signal-card">
+        <div class="signal-ico">✅</div>
+        <div class="signal-k">Grades & mesh</div>
+        <div class="signal-v">Fine / medium / coarse as required</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-ico">📦</div>
+        <div class="signal-k">Bulk packing</div>
+        <div class="signal-v">Food-grade liners, 5–25 kg</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-ico">🧾</div>
+        <div class="signal-k">Documentation</div>
+        <div class="signal-v">COA / batch details on request</div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-ico">🚚</div>
+        <div class="signal-k">B2B handling</div>
+        <div class="signal-v">MOQ + lead time confirmation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
 <!-- Spec modal -->
 <div @click.self="modalOpen=false" class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50" x-show="modalOpen" x-transition="">
 <div class="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 card-hover">

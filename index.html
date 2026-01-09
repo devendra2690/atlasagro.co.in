@@ -463,6 +463,39 @@
     <a href="/products/spices.html">onion & garlic based dehydrated mixes</a>.
   </p>
 </section>
+<section class="atlas-slider mt-6" id="atlasProductSlider">
+
+  <a class="atlas-slide active" href="/products/onion.html">
+    <img src="/assets/products/onion.jpg" alt="Dehydrated Onion Flakes">
+    <div class="atlas-slide-text">
+      <h2>Dehydrated Onion Flakes</h2>
+      <p>Bulk supply • Export-ready</p>
+    </div>
+  </a>
+
+  <a class="atlas-slide" href="/products/garlic.html">
+    <img src="/assets/products/garlic.jpg" alt="Garlic Powder">
+    <div class="atlas-slide-text">
+      <h2>Garlic Powder / Granules</h2>
+      <p>Custom mesh • OEM</p>
+    </div>
+  </a>
+
+  <a class="atlas-slide" href="/products/banana.html">
+    <img src="/assets/products/banana.jpg" alt="Banana Powder">
+    <div class="atlas-slide-text">
+      <h2>Banana Powder</h2>
+      <p>B2B • 5–25 kg packs</p>
+    </div>
+  </a>
+
+  <div class="atlas-dots">
+    <span class="atlas-dot active"></span>
+    <span class="atlas-dot"></span>
+    <span class="atlas-dot"></span>
+  </div>
+
+</section>
 
 <!-- Hero -->
   <section class="relative overflow-hidden">
@@ -1425,5 +1458,20 @@ document.addEventListener("DOMContentLoaded", () => {
 <script src="/assets/js/cta-tracking.js"></script>
 
 <script defer src="/assets/js/includes.js"></script>
+<script>
+(function(){
+  const slides = document.querySelectorAll('#atlasProductSlider .atlas-slide');
+  const dots = document.querySelectorAll('#atlasProductSlider .atlas-dot');
+  let i = 0;
+
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    dots[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+    dots[i].classList.add('active');
+  }, 4500);
+})();
+</script>
 </body>
 </html>

@@ -392,21 +392,31 @@
   .w-full{ width:100%; }
 </style>
 
+
+<style>
+.atlas-slider{position:relative;overflow:hidden}
+.atlas-slide{display:none}
+.atlas-slide.active{display:block}
+.atlas-slide img{width:100%;height:auto;display:block}
+.atlas-slide-text{padding:14px 16px;background:#fff}
+.atlas-slide-text h2{font-size:1.1rem;font-weight:700;margin:0;color:#0f172a}
+.atlas-slide-text p{margin-top:4px;font-size:.9rem;color:#475569}
+.atlas-dots{display:flex;justify-content:center;gap:6px;padding:10px 0 14px}
+.atlas-dot{width:8px;height:8px;border-radius:999px;background:#cbd5e1}
+.atlas-dot.active{background:#16a34a}
+@media(min-width:768px){
+.atlas-slide-text{position:absolute;bottom:24px;left:24px;background:rgba(255,255,255,.9);border-radius:16px;max-width:420px}
+}
+</style>
+
 </head>
 
 <body class="bg-brand-50 text-ink antialiased"
       :class="{\'no-scroll\': mobileOpen}" x-data="siteApp()"
       x-init="init()">
 
-  <div class="sticky-cta">
-    <a class="quote" href="/contact.html">Get Bulk Quote</a>
-    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+supply+of+your+products.+Please+share+MOQ%2C+specs%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-  <div class="mobile-cta">
-    <div class="wrap">
-      <a class="quote" href="/contact.html">Get Bulk Quote</a>
-      <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+supply+of+your+products.+Please+share+MOQ%2C+specs%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
-    </div>
+  
+  
   </div>
 <div id="site-header"></div>
 <!-- Mobile menu (drawer) -->

@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
   
   <title>Dehydrated Vegetables & Fruit Powders | Atlas AgroFood</title>
-  <meta name="description" content="Premium dehydrated onion, garlic, fruit powders and custom spice blends for manufacturers and exporters." />
+  <meta name="description" content="Manufacturer and bulk supplier of dehydrated onions, garlic, fruit powders, and custom spice blends for B2B and export." />
   <meta name="theme-color" content="#15803d" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,7 +53,80 @@
       x-data="siteApp()" 
       x-init="init()">
 
-  <div id="site-header"></div>
+  <div class="bg-earth-gold text-white text-xs md:text-sm py-2">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center">
+      <div class="font-medium tracking-wide">
+        ✅ Bulk Supply • ✅ Export-Ready • ✅ Custom Blends
+      </div>
+      <div class="hidden sm:flex gap-4 font-semibold">
+        <a href="#quote" class="hover:underline opacity-90 hover:opacity-100">Get a Quote</a>
+        <span>|</span>
+        <a href="/assets/brochure.pdf" download class="hover:underline opacity-90 hover:opacity-100">Download Brochure</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-stone-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 h-24 md:h-32 flex items-center justify-between">
+      
+      <a href="/" class="flex items-center gap-4 group">
+        <div class="h-20 w-20 md:h-24 md:w-24 shrink-0 transition-transform duration-300 group-hover:scale-105">
+           <img src="/assets/atlas-agro-logo.png" 
+                alt="Atlas AgroFood - Dehydrated Onion & Garlic Manufacturer" 
+                class="w-full h-full object-contain">
+        </div>
+        <div class="flex flex-col justify-center">
+          <span class="font-serif-display font-bold text-xl md:text-3xl text-brand-900 leading-none group-hover:text-brand-700 transition">
+            ATLAS AGROFOOD
+          </span>
+          <span class="text-[10px] md:text-xs tracking-[0.15em] text-earth-brown uppercase font-bold mt-1">
+            Premium Dehydrated Ingredients
+          </span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="/" class="hover:text-brand-700 transition">Home</a>
+        <a href="/products/" class="hover:text-brand-700 transition">Products</a>
+        <a href="/industries/" class="hover:text-brand-700 transition">Industries</a>
+        <a href="/quality.html" class="hover:text-brand-700 transition">Quality</a>
+        <a href="/contact.html" class="hover:text-brand-700 transition">Contact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-3">
+        <a :href="whatsappLink" target="_blank" class="rounded-full border-2 border-brand-700 text-brand-700 px-6 py-2 text-sm font-bold hover:bg-brand-700 hover:text-white transition duration-300">
+          WhatsApp
+        </a>
+      </div>
+
+      <button class="md:hidden text-brand-900 p-2" @click="mobileOpen = !mobileOpen">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <div x-show="mobileOpen" class="fixed inset-0 z-[60] bg-black/50 backdrop-blur-sm" @click="mobileOpen = false" x-transition.opacity></div>
+  <div x-show="mobileOpen" class="fixed right-0 top-0 bottom-0 w-[80%] max-w-sm bg-earth-cream z-[70] shadow-2xl p-6 flex flex-col gap-6 border-l border-stone-200" 
+       x-transition:enter="transition transform duration-300"
+       x-transition:enter-start="translate-x-full"
+       x-transition:enter-end="translate-x-0"
+       x-transition:leave="transition transform duration-300"
+       x-transition:leave-start="translate-x-0"
+       x-transition:leave-end="translate-x-full">
+      <div class="flex justify-between items-center mb-4">
+        <span class="font-serif-display font-bold text-xl text-brand-900">Menu</span>
+        <button @click="mobileOpen = false" class="text-stone-500 text-2xl">✕</button>
+      </div>
+      <nav class="flex flex-col gap-4 text-lg font-medium text-stone-700">
+        <a href="/" class="text-brand-700">Home</a>
+        <a href="/products/">Products</a>
+        <a href="/industries/">Industries</a>
+        <a href="/quality.html">Quality</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a :href="whatsappLink" class="mt-auto w-full bg-brand-700 text-white text-center py-4 rounded-xl font-bold">Chat on WhatsApp</a>
+  </div>
 
   <main class="flex-grow">
       
@@ -175,9 +248,59 @@
       </section>
   </main>
 
-  <div id="site-footer"></div>
+  <footer class="bg-brand-900 text-white pt-16 pb-8 border-t-[10px] border-earth-gold">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-1 md:col-span-1">
+           <div class="h-20 w-20 rounded-2xl bg-white p-2 mb-4">
+              <img src="/assets/atlas-agro-logo.png" alt="Atlas AgroFood" class="w-full h-full object-contain">
+           </div>
+           <div class="font-serif-display text-2xl font-bold mb-4">Atlas AgroFood</div>
+           <p class="text-brand-200 text-sm leading-relaxed">
+             Premium manufacturer of dehydrated vegetables, fruit powders, and culinary spice blends.
+           </p>
+        </div>
+        
+        <div>
+          <h4 class="font-serif-display text-lg mb-4 text-earth-gold">Products</h4>
+          <ul class="space-y-2 text-sm text-brand-100">
+            <li><a href="/products/spices.html" class="hover:text-white">Onion Flakes & Powder</a></li>
+            <li><a href="/products/spices.html" class="hover:text-white">Garlic Powder</a></li>
+            <li><a href="/products/dehydrated-products.html" class="hover:text-white">Fruit Chips</a></li>
+            <li><a href="/products/spray-dried.html" class="hover:text-white">Spray Dried Fruit</a></li>
+          </ul>
+        </div>
 
-  <script src="/assets/js/includes.js"></script>
+        <div>
+          <h4 class="font-serif-display text-lg mb-4 text-earth-gold">Company</h4>
+          <ul class="space-y-2 text-sm text-brand-100">
+            <li><a href="/quality.html" class="hover:text-white">Quality Assurance</a></li>
+            <li><a href="/industries/" class="hover:text-white">Industries</a></li>
+            <li><a href="/contact.html" class="hover:text-white">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+           <h4 class="font-serif-display text-lg mb-4 text-earth-gold">Address</h4>
+           <p class="text-sm text-brand-100 leading-relaxed">
+             Khamgaon, Dist Buldhana,<br>Maharashtra, India 444303
+           </p>
+           <div class="mt-4 text-brand-200 text-sm">
+              <p>+91-7738505687</p>
+              <p>sales@atlasagro.in</p>
+           </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-brand-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-brand-300">
+        <p>&copy; <span id="footer-year">2026</span> Atlas AgroFood Pvt Ltd. All rights reserved.</p>
+        <div class="flex gap-4 mt-2 md:mt-0">
+            <a href="#" class="hover:text-white">Privacy Policy</a>
+            <a href="#" class="hover:text-white">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 

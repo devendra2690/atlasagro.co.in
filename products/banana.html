@@ -342,21 +342,19 @@
 .v3-faq-a{margin-top:10px;color:rgba(71,85,105,.95);font-weight:700;font-size:14px;line-height:1.55}
 .v3-cta{background: radial-gradient(900px 500px at 90% 0%, rgba(34,179,106,.14) 0%, rgba(255,255,255,1) 60%);}
 
-/* ===== v3 tweaks: no-floating spec bar + hero rail ===== */
-.v3-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;border:1px solid rgba(15,23,42,.10);background:#fff;color:#0f172a;font-weight:900;font-size:12px}
-.v3-pill-cta{background:rgba(22,163,74,.12);border-color:rgba(22,163,74,.22);color:#0f623c}
-.v3-pill-cta:hover{background:rgba(22,163,74,.16)}
-.v3-check{border:1px solid rgba(15,23,42,.10);border-radius:16px;padding:10px 12px;background:rgba(255,255,255,.75);font-weight:900;color:#0f172a}
-.v3-check:before{content:"✓";display:inline-block;margin-right:8px;color:var(--brand,#16a34a);font-weight:900}
 
-.v3-thumb{display:flex;flex-direction:column;gap:8px;text-align:center;border:1px solid rgba(15,23,42,.10);border-radius:18px;padding:10px;background:#fff;transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
-.v3-thumb:hover{transform:translateY(-1px);box-shadow:0 14px 28px rgba(15,23,42,.10)}
-.v3-thumb.is-active{border-color:rgba(22,163,74,.35);box-shadow:0 18px 34px rgba(22,163,74,.14)}
-.v3-thumb-img{display:block;border-radius:14px;overflow:hidden;aspect-ratio: 1 / 1;border:1px solid rgba(15,23,42,.08);background:linear-gradient(135deg, rgba(34,179,106,.10), rgba(255,255,255,.70))}
-.v3-thumb-ph{display:flex;align-items:center;justify-content:center}
-.v3-thumb-ph:after{content:"Image";font-size:10px;font-weight:900;color:rgba(71,85,105,.75)}
-.v3-thumb-t{font-size:12px;font-weight:900;color:#0f172a}
-
+/* v3 media rail */
+.v3-media-main{border:1px solid rgba(15,23,42,.10);border-radius:22px;overflow:hidden;background:#fff}
+.v3-media-img{display:block;width:100%;height:auto}
+.v3-media-rail{margin-top:12px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.v3-thumb{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;text-align:center;border-radius:18px;border:1px solid rgba(15,23,42,.10);background:#fff;padding:10px;font-weight:900;font-size:12px;color:#0f172a}
+.v3-thumb img{width:100%;aspect-ratio:1/1;border-radius:14px;object-fit:cover;border:1px solid rgba(15,23,42,.08);background:#f8fafc}
+.v3-thumb span{line-height:1}
+.v3-thumb:hover{background:rgba(15,23,42,.04)}
+.v3-thumb.is-active{border-color:rgba(34,179,106,.35);box-shadow:0 0 0 4px rgba(34,179,106,.12)}
+@media (max-width: 520px){
+  .v3-media-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 </style>
 <!-- schema-organization -->
 <!-- schema-website -->
@@ -377,6 +375,329 @@
 </div>
 <!-- Top announcement -->
 <main class="max-w-7xl mx-auto px-4 py-10">
+  <!-- Quick Spec Bar (fixed) -->
+  <div class="quickbar-spacer" aria-hidden="true"></div>
+  <div class="quickbar-wrap">
+    <div class="quickbar">
+      <div class="qb-left">
+        <div class="qb-title">Banana Powder / Flakes / Granules</div>
+        <div class="qb-sub">Bulk B2B • Export-ready • Custom specs</div>
+      </div>
+      <div class="qb-right">
+        <div class="qb-pills">
+          <span class="qb-pill">60–100 mesh</span>
+          <span class="qb-pill">5–25 kg packs</span>
+          <span class="qb-pill">OEM</span>
+        </div>
+        <div class="qb-actions">
+          <a href="/#quote" class="qb-btn qb-btn-primary">Get Quote</a>
+          <a href="/buyers-guide/bulk-packaging-options-dehydrated-products.html" class="qb-btn">Packaging</a>
+          <a href="/buyers-guide/export-quality-standards-dehydrated-products.html" class="qb-btn">Export Std</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO v3 -->
+  <section class="mt-4">
+    <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden v3-hero">
+      <div class="grid lg:grid-cols-12">
+        <div class="lg:col-span-7 p-6 md:p-10">
+          <div class="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-50 px-3 py-1 text-xs font-extrabold text-brand">
+            Banana • Dehydrated • B2B Supply <span class="h-1 w-1 rounded-full bg-brand/60"></span> Procurement-friendly
+          </div>
+
+          <h1 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-ink leading-[1.05]">
+            Spec-first banana ingredients for <span class="text-brand">food manufacturing</span>.
+          </h1>
+          <p class="mt-4 text-slateish text-base md:text-lg max-w-2xl">
+            Powder, flakes or granules — share mesh/grade, packing and destination to get a fast bulk quote.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="v3-chip">Powder / Flakes / Granules</span>
+            <span class="v3-chip">Custom sizing</span>
+            <span class="v3-chip">Bulk supply</span>
+            <span class="v3-chip">Export-ready packing</span>
+          </div>
+
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <a href="/#quote" class="v3-btn-primary">Get Bulk Quote →</a>
+            <a href="/quality.html" class="v3-btn-ghost">Quality & docs →</a>
+          </div>
+
+          <div class="mt-8 grid gap-3 sm:grid-cols-3">
+            <div class="v3-mini">
+              <div class="v3-mini-k">Common packing</div>
+              <div class="v3-mini-v">5–25 kg (liner + outer)</div>
+            </div>
+            <div class="v3-mini">
+              <div class="v3-mini-k">Grades</div>
+              <div class="v3-mini-v">Fine / medium / coarse</div>
+            </div>
+            <div class="v3-mini">
+              <div class="v3-mini-k">Docs</div>
+              <div class="v3-mini-v">COA (on request)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-slate-200 bg-slate-50/60 p-6 md:p-10">
+          <div class="rounded-3xl border border-slate-200 bg-white overflow-hidden">
+            <div class="p-4 border-b border-slate-200 flex items-center justify-between">
+              <div class="text-sm font-extrabold text-ink">Preview</div>
+              <span class="text-xs font-extrabold text-brand bg-brand-50 border border-brand/20 px-3 py-1 rounded-full">Fast quote</span>
+            </div>
+            <div class="p-5">
+              <div class="v3-media">
+  <div class="v3-media-main">
+    <img id="v3HeroImg" src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%27900%27%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23dcfce7%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27%23ffffff%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23f1f5f9%27/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27960%27%20cy%3D%27260%27%20r%3D%27220%27%20fill%3D%27%23bbf7d0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27260%27%20cy%3D%27640%27%20r%3D%27260%27%20fill%3D%27%23e2e8f0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2748%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2764%27%20font-weight%3D%27800%27%20fill%3D%27%230f172a%27%3EBanana%20Powder%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2758%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23475569%27%3EFine%20%E2%80%A2%2060%E2%80%93100%20mesh%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2785%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2718%27%20font-weight%3D%27700%27%20fill%3D%27%2394a3b8%27%3EReplace%20this%20with%20a%20real%20product%20image%3C/text%3E%0A%20%20%20%20%3C/svg%3E" alt="Banana Powder (placeholder)" class="v3-media-img">
+  </div>
+
+  <div class="v3-media-rail" id="v3MediaRail" aria-label="Banana product images">
+    <button type="button" class="v3-thumb is-active" data-src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%27900%27%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23dcfce7%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27%23ffffff%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23f1f5f9%27/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27960%27%20cy%3D%27260%27%20r%3D%27220%27%20fill%3D%27%23bbf7d0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27260%27%20cy%3D%27640%27%20r%3D%27260%27%20fill%3D%27%23e2e8f0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2748%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2764%27%20font-weight%3D%27800%27%20fill%3D%27%230f172a%27%3EBanana%20Powder%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2758%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23475569%27%3EFine%20%E2%80%A2%2060%E2%80%93100%20mesh%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2785%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2718%27%20font-weight%3D%27700%27%20fill%3D%27%2394a3b8%27%3EReplace%20this%20with%20a%20real%20product%20image%3C/text%3E%0A%20%20%20%20%3C/svg%3E" data-alt="Banana Powder (placeholder)">
+      <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%27900%27%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23dcfce7%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27%23ffffff%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23f1f5f9%27/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27960%27%20cy%3D%27260%27%20r%3D%27220%27%20fill%3D%27%23bbf7d0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27260%27%20cy%3D%27640%27%20r%3D%27260%27%20fill%3D%27%23e2e8f0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2748%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2764%27%20font-weight%3D%27800%27%20fill%3D%27%230f172a%27%3EBanana%20Powder%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2758%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23475569%27%3EFine%20%E2%80%A2%2060%E2%80%93100%20mesh%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2785%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2718%27%20font-weight%3D%27700%27%20fill%3D%27%2394a3b8%27%3EReplace%20this%20with%20a%20real%20product%20image%3C/text%3E%0A%20%20%20%20%3C/svg%3E" alt="Banana Powder thumbnail" loading="lazy">
+      <span>Powder</span>
+    </button>
+    <button type="button" class="v3-thumb" data-src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%27900%27%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23dcfce7%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27%23ffffff%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23f1f5f9%27/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27960%27%20cy%3D%27260%27%20r%3D%27220%27%20fill%3D%27%23bbf7d0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27260%27%20cy%3D%27640%27%20r%3D%27260%27%20fill%3D%27%23e2e8f0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2748%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2764%27%20font-weight%3D%27800%27%20fill%3D%27%230f172a%27%3EBanana%20Flakes%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2758%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23475569%27%3ECereals%20%E2%80%A2%20toppings%20%E2%80%A2%20snacks%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2785%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2718%27%20font-weight%3D%27700%27%20fill%3D%27%2394a3b8%27%3EReplace%20this%20with%20a%20real%20product%20image%3C/text%3E%0A%20%20%20%20%3C/svg%3E" data-alt="Banana Flakes (placeholder)">
+      <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%27900%27%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23dcfce7%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27%23ffffff%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23f1f5f9%27/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27960%27%20cy%3D%27260%27%20r%3D%27220%27%20fill%3D%27%23bbf7d0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27260%27%20cy%3D%27640%27%20r%3D%27260%27%20fill%3D%27%23e2e8f0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2748%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2764%27%20font-weight%3D%27800%27%20fill%3D%27%230f172a%27%3EBanana%20Flakes%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2758%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23475569%27%3ECereals%20%E2%80%A2%20toppings%20%E2%80%A2%20snacks%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2785%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2718%27%20font-weight%3D%27700%27%20fill%3D%27%2394a3b8%27%3EReplace%20this%20with%20a%20real%20product%20image%3C/text%3E%0A%20%20%20%20%3C/svg%3E" alt="Banana Flakes thumbnail" loading="lazy">
+      <span>Flakes</span>
+    </button>
+    <button type="button" class="v3-thumb" data-src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%27900%27%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23dcfce7%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27%23ffffff%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23f1f5f9%27/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27960%27%20cy%3D%27260%27%20r%3D%27220%27%20fill%3D%27%23bbf7d0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27260%27%20cy%3D%27640%27%20r%3D%27260%27%20fill%3D%27%23e2e8f0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2748%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2764%27%20font-weight%3D%27800%27%20fill%3D%27%230f172a%27%3EBanana%20Granules%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2758%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23475569%27%3EControlled%20flow%20%E2%80%A2%20blends%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2785%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2718%27%20font-weight%3D%27700%27%20fill%3D%27%2394a3b8%27%3EReplace%20this%20with%20a%20real%20product%20image%3C/text%3E%0A%20%20%20%20%3C/svg%3E" data-alt="Banana Granules (placeholder)">
+      <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%27900%27%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23dcfce7%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27%23ffffff%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23f1f5f9%27/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27960%27%20cy%3D%27260%27%20r%3D%27220%27%20fill%3D%27%23bbf7d0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27260%27%20cy%3D%27640%27%20r%3D%27260%27%20fill%3D%27%23e2e8f0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2748%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2764%27%20font-weight%3D%27800%27%20fill%3D%27%230f172a%27%3EBanana%20Granules%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2758%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23475569%27%3EControlled%20flow%20%E2%80%A2%20blends%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2785%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2718%27%20font-weight%3D%27700%27%20fill%3D%27%2394a3b8%27%3EReplace%20this%20with%20a%20real%20product%20image%3C/text%3E%0A%20%20%20%20%3C/svg%3E" alt="Banana Granules thumbnail" loading="lazy">
+      <span>Granules</span>
+    </button>
+    <button type="button" class="v3-thumb" data-src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%27900%27%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23dcfce7%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27%23ffffff%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23f1f5f9%27/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27960%27%20cy%3D%27260%27%20r%3D%27220%27%20fill%3D%27%23bbf7d0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27260%27%20cy%3D%27640%27%20r%3D%27260%27%20fill%3D%27%23e2e8f0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2748%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2764%27%20font-weight%3D%27800%27%20fill%3D%27%230f172a%27%3EBulk%20Packaging%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2758%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23475569%27%3E5%E2%80%9325%20kg%20%E2%80%A2%20export-ready%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2785%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2718%27%20font-weight%3D%27700%27%20fill%3D%27%2394a3b8%27%3EReplace%20this%20with%20a%20real%20product%20image%3C/text%3E%0A%20%20%20%20%3C/svg%3E" data-alt="Bulk Packaging (placeholder)">
+      <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271200%27%20height%3D%27900%27%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270%27%20stop-color%3D%27%23dcfce7%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%270.55%27%20stop-color%3D%27%23ffffff%27/%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%271%27%20stop-color%3D%27%23f1f5f9%27/%3E%0A%20%20%20%20%20%20%3C/linearGradient%3E%0A%20%20%20%20%3C/defs%3E%0A%20%20%20%20%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20fill%3D%27url%28%23g%29%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27960%27%20cy%3D%27260%27%20r%3D%27220%27%20fill%3D%27%23bbf7d0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%27260%27%20cy%3D%27640%27%20r%3D%27260%27%20fill%3D%27%23e2e8f0%27%20opacity%3D%270.55%27/%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2748%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2764%27%20font-weight%3D%27800%27%20fill%3D%27%230f172a%27%3EBulk%20Packaging%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2758%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2728%27%20font-weight%3D%27700%27%20fill%3D%27%23475569%27%3E5%E2%80%9325%20kg%20%E2%80%A2%20export-ready%3C/text%3E%0A%20%20%20%20%3Ctext%20x%3D%2750%25%27%20y%3D%2785%25%27%20text-anchor%3D%27middle%27%20font-family%3D%27Arial%2C%20Helvetica%2C%20sans-serif%27%20font-size%3D%2718%27%20font-weight%3D%27700%27%20fill%3D%27%2394a3b8%27%3EReplace%20this%20with%20a%20real%20product%20image%3C/text%3E%0A%20%20%20%20%3C/svg%3E" alt="Bulk packaging thumbnail" loading="lazy">
+      <span>Packing</span>
+    </button>
+  </div>
+
+  <p class="mt-3 text-xs text-slate-500">Tip: replace placeholders with real images (powder / flakes / granules / packaging).</p>
+</div>
+<div class="absolute inset-0 flex items-center justify-center text-center px-6">
+                  <div>
+                    <div class="text-sm font-extrabold text-slateish">Hero Image</div>
+                    <div class="mt-1 text-xs text-slate-500">Add banana powder/flakes image here</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5 grid gap-3">
+                <div class="v3-fact"><span>Applications</span><b>Bakery • beverages • premixes</b></div>
+                <div class="v3-fact"><span>Variants</span><b>Powder / flakes / granules</b></div>
+                <div class="v3-fact"><span>Share</span><b>mesh • packing • destination</b></div>
+              </div>
+
+              <div class="mt-6 flex gap-3">
+                <a href="/#quote" class="v3-btn-primary w-full text-center">Request Quote</a>
+                <a href="/contact.html" class="v3-btn-ghost w-full text-center">WhatsApp</a>
+              </div>
+
+              <p class="mt-3 text-xs text-slate-500">Tip: send monthly requirement for a faster confirmation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Forms (tabs) -->
+  <section class="mt-10">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <div class="text-xs font-extrabold tracking-wide uppercase text-brand">Forms & specs</div>
+        <h2 class="mt-2 text-2xl md:text-3xl font-extrabold tracking-tight text-ink">Choose your format</h2>
+        <p class="mt-2 text-slateish max-w-2xl">Tap a tab to view typical specs. Custom requests supported.</p>
+      </div>
+      <a href="/buyers-guide/mesh-size-grade-guide-powder-flakes-granules.html" class="hidden md:inline-flex v3-btn-ghost">Mesh & grade guide →</a>
+    </div>
+
+    <div class="mt-6 rounded-3xl border border-slate-200 bg-white overflow-hidden">
+      <div class="p-4 md:p-5 border-b border-slate-200 flex flex-wrap gap-2" id="v3Tabs">
+        <button class="v3-tab is-active" type="button" data-tab="powder">Powder</button>
+        <button class="v3-tab" type="button" data-tab="flakes">Flakes</button>
+        <button class="v3-tab" type="button" data-tab="granules">Granules</button>
+      </div>
+
+      <div class="p-6 md:p-8">
+        <div class="v3-panel" data-panel="powder">
+          <div class="grid lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-7">
+              <h3 class="text-xl md:text-2xl font-extrabold text-ink">Banana Powder</h3>
+              <p class="mt-2 text-slateish">Fine milling for easy blending in bakery premixes, beverages and nutrition mixes.</p>
+              <div class="mt-5 grid sm:grid-cols-2 gap-3">
+                <div class="v3-spec"><span>Typical mesh</span><b>60–100 (custom)</b></div>
+                <div class="v3-spec"><span>Packing</span><b>5 / 10 / 20 / 25 kg</b></div>
+                <div class="v3-spec"><span>MOQ</span><b>Depends on grade</b></div>
+                <div class="v3-spec"><span>Use-cases</span><b>Premixes • beverages</b></div>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <div class="rounded-3xl border border-slate-200 bg-slate-50/70 p-5">
+                <div class="text-sm font-extrabold text-ink">Fast quote checklist</div>
+                <ul class="mt-3 space-y-2 text-sm text-slateish font-semibold">
+                  <li>• mesh/grade</li><li>• moisture expectation</li><li>• packing size</li><li>• destination</li>
+                </ul>
+                <a href="/#quote" class="mt-5 v3-btn-primary w-full text-center">Get Quote for Powder →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="v3-panel hidden" data-panel="flakes">
+          <div class="grid lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-7">
+              <h3 class="text-xl md:text-2xl font-extrabold text-ink">Banana Flakes</h3>
+              <p class="mt-2 text-slateish">Visible inclusions for cereals, toppings, snack blends and trail mixes.</p>
+              <div class="mt-5 grid sm:grid-cols-2 gap-3">
+                <div class="v3-spec"><span>Cut / size</span><b>Custom supported</b></div>
+                <div class="v3-spec"><span>Packing</span><b>5 / 10 / 20 / 25 kg</b></div>
+                <div class="v3-spec"><span>MOQ</span><b>Depends on cut</b></div>
+                <div class="v3-spec"><span>Use-cases</span><b>Toppings • snacks</b></div>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <div class="rounded-3xl border border-slate-200 bg-slate-50/70 p-5">
+                <div class="text-sm font-extrabold text-ink">Fast quote checklist</div>
+                <ul class="mt-3 space-y-2 text-sm text-slateish font-semibold">
+                  <li>• flake size</li><li>• packing size</li><li>• destination</li><li>• monthly requirement</li>
+                </ul>
+                <a href="/#quote" class="mt-5 v3-btn-primary w-full text-center">Get Quote for Flakes →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="v3-panel hidden" data-panel="granules">
+          <div class="grid lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-7">
+              <h3 class="text-xl md:text-2xl font-extrabold text-ink">Banana Granules</h3>
+              <p class="mt-2 text-slateish">Controlled flow for consistent inclusion in blends and premixes.</p>
+              <div class="mt-5 grid sm:grid-cols-2 gap-3">
+                <div class="v3-spec"><span>Grade</span><b>Medium / coarse</b></div>
+                <div class="v3-spec"><span>Packing</span><b>5 / 10 / 20 / 25 kg</b></div>
+                <div class="v3-spec"><span>MOQ</span><b>Depends on grade</b></div>
+                <div class="v3-spec"><span>Use-cases</span><b>Premixes • blends</b></div>
+              </div>
+            </div>
+            <div class="lg:col-span-5">
+              <div class="rounded-3xl border border-slate-200 bg-slate-50/70 p-5">
+                <div class="text-sm font-extrabold text-ink">Fast quote checklist</div>
+                <ul class="mt-3 space-y-2 text-sm text-slateish font-semibold">
+                  <li>• granule size</li><li>• packing size</li><li>• destination</li><li>• monthly requirement</li>
+                </ul>
+                <a href="/#quote" class="mt-5 v3-btn-primary w-full text-center">Get Quote for Granules →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div class="text-sm text-slateish font-semibold">Need help selecting? Tell us your application — we’ll recommend the best format.</div>
+          <div class="flex gap-2">
+            <a href="/buyers-guide/private-label-oem-dehydrated-products.html" class="v3-btn-ghost">Private label / OEM →</a>
+            <a href="/buyers-guide/shelf-life-storage-dehydrated-powders.html" class="v3-btn-ghost">Shelf life & storage →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="mt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <div class="text-xs font-extrabold tracking-wide uppercase text-brand">FAQs</div>
+          <h2 class="mt-2 text-2xl md:text-3xl font-extrabold tracking-tight text-ink">Common questions</h2>
+        </div>
+        <a href="/buyers-guide/" class="hidden md:inline-flex v3-btn-ghost">Buyer Guides →</a>
+      </div>
+
+      <div class="mt-6 space-y-3">
+        <details class="v3-faq">
+          <summary>What is your MOQ for Banana Powder?</summary>
+          <div class="v3-faq-a">MOQ depends on grade, packing and seasonality. Share your requirement and we’ll confirm availability.</div>
+        </details>
+        <details class="v3-faq">
+          <summary>Do you support export-ready packing?</summary>
+          <div class="v3-faq-a">Yes. We support bulk packing (5–25 kg) and can guide labeling/packing requirements based on destination.</div>
+        </details>
+        <details class="v3-faq">
+          <summary>How do we get the fastest quote?</summary>
+          <div class="v3-faq-a">Send mesh/grade, packing size, destination and monthly requirement. We’ll reply with availability + quote.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="mt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 md:p-8 v3-cta">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <div class="text-xs font-extrabold tracking-wide uppercase text-brand">Ready to source?</div>
+          <h2 class="mt-2 text-2xl md:text-3xl font-extrabold tracking-tight text-ink">Share your specs — we’ll confirm and quote.</h2>
+          <p class="mt-2 text-slateish">MOQ • mesh/grade • packing • destination</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="/#quote" class="v3-btn-primary">Get Bulk Quote →</a>
+          <a href="/contact.html" class="v3-btn-ghost">Contact</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  var wrap = document.getElementById('v3Tabs');
+  if (!wrap) return;
+  var buttons = wrap.querySelectorAll('[data-tab]');
+  var panels = document.querySelectorAll('[data-panel]');
+
+  function setTab(name) {
+    buttons.forEach(function (b) {
+      b.classList.toggle('is-active', b.getAttribute('data-tab') === name);
+    });
+    panels.forEach(function (p) {
+      p.classList.toggle('hidden', p.getAttribute('data-panel') !== name);
+    });
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setTab(b.getAttribute('data-tab')); });
+  });
+
+  setTab('powder');
+})();
+</script>
+
+<script>
+(function () {
+  var rail = document.getElementById('v3MediaRail');
+  var img = document.getElementById('v3HeroImg');
+  if (!rail || !img) return;
+
+  rail.addEventListener('click', function (e) {
+    var btn = e.target.closest('.v3-thumb');
+    if (!btn) return;
+
+    var src = btn.getAttribute('data-src');
+    var alt = btn.getAttribute('data-alt') || 'Product image';
+    if (!src) return;
+
+    img.setAttribute('src', src);
+    img.setAttribute('alt', alt);
+
+    rail.querySelectorAll('.v3-thumb').forEach(function (b) {
+      b.classList.toggle('is-active', b === btn);
+    });
+  });
+})();
+</script>
+
 <!-- Spec modal -->
 <div @click.self="modalOpen=false" class="fixed inset-0 z-50 grid place-items-center p-4 bg-black/50" x-show="modalOpen" x-transition="">
 <div class="w-full max-w-xl rounded-3xl border border-slate-200 bg-white p-6 card-hover">

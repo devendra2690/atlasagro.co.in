@@ -328,106 +328,7 @@
       <a href="/products/" style="display:inline-block;margin-left:10px;border:1px solid rgba(15,107,62,.35);color:#0F6B3E;text-decoration:none;padding:10px 16px;border-radius:999px;font-weight:700;">Browse Products</a>
     </div>
   </div>
-
-
-  <!-- Top announcement -->
-  <div class="bg-brand-100 border-b border-brand-200 hidden md:block">
-    <div class="max-w-7xl mx-auto px-4 py-2 text-sm flex flex-wrap items-center justify-between gap-2">
-      <div class="text-ink">
-        ✅ Bulk Supply • ✅ Export-ready • ✅ Custom Blends for Soups / Noodles / Ready Meals
-      </div>
-      <div class="flex items-center gap-3">
-
-        <!-- Language Switcher -->
-        <div class="hidden sm:flex items-center gap-2 text-xs border border-slate-200 rounded-full px-3 py-2 bg-white">
-          <button type="button" onclick="setLang('en')" class="hover:text-brand-700 font-medium">EN</button>
-          <span class="text-slateish">|</span>
-          <button type="button" onclick="setLang('hi')" class="hover:text-brand-700 font-medium">हिंदी</button>
-          <span class="text-slateish">|</span>
-          <button type="button" onclick="setLang('mr')" class="hover:text-brand-700 font-medium">मराठी</button>
-        </div>
-
-        <a class="text-ink hover:text-ink underline underline-offset-4"
-           href="#quote">Get a Quote</a>
-        <a class="text-ink hover:text-ink underline underline-offset-4"
-           href="/assets/brochure.pdf" download>
-          Download Brochure
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navbar -->
-  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
-<div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4 relative">
-
-<a href="#" class="flex items-center gap-3 md:gap-5 min-w-0">
-  <!-- BIG, BORDERLESS LOGO -->
-  <span class="flex items-center justify-center">
-    <img loading="eager" decoding="async"
-      src="/assets/atlas-agro-logo.png"
-      alt="Atlas AgroFood Logo"
-      class="h-10 w-auto md:h-14 object-contain"
-    />
-  </span>
-
-  <div class="leading-tight min-w-0">
-  <!-- Mobile brand -->
-  <div class="block md:hidden font-semibold text-ink text-base">
-    ATLAS AGROFOOD
-  </div>
-
-  <!-- Desktop brand -->
-  <div class="hidden md:block font-semibold text-ink text-lg">
-    ATLAS AGROFOOD PRIVATE LTD
-  </div>
-
-  <div class="hidden md:block text-xs text-slateish tracking-wide uppercase">
-    PREMIUM DEHYDRATED VEGETABLES & FRUITS
-  </div>
-</div>
-
-</a>
-
-
-
-
-    <nav class="hidden md:flex items-center gap-7 text-sm">
-      <a class="hover:text-ink text-slateish" href="/" data-i18n="nav.home">Home</a>
-      <a class="hover:text-ink text-slateish" href="/products/" data-i18n="nav.products">Products</a>
-      <a class="hover:text-ink text-slateish" href="/industries/" data-i18n="nav.industries">Industries</a>
-      <a class="hover:text-ink text-slateish" href="/quality.html" data-i18n="nav.quality">Quality</a>
-      <a class="hover:text-ink text-slateish" href="/gallery.html" data-i18n="nav.gallery">Gallery</a>
-      <a class="hover:text-ink text-slateish" href="/faq.html" data-i18n="nav.faq">FAQ</a>
-      <a class="hover:text-ink text-slateish" href="/contact.html" data-i18n="nav.contact">Contact</a>
-    </nav>
-
-    <div class="flex items-center gap-3">
-      <a :href="whatsappLink"
-         class="hidden sm:inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
-        <span>WhatsApp</span>
-        <span aria-hidden="true">→</span>
-      </a>
-
-      
-      <!-- Mobile Language Switcher -->
-      <div class="md:hidden flex items-center gap-1 text-[11px] border border-slate-200 rounded-2xl px-2 py-2 bg-white">
-        <button type="button" onclick="setLang('en')" class="px-1 font-medium hover:text-brand-700">EN</button>
-        <span class="text-slateish">|</span>
-        <button type="button" onclick="setLang('hi')" class="px-1 font-medium hover:text-brand-700">हिं</button>
-        <span class="text-slateish">|</span>
-        <button type="button" onclick="setLang('mr')" class="px-1 font-medium hover:text-brand-700">मर</button>
-      </div>
-      <button class="md:hidden rounded-2xl border border-slate-200 px-3 py-2 hover:bg-white"
-              @click="mobileOpen = !mobileOpen"
-              aria-label="Toggle menu">
-        ☰
-      </button>
-    </div>
-  </div>
-</header>
-
-
+<div id="site-header"></div>
 <!-- Internal Links: Products -->
 <section class="explore-strip">
   <p class="explore-text">
@@ -884,22 +785,8 @@
           </div>
         </div>
       </div>
-
-      <footer class="mt-14 pt-8 border-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
-        <div>© <span x-text="new Date().getFullYear()"></span> Atlas AgroFood. All rights reserved.</div>
-        <div class="flex items-center gap-4">
-          <a class="hover:text-slateish" href="/products/">Products</a>
-          <a class="hover:text-brand-700" href="/why-atlas-agro.html">Why Atlas AgroFood</a>
-          <a class="hover:text-slateish" href="/quality.html">Quality</a>
-          <a class="hover:text-slateish" href="/contact.html">Contact</a>
-        </div>
-      
-<section id="faq" class="section">
-  <div class="container">
-    
-
-</footer>
-    </div>
+<div id="site-footer"></div>
+</div>
   </section>
 
   <!-- Spec modal -->
@@ -1536,5 +1423,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script src="/assets/js/cta-tracking.js"></script>
+
+<script defer src="/assets/js/includes.js"></script>
 </body>
 </html>

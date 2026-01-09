@@ -84,7 +84,6 @@
             brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 100: '#e7f7ee', 200: '#c9efd9', 300: '#9fe2bd', 400: '#5ecc8f', 500: '#22b36a', 600: '#129457', 700: '#0f7a4a', 800: '#0f623c', 900: '#0c4f31' },
             ink: '#0f172a',
             slateish: '#475569',
-            // Earthy tones from the reference image
             'earth-cream': '#f4f1ea',
             'earth-gold': '#c5a365', 
             'earth-brown': '#5d4037',
@@ -99,18 +98,6 @@
 <body class="bg-brand-50 text-ink antialiased"
       :class="{'no-scroll': mobileOpen}" x-data="siteApp()"
       x-init="init()">
-
-  <div class="sticky-cta">
-    <a class="quote" href="/contact.html">Get Bulk Quote</a>
-    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
-  </div>
-  <div class="mobile-cta">
-    <div class="wrap">
-      <a class="quote" href="/contact.html">Get Bulk Quote</a>
-      <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
-    </div>
-  </div>
-
   <div id="site-header"></div>
   
   <div x-cloak x-show="mobileOpen" class="mobile-menu-overlay" @click="mobileOpen=false" x-transition.opacity></div>
@@ -158,7 +145,7 @@
            x-transition:leave-start="opacity-100"
            x-transition:leave-end="opacity-0">
         
-        <div class="w-full h-[55%] md:h-full md:w-[60%] flex items-center justify-center md:justify-start px-6 md:pl-24 relative z-20 bg-earth-cream md:bg-transparent">
+        <div class="w-full h-[55%] md:h-full md:w-[60%] flex items-center justify-center md:justify-start px-6 md:pl-24 relative z-20 bg-earth-cream">
           <div class="max-w-xl text-center md:text-left mt-8 md:mt-0">
             
             <div class="relative inline-block mb-3 md:mb-4">
@@ -177,14 +164,14 @@
           </div>
         </div>
 
-        <div class="w-full h-[45%] md:h-full md:w-[40%] relative md:static overflow-hidden z-10">
+        <div class="w-full h-[45%] md:h-full md:w-[40%] relative overflow-hidden z-10">
           
-          <div class="absolute inset-0 md:right-0 md:top-0 w-full md:w-[45%] h-full z-0 transition-colors duration-700"
+          <div class="absolute inset-0 w-full h-full z-0 transition-colors duration-700"
                :style="`background-color: ${slide.color}`"></div>
           
           <div class="absolute 
                       left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 
-                      md:left-auto md:right-[5%] md:top-1/2 md:-translate-y-1/2 md:translate-x-0
+                      md:left-auto md:right-[10%] md:top-1/2 md:-translate-y-1/2 md:translate-x-0
                       w-[280px] h-[280px] 
                       md:w-[90%] md:h-auto md:aspect-square 
                       rounded-full border-[8px] md:border-[15px] border-white/20 shadow-2xl flex items-center justify-center z-10 overflow-hidden bg-white/10">
@@ -344,7 +331,6 @@
   </section>
 
   <script>
-    // Slider Component logic
     function heroSlider() {
       return {
         active: 0,
@@ -355,28 +341,28 @@
             title: "Dehydrated <br>Onion Flakes",
             desc: "Export-quality onion flakes and powders for seasonings, gravies and ready-mixes.",
             image: "assets/gallery/onion-garlic.jpg",
-            color: "#c5a365" // Gold/Beige
+            color: "#c5a365" 
           },
           {
             tagline: "Natural Snacks",
             title: "Crispy Fruit <br>Chips",
             desc: "100% natural dehydrated fruit chips. No added sugar, perfect for snacking.",
             image: "assets/gallery/fruit-chips.png",
-            color: "#8FA35C" // Olive Green
+            color: "#8FA35C"
           },
           {
             tagline: "Pure Ingredients",
             title: "Vegetable <br>Powders",
             desc: "Spinach, Tomato, and Ginger powders for instant soups and nutraceuticals.",
             image: "assets/gallery/vegetable-mix.jpg",
-            color: "#B35A22" // Rust/Orange
+            color: "#B35A22"
           },
           {
             tagline: "Custom Blends",
             title: "Spices & <br>Seasonings",
             desc: "Customized spice blends tailored for noodle tastemakers and snack dust.",
             image: "assets/gallery/custom-blends.jpg",
-            color: "#5D4037" // Dark Brown
+            color: "#5D4037"
           }
         ],
         next() {
@@ -419,7 +405,7 @@
           window.open(`https://wa.me/${this.whatsappNumber}?text=${msg}`, "_blank");
         },
         init() {
-          // Initialize analytics or other global scripts here
+          // Initialize analytics
         }
       };
     }

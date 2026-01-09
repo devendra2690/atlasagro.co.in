@@ -332,6 +332,8 @@
 <body class="bg-brand-50 text-ink antialiased"
       x-data="siteApp()"
       x-init="init()">
+<div id="site-header"></div>
+
 
   <div class="sticky-cta">
     <a class="quote" href="/contact.html">Get Bulk Quote</a>
@@ -370,73 +372,7 @@
       </div>
     </div>
   </div>
-<header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
-<div class="max-w-7xl mx-auto px-4 h-16 md:h-20 flex items-center justify-between gap-4 relative">
 
-<a href="#" class="flex items-center gap-3 md:gap-5 min-w-0">
-  <!-- BIG, BORDERLESS LOGO -->
-  <span class="flex items-center justify-center">
-    <img loading="eager" decoding="async"
-      src="/assets/atlas-agrofood-logo.png"
-      alt="Atlas AgroFood Logo"
-      class="h-10 w-auto md:h-14 object-contain"
-    />
-  </span>
-
-  <div class="leading-tight min-w-0">
-  <!-- Mobile brand -->
-  <div class="block md:hidden font-semibold text-ink text-base">
-    ATLAS AGROFOOD
-  </div>
-
-  <!-- Desktop brand -->
-  <div class="hidden md:block font-semibold text-ink text-lg">
-    ATLAS AGROFOOD PRIVATE LTD
-  </div>
-
-  <div class="hidden md:block text-xs text-slateish tracking-wide uppercase">
-    PREMIUM DEHYDRATED VEGETABLES & FRUITS
-  </div>
-</div>
-
-</a>
-
-
-
-
-    <nav class="hidden md:flex items-center gap-7 text-sm">
-      <a class="hover:text-ink text-slateish" href="/" data-i18n="nav.home">Home</a><a class="hover:text-ink text-slateish" href="/products/" data-i18n="nav.products">Products</a>
-      <a class="hover:text-ink text-slateish" href="/industries/" data-i18n="nav.industries">Industries</a>
-      <a class="hover:text-ink text-slateish" href="/quality.html" data-i18n="nav.quality">Quality</a>
-      <a class="hover:text-ink text-slateish" href="/gallery.html" data-i18n="nav.gallery">Gallery</a>
-      <a class="hover:text-ink text-slateish" href="/faq.html" data-i18n="nav.faq">FAQ</a>
-      <a class="hover:text-ink text-slateish" href="/contact.html" data-i18n="nav.contact">Contact</a>
-    </nav>
-
-    <div class="flex items-center gap-3">
-      <a :href="whatsappLink"
-         class="hidden sm:inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
-        <span>WhatsApp</span>
-        <span aria-hidden="true">→</span>
-      </a>
-
-      
-      <!-- Mobile Language Switcher -->
-      <div class="md:hidden flex items-center gap-1 text-[11px] border border-slate-200 rounded-2xl px-2 py-2 bg-white card-hover hover:border-slate-300 transition">
-        <button type="button" onclick="setLang('en')" class="px-1 font-medium hover:text-brand-700">EN</button>
-        <span class="text-slateish">|</span>
-        <button type="button" onclick="setLang('hi')" class="px-1 font-medium hover:text-brand-700">हिं</button>
-        <span class="text-slateish">|</span>
-        <button type="button" onclick="setLang('mr')" class="px-1 font-medium hover:text-brand-700">मर</button>
-      </div>
-      <button class="md:hidden rounded-2xl border border-slate-200 px-3 py-2 hover:bg-white card-hover hover:border-slate-300 transition"
-              @click="mobileOpen = !mobileOpen"
-              aria-label="Toggle menu">
-        ☰
-      </button>
-    </div>
-  </div>
-</header>
 <main class="max-w-7xl mx-auto px-4 py-10">
   <div class="max-w-3xl">
     
@@ -612,15 +548,7 @@
 </div>
 </section>
 </main>
-<footer class="mt-14 pt-8 border-t border-slate-200 text-sm text-slateish flex flex-col md:flex-row gap-3 items-center justify-between">
-        <div>© <span x-text="new Date().getFullYear()"></span> Atlas AgroFood. All rights reserved.</div>
-        <div class="flex items-center gap-4">
-          <a class="hover:text-slateish" href="/products/">Products</a>
-          <a class="hover:text-brand-700" href="/why-atlas-agro.html">Why Atlas AgroFood</a>
-          <a class="hover:text-slateish" href="/quality.html">Quality</a>
-          <a class="hover:text-slateish" href="/contact.html">Contact</a>
-        </div>
-      </footer>
+
 </div>
   </section>
 
@@ -1333,5 +1261,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })();
 </script>
 
+
+<div id="site-footer"></div>
+<script defer src="/assets/js/includes.js"></script>
 </body>
 </html>

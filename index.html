@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  
-
-  <!-- Favicon / Tab Icon -->
   <link rel="icon" type="image/png" href="/assets/atlas-agro-logo.png" />
   <link rel="apple-touch-icon" href="/assets/atlas-agro-logo.png" />
 
@@ -15,152 +12,30 @@
   <meta name="keywords" content="dehydrated powder supplier, onion powder, garlic powder, ginger powder, fruit chips, vegetable powders, custom blends" />
   <meta name="theme-color" content="#0f7a4a" />
 
-  <meta name="description" content="Atlas AgroFood is a B2B manufacturer of dehydrated vegetables, fruit powders, onion & garlic powders, and custom blends for food processors and exporters.">
-
   <link rel="canonical" href="https://atlasagro.co.in/">
 
-          <link rel="alternate" href="https://atlasagro.co.in/" hreflang="en-IN">
-    <link rel="alternate" href="https://atlasagro.co.in/" hreflang="x-default">
-<!-- Social previews -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Atlas AgroFood">
-    <meta property="og:title" content="Dehydrated Vegetables, Fruit Powders &amp; Custom Blends | Atlas AgroFood">
-    <meta property="og:description" content="Atlas AgroFood Pvt Ltd supplies export-ready dehydrated vegetables, fruit powders, onion &amp; garlic powders, and custom blends for B2B buyers.">
-    <meta property="og:url" content="https://atlasagro.co.in/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dehydrated Vegetables, Fruit Powders &amp; Custom Blends | Atlas AgroFood">
-    <meta name="twitter:description" content="Atlas AgroFood Pvt Ltd supplies export-ready dehydrated vegetables, fruit powders, onion &amp; garlic powders, and custom blends for B2B buyers.">
-<meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
-<!-- Open Graph (for WhatsApp/LinkedIn preview) -->
-<meta property="og:title" content="Dehydrated Vegetables, Fruit Powders &amp; Custom Blends | Atlas AgroFood">
-<meta property="og:description" content="Atlas AgroFood Pvt Ltd supplies export-ready dehydrated vegetables, fruit powders, onion &amp; garlic powders, and custom blends for B2B buyers.">
-<meta property="og:url" content="https://atlasagro.co.in/">
-<meta property="og:type" content="website">
-<!-- Optional: add your logo image URL if you have one -->
-<!-- <meta property="og:image" content="https://atlasagro.co.in/assets/atlas-agro-logo.png"> -->
-
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Dehydrated Vegetables, Fruit Powders &amp; Custom Blends | Atlas AgroFood">
-  <meta property="og:description" content="Atlas AgroFood Pvt Ltd supplies export-ready dehydrated vegetables, fruit powders, onion &amp; garlic powders, and custom blends for B2B buyers.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://atlasagro.co.in/assets/atlas-agro-logo.png">
-
-  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Atlas AgroFood",
-  "url": "https://atlasagro.co.in/",
-  "description": "Manufacturer and bulk supplier of dehydrated fruits, vegetables, and custom food ingredients for B2B and export markets.",
-  "sameAs": [],
-  "contactPoint": [{
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "areaServed": ["IN", "Global"],
-    "availableLanguage": ["English", "Hindi", "Marathi"]
-  }]
-}
-</script>
-
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          brand: {
-            DEFAULT: '#22b36a',
-            50: '#f5fbf7',
-            100: '#e7f7ee',
-            200: '#c9efd9',
-            300: '#9fe2bd',
-            400: '#5ecc8f',
-            500: '#22b36a',
-            600: '#129457',
-            700: '#0f7a4a',
-            800: '#0f623c',
-            900: '#0c4f31'
-          },
-          ink: '#0f172a',
-          slateish: '#475569'
-        }
-      }
-    }
-  }
-
-  function galleryMagic() {
-    return {
-      isOpen: false,
-      activeIndex: 0,
-
-      items: [
-        { title: "Fruit Chips", desc: "Assorted chips & pieces", src: "assets/gallery/fruit-chips.png", alt: "Dehydrated Fruit Chips" },
-        { title: "Vegetable Mix", desc: "Ready meal blends", src: "assets/gallery/vegetable-mix.jpg", alt: "Dehydrated Vegetable Mix" },
-        { title: "Onion / Garlic", desc: "Powders & granules", src: "assets/gallery/onion-garlic.jpg", alt: "Onion Garlic Powder" },
-        { title: "Custom Blends", desc: "Soup & noodle mixes", src: "assets/gallery/custom-blends.jpg", alt: "Custom Food Blends" },
-        { title: "Herbs", desc: "Leafy greens & flakes", src: "assets/gallery/herbs.jpg", alt: "Dehydrated Herbs" },
-        { title: "Packaging", desc: "Bulk & retail options", src: "assets/gallery/packaging.jpg", alt: "Food Packaging" },
-        { title: "Quality Checks", desc: "Batch consistency", src: "assets/gallery/quality-checks.jpg", alt: "Quality Checks" },
-        { title: "Dispatch", desc: "Reliable shipments", src: "assets/gallery/dispatch.jpg", alt: "Dispatch & Logistics" },
-      ],
-
-      init() {
-        // Scroll reveal with IntersectionObserver
-        const cards = this.$root.querySelectorAll("button.group");
-        cards.forEach((el) => el.classList.add("reveal"));
-
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) e.target.classList.add("in");
-          });
-        }, { threshold: 0.12 });
-
-        cards.forEach((el) => io.observe(el));
-      },
-
-      open(i) {
-        this.activeIndex = i;
-        this.isOpen = true;
-        document.body.style.overflow = "hidden";
-      },
-      close() {
-        this.isOpen = false;
-        document.body.style.overflow = "";
-      },
-      activeItem() {
-        return this.items[this.activeIndex] || this.items[0];
-      },
-      next() {
-        this.activeIndex = (this.activeIndex + 1) % this.items.length;
-      },
-      prev() {
-        this.activeIndex = (this.activeIndex - 1 + this.items.length) % this.items.length;
-      }
-    };
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const els = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach((el) => io.observe(el));
-  });
-</script>
-
-  <!-- Alpine.js -->
+  
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <style>
+    /* Font overrides for the slider */
+    .font-script { font-family: 'Dancing Script', cursive; }
+    .font-serif-display { font-family: 'Playfair Display', serif; }
+
+    /* Slider Animations */
+    [x-cloak] { display: none !important; }
+    
+    .spin-slow { animation: spin 40s linear infinite; }
+    @keyframes spin { 100% { transform: rotate(360deg); } }
+
+    /* Navigation button hover effects */
+    .nav-btn svg { transition: transform 0.3s ease; }
+    .nav-btn:hover svg { transform: scale(1.2); }
 
     .sticky-cta{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:10px}
     .sticky-cta a{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:16px;font-weight:800}
@@ -172,476 +47,401 @@
     @media (min-width: 768px){.mobile-cta{display:none}}
     @media (max-width: 767px){body{padding-bottom:70px}}
     
-
-    
     .card-hover{transition:all .25s ease;}
     .card-hover:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,122,74,.12);}
 
-/* Smooth scroll + nicer selection */
     html { scroll-behavior: smooth; }
     ::selection { background: rgba(34,179,106,.25); }
-    /* Gallery reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(14px) scale(.98);
-      transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1);
-      will-change: transform, opacity;
+    
+    /* Utility */
+    .reveal { opacity: 0; transform: translateY(14px) scale(.98); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.8,.2,1); will-change: transform, opacity; }
+    .reveal.in { opacity: 1; transform: translateY(0) scale(1); }
+    
+    .supply-card:hover { background-color: rgb(34 179 106 / 0.08); border-color: rgb(34 179 106 / 0.35); }
+    
+    .explore-strip { width: 100%; background: rgba(255, 255, 255, 0.7); border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; padding: 14px 20px; display: flex; justify-content: center; }
+    .explore-text { max-width: 1200px; text-align: center; font-size: 14px; color: #475569; line-height: 1.6; }
+    .explore-text span { font-weight: 600; color: #0f172a; }
+    .explore-text a { color: #16a34a; font-weight: 600; text-decoration: none; }
+    .explore-text a:hover { text-decoration: underline; }
+
+    .no-scroll{ overflow:hidden; }
+    .mobile-menu-overlay{ position: fixed; inset: 0; background: rgba(15, 23, 42, .35); backdrop-filter: blur(2px); z-index: 60; }
+    .mobile-menu-panel{ position: fixed; left: 12px; right: 12px; top: 88px; max-height: calc(100vh - 112px); overflow: auto; background: rgba(255,255,255,.92); border: 1px solid rgba(16, 185, 129, .18); border-radius: 18px; box-shadow: 0 20px 50px rgba(2, 6, 23, .18); z-index: 61; padding: 14px; }
+    .mobile-menu-header{ display:flex; align-items:center; justify-content:space-between; padding: 4px 4px 10px 4px; }
+    .mobile-menu-title{ font-weight: 700; font-size: 16px; color: #0f172a; }
+    .mobile-menu-close{ width: 40px; height: 40px; border-radius: 999px; border: 1px solid rgba(148,163,184,.55); background: rgba(255,255,255,.75); color: #0f172a; font-size: 18px; line-height: 1; display:flex; align-items:center; justify-content:center; }
+    .mobile-menu-nav{ display:grid; gap: 10px; padding: 6px 4px 12px 4px; }
+    .mobile-menu-nav a{ padding: 12px 12px; border-radius: 14px; border: 1px solid rgba(148,163,184,.35); background: rgba(255,255,255,.6); color: #0f172a; font-weight: 600; }
+    .mobile-menu-actions{ display:grid; gap: 10px; padding: 4px; }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#22b36a', 50: '#f5fbf7', 100: '#e7f7ee', 200: '#c9efd9', 300: '#9fe2bd', 400: '#5ecc8f', 500: '#22b36a', 600: '#129457', 700: '#0f7a4a', 800: '#0f623c', 900: '#0c4f31' },
+            ink: '#0f172a',
+            slateish: '#475569',
+            'earth-cream': '#f4f1ea',
+            'earth-gold': '#c5a365', 
+            'earth-brown': '#5d4037',
+            'earth-green': '#556b2f',
+          }
+        }
+      }
     }
-    .reveal.in {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  
-    /* Gallery hover depth & tilt */
-    .gallery-card {
-      transform-style: preserve-3d;
-    }
-    .gallery-card:hover {
-      transform: translateY(-6px) scale(1.01);
-    }
-    .gallery-card img {
-      transition: transform .6s cubic-bezier(.2,.8,.2,1);
-    }
-    .gallery-card:hover img {
-      transform: scale(1.12);
-    }
-    /* Who we supply hover (match Products) */
-    .supply-card {
-      transition: background-color .25s ease, border-color .25s ease, transform .25s ease;
-    }
-
-    .supply-card:hover {
-      background-color: rgb(34 179 106 / 0.08); /* brand green, subtle */
-      border-color: rgb(34 179 106 / 0.35);
-    }
-
-  /* Universal card hover */
-  .card-hover {
-    transition: background-color .25s ease,
-                border-color .25s ease,
-                transform .25s ease,
-                box-shadow .25s ease;
-  }
-  .card-hover:hover {
-    background-color: rgb(34 179 106 / 0.08);
-    border-color: rgb(34 179 106 / 0.35);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(15, 122, 74, 0.12);
-  }
-  /* Full-width explore strip */
-	.explore-strip {
-	  width: 100%;
-	  background: rgba(255, 255, 255, 0.7);
-	  border-top: 1px solid #e5e7eb;
-	  border-bottom: 1px solid #e5e7eb;
-	  padding: 14px 20px;
-	  display: flex;
-	  justify-content: center;
-	}
-
-	.explore-text {
-	  max-width: 1200px;
-	  text-align: center;
-	  font-size: 14px;
-	  color: #475569;
-	  line-height: 1.6;
-	}
-
-	.explore-text span {
-	  font-weight: 600;
-	  color: #0f172a;
-	}
-
-	.explore-text a {
-	  color: #16a34a; /* Atlas green */
-	  font-weight: 600;
-	  text-decoration: none;
-	}
-
-	.explore-text a:hover {
-	  text-decoration: underline;
-	}
-
-
-
-
-/* reusable section divider (minimal) */
-.section-divider{height:1px;width:100%;background:rgba(15,23,42,0.08);margin:28px 0;}
-@media (max-width:640px){.section-divider{margin:20px 0;}}
-
-
-/* consistent breadcrumb pill */
-.breadcrumb-pill{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:10px 14px;border-radius:999px;
-  background: #ffffff;
-  border:1px solid rgba(15,23,42,0.08);
-  box-shadow: 0 8px 22px rgba(15,23,42,0.06);
-  color: rgba(15,23,42,0.75);
-  font-weight: 600;
-}
-.breadcrumb-pill a{color:inherit;text-decoration:none;}
-.breadcrumb-pill a:hover{text-decoration:underline;}
-.breadcrumb-pill .sep{opacity:.55;font-weight:700;}
-
-  .breadcrumb-pill .current{color: #2f6b45; font-weight:700;}
-</style>
-
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is your MOQ for bulk orders?", "acceptedAnswer": {"@type": "Answer", "text": "MOQ depends on the product category and packaging. Share your requirement on WhatsApp and we’ll confirm MOQ and pricing."}}, {"@type": "Question", "name": "Do you support different mesh sizes and granulation?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We can share available mesh sizes/grades for powders, flakes and granules depending on the product."}}, {"@type": "Question", "name": "Do you offer packaging options and private label?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We support bulk packs and selected packaging options. Private label/OEM can be discussed for repeat orders."}}, {"@type": "Question", "name": "Are your products suitable for export?", "acceptedAnswer": {"@type": "Answer", "text": "We can support export-oriented supply based on buyer requirements. Share destination country and specifications to align documents and packing."}}]}</script>
-<style>
-/* Phase 1A UI: subtle card shadow */
-.shadow-soft{box-shadow:0 10px 30px rgba(15,23,42,.08);} 
-</style>
-
-    <meta name="twitter:image" content="https://atlasagro.co.in/assets/atlas-agro-logo.png">  <!-- schema-organization -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://atlasagro.co.in#organization", "name": "Atlas AgroFood Private Ltd", "url": "https://atlasagro.co.in/", "logo": "https://atlasagro.co.in/assets/atlas-agro-logo.png", "email": "sales@atlasagrofood.co.in", "telephone": "+91-7738505687"}</script>
-  <!-- schema-website -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://atlasagro.co.in#website", "url": "https://atlasagro.co.in/", "name": "Atlas AgroFood", "publisher": {"@id": "https://atlasagro.co.in#organization"}, "inLanguage": "en"}</script>
-  <!-- schema-webpage:https://atlasagro.co.in/ -->
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://atlasagro.co.in/#webpage", "url": "https://atlasagro.co.in/", "name": "Dehydrated Vegetables, Fruit Powders & Custom Blends | Atlas AgroFood", "description": "Atlas AgroFood Pvt Ltd supplies export-ready dehydrated vegetables, fruit powders, onion & garlic powders, and custom blends for B2B buyers.", "isPartOf": {"@id": "https://atlasagro.co.in#website"}, "about": {"@id": "https://atlasagro.co.in#organization"}, "inLanguage": "en"}</script>
-
-    <link rel="manifest" href="/site.webmanifest">
-
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "itemListElement": [{"@type": "SiteNavigationElement", "position": 1, "name": "Home", "url": "https://atlasagro.co.in/"}, {"@type": "SiteNavigationElement", "position": 2, "name": "Products", "url": "https://atlasagro.co.in/products/"}, {"@type": "SiteNavigationElement", "position": 3, "name": "Dehydrated Products", "url": "https://atlasagro.co.in/products/dehydrated-products.html"}, {"@type": "SiteNavigationElement", "position": 4, "name": "Spray Dried Products", "url": "https://atlasagro.co.in/products/spray-dried.html"}, {"@type": "SiteNavigationElement", "position": 5, "name": "Spices", "url": "https://atlasagro.co.in/products/spices.html"}]}</script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Atlas AgroFood Pvt Ltd",
-    "url":"https://atlasagro.co.in",
-    "contactPoint":{
-      "@type":"ContactPoint",
-      "contactType":"sales",
-      "url":"https://atlasagro.co.in/contact.html"
-    }
-  }
   </script>
-
-
-<style>
-  [x-cloak]{ display:none !important; }
-  .no-scroll{ overflow:hidden; }
-
-  .mobile-menu-overlay{
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, .35);
-    backdrop-filter: blur(2px);
-    z-index: 60;
-  }
-  .mobile-menu-panel{
-    position: fixed;
-    left: 12px;
-    right: 12px;
-    top: 88px;
-    max-height: calc(100vh - 112px);
-    overflow: auto;
-    background: rgba(255,255,255,.92);
-    border: 1px solid rgba(16, 185, 129, .18);
-    border-radius: 18px;
-    box-shadow: 0 20px 50px rgba(2, 6, 23, .18);
-    z-index: 61;
-    padding: 14px;
-  }
-  .mobile-menu-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding: 4px 4px 10px 4px;
-  }
-  .mobile-menu-title{
-    font-weight: 700;
-    font-size: 16px;
-    color: #0f172a;
-  }
-  .mobile-menu-close{
-    width: 40px;
-    height: 40px;
-    border-radius: 999px;
-    border: 1px solid rgba(148,163,184,.55);
-    background: rgba(255,255,255,.75);
-    color: #0f172a;
-    font-size: 18px;
-    line-height: 1;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .mobile-menu-nav{
-    display:grid;
-    gap: 10px;
-    padding: 6px 4px 12px 4px;
-  }
-  .mobile-menu-nav a{
-    padding: 12px 12px;
-    border-radius: 14px;
-    border: 1px solid rgba(148,163,184,.35);
-    background: rgba(255,255,255,.6);
-    color: #0f172a;
-    font-weight: 600;
-  }
-  .mobile-menu-nav a:active{
-    transform: translateY(1px);
-  }
-  .mobile-menu-actions{
-    display:grid;
-    gap: 10px;
-    padding: 4px;
-  }
-  .w-full{ width:100%; }
-
-</style>
-
 </head>
 
 <body class="bg-brand-50 text-ink antialiased"
-      :class="{\'no-scroll\': mobileOpen}" x-data="siteApp()"
+      :class="{'no-scroll': mobileOpen}" x-data="siteApp()"
       x-init="init()">
 
   <div class="sticky-cta">
     <a class="quote" href="/contact.html">Get Bulk Quote</a>
-    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+supply+of+your+products.+Please+share+MOQ%2C+specs%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
+    <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
   </div>
   <div class="mobile-cta">
     <div class="wrap">
       <a class="quote" href="/contact.html">Get Bulk Quote</a>
-      <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687?text=Hi+Atlas+AgroFood%2C+I+am+looking+for+bulk+supply+of+your+products.+Please+share+MOQ%2C+specs%2C+packaging+options+and+pricing." target="_blank" rel="noopener">WhatsApp</a>
+      <a class="wa card-hover hover:border-slate-300 transition" href="https://wa.me/917738505687" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
-<div id="site-header"></div>
-<!-- Mobile menu (drawer) -->
-<div x-cloak x-show="mobileOpen" class="mobile-menu-overlay" @click="mobileOpen=false" x-transition.opacity></div>
-<div x-cloak x-show="mobileOpen" class="mobile-menu-panel" @click.stop
-     x-transition:enter="transition ease-out duration-200"
-     x-transition:enter-start="opacity-0 translate-y-2"
-     x-transition:enter-end="opacity-100 translate-y-0"
-     x-transition:leave="transition ease-in duration-150"
-     x-transition:leave-start="opacity-100 translate-y-0"
-     x-transition:leave-end="opacity-0 translate-y-2">
-  <div class="mobile-menu-header">
-    <div class="mobile-menu-title">Menu</div>
-    <button class="mobile-menu-close" @click="mobileOpen=false" aria-label="Close menu">✕</button>
+
+  <div id="site-header"></div>
+  
+  <div x-cloak x-show="mobileOpen" class="mobile-menu-overlay" @click="mobileOpen=false" x-transition.opacity></div>
+  <div x-cloak x-show="mobileOpen" class="mobile-menu-panel" @click.stop
+       x-transition:enter="transition ease-out duration-200"
+       x-transition:enter-start="opacity-0 translate-y-2"
+       x-transition:enter-end="opacity-100 translate-y-0"
+       x-transition:leave="transition ease-in duration-150"
+       x-transition:leave-start="opacity-100 translate-y-0"
+       x-transition:leave-end="opacity-0 translate-y-2">
+    <div class="mobile-menu-header">
+      <div class="mobile-menu-title">Menu</div>
+      <button class="mobile-menu-close" @click="mobileOpen=false">✕</button>
+    </div>
+    <nav class="mobile-menu-nav">
+      <a href="index.html">Home</a>
+      <a href="products/index.html">Products</a>
+      <a href="industries/index.html">Industries</a>
+      <a href="quality.html">Quality</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+      <a href="/assets/brochure.pdf" download>📄 Download Brochure</a>
+    </nav>
   </div>
 
-  <nav class="mobile-menu-nav" aria-label="Mobile navigation">
-    <a href="index.html">Home</a>
-    <a href="products/index.html">Products</a>
-    <a href="industries/index.html">Industries</a>
-    <a href="quality.html">Quality</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-    <a href="/assets/brochure.pdf" download>📄 Download Brochure</a>
+  <section class="explore-strip relative z-20">
+    <p class="explore-text">
+      <span>Explore:</span>
+      <a href="/products/">product categories</a> including
+      <a href="/products/dehydrated-products.html">dehydrated vegetables</a>,
+      <a href="/products/spray-dried.html">spray dried ingredients</a> and
+      <a href="/products/spices.html">onion & garlic mixes</a>.
+    </p>
+  </section>
 
-  </nav>
+  <section class="relative w-full h-[680px] md:h-[750px] overflow-hidden bg-earth-cream" x-data="heroSlider()">
+    
+    <template x-for="(slide, index) in slides" :key="index">
+      <div class="absolute inset-0 w-full h-full flex flex-col md:flex-row" 
+           x-show="active === index"
+           x-transition:enter="transition ease-in-out duration-700"
+           x-transition:enter-start="opacity-0"
+           x-transition:enter-end="opacity-100"
+           x-transition:leave="transition ease-in-out duration-700"
+           x-transition:leave-start="opacity-100"
+           x-transition:leave-end="opacity-0">
+        
+        <div class="w-full h-[55%] md:h-full md:w-[60%] flex items-center justify-center md:justify-start px-6 md:pl-24 relative z-20 bg-earth-cream">
+          <div class="max-w-xl text-center md:text-left mt-8 md:mt-0">
+            
+            <div class="relative inline-block mb-3 md:mb-4">
+               <span class="block h-px w-12 bg-gray-400 absolute left-[-60px] top-1/2 hidden md:block"></span>
+               <span class="font-script text-3xl md:text-4xl text-[#c5a365]" x-text="slide.tagline"></span>
+               <span class="block h-px w-12 bg-gray-400 absolute right-[-60px] top-1/2 hidden md:block"></span>
+            </div>
 
-  <div class="mobile-menu-actions">
-    <a class="btn btn-primary w-full" href="#quote" @click="mobileOpen=false">Get Bulk Quote</a>
-    <a class="btn btn-outline w-full" href="https://wa.me/917738505687" target="_blank" rel="noopener" @click="mobileOpen=false">WhatsApp</a>
-  </div>
-</div>
+            <h1 class="font-serif-display text-4xl sm:text-5xl md:text-7xl text-ink leading-[1.1] mb-4 md:mb-6" x-html="slide.title"></h1>
+            
+            <p class="text-slate-600 text-sm md:text-lg mb-6 md:mb-8 max-w-sm mx-auto md:mx-0 font-light" x-text="slide.desc"></p>
 
-
-
-<!-- Internal Links: Products -->
-<section class="explore-strip">
-  <p class="explore-text">
-    <span>Explore:</span>
-    <a href="/products/">product categories</a> including
-    <a href="/products/dehydrated-products.html">dehydrated vegetables & fruit powders</a>,
-    <a href="/products/spray-dried.html">spray dried ingredients</a> and
-    <a href="/products/spices.html">onion & garlic based dehydrated mixes</a>.
-  </p>
-</section>
-
-<!-- New Hero Slider: Carousel with Progress Indicators -->
-<section class="relative py-12 md:py-20">
-  <div class="w-full max-w-5xl mx-auto text-center" x-data="slider">
-    <!-- Item image -->
-    <div class="transition-all duration-150 delay-300 ease-in-out">
-        <div class="relative flex flex-col" x-ref="items">
-            <!-- Alpine.js template for items -->
-            <template x-for="(item, index) in items" :key="index">
-                <div
-                    x-show="active === index"
-                    x-transition:enter="transition ease-in-out duration-500 delay-200 order-first"
-                    x-transition:enter-start="opacity-0 scale-105"
-                    x-transition:enter-end="opacity-100 scale-100"
-                    x-transition:leave="transition ease-in-out duration-300 absolute"
-                    x-transition:leave-start="opacity-100 scale-100"
-                    x-transition:leave-end="opacity-0 scale-95"
-                >
-                    <img class="rounded-xl" :src="item.img" width="1024" height="576" :alt="item.desc">
-                </div>
-            </template>
+            <a :href="slide.link" class="inline-block bg-[#c5a365] text-white px-6 py-3 md:px-8 md:py-4 uppercase tracking-widest text-xs md:text-sm font-bold hover:bg-[#b08d55] transition shadow-lg">
+              View Product
+            </a>
+          </div>
         </div>
-    </div>
-    <!-- Buttons -->
-    <div class="max-w-xs sm:max-w-sm md:max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
-        <!-- Alpine.js template for buttons -->
-        <template x-for="(item, index) in items" :key="index">
-            <button class="p-2 rounded focus:outline-none focus-visible:ring focus-visible:ring-brand-300 group" @click="active = index">
-                <span class="text-center flex flex-col items-center" :class="active === index ? '' : 'opacity-50 group-hover:opacity-100 group-focus:opacity-100 transition-opacity'">
-                    <span class="block text-sm font-medium text-slate-900 mb-2" x-text="item.desc"></span>
-                    <span class="block relative w-full bg-slate-200 h-1 rounded-full" role="progressbar" :aria-valuenow="active === index ? progress : 0" aria-valuemin="0" aria-valuemax="100">
-                        <span class="absolute inset-0 bg-brand-500 rounded-[inherit]" :style="`${active === index ? `width: ${progress}%` : 'width: 0%'}`"></span>
-                    </span>
-                </span>
-            </button>
+
+        <div class="w-full h-[45%] md:h-full md:w-[40%] relative overflow-hidden z-10">
+          
+          <div class="absolute inset-0 w-full h-full z-0 transition-colors duration-700"
+               :style="`background-color: ${slide.color}`"></div>
+          
+          <div class="absolute 
+                      left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 
+                      md:left-auto md:right-[10%] md:top-1/2 md:-translate-y-1/2 md:translate-x-0
+                      w-[280px] h-[280px] 
+                      md:w-[90%] md:h-auto md:aspect-square 
+                      rounded-full border-[8px] md:border-[15px] border-white/20 shadow-2xl flex items-center justify-center z-10 overflow-hidden bg-white/10">
+             <img :src="slide.image" class="w-full h-full object-cover scale-110" alt="Product Image">
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <div class="absolute bottom-0 left-0 w-full px-6 py-4 md:px-12 md:py-8 z-30 flex flex-col md:flex-row items-center justify-between pointer-events-none">
+      
+      <div class="flex gap-4 pointer-events-auto mb-4 md:mb-0 hidden md:flex">
+        <button @click="prev()" class="nav-btn w-12 h-12 md:w-16 md:h-16 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:bg-white hover:border-white transition group">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+        </button>
+        <button @click="next()" class="nav-btn w-12 h-12 md:w-16 md:h-16 rounded-full border border-gray-400 flex items-center justify-center text-gray-700 hover:bg-white hover:border-white transition group">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <div class="absolute bottom-[22%] w-full flex justify-between px-4 md:hidden pointer-events-auto">
+         <button @click="prev()" class="w-10 h-10 rounded-full bg-white/20 backdrop-blur text-white flex items-center justify-center">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+         </button>
+         <button @click="next()" class="w-10 h-10 rounded-full bg-white/20 backdrop-blur text-white flex items-center justify-center">
+             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+         </button>
+      </div>
+
+      <div class="flex gap-4 pointer-events-auto overflow-x-auto max-w-full pb-2 md:pb-0">
+        <template x-for="(slide, index) in slides" :key="index">
+          <button @click="goTo(index)" 
+                  class="relative w-12 h-12 md:w-20 md:h-20 rounded-full overflow-hidden border-2 transition-all duration-300 transform"
+                  :class="active === index ? 'border-[#c5a365] scale-110 shadow-lg' : 'border-transparent opacity-70 grayscale'">
+            <img :src="slide.image" class="w-full h-full object-cover">
+          </button>
         </template>
-    </div>
-    <!-- CTA Buttons -->
-    <div class="mt-7 flex flex-wrap gap-3 justify-center">
-      <a href="#quote"
-         class="rounded-2xl px-5 py-3 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">
-        Request Pricing / MOQ
-      </a>
-      <a href="/products/"
-         class="rounded-2xl px-5 py-3 border border-slate-200 hover:bg-white transition">
-        Explore Products
-      </a>
-    </div>
-  </div>
-</section>
+      </div>
 
-<script>
-document.addEventListener('alpine:init', () => {
-    Alpine.data('slider', () => ({
-        duration: 5000,
+      <div class="hidden md:flex items-center gap-2 pointer-events-auto transform rotate-90 origin-right translate-x-8 text-[#c5a365] font-bold tracking-[0.2em] text-xs">
+         ORDER NOW
+      </div>
+    </div>
+  </section>
+
+  <section id="industries" class="border-y border-slate-200 bg-brand-50">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <h2 class="text-3xl font-bold" data-i18n="sec.industries">Who we supply</h2>
+      <p class="text-slateish mt-2 max-w-2xl">
+        <span data-i18n="industries.lead">Ingredients designed for consistent taste, low moisture, and stable shelf life.</span>
+      </p>
+
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition card-hover" style="transition-delay:0ms">
+          <div class="text-xl font-semibold" data-i18n="industries.card1.title">Food Manufacturers</div>
+          <div class="text-sm text-slateish mt-2" data-i18n="industries.card1.desc">Seasonings, sauces, RTC/RTD, frozen foods.</div>
+        </div>
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition card-hover" style="transition-delay:80ms">
+          <div class="text-xl font-semibold" data-i18n="industries.card2.title">HoReCa</div>
+          <div class="text-sm text-slateish mt-2" data-i18n="industries.card2.desc">Hotels, restaurants, caterers — bulk packs.</div>
+        </div>
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition card-hover" style="transition-delay:160ms">          
+            <div class="text-xl font-semibold"><span data-i18n="industries.snackBrands">Snack Brands</span></div>
+          <div class="text-sm text-slateish mt-2"><span data-i18n="industries.snackDesc">Fruit chips, veg chips, spice blends.</span></div>
+        </div>
+        <div class="reveal supply-card rounded-3xl border border-slate-200 bg-white p-5 hover:shadow-lg transition card-hover" style="transition-delay:240ms">          
+            <div class="text-xl font-semibold"><span data-i18n="industries.exporters">Exporters</span></div>
+          <div class="text-sm text-slateish mt-2"><span data-i18n="industries.exportersDesc">Documentation & packing support.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quality" class="max-w-7xl mx-auto px-4 py-16">
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-3xl font-bold" data-i18n="sec.quality">Quality & Food Safety</h2>
+        <p class="text-slateish mt-2">
+          <span data-i18n="quality.lead">We aim for repeatable batches through raw material checks, controlled processing, and QC logs.</span>
+        </p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4">
+          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 card-hover">
+            <div class="font-semibold" data-i18n="quality.card1.title">Incoming RM Checks</div>
+            <div class="text-sm text-slateish mt-2" data-i18n="quality.card1.desc">Visual sorting, odor, moisture, infestation check.</div>
+          </div>
+          <div class="card-hover rounded-3xl border border-slate-200 bg-white p-5 card-hover">
+            <div class="font-semibold" data-i18n="quality.card2.title">Batch QC</div>
+            <div class="text-sm text-slateish mt-2" data-i18n="quality.card2.desc"><span data-i18n="specs.moisture">Moisture</span>, mesh size, color, aroma, foreign matter.</div>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 card-hover">
+        <div class="text-xl font-semibold"><span data-i18n="specs.title">Typical Specifications</span></div>
+        <div class="mt-5 grid gap-3 text-sm">
+           <div class="flex items-center justify-between border-b pb-2"><span class="text-slateish">Moisture</span><span class="font-semibold">Max 5-6%</span></div>
+           <div class="flex items-center justify-between border-b pb-2"><span class="text-slateish">Shelf Life</span><span class="font-semibold">12-18 Months</span></div>
+        </div>
+        <div class="mt-6">
+          <a href="#quote" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-slate-200 hover:bg-white transition">
+            <span data-i18n="specs.cta">Share your required specs →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="max-w-7xl mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold" data-i18n="sec.faq">FAQ</h2>
+    <div class="mt-8 grid gap-3 max-w-3xl">
+      <template x-for="(f, idx) in faqs" :key="idx">
+        <div class="card-hover rounded-3xl border border-slate-200 bg-white overflow-hidden card-hover">
+          <button class="w-full text-left p-5 flex items-center justify-between gap-4" @click="f.open = !f.open">
+            <span class="font-semibold" x-text="f.q"></span>
+            <span class="text-slateish" x-text="f.open ? '−' : '+'"></span>
+          </button>
+          <div class="px-5 pb-5 text-sm text-slateish" x-show="f.open" x-transition>
+            <div x-text="f.a"></div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </section>
+
+  <section id="quote" class="border-t border-slate-200 bg-brand-50">
+    <div id="contact" class="max-w-7xl mx-auto px-4 py-16">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 class="text-3xl font-bold">Contact & Quote</h2>
+          <p class="text-slateish mt-2">Share your requirement for bulk supply.</p>
+          
+          <div class="mt-5 card-hover rounded-3xl border border-slate-200 bg-white p-6">
+            <form class="grid gap-3" @submit.prevent="submitQuote()">
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <input class="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 outline-none focus:border-brand-500" placeholder="Your Name" x-model="quote.name" required />
+                  <input class="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 outline-none focus:border-brand-500" placeholder="Company" x-model="quote.company" />
+                </div>
+                <input class="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 outline-none focus:border-brand-500" placeholder="Phone / WhatsApp" x-model="quote.phone" required />
+                <textarea class="w-full rounded-2xl bg-white border border-slate-200 px-4 py-3 outline-none focus:border-brand-500" rows="3" placeholder="Requirement details..." x-model="quote.message"></textarea>
+                <button class="rounded-2xl px-5 py-3 bg-brand-700 text-white font-semibold hover:bg-brand-600 transition">Send via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="card-hover rounded-3xl border border-slate-200 bg-white overflow-hidden card-hover">
+          <div class="h-72">
+            <iframe title="Atlas AgroFood Location" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Khamgaon%20Maharashtra&output=embed"></iframe>
+          </div>
+          <div class="p-6 border-t border-slate-200">
+             <div class="text-lg font-semibold">Atlas AgroFood Pvt Ltd</div>
+             <div class="text-slateish text-sm">Khamgaon, Buldhana, Maharashtra 444303</div>
+             <div class="text-brand-700 font-bold mt-2">+91-7738505687</div>
+          </div>
+        </div>
+      </div>
+      <div id="site-footer"></div>
+    </div>
+  </section>
+
+  <script>
+    function heroSlider() {
+      return {
         active: 0,
-        progress: 0,
-        firstFrameTime: 0,
-        items: [
-            {
-                img: 'assets/gallery/fruit-chips.png',
-                desc: 'Fruit Chips',
-            },
-            {
-                img: 'assets/gallery/vegetable-mix.jpg',
-                desc: 'Vegetable Mix',
-            },
-            {
-                img: 'assets/gallery/onion-garlic.jpg',
-                desc: 'Onion / Garlic',
-            },
-            {
-                img: 'assets/gallery/custom-blends.jpg',
-                desc: 'Custom Blends',
-            },                                
+        interval: null,
+        slides: [
+          {
+            tagline: "Healthy & Quality",
+            title: "Dehydrated <br>Onion Flakes",
+            desc: "Export-quality onion flakes and powders for seasonings, gravies and ready-mixes.",
+            image: "assets/gallery/onion-garlic.jpg",
+            color: "#c5a365",
+            link: "products/spices.html"
+          },
+          {
+            tagline: "Natural Snacks",
+            title: "Crispy Fruit <br>Chips",
+            desc: "100% natural dehydrated fruit chips. No added sugar, perfect for snacking.",
+            image: "assets/gallery/fruit-chips.png",
+            color: "#8FA35C",
+            link: "products/dehydrated-products.html"
+          },
+          {
+            tagline: "Pure Ingredients",
+            title: "Vegetable <br>Powders",
+            desc: "Spinach, Tomato, and Ginger powders for instant soups and nutraceuticals.",
+            image: "assets/gallery/vegetable-mix.jpg",
+            color: "#B35A22",
+            link: "products/dehydrated-products.html"
+          },
+          {
+            tagline: "Custom Blends",
+            title: "Spices & <br>Seasonings",
+            desc: "Customized spice blends tailored for noodle tastemakers and snack dust.",
+            image: "assets/gallery/custom-blends.jpg",
+            color: "#5D4037",
+            link: "products/spices.html"
+          }
         ],
+        next() {
+          this.active = (this.active + 1) % this.slides.length;
+          this.resetTimer();
+        },
+        prev() {
+          this.active = (this.active - 1 + this.slides.length) % this.slides.length;
+          this.resetTimer();
+        },
+        goTo(index) {
+          this.active = index;
+          this.resetTimer();
+        },
         init() {
-            this.startAnimation()
-            this.$watch('active', callback => {
-                cancelAnimationFrame(this.frame)
-                this.startAnimation()
-            })
+          this.startTimer();
         },
-        startAnimation() {
-            this.progress = 0
-            this.$nextTick(() => {
-                this.heightFix()
-                this.firstFrameTime = performance.now()
-                this.frame = requestAnimationFrame(this.animate.bind(this))
-            })
+        startTimer() {
+          this.interval = setInterval(() => { this.next(); }, 5000);
         },
-        animate(now) {
-            let timeFraction = (now - this.firstFrameTime) / this.duration
-            if (timeFraction <= 1) {
-                this.progress = timeFraction * 100
-                this.frame = requestAnimationFrame(this.animate.bind(this))
-            } else {
-                timeFraction = 1
-                this.active = (this.active + 1) % this.items.length
-            }
-        },
-        heightFix() {
-            this.$nextTick(() => {
-                this.$refs.items.parentElement.style.height = this.$refs.items.children[this.active + 1].clientHeight + 'px'
-            })
-        }                            
-    }))
-})
-</script>
-
-<!-- The rest of your HTML remains the same (quality section, products, etc.) -->
-  <!-- ... (truncated for brevity, but include the full remaining content from your original file) ... -->
-
-<script>
-function siteApp() {
-  return {
-    whatsappNumber: "917738505687",
-    mobileOpen: false,
-    modalOpen: false,
-    modalProduct: null,
-    quote: { name: "", company: "", phone: "", email: "", product: "", message: "" },
-    selectedCategory: "All",
-    faqs: [],
-
-    products: [
-      // ... your products array ...
-    ],
-
-    get whatsappLink() {
-      const base = `Hello Atlas AgroFood, interested in pricing, MOQ, specs (mesh/moisture), packaging options and lead time.`;
-      return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(base)}`;
-    },
-
-    filteredProducts() {
-      if (this.selectedCategory === "All") return this.products;
-      return this.products.filter(p => p.category === this.selectedCategory);
-    },
-
-    openSpec(p) {
-      this.modalProduct = p;
-      this.modalOpen = true;
-    },
-
-    submitQuote() {
-      const msg =
-        `Hello! Quote request:%0A` +
-        `Name: ${encodeURIComponent(this.quote.name)}%0A` +
-        `Company: ${encodeURIComponent(this.quote.company || "-")}%0A` +
-        `Phone: ${encodeURIComponent(this.quote.phone)}%0A` +
-        `Email: ${encodeURIComponent(this.quote.email || "-")}%0A` +
-        `Interest: ${encodeURIComponent(this.quote.product || "-")}%0A` +
-        `Message: ${encodeURIComponent(this.quote.message || "-")}`;
-
-      window.open(`https://wa.me/${this.whatsappNumber}?text=${msg}`, "_blank");
-    },
-
-    init() {
-      // You can add analytics init here later (GA4, Meta Pixel, etc.)
-      this.refreshFaqs();
-      window.addEventListener("atlasLangChanged", () => this.refreshFaqs());
-
+        resetTimer() {
+          clearInterval(this.interval);
+          this.startTimer();
+        }
+      }
     }
-  };
-}
-</script>
 
-<script>
-const translations = {
-  // ... your translations ...
-};
+    function siteApp() {
+      return {
+        mobileOpen: false,
+        whatsappNumber: "917738505687",
+        quote: { name: "", company: "", phone: "", message: "" },
+        faqs: [
+            { q: "Do you supply in bulk?", a: "Yes, we support bulk supply with custom packaging options.", open: true },
+            { q: "What is the MOQ?", a: "MOQ depends on the product, usually starting from 100kg.", open: false },
+            { q: "Do you export?", a: "Yes, we provide export-ready packing and documentation.", open: false }
+        ],
+        submitQuote() {
+          const msg = `Quote Request:%0A Name: ${this.quote.name}%0A Company: ${this.quote.company}%0A Phone: ${this.quote.phone}%0A Message: ${this.quote.message}`;
+          window.open(`https://wa.me/${this.whatsappNumber}?text=${msg}`, "_blank");
+        },
+        init() {
+          // Initialize analytics
+        }
+      };
+    }
+  </script>
 
-// ... your other scripts (syncAlpine, setLang, etc.) ...
-</script>
+  <script>
+    (function(){
+      function setActiveNav(){
+        var path = (location.pathname || "/").toLowerCase();
+        var home = document.querySelector('a[href="index.html"]');
+        if(home && (path === "/" || path === "/index.html")) {
+          home.classList.add("text-brand-700");
+        }
+      }
+      if(document.readyState === "loading"){ document.addEventListener("DOMContentLoaded", setActiveNav); }
+      else { setActiveNav(); }
+    })();
+  </script>
 
-<script>
-(function(){
-  // ... your nav script ...
-})();
-</script>
-
-<script>
-(function(){
-  // ... your WhatsApp prefill script ...
-})();
-</script>
-
-<script src="/assets/js/cta-tracking.js"></script>
-
-<script defer src="/assets/js/includes.js"></script>
+  <script src="/assets/js/cta-tracking.js"></script>
+  <script defer src="/assets/js/includes.js"></script>
 </body>
 </html>

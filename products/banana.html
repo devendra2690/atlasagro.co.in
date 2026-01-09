@@ -253,18 +253,24 @@
   }
   .btn-ghost:hover{text-decoration:none;filter:brightness(.98);}
 /* --- Creative polish: Sticky quickbar + signals --- */
-.quickbar-wrap{position:sticky; top:86px; z-index:40; margin-top:6px; margin-bottom:14px}
+.quickbar-wrap{position:fixed; left:0; right:0; top:86px; z-index:60; margin:0; padding:0 16px}
+@media (max-width: 767px){.quickbar-wrap{top:70px}}
+.quickbar-spacer{height:84px}
+@media (max-width: 767px){.quickbar-spacer{height:78px}}
+
 @media (max-width: 767px){
   .quickbar-wrap{top:70px}
 }
 .quickbar{
+  max-width: 1120px;
+  margin: 0 auto;
   display:flex; gap:14px; align-items:center; justify-content:space-between;
   border:1px solid rgba(15,23,42,.10);
   background: rgba(255,255,255,.82);
   backdrop-filter: blur(10px);
   border-radius: 24px;
   padding: 14px 14px;
-  box-shadow: 0 14px 34px rgba(15,23,42,.10);
+  box-shadow: 0 10px 24px rgba(15,23,42,.10);
 }
 .qb-left{min-width:0}
 .qb-title{font-weight:900; color:#0f172a; font-size:14px; line-height:1.1}
@@ -330,7 +336,8 @@
 <!-- Top announcement -->
 <main class="max-w-7xl mx-auto px-4 py-10">
 
-<!-- Quick Spec Bar (sticky) -->
+<!-- Quick Spec Bar (fixed) -->
+  <div class="quickbar-spacer" aria-hidden="true"></div>
 <div class="quickbar-wrap">
   <div class="quickbar">
     <div class="qb-left">

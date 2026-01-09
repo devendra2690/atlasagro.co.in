@@ -390,6 +390,25 @@
     padding: 4px;
   }
   .w-full{ width:100%; }
+  .atlas-slider {
+  max-height: 420px;   /* desktop */
+}
+
+.atlas-slide img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;   /* important */
+}
+
+@media (max-width: 768px) {
+  .atlas-slider {
+    max-height: 280px;
+  }
+
+  .atlas-slide img {
+    height: 280px;
+  }
+}
 </style>
 
 
@@ -466,7 +485,7 @@
 <section class="atlas-slider mt-6" id="atlasProductSlider">
 
   <a class="atlas-slide active" href="/products/onion.html">
-    <img src="/assets/products/onion.jpg" alt="Dehydrated Onion Flakes">
+    <img src="/assets/products/onion/hero.png" alt="Dehydrated Onion Flakes">
     <div class="atlas-slide-text">
       <h2>Dehydrated Onion Flakes</h2>
       <p>Bulk supply • Export-ready</p>
@@ -474,7 +493,7 @@
   </a>
 
   <a class="atlas-slide" href="/products/garlic.html">
-    <img src="/assets/products/garlic.jpg" alt="Garlic Powder">
+    <img src="/assets/products/garlic/hero.png" alt="Garlic Powder">
     <div class="atlas-slide-text">
       <h2>Garlic Powder / Granules</h2>
       <p>Custom mesh • OEM</p>
@@ -482,7 +501,7 @@
   </a>
 
   <a class="atlas-slide" href="/products/banana.html">
-    <img src="/assets/products/banana.jpg" alt="Banana Powder">
+    <img src="/assets/products/banana/hero.png" alt="Banana Powder">
     <div class="atlas-slide-text">
       <h2>Banana Powder</h2>
       <p>B2B • 5–25 kg packs</p>

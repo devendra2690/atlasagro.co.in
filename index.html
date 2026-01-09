@@ -22,16 +22,12 @@
     .font-script { font-family: 'Dancing Script', cursive; }
     .font-serif-display { font-family: 'Playfair Display', serif; }
 
-    /* Animations & Utilities */
+    /* Utilities */
     [x-cloak] { display: none !important; }
     html { scroll-behavior: smooth; }
     
     .card-hover { transition: all .3s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
-
-    /* Slider Transitions */
-    .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .reveal.in { opacity: 1; transform: translateY(0); }
   </style>
 
   <script>
@@ -39,21 +35,19 @@
       theme: {
         extend: {
           colors: {
-            // NEW PALETTE: Deep Forest Green (Natural & Premium) instead of Neon Green
             brand: { 
               DEFAULT: '#15803d', 
               50: '#f2fcf5', 
               100: '#dcfce7', 
               200: '#bbf7d0', 
               600: '#16a34a', 
-              700: '#15803d', // Main Brand Color
+              700: '#15803d', 
               800: '#166534', 
               900: '#14532d' 
             },
-            ink: '#1e293b', // Softer black
+            ink: '#1e293b',
             slateish: '#64748b',
-            // Earth Tones matching your Slider Images
-            'earth-cream': '#f9f7f2', // Softer cream
+            'earth-cream': '#f9f7f2',
             'earth-gold': '#c5a365', 
             'earth-brown': '#5d4037',
             'earth-green': '#556b2f',
@@ -148,12 +142,12 @@
     <template x-for="(slide, index) in slides" :key="index">
       <div class="absolute inset-0 w-full h-full flex flex-col md:flex-row" 
            x-show="active === index"
-           x-transition:enter="transition ease-out duration-1000"
-           x-transition:enter-start="opacity-0 scale-95"
-           x-transition:enter-end="opacity-100 scale-100"
-           x-transition:leave="transition ease-in duration-1000"
-           x-transition:leave-start="opacity-100 scale-100"
-           x-transition:leave-end="opacity-0 scale-105">
+           x-transition:enter="transition ease-in-out duration-700"
+           x-transition:enter-start="opacity-0"
+           x-transition:enter-end="opacity-100"
+           x-transition:leave="transition ease-in-out duration-700"
+           x-transition:leave-start="opacity-100"
+           x-transition:leave-end="opacity-0">
         
         <div class="w-full h-[55%] md:h-full md:w-[60%] flex items-center justify-center md:justify-start px-6 md:pl-24 relative z-20">
           <div class="max-w-xl text-center md:text-left mt-8 md:mt-0">
